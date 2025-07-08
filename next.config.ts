@@ -15,7 +15,17 @@ const nextConfig: NextConfig = {
       "scontent-del2-3.xx.fbcdn.net",
       "scontent-del1-2.xx.fbcdn.net",
       "scontent.xx.fbcdn.net",
-      "platform-lookaside.fbsbx.com"
+      "platform-lookaside.fbsbx.com",
+      'images.unsplash.com',
+      'scontent-del2-3.xx.fbcdn.net',
+      'scontent.fpat1-1.fna.fbcdn.net',
+      'scontent.xx.fbcdn.net',
+       'www.facebook.com',
+       "catalystcollege.in",
+       "plus.unsplash.com",
+       "lh3.googleusercontent.com",
+       "cdn.prod.website-files.com",
+       "media.npr.org" 
     ],
 
     /**

@@ -1,152 +1,139 @@
-import Link from 'next/link';
+// app/components/Footer.tsx            (or /src/components/Footer.tsx)
 import Image from 'next/image';
-import { 
-  FaFacebook, 
-  FaTwitter, 
-  FaInstagram, 
-  FaLinkedin, 
-  FaYoutube,
-  FaPhone,
-  FaEnvelope,
-  FaBuilding,
-  FaChevronRight
-} from 'react-icons/fa';
-import '../app/globals.css'
+import Link from 'next/link';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+type SimpleLink = { label: string; href: string };
 
+interface NavSection {
+  title: string;
+  links: SimpleLink[];
+}
+
+const NAV_SECTIONS: NavSection[] = [
+  {
+    title: 'Services',
+    links: [
+      { label: 'Web Development', href: '#' },
+      { label: 'Pricing', href: '#' },
+      { label: 'Support', href: '#' },
+      { label: 'Client Portal', href: '#' },
+      { label: 'Resources', href: '#' },
+    ],
+  },
+  {
+    title: 'Platforms',
+    links: [
+      { label: 'Hubspot', href: '#' },
+      { label: 'Integration Services', href: '#' },
+      { label: 'Marketing Glossary', href: '#' },
+      { label: 'UIPath', href: '#' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About us', href: '#' },
+      { label: 'Careers', href: '#' },
+      { label: 'Blog', href: '#' },
+      { label: 'Portfolio', href: '#' },
+      { label: 'Events', href: '#' },
+    ],
+  },
+  {
+    title: 'Additional',
+    links: [
+      { label: 'FAQ', href: '#' },
+      { label: 'Partners', href: '#' },
+      { label: 'Sitemap', href: '#' },
+      { label: 'Contact', href: '#' },
+      { label: 'News', href: '#' },
+    ],
+  },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* College Info */}
-          <div className="flex flex-col items-start">
-            <div className="mb-6">
-              <Image 
-                src="/college-logo.png" 
-                alt="College Logo"
-                width={180}
-                height={70}
-                className="dark:invert"
-              />
-            </div>
-            <p className="mb-4 text-muted-foreground text-sm">
-              123 Education Avenue<br />
-              Academic City, AC 12345<br />
-              United States
-            </p>
-            <p className="text-muted-foreground text-sm">
-              © {currentYear} College Name. All rights reserved.
-            </p>
-          </div>
+    <footer className="tracking-wide bg-slate-100 px-8 sm:px-12 pt-12 pb-6">
+      {/* Top grid */}
+      <div className="grid min-[1200px]:grid-cols-3 gap-12 xl:gap-16">
+        {/* Brand & summary */}
+        <div className="min-[1200px]:max-w-sm max-w-lg w-full">
+          <Link href="#">
+            <Image
+              src="https://readymadeui.com/readymadeui.svg"
+              alt="ReadymadeUI logo"
+              width={144}
+              height={40}
+              priority
+              className="w-36 h-auto"
+            />
+          </Link>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Quick Links</h3>
-            <ul className="space-y-2">
-              {[
-                { name: 'About Us', href: '/about' },
-                { name: 'Academics', href: '/academics' },
-                { name: 'Admissions', href: '/admissions' },
-                { name: 'Research', href: '/research' },
-                { name: 'Campus Life', href: '/campus-life' },
-              ].map((link) => (
-                <li key={link.name} className="flex items-center">
-                  <FaChevronRight className="mr-2 text-muted-foreground text-xs" />
-                  <Link href={link.href} className="footer-link">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p className="mt-6 text-slate-600 leading-relaxed text-sm">
+            ReadymadeUI is a library of pre-designed UI components built for
+            Tailwind CSS. It offers a collection of versatile and ready-to-use
+            components.
+          </p>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Contact Us</h3>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-3">
-                <FaPhone className="mt-0.5" />
-                <div>
-                  <p className="font-medium">General Inquiries</p>
-                  <p>(123) 456-7890</p>
-                </div>
+          {/* Socials */}
+          <ul className="mt-6 flex space-x-5">
+            {['facebook', 'linkedin', 'instagram', 'code'].map((name) => (
+              <li key={name}>
+                <Link href="#">
+                  <span className="sr-only">{name}</span>
+                  {/* Keep your inline SVGs—omitted here for brevity */}
+                </Link>
               </li>
-              <li className="flex items-start gap-3">
-                <FaEnvelope className="mt-0.5" />
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p>info@college.edu</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaBuilding className="mt-0.5" />
-                <div>
-                  <p className="font-medium">Visit Us</p>
-                  <p>Administration Building, Room 101</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social & Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Stay Connected</h3>
-            <div className="flex gap-4 mb-6">
-              <Link href="#" aria-label="Facebook" className="social-icon">
-                <FaFacebook />
-              </Link>
-              <Link href="#" aria-label="Twitter" className="social-icon">
-                <FaTwitter />
-              </Link>
-              <Link href="#" aria-label="Instagram" className="social-icon">
-                <FaInstagram />
-              </Link>
-              <Link href="#" aria-label="LinkedIn" className="social-icon">
-                <FaLinkedin />
-              </Link>
-              <Link href="#" aria-label="YouTube" className="social-icon">
-                <FaYoutube />
-              </Link>
-            </div>
-            
-            <div>
-              <h4 className="font-medium mb-3 text-muted-foreground">Subscribe to Newsletter</h4>
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Your email" 
-                  className="newsletter-input"
-                />
-                <button className="newsletter-button">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
+            ))}
+          </ul>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="footer-divider flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-4 md:mb-0">
-            <Link href="/privacy-policy" className="footer-link">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="footer-link">
-              Terms of Service
-            </Link>
-            <Link href="/accessibility" className="footer-link">
-              Accessibility
-            </Link>
-          </div>
-          <div className="text-center md:text-right">
-            Accredited by the Higher Education Commission
-          </div>
+        {/* Navigation columns */}
+        <div className="min-[1200px]:col-span-2 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {NAV_SECTIONS.map((section) => (
+            <nav key={section.title} className="max-lg:min-w-[140px]">
+              <h4 className="text-slate-900 font-semibold text-base">
+                {section.title}
+              </h4>
+              <ul className="mt-6 space-y-4">
+                {section.links.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="hover:text-slate-900 text-slate-600 text-sm font-normal"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
+      </div>
+
+      {/* Divider */}
+      <hr className="mt-10 mb-6 border-gray-300" />
+
+      {/* Bottom bar */}
+      <div className="flex flex-wrap max-md:flex-col gap-4">
+        <ul className="md:flex md:space-x-6 max-md:space-y-2">
+          {['Terms of Service', 'Privacy Policy', 'Security'].map((item) => (
+            <li key={item}>
+              <Link
+                href="#"
+                className="hover:text-slate-900 text-slate-600 text-sm font-normal"
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <p className="text-slate-600 text-sm md:ml-auto">
+          © ReadymadeUI. All rights reserved.
+        </p>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/button';
 import { navItems } from './Constants';
 
+
 type NavItem = {
   name: string;
   href: string;
@@ -107,7 +108,7 @@ export default function MainNavbar({ isFixed = false }: MainNavbarProps) {
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 z-10 transition-all duration-300">
           <Image
-            src="https://raw.githubusercontent.com/Cimage-Patna/Cimage-main/main/frontend/public/img/logo.png"
+            src="https://catalystcollege.in/Catalyst_logo.jpg"
             alt="CIMAGE Group of Institutions"
             width={240}
             height={60}

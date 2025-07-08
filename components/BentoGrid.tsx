@@ -1,8 +1,9 @@
+
 "use client";
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useSwipeable } from 'react-swipeable';
 
 interface ImageItem {
   url: string;
@@ -15,78 +16,162 @@ interface BentoGridProps {
   images: ImageItem[];
 }
 
-const desktopPattern = [
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-2 md:row-span-2',
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-1 md:row-span-2',
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-2 md:row-span-1',
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-1 md:row-span-2',
-  'md:col-span-1 md:row-span-1',
-  'md:col-span-2 md:row-span-2',
-  // ... continue with remaining patterns
-];
-
-const mobilePattern = [
-  'col-span-1 row-span-1',
-  'col-span-2 row-span-2',
-  // ... mobile patterns
-];
-
 const BentoGrid = ({ images }: BentoGridProps) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout>();
+
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkResponsive = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsTablet(width >= 768 && width < 1024);
     };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+
+    checkResponsive();
+    window.addEventListener('resize', checkResponsive);
+
+    return () => window.removeEventListener('resize', checkResponsive);
   }, []);
 
-  const displayedImages = isMobile ? images.slice(0, 10) : images;
+
+  useEffect(() => {
+    if (isMobile || isTablet) {
+      intervalRef.current = setInterval(() => {
+        setCurrentSlide(prev => (prev + 1) % images.length);
+      }, 3000);
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isMobile, isTablet, images.length]);
+
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      setCurrentSlide(prev => (prev + 1) % images.length);
+      resetInterval();
+    },
+    onSwipedRight: () => {
+      setCurrentSlide(prev => (prev - 1 + images.length) % images.length);
+      resetInterval();
+    },
+    trackMouse: true
+  });
+
+  const resetInterval = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % images.length);
+    }, 3000);
+  };
+
+  const desktopLayout = [
+    { area: 'a', class: 'col-span-1 row-span-1' },
+    { area: 'b', class: 'col-span-2 row-span-2' },
+    { area: 'c', class: 'col-span-1 row-span-1' },
+    { area: 'd', class: 'col-span-1 row-span-2' },
+    { area: 'e', class: 'col-span-1 row-span-1' },
+    { area: 'f', class: 'col-span-2 row-span-1' },
+    { area: 'g', class: 'col-span-1 row-span-1' },
+    { area: 'h', class: 'col-span-1 row-span-2' },
+    { area: 'i', class: 'col-span-1 row-span-1' },
+    { area: 'j', class: 'col-span-2 row-span-2' },
+    { area: 'k', class: 'col-span-1 row-span-1' },
+    { area: 'l', class: 'col-span-1 row-span-1' },
+    { area: 'm', class: 'col-span-1 row-span-1' }
+  ];
 
   return (
-    <div className="w-full px-0 mx-0">
-      {/* Mobile Grid */}
-      <div className="md:hidden grid grid-cols-2 gap-2 auto-rows-[150px]">
-        {displayedImages.map((image, index) => (
-          <BentoItem 
-            key={index}
-            image={image}
-            patternClass={mobilePattern[index % mobilePattern.length]}
-            isMobile={true}
-          />
-        ))}
-      </div>
+    <div className="w-full">
 
-      {/* Desktop/Tablet Grid */}
-      <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-3 auto-rows-[200px] px-0">
-        {displayedImages.map((image, index) => (
-          <BentoItem 
-            key={index}
-            image={image}
-            patternClass={desktopPattern[index % desktopPattern.length]}
-            isMobile={false}
-          />
-        ))}
-      </div>
+      {/* Desktop Bento Grid */}
+      {!isMobile && !isTablet && (
+        <div
+          className="hidden lg:grid grid-cols-5 gap-2 auto-rows-[180px]"
+          style={{
+            gridTemplateAreas: `
+              "a b b c d"
+              "e b b f g"
+              "h i j j k"
+              "h l j j m"
+            `
+          }}
+        >
+          {images.slice(0, 13).map((image, index) => (
+            <BentoItem
+              key={index}
+              image={image}
+              areaName={desktopLayout[index].area}
+              className={desktopLayout[index].class}
+              isMobile={false}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Mobile/Tablet Carousel */}
+      {(isMobile || isTablet) && (
+        <div
+          {...handlers}
+          ref={carouselRef}
+          className="relative w-full overflow-hidden"
+          style={{ height: isMobile ? '300px' : '400px' }}
+        >
+          <div
+            className="flex h-full transition-transform duration-500 ease-out"
+            style={{
+              width: `${images.length * 100}%`,
+              transform: `translateX(-${currentSlide * (100 / images.length)}%)`
+            }}
+          >
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="relative w-full h-full flex-shrink-0"
+                style={{ width: `${100 / images.length}%` }}
+              >
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                />
+                <Link href={image.link} className="flex justify-center">
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/80 shadow-lg whitespace-nowrap">
+                    <span className="text-white font-medium text-sm">
+                      {image.tag}
+                    </span>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/* Carousel Indicators */}
+          <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentSlide(index);
+                  resetInterval();
+                }}
+                className={`w-2 h-2 rounded-full transition-all ${currentSlide === index ? 'bg-white w-6' : 'bg-white/50'}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-interface BentoItemProps {
-  image: ImageItem;
-  patternClass: string;
-  isMobile: boolean;
-}
 
-const BentoItem = ({ image, patternClass, isMobile }: BentoItemProps) => {
+const BentoItem = ({ image, areaName, className, isMobile }: any) => {
   const itemRef = useRef<HTMLDivElement>(null);
   const tagRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -108,10 +193,8 @@ const BentoItem = ({ image, patternClass, isMobile }: BentoItemProps) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // Kill any existing animation
     animationRef.current?.kill();
 
-    // Create smooth follow animation with GSAP
     animationRef.current = gsap.to(tagRef.current, {
       x: x,
       y: y,
@@ -141,35 +224,31 @@ const BentoItem = ({ image, patternClass, isMobile }: BentoItemProps) => {
   };
 
   return (
-    <div 
+    <div
       ref={itemRef}
-      className={`relative overflow-hidden rounded-lg transition-all duration-300 mx-1 ${patternClass} ${
-        patternClass.includes('row-span-2') ? 'md:min-h-[400px]' : 'min-h-[200px]'
-      }`}
+      className={`relative overflow-hidden rounded-lg transition-all duration-300 ${className}`}
+      style={{ gridArea: areaName }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
     >
-      <Image
+      <img
         src={image.url}
         alt={image.alt}
-        fill
-        className="object-cover transition-transform duration-500 hover:scale-110"
-        sizes="(max-width: 768px) 50vw, 33vw"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      
-      {/* Floating Tag Button with GSAP animation */}
+
       <Link href={image.link} passHref>
-        <div 
+        <div
           ref={tagRef}
-          className="absolute pointer-events-none mix-blend-difference bg-white/20 backdrop-blur-md rounded-full px-4 py-2 border border-white/30 shadow-lg"
+          className="absolute z-50 mix-blend-difference pointer-events-none bg-black/70 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20 shadow-lg"
           style={{
             transform: 'translate(-50%, -50%)',
             opacity: 0,
             scale: 0.8,
           }}
         >
-          <span className="text-white font-medium text-sm whitespace-nowrap">
+          <span className="text-white font-medium text-xs whitespace-nowrap">
             {image.tag}
           </span>
         </div>

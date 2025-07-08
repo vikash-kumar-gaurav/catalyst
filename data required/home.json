@@ -1,0 +1,53 @@
+{
+    "HeroImageSection": {
+        "heroImgUrl": "",
+        "tagline": "",
+        "duration": "2025-2028"
+    },
+    "campusFacility": {
+        "campusImgURI": "",
+        "facilities": [
+            {
+                "id": "",
+                "title": "",
+                "description":"",
+                "image":""
+            }
+        ]
+    },
+    "cimageGlance":[
+        {
+            "Url":"",
+            "alt":"",
+            "tag":"",
+            "link":""
+        }
+    ],
+    "workShops":[
+        {
+            "kind":"industry visit",
+            "title":"",
+            "duration":"2 weeks",
+            "benifits":[""],
+            "image":""
+        }
+    ],
+    "courses":[
+        {
+            "title":"Bacholors of computers and applications(BCA)",
+            "duration":"3 years",
+            "description":"",
+            "highlights":[""]
+        }
+    ],
+
+    "testimonials":[
+        {
+            "studentProfilepic":"",
+            "studentName":"",
+            "course":"",
+            "review":"",
+            "courseTimeLine":""
+        }
+    ]
+}
