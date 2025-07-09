@@ -105,11 +105,11 @@ const Footer = () => {
                         <address className="not-italic space-y-4 text-gray-300 text-sm">
                             <div className="flex items-start gap-3">
                                 <FaPhone className="text-indigo-400 mt-0.5 flex-shrink-0" />
-                                <a href="tel:+919835024444" className="hover:text-indigo-300 transition-colors">+919835024444</a>
+                                <a href="tel:+919835024444" className="hover:text-indigo-300 transition-colors">+91 9835024444</a>
                             </div>
                             <div className="flex items-start gap-3">
                                 <FaEnvelope className="text-indigo-400 mt-0.5 flex-shrink-0" />
-                                <a href="mailto:info@catalystcollege.in" className="hover:text-indigo-300 transition-colors">info@CATALYSTCOLLEGE.IN</a>
+                                <a href="mailto:info@catalystcollege.in" className="hover:text-indigo-300 transition-colors">info@catalystcollege.in</a>
                             </div>
                             <div className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="text-indigo-400 mt-0.5 flex-shrink-0" />
