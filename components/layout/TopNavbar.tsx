@@ -15,27 +15,27 @@ export default function TopNavbar() {
           <div className="flex items-center gap-3">
             <span className="mr-3 text-base">Follow us:-</span>
             <div className="flex gap-4">
-              <Link href="#" className="hover:text-gray-200 transition-colors">
+              <Link href="https://www.facebook.com/cimage/" className="hover:text-gray-200 transition-colors">
                 <div className={socialIconContainerStyle}>
                   <FaFacebookF size={16} />
                 </div>
               </Link>
-              <Link href="#" className="hover:text-gray-200 transition-colors">
+              <Link href="https://in.linkedin.com/school/cimage/" className="hover:text-gray-200 transition-colors">
                 <div className={socialIconContainerStyle}>
                   <FaLinkedinIn size={16} />
                 </div>
               </Link>
-              <Link href="#" className="hover:text-gray-200 transition-colors">
+              <Link href="https://www.instagram.com/cimagecollege/?hl=en" className="hover:text-gray-200 transition-colors">
                 <div className={socialIconContainerStyle}>
                   <FaInstagram size={16} />
                 </div>
               </Link>
-              <Link href="#" className="hover:text-gray-200 transition-colors">
+              <Link href="https://x.com/cimagecollege?lang=en" className="hover:text-gray-200 transition-colors">
                 <div className={socialIconContainerStyle}>
                   <FaTwitter size={16} />
                 </div>
               </Link>
-              <Link href="#" className="hover:text-gray-200 transition-colors">
+              <Link href="https://www.youtube.com/@cimagepatna" className="hover:text-gray-200 transition-colors">
                 <div className={socialIconContainerStyle}>
                   <FaYoutube size={16} />
                 </div>
