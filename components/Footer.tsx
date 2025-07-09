@@ -79,11 +79,11 @@ const Footer = () => {
                     <section className="space-y-6">
                         <h2 className="text-lg font-semibold text-white">Quick Links</h2>
                         <ul className="space-y-3">
-                            <FooterLink url="#" name="About Us" />
-                            <FooterLink url="#" name="Academic Calendar" />
-                            <FooterLink url="#" name="Events" />
-                            <FooterLink url="#" name="Alumni Network" />
-                            <FooterLink url="#" name="Research" />
+                            <FooterLink url="/about-us" name="About Us" />
+                            <FooterLink url="/academic-calendar" name="Academic Calendar" />
+                            <FooterLink url="/events" name="Events" />
+                            <FooterLink url="/alumni-network" name="Alumni Network" />
+                            <FooterLink url="/research" name="Research" />
                         </ul>
                     </section>
 
@@ -91,11 +91,11 @@ const Footer = () => {
                     <section className="space-y-6">
                         <h2 className="text-lg font-semibold text-white">Admissions</h2>
                         <ul className="space-y-3">
-                            <FooterLink url="#" name="Application Process" />
-                            <FooterLink url="#" name="Fees" />
-                            <FooterLink url="#" name="Scholarships" />
-                            <FooterLink url="#" name="Virtual Tour" />
-                            <FooterLink url="#" name="FAQs" />
+                            <FooterLink url="/admission" name="Application Process" />
+                            <FooterLink url="/fees" name="Fees" />
+                            <FooterLink url="/scholorships" name="Scholarships" />
+                            <FooterLink url="/virtual-tour" name="Virtual Tour" />
+                            <FooterLink url="/faqs" name="FAQs" />
                         </ul>
                     </section>
 
@@ -105,11 +105,11 @@ const Footer = () => {
                         <address className="not-italic space-y-4 text-gray-300 text-sm">
                             <div className="flex items-start gap-3">
                                 <FaPhone className="text-indigo-400 mt-0.5 flex-shrink-0" />
-                                <a href="tel:+1234567890" className="hover:text-indigo-300 transition-colors">+1 (234) 567-890</a>
+                                <a href="tel:+919835024444" className="hover:text-indigo-300 transition-colors">+919835024444</a>
                             </div>
                             <div className="flex items-start gap-3">
                                 <FaEnvelope className="text-indigo-400 mt-0.5 flex-shrink-0" />
-                                <a href="mailto:info@catalystcollege.in" className="hover:text-indigo-300 transition-colors">info@edupulse.edu</a>
+                                <a href="mailto:info@catalystcollege.in" className="hover:text-indigo-300 transition-colors">info@CATALYSTCOLLEGE.IN</a>
                             </div>
                             <div className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="text-indigo-400 mt-0.5 flex-shrink-0" />
@@ -122,15 +122,15 @@ const Footer = () => {
                             <h3 className="text-sm font-semibold text-gray-200 mb-3">Connect With Us</h3>
                             <div className="flex items-center gap-3">
                                 {[
-                                    { icon: <FaFacebookF />, color: 'bg-blue-600 hover:bg-blue-700', label: 'Facebook' },
-                                    { icon: <FaYoutube />, color: 'bg-red-600 hover:bg-red-700', label: 'YouTube' },
-                                    { icon: <FaInstagram />, color: 'bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90', label: 'Instagram' },
-                                    { icon: <FaLinkedin />, color: 'bg-blue-500 hover:bg-blue-600', label: 'LinkedIn' },
-                                    { icon: <FaWhatsapp />, color: 'bg-green-500 hover:bg-green-600', label: 'WhatsApp' }
+                                    { icon: <FaFacebookF />, color: 'bg-blue-600 hover:bg-blue-700', label: 'Facebook' , link:'https://www.facebook.com/cimage/'},
+                                    { icon: <FaYoutube />, color: 'bg-red-600 hover:bg-red-700', label: 'YouTube' , link:'https://www.youtube.com/@cimagepatna'},
+                                    { icon: <FaInstagram />, color: 'bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90', label: 'Instagram' , link:'https://www.instagram.com/cimagecollege/?hl=en'},
+                                    { icon: <FaLinkedin />, color: 'bg-blue-500 hover:bg-blue-600', label: 'LinkedIn' , link:'https://in.linkedin.com/school/cimage/'},
+                                    { icon: <FaWhatsapp />, color: 'bg-green-500 hover:bg-green-600', label: 'WhatsApp' , link:'https://api.whatsapp.com/send/?phone=917250767676&text&type=phone_number&app_absent=0' }
                                 ].map((social, index) => (
                                     <a
                                         key={index}
-                                        href="#"
+                                        href={social.link}
                                         aria-label={social.label}
                                         target="_blank"
                                         rel="noopener noreferrer"
