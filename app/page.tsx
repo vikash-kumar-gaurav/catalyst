@@ -16,7 +16,7 @@ import GlobalAchievers from '@/components/HomePageComponents/CollegeAchievers';
 
 
 export const metadata: Metadata = {
-  title: 'HUHU',
+  title: 'Catalyst College',
   description: ' hi '
 }
 
@@ -442,7 +442,7 @@ export default async function Home() {
       {/* -----------------------about Us ------------------------------ */}
       <CollegeFacilities campusFacility={campusFacility || response.campus_facility} />
       {/* --------------------glallery section -------------------- */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative py-8 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -459,9 +459,6 @@ export default async function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <span className="inline-block mb-4 text-sm font-semibold tracking-widest text-blue-600 uppercase">
-              Campus Visual Journey
-            </span>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Cimage</span> at a Glance
             </h1>

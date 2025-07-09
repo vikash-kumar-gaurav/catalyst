@@ -7,11 +7,11 @@ import Image from 'next/image';
 const CollegeFacilities = ({campusFacility} : {campusFacility:any}) => {
   const [activeFacility, setActiveFacility] = useState<number | null>(null);
   const [imageError, setImageError] = useState<{[key: number]: boolean}>({});
-  
+
   // Fallback image for when main image fails to load
   const fallbackImage = '';
-  
-  
+
+
 
   // Handle image loading errors
   const handleImageError = (id: number) => {
@@ -19,7 +19,7 @@ const CollegeFacilities = ({campusFacility} : {campusFacility:any}) => {
   };
 
   return (
-    <section className="min-h-screen w-full py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className=" h-auto w-full pt-2 pb-8 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -45,11 +45,11 @@ const CollegeFacilities = ({campusFacility} : {campusFacility:any}) => {
                 />
               ) : (
                 <Image 
-                  src={campusFacility.campusImageUrl}
+                  src={campusFacility.campus_img_uri}
                   alt="College Campus"
                   layout="fill"
                   objectFit="cover"
-                  className="transition-all duration-500"
+                  className="transition-all duration-500 h-full"
                 />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
@@ -60,7 +60,7 @@ const CollegeFacilities = ({campusFacility} : {campusFacility:any}) => {
               </div>
             </div>
           </div>
-          
+
           {/* Facilities Cards */}
           <div className="lg:w-1/2 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -84,7 +84,7 @@ const CollegeFacilities = ({campusFacility} : {campusFacility:any}) => {
                       </p>
                     </div>
                   </div>
-                  
+
                   {/* Mobile-only image preview */}
                   <div className="lg:hidden mt-4">
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden">
@@ -100,7 +100,7 @@ const CollegeFacilities = ({campusFacility} : {campusFacility:any}) => {
                 </div>
               ))}
             </div>
-            
+
             {/* CTA Button - Moved inside the grid container for better alignment */}
             <div className="flex justify-center mt-10">
               <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl flex items-center">

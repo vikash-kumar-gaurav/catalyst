@@ -25,7 +25,8 @@ const nextConfig: NextConfig = {
        "plus.unsplash.com",
        "lh3.googleusercontent.com",
        "cdn.prod.website-files.com",
-       "media.npr.org" 
+       "media.npr.org" ,
+       "via.placeholder.com"
     ],
 
     /**

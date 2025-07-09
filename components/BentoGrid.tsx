@@ -21,7 +21,7 @@ const BentoGrid = ({ images }: BentoGridProps) => {
   const [isTablet, setIsTablet] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
 
   useEffect(() => {
@@ -238,21 +238,40 @@ const BentoItem = ({ image, areaName, className, isMobile }: any) => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      <Link href={image.link} passHref>
-        <div
-          ref={tagRef}
-          className="absolute z-50 mix-blend-difference pointer-events-none bg-black/70 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/20 shadow-lg"
-          style={{
-            transform: 'translate(-50%, -50%)',
-            opacity: 0,
-            scale: 0.8,
-          }}
+     <Link href={image.link}>
+  <div
+    ref={tagRef}
+    className="absolute z-50 group"
+    style={{
+      transform: 'translate(-50%, -50%)',
+      opacity: 0,
+      scale: 0.8,
+    }}
+  >
+    {/* Wrap the button tag with the link content */}
+    <div className="bg-gray-900/80 backdrop-blur-sm rounded-full px-4 py-1.5 border border-white/20 shadow-lg hover:bg-gray-900 transition-colors duration-200">
+      <span className="text-white font-medium text-xs whitespace-nowrap flex items-center">
+        <svg
+          className="w-3 h-3 mr-1.5 opacity-80 group-hover:opacity-100 transition-opacity"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
         >
-          <span className="text-white font-medium text-xs whitespace-nowrap">
-            {image.tag}
-          </span>
-        </div>
-      </Link>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
+        </svg>
+        {image.tag}
+      </span>
+    </div>
+
+    {/* Small accent dot */}
+    <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-blue-400 rounded-full transform translate-x-0.5 -translate-y-0.5" />
+  </div>
+</Link>
     </div>
   );
 };

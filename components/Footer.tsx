@@ -191,7 +191,7 @@ const Footer = () => {
                             ))}
                         </div>
                         <p className="text-xs text-gray-500 text-center lg:text-right">
-                            © {new Date().getFullYear()} 
+                            © {new Date().getFullYear()} Copyright Vijayam Educational Trust 2025 . All rights reserved.
                         </p>
                     </div>
                 </div>

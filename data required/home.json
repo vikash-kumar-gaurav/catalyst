@@ -1,53 +1,110 @@
 {
-    "HeroImageSection": {
-        "heroImgUrl": "",
-        "tagline": "",
-        "duration": "2025-2028"
-    },
-    "campusFacility": {
-        "campusImgURI": "",
-        "facilities": [
-            {
-                "id": "",
-                "title": "",
-                "description":"",
-                "image":""
-            }
-        ]
-    },
-    "cimageGlance":[
-        {
-            "Url":"",
-            "alt":"",
-            "tag":"",
-            "link":""
+  "heroData": {
+    "hero_img_url": { "required": true },
+    "duration": { "required": true },
+    "tagline": { "required": true }
+  },
+  "campusFacility": {
+    "campus_img_uri": { "required": true },
+    "facilities": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "id": { "required": true },
+        "title": { "required": true },
+        "description": { "required": true },
+        "image": { "required": true }
+      }
+    }
+  },
+  "imageItems": {
+    "type": "array",
+    "required": true,
+    "items": {
+      "url": { "required": true },
+      "alt": { "required": true },
+      "tag": { "required": true },
+      "link": { "required": true }
+    }
+  },
+  "courses": {
+    "type": "array",
+    "required": true,
+    "items": {
+      "title": { "required": true },
+      "duration": { "required": true },
+      "description": { "required": true },
+      "highlights": {
+        "type": "array",
+        "required": true,
+        "items": { "type": "string" }
+      }
+    }
+  },
+  "workshops": {
+    "type": "array",
+    "required": true,
+    "items": {
+      "id": { "required": true },
+      "kind": { "required": true },
+      "title": { "required": true },
+      "duration": { "required": true },
+      "benefits": {
+        "type": "array",
+        "required": true,
+        "items": { "type": "string" }
+      },
+      "image": { "required": true }
+    }
+  },
+  "newsItems": {
+    "type": "array",
+    "required": true,
+    "items": {
+      "id": { "required": true },
+      "slug": { "required": true },
+      "title": { "required": true },
+      "excerpt": { "required": true },
+      "date": { "required": true },
+      "category": { "required": true, "enum": ["news", "notification", "event"] },
+      "isNew": { "required": false },
+      "isFeatured": { "required": false },
+      "image": { "required": false }
+    }
+  },
+  "achievers": {
+    "type": "array",
+    "required": true,
+    "items": {
+      "id": { "required": true },
+      "name": { "required": true },
+      "course": { "required": true },
+      "company": { "required": true },
+      "position": { "required": true },
+      "package": { "required": true },
+      "location": { "required": true },
+      "testimonial": { "required": true },
+      "image": { "required": true },
+      "social": {
+        "required": false,
+        "properties": {
+          "linkedin": { "required": false },
+          "twitter": { "required": false }
         }
-    ],
-    "workShops":[
-        {
-            "kind":"industry visit",
-            "title":"",
-            "duration":"2 weeks",
-            "benifits":[""],
-            "image":""
-        }
-    ],
-    "courses":[
-        {
-            "title":"Bacholors of computers and applications(BCA)",
-            "duration":"3 years",
-            "description":"",
-            "highlights":[""]
-        }
-    ],
-
-    "testimonials":[
-        {
-            "studentProfilepic":"",
-            "studentName":"",
-            "course":"",
-            "review":"",
-            "courseTimeLine":""
-        }
-    ]
+      }
+    }
+  },
+  "testimonials": {
+    "type": "array",
+    "required": true,
+    "items": {
+      "name": { "required": true },
+      "course": { "required": true },
+      "duration": { "required": true },
+      "review": { "required": true },
+      "photo": { "required": true },
+      "company": { "required": true },
+      "rating": { "required": true }
+    }
+  }
 }
