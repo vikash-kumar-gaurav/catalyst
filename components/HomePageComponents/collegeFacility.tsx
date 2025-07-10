@@ -1,5 +1,5 @@
 "use client"
-// components/CollegeFacilities.tsx
+
 import { useState } from 'react';
 import Image from 'next/image';
 

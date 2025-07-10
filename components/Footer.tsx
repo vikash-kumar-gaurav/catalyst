@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaYoutube, FaWhatsapp, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import collegeLogo from '../public/collegeLogo.png'
 
 const Footer = () => {
     const academicPrograms = [
@@ -51,7 +52,7 @@ const Footer = () => {
                         <div className="flex items-center space-x-3">
                             {/* Animated Logo */}
                             <div className="relative">
-                                <img src="https://catalystcollege.in/Catalyst_logo.jpg" alt="college logo.png" />
+                                <img src={collegeLogo.src} alt="college logo.png" style={{height:'80px'}} />
                             </div>
                             
                         </div>

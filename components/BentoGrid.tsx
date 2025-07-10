@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { useSwipeable } from 'react-swipeable';
 
 interface ImageItem {
-  url: string;
+  url:any;
   alt: string;
   tag: string;
   link: string;

@@ -26,7 +26,13 @@ const nextConfig: NextConfig = {
        "lh3.googleusercontent.com",
        "cdn.prod.website-files.com",
        "media.npr.org" ,
-       "via.placeholder.com"
+       "via.placeholder.com",
+       "admissions.cimagepatna.com" ,
+       "encrypted-tbn0.gstatic.com" ,
+       "static.theprint.in" ,
+       "c8.alamy.com" ,
+       "i.ytimg.com",
+       "media.cricheroes.in"
     ],
 
     /**

@@ -1,4 +1,4 @@
-// src/components/layout/Header.js
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';

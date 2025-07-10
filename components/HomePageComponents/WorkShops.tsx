@@ -72,7 +72,7 @@ const ProgramsSection = ({ programs }: ProgramsSectionProps) => {
         {/* Tabs */}
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-wrap justify-center gap-2">
-            <div className="inline-flex rounded-xl border border-gray-200 bg-white p-1 shadow-sm">
+            <div className="inline-flex rounded-xl border border-gray-200 bg-white p-1 shadow-sm overflow-scroll sm:overflow-hidden">
               {(["all", "workshops", "internships", "tours", "industry-visits"] as const).map(tab => (
                 <button
                   key={tab}
