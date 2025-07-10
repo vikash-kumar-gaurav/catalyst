@@ -5,7 +5,7 @@ import axios from 'axios';
 import CollegeFacilities from '@/components/HomePageComponents/collegeFacility';
 import ProgramsSection from '@/components/HomePageComponents/WorkShops';
 import BentoGrid from '@/components/BentoGrid';
-import AdmissionHero from '@/components/HeroFile';
+import HeroImage from '@/components/HeroFile';
 import { MdDescription } from 'react-icons/md';
 import type { Metadata } from 'next'
 import TestimonialsCarousel from '@/components/HomePageComponents/Testimonials';
@@ -276,7 +276,7 @@ const achievers = [
   {
     id: 1,
     name: "Ankit Raj",
-    course: "BCA (2020–2023)",
+    course: "BCA (2020 - 2023)",
     company: "Amazon India",
     position: "Software Development Engineer",
     package: "₹32 LPA",
@@ -291,7 +291,7 @@ const achievers = [
   {
     id: 2,
     name: "Sneha Verma",
-    course: "MCA (2019–2022)",
+    course: "MCA (2019 - 2022)",
     company: "Zomato",
     position: "Product Analyst",
     package: "₹21 LPA",
@@ -394,7 +394,7 @@ export default async function Home() {
   return (
     <div className="bg-gradient-to-br from-indigo-50 to-purple-100">
       {/* ──────────────── HERO ──────────────── */}
-      <AdmissionHero data={heroData || response.hero_section} />
+      <HeroImage data={heroData || response.hero_section} />
 
       {/* -----------------------about Us ------------------------------ */}
       <CollegeFacilities campusFacility={campusFacility || response.campus_facility} />

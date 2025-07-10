@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
-const AdmissionHero = ({data}:{data:any }) => {
+const HeroImage = ({data}:{data:any }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -81,4 +81,4 @@ const AdmissionHero = ({data}:{data:any }) => {
   );
 };
 
-export default AdmissionHero;
+export default HeroImage;

@@ -23,7 +23,7 @@ export const navItems = [
         name: 'Academics',
         href: '/academics',
         submenu: [
-            { name: 'Academic Calendar', href: '/academics/calendar' },
+            { name: 'Academic Calendar', href: '/academics/academic-calendar' },
             { name: 'Curriculum & Syllabus', href: '/academics/curriculum-syllabus' },
             { name: 'Outcome-Based Education', href: '/academics/outcome-based-education' },
             { name: 'Teaching-Learning Practices', href: '/academics/teaching-learning' },
@@ -37,18 +37,13 @@ export const navItems = [
         ]
     },
     {
-        name: 'Programmes',
-        href: '/programmes',
+        name: 'Program',
+        href: '/program',
         submenu: [
-            { name: 'BCA ( AKU / PPU )', href: '/programmes/bca' },
-            { name: 'BBA ( AKU / PPU )', href: '/programmes/bba' },
-            { name: 'B.Com', href: '/programmes/bcom' },
-            { name: 'B.Sc', href: '/programmes/bsc' },
-            { name: 'MCA', href: '/programmes/mca' },
-            { name: 'MBA', href: '/programmes/mba' },
-            { name: 'PGDM', href: '/programmes/pgdm' },
-            { name: 'Course Outcomes ( COs, POs, PSOs )', href: '/programmes/course-outcomes' },
-            { name: 'Departmental Activities', href: '/programmes/departmental-activities' },
+            { name: 'BCA ( AKU / PPU )', href: '/program//bca' },
+            { name: 'BBA ( AKU / PPU )', href: '/program//bba' },
+            { name: 'B.Sc - IT', href: '/program//bsc-it' },
+            { name: 'Departmental Activities', href: '/program/departmental-activities' },
         ]
     },
     {
@@ -73,6 +68,51 @@ export const navItems = [
             { name: 'Institutional Distinctiveness', href: '/iqac/institutional-distinctiveness' },
         ]
     },
-    /*    { name: 'Social Initiatives', href: '/social-initiatives' },*/
+    {
+        name:"Research & Innovation",
+        href:'/research-innovatiovation',
+        submenu :[
+            {name :"Research Policy", href:'/research-innovatiovation/research-policy'},
+            {name :"Publications", href:'/research-innovatiovation/publications'},
+            {name :"IPR Cell", href:'/research-innovatiovation/ipr-cell'},
+            {name :"Innovation Hub", href:'/research-innovatiovation/innovation-hub'}
+
+        ]
+    },
+
     { name: 'Blog', href: '/blogs' },
+
+    {
+        name:"Student Support",
+        href:'/student-support',
+        submenu:[
+            {name:"Scholarship", href:'/student-support/scholorship'},
+            {name:"counseling", href:'/student-support/counseling'},
+            {name:"Grievence Cell", href:'/student-support/grievance-cell'},
+            {name:"SC/ST/OBC/Minority/Disability Cell", href:'/student-support/minority-cell'},
+            
+
+        ] 
+
+    },
+     {
+        name:"Library",
+        href:'/library'
+     },
+     {
+        name:'Alumni',
+        href:'/alumni'
+     },
+     {
+        name:"Career",
+        href:'/career'
+     },
+     {
+        name:"Social Initiatives",
+        href:'/social-initiatives'
+     },
+     {
+        name:"Contact Us",
+        href:'/contact'
+     }
 ];
