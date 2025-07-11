@@ -1,275 +1,285 @@
-// app/bba/page.tsx
+// app/bscit/page.tsx
 import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: "BBA Program | Catalyst College Patna - Premier Business Education in Bihar",
-  description: "3-year industry-integrated BBA program with specializations in Marketing, Finance, HR & Analytics. 92% placement record | AKU-affiliated | Bihar's top business college",
+  title: "BSc IT Program | Catalyst College Patna - Premier IT Education in Bihar",
+  description: "3-year industry-focused BSc in Information Technology with specializations in Software Development, Data Science, and Cybersecurity. 94% placement record | AKU-affiliated | State-of-the-art labs",
   keywords: [
-    "Best BBA College Patna",
-    "BBA in Bihar",
-    "Business Administration Patna",
-    "Catalyst College BBA",
-    "Top BBA College Bihar",
-    "AKU affiliated BBA"
+    "Best BSc IT College Patna",
+    "BSc IT in Bihar",
+    "Information Technology Degree Patna",
+    "Catalyst College BSc IT",
+    "Top IT College Bihar",
+    "AKU affiliated BSc IT"
   ],
   openGraph: {
-    title: "BBA Program | Catalyst College Patna",
-    description: "Transform into business leaders with Bihar's most industry-connected BBA program",
+    title: "BSc IT Program | Catalyst College Patna",
+    description: "Launch your tech career with Bihar's most practical IT degree program",
     images: [
       {
-        url: "/images/bba/og-image.jpg",
+        url: "/images/bscit/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Catalyst College BBA Students",
+        alt: "Catalyst College BSc IT Students",
       },
     ],
   },
 }
 
-const bbaProgram = {
+const bscitProgram = {
   overview: {
-    title: "Bachelor of Business Administration (BBA)",
-    intro: "Catalyst College Patna's BBA program molds aspiring students into industry-ready business professionals through our unique blend of academic rigor and practical exposure.",
+    title: "Bachelor of Science in Information Technology (BSc IT)",
+    intro: "Catalyst College Patna's BSc IT program equips students with cutting-edge technical skills through hands-on learning in our advanced labs and industry collaborations.",
     highlights: [
       "AKU-affiliated 3-year degree program",
-      "92% placement record in 2023",
-      "Industry-designed curriculum",
-      "Summer internship guarantee",
-      "Bloomberg Finance Lab access"
+      "94% placement record in 2023",
+      "Project-based learning approach",
+      "Guaranteed industry internship",
+      "Cisco Networking Academy partnered"
     ],
     skills: [
-      "Business Strategy Formulation",
-      "Financial Analysis & Reporting",
-      "Digital Marketing Execution",
-      "Leadership & Team Management",
-      "Data-Driven Decision Making",
-      "Entrepreneurial Mindset"
+      "Full-Stack Development",
+      "Data Analysis & Visualization",
+      "Cybersecurity Fundamentals",
+      "Cloud Computing",
+      "Database Management",
+      "AI/ML Basics"
     ],
-    accreditation: "Accredited by National Assessment and Accreditation Council (NAAC 'A' Grade)"
+    accreditation: "NAAC 'A' Grade | Cisco Networking Academy | Microsoft Learn Partner"
   },
   whyChoose: {
-    title: "Why Catalyst College for BBA?",
+    title: "Why Choose Our BSc IT Program?",
     features: [
       {
-        title: "Patna's Business Network",
-        description: "Direct recruitment partnerships with 50+ Bihar-based companies including Patna Industrial Association members",
-        icon: "/svg/network.svg"
+        title: "Advanced Computing Labs",
+        description: "Access to specialized labs: Cisco Networking, AI/ML, Cybersecurity, and Software Development",
+        icon: "/svg/lab.svg"
       },
       {
-        title: "Learn from Practitioners",
-        description: "70% faculty with 10+ years corporate experience including ex-managers from TATA, HDFC, and Patna-based enterprises",
+        title: "Industry-Aligned Curriculum",
+        description: "Courses designed with Patna's IT companies like PatnaTech Solutions and Bihar IT Hub",
+        icon: "/svg/curriculum.svg"
+      },
+      {
+        title: "Certification Integration",
+        description: "Earn professional certs in Cisco, Microsoft, AWS alongside your degree",
+        icon: "/svg/certification.svg"
+      },
+      {
+        title: "Startup Incubation",
+        description: "Dedicated support for student tech startups through Catalyst Tech Garage",
+        icon: "/svg/incubator.svg"
+      },
+      {
+        title: "Faculty Practitioners",
+        description: "Learn from professors with 10+ years experience at TCS, Infosys, and Patna-based IT firms",
         icon: "/svg/faculty.svg"
       },
       {
-        title: "Live Business Projects",
-        description: "Solve real challenges from our partner companies like Bihar State Credit Bank and Patna Retail Association",
-        icon: "/svg/projects.svg"
-      },
-      {
-        title: "Entrepreneurship Cell",
-        description: "Incubation support with seed funding up to ₹5 lakhs for student startups",
-        icon: "/svg/startup.svg"
-      },
-      {
-        title: "Global Perspective",
-        description: "International case studies and optional summer school at Singapore Management University",
-        icon: "/svg/global.svg"
-      },
-      {
-        title: "Digital-First Learning",
-        description: "Access to Coursera, Harvard Business Publishing, and our AI-powered business simulator",
-        icon: "/svg/digital.svg"
+        title: "Hackathon Culture",
+        description: "Regular coding competitions with prizes from Bihar IT Association",
+        icon: "/svg/hackathon.svg"
       }
     ]
   },
   curriculum: {
     structure: {
       duration: "3 Years | 6 Semesters",
-      credits: "132 Credit Hours (AKU Pattern)",
-      pattern: "Choice-Based Credit System (CBCS)"
+      credits: "140 Credit Hours (AKU Pattern)",
+      pattern: "60% Practical | 40% Theory"
     },
     coreSubjects: [
-      "Principles of Management",
-      "Financial Accounting",
-      "Business Economics",
-      "Business Mathematics & Statistics",
-      "Marketing Management",
-      "Organizational Behavior",
-      "Business Law",
-      "Operations Management",
-      "Human Resource Management",
-      "Business Communication",
-      "Business Environment in Bihar",
-      "Entrepreneurship Development"
+      "Programming Fundamentals",
+      "Data Structures & Algorithms",
+      "Computer Networks",
+      "Database Management Systems",
+      "Web Technologies",
+      "Operating Systems",
+      "Software Engineering",
+      "Object-Oriented Programming",
+      "Computer Organization",
+      "Discrete Mathematics"
     ],
     specializations: {
-      "Marketing": [
-        "Consumer Behavior & Market Research",
-        "Digital Marketing & E-Commerce",
-        "Rural Marketing Strategies",
-        "Brand Management",
-        "Sales & Distribution Management"
+      "Software Development": [
+        "Advanced Java/Python",
+        "Mobile App Development",
+        "DevOps Practices",
+        "UI/UX Design",
+        "Agile Methodologies"
       ],
-      "Finance": [
-        "Corporate Finance",
-        "Investment Analysis & Portfolio Management",
-        "Banking & Insurance",
-        "Financial Markets & Services",
-        "Cost & Management Accounting"
-      ],
-      "Human Resource": [
-        "Talent Acquisition & Management",
-        "Training & Development",
-        "Compensation & Benefits",
-        "Industrial Relations & Labor Laws",
-        "Organizational Development"
-      ],
-      "Business Analytics": [
-        "Business Intelligence",
-        "Predictive Analytics",
+      "Data Science": [
+        "Python for Data Science",
+        "Machine Learning Basics",
+        "Big Data Analytics",
         "Data Visualization",
-        "Python for Business",
-        "AI in Business Decision Making"
+        "Statistical Methods"
+      ],
+      "Cybersecurity": [
+        "Ethical Hacking",
+        "Network Security",
+        "Cyber Laws",
+        "Digital Forensics",
+        "Cryptography"
       ]
     },
-    semesterBreakdown: [
-      {
-        semester: "Semester 1",
-        subjects: [
-          "Principles of Management",
-          "Business Economics",
-          "Financial Accounting",
-          "Business Mathematics",
-          "Business Communication"
-        ]
-      },
-      // Include all 6 semesters...
+    labs: [
+      "Cisco Networking Lab",
+      "Software Development Lab",
+      "Data Science Lab",
+      "Cybersecurity Lab",
+      "Cloud Computing Lab"
     ]
   },
   admission: {
     eligibility: [
-      "10+2 from any recognized board with minimum 50% marks",
-      "No age restriction",
-      "English as compulsory subject",
-      "Direct admission based on merit (No entrance exam)"
+      "10+2 with Mathematics as compulsory subject",
+      "Minimum 50% marks in 12th standard",
+      "Basic computer knowledge preferred",
+      "No age restriction"
     ],
     process: [
       {
-        step: "1. Application",
-        description: "Submit online form with ₹500 fee",
+        step: "1. Online Application",
+        description: "Fill form at admissions.catalystcollege.edu.in with ₹600 fee",
         icon: "/svg/application.svg"
       },
       {
-        step: "2. Document Verification",
-        description: "Upload 10th/12th marksheets, TC, and photos",
-        icon: "/svg/verification.svg"
+        step: "2. Aptitude Test",
+        description: "Basic math and logical reasoning test (online/offline)",
+        icon: "/svg/test.svg"
       },
       {
-        step: "3. Counseling",
-        description: "Optional campus interaction session",
+        step: "3. Counseling Session",
+        description: "Interactive session with faculty",
         icon: "/svg/counseling.svg"
       },
       {
         step: "4. Enrollment",
-        description: "Fee payment & orientation program",
+        description: "Document verification and fee payment",
         icon: "/svg/enrollment.svg"
       }
     ],
     deadlines: {
-      "Early Bird": "May 15, 2024",
-      "Regular": "June 30, 2024",
-      "Extended": "July 31, 2024"
-    },
-    documents: [
-      "10th & 12th original marksheets",
-      "Transfer Certificate",
-      "Migration Certificate (if applicable)",
-      "Caste Certificate (for reserved category)",
-      "Passport size photographs (4 copies)",
-      "Aadhar Card copy"
-    ]
+      "Early Admission": "May 20, 2024",
+      "Regular Admission": "June 30, 2024",
+      "Late Admission": "July 25, 2024"
+    }
   },
   careers: {
     roles: [
-      "Business Analyst",
-      "Marketing Executive",
-      "Financial Advisor",
-      "HR Recruiter",
-      "Operations Coordinator",
-      "Entrepreneur",
-      "Digital Marketer",
-      "Sales Manager"
+      "Software Developer",
+      "IT Support Specialist",
+      "Data Analyst",
+      "Network Administrator",
+      "Cybersecurity Analyst",
+      "Database Administrator",
+      "Web Developer",
+      "Cloud Engineer"
     ],
     placement: {
-      rate: "92%",
-      average: "₹3.2 LPA",
-      highest: "₹7.5 LPA",
+      rate: "94%",
+      average: "₹3.8 LPA",
+      highest: "₹9.2 LPA",
       companies: [
-        "/images/recruiters/hdfc.png",
-        "/images/recruiters/icici.png",
-        "/images/recruiters/patna-industrial.png",
-        "/images/recruiters/bihar-startup.png",
-        "/images/recruiters/edelweiss.png"
+        "/images/recruiters/tcs.png",
+        "/images/recruiters/infosys.png",
+        "/images/recruiters/patnatech.png",
+        "/images/recruiters/bihar-it-hub.png",
+        "/images/recruiters/wipro.png"
       ]
     },
-    alumni: [
-      {
-        name: "Rahul Kumar",
-        position: "Area Manager",
-        company: "HDFC Bank",
-        quote: "The practical finance projects at Catalyst gave me unmatched exposure to real banking operations.",
-        image: "/images/alumni/rahul.jpg"
-      },
-      // Add more alumni...
-    ]
+    internship: {
+      partners: [
+        "PatnaTech Solutions",
+        "Bihar IT Hub",
+        "Digital Bihar Initiative",
+        "Patna Smart City Project",
+        "State Bank of India IT Division"
+      ],
+      duration: "Minimum 8 weeks mandatory in 5th semester"
+    }
   },
   faculty: [
     {
-      name: "Dr. Amit Sukhla",
-      designation: "Professor & HOD",
-      qualification: "PhD (Management), IIM Ahmedabad",
-      expertise: "Marketing Strategy",
-      experience: "18 years (ex-TATA Consumer)",
-      image: "/images/faculty/amit-sukhla.jpg"
+      name: "Dr. Anil Kumar",
+      designation: "Professor & HOD (IT)",
+      qualification: "PhD (Computer Science), IIT Patna",
+      expertise: "Network Security",
+      experience: "15 years (ex-TCS Cybersecurity)",
+      image: "/images/faculty/anil-kumar.jpg"
     },
-    // Add more faculty...
+    {
+      name: "Prof. Priya Sharma",
+      designation: "Associate Professor",
+      qualification: "MTech (Software Systems), NIT Patna",
+      expertise: "Data Science",
+      experience: "10 years industry experience",
+      image: "/images/faculty/priya-sharma.jpg"
+    }
   ],
   studentLife: {
     clubs: [
       {
-        name: "Catalyst Business Club",
-        description: "Organizes stock simulations, case competitions",
-        image: "/images/clubs/business-club.jpg"
+        name: "Code Catalyst",
+        description: "Weekly coding challenges and hackathon preparation",
+        image: "/images/clubs/code-catalyst.jpg"
       },
-      // Add more clubs...
+      {
+        name: "Cyber Warriors",
+        description: "Cybersecurity competitions and CTF events",
+        image: "/images/clubs/cyber-warriors.jpg"
+      }
     ],
     events: [
       {
-        name: "Arthashastra",
-        description: "Annual management fest with 50+ colleges",
-        image: "/images/events/arthashastra.jpg"
+        name: "TechVista",
+        description: "Annual tech fest with 100+ participants from Bihar",
+        image: "/images/events/techvista.jpg"
       },
-      // Add more events...
+      {
+        name: "HackBihar",
+        description: "48-hour hackathon solving Bihar's digital challenges",
+        image: "/images/events/hackbihar.jpg"
+      }
     ]
+  },
+  facilities: {
+    labs: [
+      {
+        name: "Cisco Networking Lab",
+        equipment: "20 Cisco routers/switches, Packet Tracer software",
+        image: "/images/labs/cisco-lab.jpg"
+      },
+      {
+        name: "Data Science Lab",
+        equipment: "High-performance workstations with Python/R, Tableau",
+        image: "/images/labs/ds-lab.jpg"
+      }
+    ],
+    library: {
+      volumes: "5000+ IT-specific books/journals",
+      digital: "Access to IEEE Xplore, ACM Digital Library"
+    }
   },
   fees: {
     structure: [
       {
         item: "Tuition Fee",
-        amount: "₹55,000/year"
+        amount: "₹60,000/year"
       },
       {
-        item: "Lab/Resource Fee",
-        amount: "₹8,000/year"
+        item: "Lab Fee",
+        amount: "₹10,000/year"
       },
       {
         item: "Exam Fee",
-        amount: "₹3,000/semester"
+        amount: "₹3,500/semester"
       },
       {
-        item: "Caution Deposit",
-        amount: "₹5,000 (refundable)"
+        item: "Industry Certification Fee",
+        amount: "₹5,000 (one-time)"
       }
     ],
     scholarships: [
@@ -278,25 +288,18 @@ const bbaProgram = {
         amount: "Up to ₹4 lakhs"
       },
       {
-        name: "EBC Scholarship",
-        amount: "25% fee waiver"
-      },
-      // Add more scholarships...
+        name: "Tech Talent Scholarship",
+        amount: "25% fee waiver for coding competition winners"
+      }
     ]
-  },
-  contact: {
-    email: "bba.admissions@catalystcollege.edu.in",
-    phone: "+91 1234567890",
-    address: "Catalyst College Campus, Bailey Road, Patna - 800014",
-    hours: "Monday-Saturday: 9:00 AM - 5:00 PM"
   }
 }
 
-export default function BBAPage() {
+export default function BScITPage() {
   return (
     <div className="bg-white">
-      {/* Hero Section with Animated Background */}
-      <div className="relative bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+      {/* Hero Section with Tech Background */}
+      <div className="relative bg-gradient-to-r from-blue-900 to-indigo-900 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <svg
             className="absolute inset-0 w-full h-full"
@@ -306,19 +309,19 @@ export default function BBAPage() {
             viewBox="0 0 1463 360"
           >
             <path
-              fill="url(#hero-background)"
+              fill="url(#tech-pattern)"
               d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
             />
             <defs>
               <linearGradient
-                id="hero-background"
+                id="tech-pattern"
                 x1="0%"
                 y1="0%"
                 x2="100%"
                 y2="100%"
               >
                 <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#6366f1" />
               </linearGradient>
             </defs>
           </svg>
@@ -328,10 +331,10 @@ export default function BBAPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {bbaProgram.overview.title}
+                {bscitProgram.overview.title}
               </h1>
               <p className="mt-6 text-xl text-blue-100 max-w-3xl">
-                {bbaProgram.overview.intro}
+                {bscitProgram.overview.intro}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -341,17 +344,17 @@ export default function BBAPage() {
                   Apply Now
                 </a>
                 <a
-                  href="#curriculum"
+                  href="#labs"
                   className="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-800 transition-colors"
                 >
-                  View Curriculum
+                  Explore Labs
                 </a>
               </div>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
-                src="/images/bba/hero-students.jpg"
-                alt="BBA students at Catalyst College"
+                src="/images/bscit/hero-coding.jpg"
+                alt="BSc IT students working in lab"
                 fill
                 className="object-cover"
                 priority
@@ -365,20 +368,20 @@ export default function BBAPage() {
       <div className="bg-white shadow-lg -mt-10 mx-4 rounded-xl relative z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
           <div className="p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600">{bbaProgram.careers.placement.rate}</div>
+            <div className="text-3xl font-bold text-blue-600">{bscitProgram.careers.placement.rate}</div>
             <div className="text-gray-600 mt-1">Placement Rate</div>
           </div>
           <div className="p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600">{bbaProgram.careers.placement.average}</div>
+            <div className="text-3xl font-bold text-blue-600">{bscitProgram.careers.placement.average}</div>
             <div className="text-gray-600 mt-1">Average Package</div>
           </div>
           <div className="p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600">50+</div>
-            <div className="text-gray-600 mt-1">Recruiting Partners</div>
+            <div className="text-3xl font-bold text-blue-600">5</div>
+            <div className="text-gray-600 mt-1">Specialized Labs</div>
           </div>
           <div className="p-6 text-center">
-            <div className="text-3xl font-bold text-blue-600">3</div>
-            <div className="text-gray-600 mt-1">Specializations</div>
+            <div className="text-3xl font-bold text-blue-600">100+</div>
+            <div className="text-gray-600 mt-1">Industry Projects</div>
           </div>
         </div>
       </div>
@@ -389,15 +392,15 @@ export default function BBAPage() {
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Program Overview</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Building Bihar's Next Business Leaders
+              Building Bihar's Tech Talent
             </p>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
-              Our BBA program combines academic excellence with real-world business exposure to create professionals ready for Patna's growing corporate ecosystem.
+              Our BSc IT program combines theoretical foundations with hands-on technical training to create industry-ready IT professionals.
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {bbaProgram.overview.highlights.map((highlight, index) => (
+            {bscitProgram.overview.highlights.map((highlight, index) => (
               <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
                 <div className="flex items-center">
                   <div className="flex-shrink-0 bg-blue-100 p-2 rounded-md">
@@ -414,9 +417,9 @@ export default function BBAPage() {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-2xl font-medium text-center text-gray-900 mb-6">Skills You'll Master</h3>
+            <h3 className="text-2xl font-medium text-center text-gray-900 mb-6">Technical Skills You'll Master</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {bbaProgram.overview.skills.map((skill, index) => (
+              {bscitProgram.overview.skills.map((skill, index) => (
                 <div key={index} className="bg-white p-3 rounded-lg shadow-xs border border-gray-200 text-center">
                   <p className="text-sm font-medium text-gray-700">{skill}</p>
                 </div>
@@ -430,14 +433,14 @@ export default function BBAPage() {
       <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Catalyst College?</h2>
+            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Our BSc IT?</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Bihar's Most Industry-Connected BBA Program
+              Bihar's Most Practical IT Education
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {bbaProgram.whyChoose.features.map((feature, index) => (
+            {bscitProgram.whyChoose.features.map((feature, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-4">
                   <Image 
@@ -462,11 +465,11 @@ export default function BBAPage() {
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Curriculum</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Industry-Relevant Learning Structure
+              Industry-Relevant Tech Education
             </p>
             <div className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-              <p>{bbaProgram.curriculum.structure.duration} • {bbaProgram.curriculum.structure.credits}</p>
-              <p className="mt-2">{bbaProgram.curriculum.structure.pattern}</p>
+              <p>{bscitProgram.curriculum.structure.duration} • {bscitProgram.curriculum.structure.credits}</p>
+              <p className="mt-2">{bscitProgram.curriculum.structure.pattern}</p>
             </div>
           </div>
 
@@ -475,7 +478,7 @@ export default function BBAPage() {
               <div className="lg:col-span-2">
                 <h3 className="text-2xl font-medium text-gray-900 mb-6">Core Subjects</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {bbaProgram.curriculum.coreSubjects.map((subject, index) => (
+                  {bscitProgram.curriculum.coreSubjects.map((subject, index) => (
                     <div key={index} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-5 w-5 text-blue-500">
@@ -495,7 +498,7 @@ export default function BBAPage() {
               <div>
                 <h3 className="text-2xl font-medium text-gray-900 mb-6">Specializations</h3>
                 <div className="space-y-6">
-                  {Object.entries(bbaProgram.curriculum.specializations).map(([specialization, subjects]) => (
+                  {Object.entries(bscitProgram.curriculum.specializations).map(([specialization, subjects]) => (
                     <div key={specialization} className="bg-white p-4 rounded-lg shadow-xs border border-gray-200">
                       <h4 className="text-lg font-medium text-blue-800">{specialization}</h4>
                       <ul className="mt-3 space-y-2">
@@ -520,13 +523,44 @@ export default function BBAPage() {
         </div>
       </section>
 
+      {/* Labs Section */}
+      <section id="labs" className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Facilities</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              State-of-the-Art Computing Labs
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {bscitProgram.facilities.labs.map((lab, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={lab.image}
+                    alt={lab.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-medium text-gray-900">{lab.name}</h3>
+                  <p className="mt-2 text-gray-600"><span className="font-medium">Equipment:</span> {lab.equipment}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Admission Process */}
-      <section id="admission" className="py-16 bg-gray-50">
+      <section id="admission" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Admission</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Start Your BBA Journey
+              Join Our BSc IT Program
             </p>
           </div>
 
@@ -534,7 +568,7 @@ export default function BBAPage() {
             <div>
               <h3 className="text-2xl font-medium text-gray-900 mb-6">Eligibility Criteria</h3>
               <ul className="space-y-4">
-                {bbaProgram.admission.eligibility.map((item, index) => (
+                {bscitProgram.admission.eligibility.map((item, index) => (
                   <li key={index} className="flex items-start">
                     <div className="flex-shrink-0 h-6 w-6 text-green-500">
                       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -550,7 +584,7 @@ export default function BBAPage() {
                 <h3 className="text-2xl font-medium text-gray-900 mb-6">Important Dates</h3>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
                   <ul className="space-y-4">
-                    {Object.entries(bbaProgram.admission.deadlines).map(([phase, date]) => (
+                    {Object.entries(bscitProgram.admission.deadlines).map(([phase, date]) => (
                       <li key={phase} className="flex justify-between border-b pb-3">
                         <span className="font-medium text-gray-700">{phase}</span>
                         <span className="text-gray-600">{date}</span>
@@ -564,7 +598,7 @@ export default function BBAPage() {
             <div>
               <h3 className="text-2xl font-medium text-gray-900 mb-6">Admission Process</h3>
               <div className="space-y-8">
-                {bbaProgram.admission.process.map((step, index) => (
+                {bscitProgram.admission.process.map((step, index) => (
                   <div key={index} className="flex">
                     <div className="flex-shrink-0">
                       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-800 font-bold text-lg">
@@ -577,17 +611,6 @@ export default function BBAPage() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              <div className="mt-10">
-                <h3 className="text-xl font-medium text-gray-900 mb-4">Required Documents</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {bbaProgram.admission.documents.map((doc, index) => (
-                    <div key={index} className="bg-white p-3 rounded border border-gray-200">
-                      <p className="text-sm text-gray-700">{doc}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
@@ -604,12 +627,12 @@ export default function BBAPage() {
       </section>
 
       {/* Career Opportunities */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Careers</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Your Future After BBA
+              Your Future in Technology
             </p>
           </div>
 
@@ -618,8 +641,8 @@ export default function BBAPage() {
               <div>
                 <h3 className="text-2xl font-medium text-gray-900 mb-6">Career Paths</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {bbaProgram.careers.roles.map((role, index) => (
-                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                  {bscitProgram.careers.roles.map((role, index) => (
+                    <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
                       <div className="flex items-center">
                         <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -633,18 +656,18 @@ export default function BBAPage() {
 
               <div>
                 <h3 className="text-2xl font-medium text-gray-900 mb-6">Placement Highlights</h3>
-                <div className="bg-blue-50 p-6 rounded-lg">
+                <div className="bg-white p-6 rounded-lg shadow-md">
                   <div className="grid grid-cols-3 gap-6 text-center">
                     <div>
-                      <p className="text-3xl font-bold text-blue-800">{bbaProgram.careers.placement.rate}</p>
+                      <p className="text-3xl font-bold text-blue-800">{bscitProgram.careers.placement.rate}</p>
                       <p className="mt-1 text-sm font-medium text-gray-600">Placement Rate</p>
                     </div>
                     <div>
-                      <p className="text-3xl font-bold text-blue-800">{bbaProgram.careers.placement.average}</p>
+                      <p className="text-3xl font-bold text-blue-800">{bscitProgram.careers.placement.average}</p>
                       <p className="mt-1 text-sm font-medium text-gray-600">Average Package</p>
                     </div>
                     <div>
-                      <p className="text-3xl font-bold text-blue-800">{bbaProgram.careers.placement.highest}</p>
+                      <p className="text-3xl font-bold text-blue-800">{bscitProgram.careers.placement.highest}</p>
                       <p className="mt-1 text-sm font-medium text-gray-600">Highest Package</p>
                     </div>
                   </div>
@@ -652,7 +675,7 @@ export default function BBAPage() {
                   <div className="mt-8">
                     <h4 className="text-lg font-medium text-gray-900 mb-4">Our Top Recruiters</h4>
                     <div className="flex flex-wrap justify-center gap-6">
-                      {bbaProgram.careers.placement.companies.map((logo, index) => (
+                      {bscitProgram.careers.placement.companies.map((logo, index) => (
                         <div key={index} className="h-12 w-auto">
                           <Image
                             src={logo}
@@ -673,20 +696,17 @@ export default function BBAPage() {
       </section>
 
       {/* Faculty Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Faculty</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Learn From Industry Experts
-            </p>
-            <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-              Our faculty combines academic excellence with real-world business experience
+              Learn From Tech Experts
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {bbaProgram.faculty.map((faculty, index) => (
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {bscitProgram.faculty.map((faculty, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="relative h-64 w-full">
                   <Image
@@ -712,34 +732,31 @@ export default function BBAPage() {
       </section>
 
       {/* Student Life */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Student Life</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Beyond the Classroom
+              Beyond Coding
             </p>
           </div>
 
           <div className="mt-12">
-            <h3 className="text-2xl font-medium text-gray-900 mb-6">Clubs & Activities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {bbaProgram.studentLife.clubs.map((club, index) => (
-                <div key={index} className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <h3 className="text-2xl font-medium text-gray-900 mb-6">Tech Clubs</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {bscitProgram.studentLife.clubs.map((club, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                   <div className="relative h-48 w-full">
                     <Image
                       src={club.image}
                       alt={club.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform"
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <h4 className="text-xl font-bold text-white">{club.name}</h4>
-                    </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-600">{club.description}</p>
+                    <h4 className="text-xl font-medium text-gray-900">{club.name}</h4>
+                    <p className="mt-2 text-gray-600">{club.description}</p>
                   </div>
                 </div>
               ))}
@@ -749,9 +766,9 @@ export default function BBAPage() {
           <div className="mt-16">
             <h3 className="text-2xl font-medium text-gray-900 mb-6">Annual Events</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {bbaProgram.studentLife.events.map((event, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
-                  <div className="relative h-56 w-full">
+              {bscitProgram.studentLife.events.map((event, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <div className="relative h-48 w-full">
                     <Image
                       src={event.image}
                       alt={event.name}
@@ -771,7 +788,7 @@ export default function BBAPage() {
       </section>
 
       {/* Fees & Scholarships */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Financials</h2>
@@ -783,97 +800,27 @@ export default function BBAPage() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-medium text-gray-900 mb-6">Fee Structure</h3>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                 <ul className="space-y-4">
-                  {bbaProgram.fees.structure.map((fee, index) => (
+                  {bscitProgram.fees.structure.map((fee, index) => (
                     <li key={index} className="flex justify-between border-b pb-3">
                       <span className="font-medium text-gray-700">{fee.item}</span>
                       <span className="text-gray-600">{fee.amount}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-sm text-blue-800">
-                    <span className="font-bold">Note:</span> Additional one-time admission fee of ₹2,000 applicable for new students
-                  </p>
-                </div>
               </div>
             </div>
 
             <div>
               <h3 className="text-2xl font-medium text-gray-900 mb-6">Scholarships</h3>
               <div className="space-y-4">
-                {bbaProgram.fees.scholarships.map((scholarship, index) => (
-                  <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                {bscitProgram.fees.scholarships.map((scholarship, index) => (
+                  <div key={index} className="bg-blue-50 p-6 rounded-lg">
                     <h4 className="text-lg font-medium text-blue-800">{scholarship.name}</h4>
                     <p className="mt-2 text-gray-600">Amount: {scholarship.amount}</p>
-                    <button className="mt-3 text-sm text-blue-600 hover:text-blue-800 font-medium">
-                      Eligibility Criteria →
-                    </button>
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Contact</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Get In Touch
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-blue-50 p-8 rounded-xl">
-              <h3 className="text-xl font-medium text-gray-900 mb-4">Admission Office</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.email}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.phone}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.address}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.hours}</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-medium text-gray-900 mb-4">Campus Visit</h3>
-              <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/bba/campus-map.jpg"
-                  alt="Catalyst College Campus Map"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="mt-4">
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                  Download Campus Map
-                </button>
               </div>
             </div>
           </div>
@@ -884,10 +831,10 @@ export default function BBAPage() {
       <section className="bg-blue-800">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Ready to Launch Your Business Career?
+            Ready to Launch Your Tech Career?
           </h2>
           <p className="mt-4 text-xl text-blue-200 max-w-3xl mx-auto">
-            Join Bihar's most industry-connected BBA program at Catalyst College Patna
+            Join Bihar's most practical IT degree program at Catalyst College Patna
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
@@ -897,16 +844,16 @@ export default function BBAPage() {
               Apply Now
             </a>
             <a
-              href="#contact"
+              href="#"
               className="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-800"
             >
-              Schedule Campus Visit
+              Download Brochure
             </a>
             <a
               href="#"
               className="px-6 py-3 text-white font-medium rounded-lg hover:text-blue-200"
             >
-              Download Brochure
+              Chat with Current Students
             </a>
           </div>
         </div>

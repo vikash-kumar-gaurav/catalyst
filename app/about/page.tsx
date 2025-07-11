@@ -5,6 +5,7 @@ import { GiAchievement, GiTeacher, GiMedal, GiThreeFriends } from 'react-icons/g
 import { MdGpsFixed, MdHistory, MdSchool, MdPeople } from 'react-icons/md';
 import { RiLeafLine, RiTeamLine } from 'react-icons/ri';
 import { IoMdTime } from 'react-icons/io';
+import HeroSection from '@/components/newHeroImageForAllPage';
 
 // SVG Components for decoration
 const WaveDivider = () => (
@@ -28,14 +29,22 @@ const AboutUsPage = () => {
     return (
         <div className="font-sans bg-gray-50 overflow-hidden">
             {/* Hero Section */}
-            <AllPageHero
+            {/* <AllPageHero
                 imageUrl='https://scontent-del1-1.xx.fbcdn.net/v/t39.30808-6/487824369_1061032899385982_1193664897519214924_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UAH4nV-dwPcQ7kNvwFn4P2i&_nc_oc=Adm8iAKJkwWEO4yn_3UAc2VCIpI-mz9XKDw8pcatjOtFx9HVzVa4kvheyEabgoLYAnk&_nc_zt=23&_nc_ht=scontent-del1-1.xx&_nc_gid=mrL_lZzKA688qeHVUfFB9Q&oh=00_AfQhFQEsJK8EB36IRtFX_GMpY-8F3tcSjhwNGZ2v_p6HZA&oe=6875794D'
                 tagline="Discover the story behind Bihar's most transformative educational institution"
                 title="About CATALYST College"
+            /> */}
+
+            <HeroSection
+                title="About CATALYST College"
+                description="Discover the story behind Bihar's most transformative educational institution"
+                imageUrl="https://scontent-del1-1.xx.fbcdn.net/v/t39.30808-6/487824369_1061032899385982_1193664897519214924_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UAH4nV-dwPcQ7kNvwFn4P2i&_nc_oc=Adm8iAKJkwWEO4yn_3UAc2VCIpI-mz9XKDw8pcatjOtFx9HVzVa4kvheyEabgoLYAnk&_nc_zt=23&_nc_ht=scontent-del1-1.xx&_nc_gid=mrL_lZzKA688qeHVUfFB9Q&oh=00_AfQhFQEsJK8EB36IRtFX_GMpY-8F3tcSjhwNGZ2v_p6HZA&oe=6875794D"
+                overlayOpacity={0.3}
+                height="lg"
             />
 
             {/* College Identity */}
-            <section className="relative py-28 bg-white overflow-hidden">
+            <section className="relative pt-14 bg-white overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute top-0 left-0 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -216,274 +225,273 @@ const AboutUsPage = () => {
                 </div>
             </section>
 
-
             {/* History of us */}
-            <section className="relative py-28 bg-gray-50 overflow-hidden">
-  {/* Decorative elements */}
-  <div className="absolute inset-0 opacity-10">
-    <div className="absolute top-0 left-0 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
-    <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
-  </div>
-  
-  {/* Timeline curve */}
-  <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
-
-  <div className="container mx-auto px-4 sm:px-6 relative z-10">
-    <div className="max-w-5xl mx-auto text-center mb-20">
-      <span className="inline-block px-5 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-600 rounded-full text-xs font-medium tracking-wider mb-4 border border-blue-100">
-        OUR JOURNEY
-      </span>
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight font-serif">
-        Milestones That Shaped CATALYST
-      </h2>
-      <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8 rounded-full"></div>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        From humble beginnings to becoming Bihar's premier management institution, our journey reflects our commitment to educational excellence.
-      </p>
-    </div>
-
-    {/* Timeline */}
-    <div className="relative">
-      {/* Vertical line */}
-      <div className="hidden lg:block absolute left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
-      
-      {/* Timeline items */}
-      <div className="space-y-16 lg:space-y-0">
-        {/* 2008 - Founding */}
-        <div className="relative lg:flex items-center justify-between">
-          <div className="lg:w-5/12 lg:pr-12 mb-8 lg:mb-0">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-2 rounded-full mr-4">
-                  <MdHistory className="text-blue-600 text-xl" />
+            <section className="relative py-14 bg-gray-50 overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
+                    <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
                 </div>
-                <span className="text-blue-600 font-medium">June 2008</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">The Foundation</h3>
-              <p className="text-gray-600 mb-4">
-                CATALYST College was established under the visionary Vijayam Educational Trust, inaugurated by Hon'ble Chief Minister Nitish Kumar during Bihar's educational renaissance.
-              </p>
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                <img 
-                  src="/images/inauguration.jpg" 
-                  alt="College inauguration" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          
-          <div className="hidden lg:block lg:w-2/12  justify-center">
-            <div className="h-16 w-16 rounded-full bg-white border-4 border-blue-500 flex items-center justify-center shadow-lg">
-              <span className="text-blue-600 font-bold">2008</span>
-            </div>
-          </div>
-          
-          <div className="lg:w-5/12">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Started with just 47 students in a rented building in Patna</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Launched Bihar's first industry-integrated BBA program</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Initial faculty included 8 professors from top Indian universities</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
-        {/* 2012 - First Achievements */}
-        <div className="relative lg:flex items-center justify-between flex-row-reverse">
-          <div className="lg:w-5/12 lg:pl-12 mb-8 lg:mb-0">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="bg-indigo-100 p-2 rounded-full mr-4">
-                  <GiAchievement className="text-indigo-600 text-xl" />
+                {/* Timeline curve */}
+                <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div className="max-w-5xl mx-auto text-center mb-10">
+                        <span className="inline-block px-5 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-600 rounded-full text-xs font-medium tracking-wider mb-4 border border-blue-100">
+                            OUR JOURNEY
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight font-serif">
+                            Milestones That Shaped CATALYST
+                        </h2>
+                        <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8 rounded-full"></div>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                            From humble beginnings to becoming Bihar's premier management institution, our journey reflects our commitment to educational excellence.
+                        </p>
+                    </div>
+
+                    {/* Timeline */}
+                    <div className="relative">
+                        {/* Vertical line */}
+                        <div className="hidden lg:block absolute left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+
+                        {/* Timeline items */}
+                        <div className="space-y-16 lg:space-y-0">
+                            {/* 2008 - Founding */}
+                            <div className="relative lg:flex items-center justify-between">
+                                <div className="lg:w-5/12 lg:pr-12 mb-8 lg:mb-0">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <div className="flex items-center mb-4">
+                                            <div className="bg-blue-100 p-2 rounded-full mr-4">
+                                                <MdHistory className="text-blue-600 text-xl" />
+                                            </div>
+                                            <span className="text-blue-600 font-medium">June 2008</span>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">The Foundation</h3>
+                                        <p className="text-gray-600 mb-4">
+                                            CATALYST College was established under the visionary Vijayam Educational Trust, inaugurated by Hon'ble Chief Minister Nitish Kumar during Bihar's educational renaissance.
+                                        </p>
+                                        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                            <img
+                                                src="/images/inauguration.jpg"
+                                                alt="College inauguration"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="hidden lg:block lg:w-2/12  justify-center">
+                                    <div className="h-16 w-16 rounded-full bg-white border-4 border-blue-500 flex items-center justify-center shadow-lg">
+                                        <span className="text-blue-600 font-bold">2008</span>
+                                    </div>
+                                </div>
+
+                                <div className="lg:w-5/12">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <ul className="space-y-3 text-gray-600">
+                                            <li className="flex items-start">
+                                                <span className="text-blue-500 mr-2">•</span>
+                                                <span>Started with just 47 students in a rented building in Patna</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-blue-500 mr-2">•</span>
+                                                <span>Launched Bihar's first industry-integrated BBA program</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-blue-500 mr-2">•</span>
+                                                <span>Initial faculty included 8 professors from top Indian universities</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 2012 - First Achievements */}
+                            <div className="relative lg:flex items-center justify-between flex-row-reverse">
+                                <div className="lg:w-5/12 lg:pl-12 mb-8 lg:mb-0">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <div className="flex items-center mb-4">
+                                            <div className="bg-indigo-100 p-2 rounded-full mr-4">
+                                                <GiAchievement className="text-indigo-600 text-xl" />
+                                            </div>
+                                            <span className="text-indigo-600 font-medium">May 2012</span>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">First Recognition</h3>
+                                        <p className="text-gray-600 mb-4">
+                                            Our first batch achieved 92% placements, with students securing positions in companies like TCS and ICICI Bank, setting a new benchmark for Bihar.
+                                        </p>
+                                        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                            <img
+                                                src="/images/first-placements.jpg"
+                                                alt="First placement drive"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="hidden lg:block lg:w-2/12  justify-center">
+                                    <div className="h-16 w-16 rounded-full bg-white border-4 border-indigo-500 flex items-center justify-center shadow-lg">
+                                        <span className="text-indigo-600 font-bold">2012</span>
+                                    </div>
+                                </div>
+
+                                <div className="lg:w-5/12">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <ul className="space-y-3 text-gray-600">
+                                            <li className="flex items-start">
+                                                <span className="text-indigo-500 mr-2">•</span>
+                                                <span>Received ISO 9001:2008 certification for quality education</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-indigo-500 mr-2">•</span>
+                                                <span>Expanded campus with new computer labs and library</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-indigo-500 mr-2">•</span>
+                                                <span>Introduced mandatory summer internships</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 2015 - AIMA Recognition */}
+                            <div className="relative lg:flex items-center justify-between">
+                                <div className="lg:w-5/12 lg:pr-12 mb-8 lg:mb-0">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <div className="flex items-center mb-4">
+                                            <div className="bg-purple-100 p-2 rounded-full mr-4">
+                                                <GiMedal className="text-purple-600 text-xl" />
+                                            </div>
+                                            <span className="text-purple-600 font-medium">November 2015</span>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">National Recognition</h3>
+                                        <p className="text-gray-600 mb-4">
+                                            Awarded "Most Emerging Institute for Management Education" by AIMA (All India Management Association), putting CATALYST on the national map.
+                                        </p>
+                                        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                            <img
+                                                src="/images/aima-award.jpg"
+                                                alt="AIMA award ceremony"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="hidden lg:block lg:w-2/12 justify-center">
+                                    <div className="h-16 w-16 rounded-full bg-white border-4 border-purple-500 flex items-center justify-center shadow-lg">
+                                        <span className="text-purple-600 font-bold">2015</span>
+                                    </div>
+                                </div>
+
+                                <div className="lg:w-5/12">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <ul className="space-y-3 text-gray-600">
+                                            <li className="flex items-start">
+                                                <span className="text-purple-500 mr-2">•</span>
+                                                <span>Launched MBA program with 5 specializations</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-purple-500 mr-2">•</span>
+                                                <span>Established Center for Entrepreneurship Development</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-purple-500 mr-2">•</span>
+                                                <span>Crossed 500+ student enrollment</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 2020 - Pandemic Response */}
+                            <div className="relative lg:flex items-center justify-between flex-row-reverse">
+                                <div className="lg:w-5/12 lg:pl-12 mb-8 lg:mb-0">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <div className="flex items-center mb-4">
+                                            <div className="bg-teal-100 p-2 rounded-full mr-4">
+                                                <RiTeamLine className="text-teal-600 text-xl" />
+                                            </div>
+                                            <span className="text-teal-600 font-medium">2020-2021</span>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">Digital Transformation</h3>
+                                        <p className="text-gray-600 mb-4">
+                                            Despite pandemic challenges, we achieved 100% virtual placements and became the first college in Bihar to implement a complete hybrid learning ecosystem.
+                                        </p>
+                                        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                            <img
+                                                src="/images/digital-classes.jpg"
+                                                alt="Digital classroom"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="hidden lg:block lg:w-2/12 justify-center">
+                                    <div className="h-16 w-16 rounded-full bg-white border-4 border-teal-500 flex items-center justify-center shadow-lg">
+                                        <span className="text-teal-600 font-bold">2020</span>
+                                    </div>
+                                </div>
+
+                                <div className="lg:w-5/12">
+                                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                                        <ul className="space-y-3 text-gray-600">
+                                            <li className="flex items-start">
+                                                <span className="text-teal-500 mr-2">•</span>
+                                                <span>Implemented CATALYST Digital Campus with 30+ online courses</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-teal-500 mr-2">•</span>
+                                                <span>Record ₹18 LPA highest package despite economic slowdown</span>
+                                            </li>
+                                            <li className="flex items-start">
+                                                <span className="text-teal-500 mr-2">•</span>
+                                                <span>Recognized as "Best Educational Institute in Bihar" by Education Today</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Current Status */}
+                    <div className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-10 text-white overflow-hidden relative">
+                        <div className="absolute inset-0 opacity-10">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full filter blur-xl"></div>
+                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-300 rounded-full filter blur-xl"></div>
+                        </div>
+                        <div className="relative z-10">
+                            <div className="max-w-4xl mx-auto">
+                                <h3 className="text-2xl md:text-3xl font-bold mb-6">CATALYST Today</h3>
+                                <div className="grid md:grid-cols-3 gap-8">
+                                    <div>
+                                        <p className="text-4xl font-bold mb-2">1200+</p>
+                                        <p className="text-blue-100">Students Enrolled</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-4xl font-bold mb-2">50+</p>
+                                        <p className="text-blue-100">Recruiting Companies</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-4xl font-bold mb-2">100%</p>
+                                        <p className="text-blue-100">Placement Record (3 years running)</p>
+                                    </div>
+                                </div>
+                                <div className="mt-8 pt-6 border-t border-blue-400/30">
+                                    <p className="text-blue-100">
+                                        From our humble beginnings with 47 students, CATALYST has grown into Bihar's most sought-after management institution, with alumni now leading teams at Google, Amazon, TCS, and Indian administrative services.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <span className="text-indigo-600 font-medium">May 2012</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">First Recognition</h3>
-              <p className="text-gray-600 mb-4">
-                Our first batch achieved 92% placements, with students securing positions in companies like TCS and ICICI Bank, setting a new benchmark for Bihar.
-              </p>
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                <img 
-                  src="/images/first-placements.jpg" 
-                  alt="First placement drive" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          
-          <div className="hidden lg:block lg:w-2/12  justify-center">
-            <div className="h-16 w-16 rounded-full bg-white border-4 border-indigo-500 flex items-center justify-center shadow-lg">
-              <span className="text-indigo-600 font-bold">2012</span>
-            </div>
-          </div>
-          
-          <div className="lg:w-5/12">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-indigo-500 mr-2">•</span>
-                  <span>Received ISO 9001:2008 certification for quality education</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-indigo-500 mr-2">•</span>
-                  <span>Expanded campus with new computer labs and library</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-indigo-500 mr-2">•</span>
-                  <span>Introduced mandatory summer internships</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* 2015 - AIMA Recognition */}
-        <div className="relative lg:flex items-center justify-between">
-          <div className="lg:w-5/12 lg:pr-12 mb-8 lg:mb-0">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="bg-purple-100 p-2 rounded-full mr-4">
-                  <GiMedal className="text-purple-600 text-xl" />
-                </div>
-                <span className="text-purple-600 font-medium">November 2015</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">National Recognition</h3>
-              <p className="text-gray-600 mb-4">
-                Awarded "Most Emerging Institute for Management Education" by AIMA (All India Management Association), putting CATALYST on the national map.
-              </p>
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                <img 
-                  src="/images/aima-award.jpg" 
-                  alt="AIMA award ceremony" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          
-          <div className="hidden lg:block lg:w-2/12 justify-center">
-            <div className="h-16 w-16 rounded-full bg-white border-4 border-purple-500 flex items-center justify-center shadow-lg">
-              <span className="text-purple-600 font-bold">2015</span>
-            </div>
-          </div>
-          
-          <div className="lg:w-5/12">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-purple-500 mr-2">•</span>
-                  <span>Launched MBA program with 5 specializations</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-500 mr-2">•</span>
-                  <span>Established Center for Entrepreneurship Development</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-500 mr-2">•</span>
-                  <span>Crossed 500+ student enrollment</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* 2020 - Pandemic Response */}
-        <div className="relative lg:flex items-center justify-between flex-row-reverse">
-          <div className="lg:w-5/12 lg:pl-12 mb-8 lg:mb-0">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="bg-teal-100 p-2 rounded-full mr-4">
-                  <RiTeamLine className="text-teal-600 text-xl" />
-                </div>
-                <span className="text-teal-600 font-medium">2020-2021</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">Digital Transformation</h3>
-              <p className="text-gray-600 mb-4">
-                Despite pandemic challenges, we achieved 100% virtual placements and became the first college in Bihar to implement a complete hybrid learning ecosystem.
-              </p>
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                <img 
-                  src="/images/digital-classes.jpg" 
-                  alt="Digital classroom" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          
-          <div className="hidden lg:block lg:w-2/12 justify-center">
-            <div className="h-16 w-16 rounded-full bg-white border-4 border-teal-500 flex items-center justify-center shadow-lg">
-              <span className="text-teal-600 font-bold">2020</span>
-            </div>
-          </div>
-          
-          <div className="lg:w-5/12">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-teal-500 mr-2">•</span>
-                  <span>Implemented CATALYST Digital Campus with 30+ online courses</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal-500 mr-2">•</span>
-                  <span>Record ₹18 LPA highest package despite economic slowdown</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal-500 mr-2">•</span>
-                  <span>Recognized as "Best Educational Institute in Bihar" by Education Today</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Current Status */}
-    <div className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-10 text-white overflow-hidden relative">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full filter blur-xl"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-300 rounded-full filter blur-xl"></div>
-      </div>
-      <div className="relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">CATALYST Today</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-4xl font-bold mb-2">1200+</p>
-              <p className="text-blue-100">Students Enrolled</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold mb-2">50+</p>
-              <p className="text-blue-100">Recruiting Companies</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold mb-2">100%</p>
-              <p className="text-blue-100">Placement Record (3 years running)</p>
-            </div>
-          </div>
-          <div className="mt-8 pt-6 border-t border-blue-400/30">
-            <p className="text-blue-100">
-              From our humble beginnings with 47 students, CATALYST has grown into Bihar's most sought-after management institution, with alumni now leading teams at Google, Amazon, TCS, and Indian administrative services.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            </section>
 
             {/* History & Establishment */}
             <section className="relative py-20 bg-gray-50">

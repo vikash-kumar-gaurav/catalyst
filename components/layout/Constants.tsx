@@ -54,7 +54,7 @@ export const navItems = [
             { name: 'Industry Interaction', href: '/placements/industry-interaction' },
             { name: 'Career Training', href: '/placements/career-training' },
             { name: 'Internship Info', href: '/placements/internship-info' },
-            { name: 'Career', href: '/career' }
+            { name: 'Career', href: 'placements/career' }
         ]
     },
     {
@@ -104,15 +104,7 @@ export const navItems = [
         href:'/alumni'
      },
      {
-        name:"Career",
-        href:'/career'
-     },
-     {
         name:"Social Initiatives",
         href:'/social-initiatives'
-     },
-     {
-        name:"Contact Us",
-        href:'/contact'
      }
 ];
