@@ -10,7 +10,6 @@ export const navItems = [
             { name: 'Faculty Corner', href: '/about/faculty-corner' },
             { name: 'Infrastructure', href: '/about/infrastructure' },
             { name: 'Awards & Recognition', href: '/about/awards-recognition' },
-            { name: 'Anti Ragging', href: '/about/anti-ragging' },
             { name: 'Code of Conduct', href: '/about/code-of-conduct' },
             { name: 'Organogram', href: '/about/organogram' },
             { name: 'Committees & Cells', href: '/about/committees-cells' },
@@ -54,7 +53,7 @@ export const navItems = [
             { name: 'Industry Interaction', href: '/placements/industry-interaction' },
             { name: 'Career Training', href: '/placements/career-training' },
             { name: 'Internship Info', href: '/placements/internship-info' },
-            { name: 'Career', href: 'placements/career' }
+            { name: 'Career', href: '/placements/career' }
         ]
     },
     {
@@ -64,18 +63,18 @@ export const navItems = [
             { name: 'Members & Functions', href: '/iqac/members-functions' },
             { name: 'AQAR Reports', href: '/iqac/aqar-reports' },
             { name: 'Best Practices', href: '/iqac/best-practices' },
-            { name: 'Feebback Reports', href: '/iqac/feedback-reports' },
+            { name: 'Feedback Reports', href: '/iqac/feedback-reports' },
             { name: 'Institutional Distinctiveness', href: '/iqac/institutional-distinctiveness' },
         ]
     },
     {
         name:"Research & Innovation",
-        href:'/research-innovatiovation',
+        href:'/research-innovation',
         submenu :[
-            {name :"Research Policy", href:'/research-innovatiovation/research-policy'},
-            {name :"Publications", href:'/research-innovatiovation/publications'},
-            {name :"IPR Cell", href:'/research-innovatiovation/ipr-cell'},
-            {name :"Innovation Hub", href:'/research-innovatiovation/innovation-hub'}
+            {name :"Research Policy", href:'/research-innovation/research-policy'},
+            {name :"Publications", href:'/research-innovation/publications'},
+            {name :"IPR Cell", href:'/research-innovation/ipr-cell'},
+            {name :"Innovation Hub", href:'/research-innovation/innovation-hub'}
 
         ]
     },
@@ -95,10 +94,6 @@ export const navItems = [
         ] 
 
     },
-     {
-        name:"Library",
-        href:'/library'
-     },
      {
         name:'Alumni',
         href:'/alumni'

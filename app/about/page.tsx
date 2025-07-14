@@ -29,11 +29,6 @@ const AboutUsPage = () => {
     return (
         <div className="font-sans bg-gray-50 overflow-hidden">
             {/* Hero Section */}
-            {/* <AllPageHero
-                imageUrl='https://scontent-del1-1.xx.fbcdn.net/v/t39.30808-6/487824369_1061032899385982_1193664897519214924_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UAH4nV-dwPcQ7kNvwFn4P2i&_nc_oc=Adm8iAKJkwWEO4yn_3UAc2VCIpI-mz9XKDw8pcatjOtFx9HVzVa4kvheyEabgoLYAnk&_nc_zt=23&_nc_ht=scontent-del1-1.xx&_nc_gid=mrL_lZzKA688qeHVUfFB9Q&oh=00_AfQhFQEsJK8EB36IRtFX_GMpY-8F3tcSjhwNGZ2v_p6HZA&oe=6875794D'
-                tagline="Discover the story behind Bihar's most transformative educational institution"
-                title="About CATALYST College"
-            /> */}
 
             <HeroSection
                 title="About CATALYST College"

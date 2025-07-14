@@ -2,36 +2,95 @@ import React from "react";
 import { GiReceiveMoney, GiGraduateCap, GiNotebook } from "react-icons/gi";
 import { FaUserTie, FaRupeeSign, FaUniversity, FaFileAlt, FaHandshake } from "react-icons/fa";
 import { MdSchool, MdAccountBalance, Gavel } from "react-icons/md";
+import { fetchPageData } from '@/lib/useFetchData';
 
-const StudentCreditCardScheme = () => {
-  const eligibility = [
-    { criteria: "Age", requirement: "Must be within 25 years at the time of application" },
-    { criteria: "Residency", requirement: "Must be a permanent resident of Bihar" },
-    { criteria: "Education", requirement: "Must have passed Class 12 from a recognized board" },
-    { criteria: "Admission", requirement: "Must have secured admission in a recognized institution" },
-  ];
 
-  const documents = [
-    { name: "10th and 12th Mark Sheets", notes: "Self-attested copies" },
-    { name: "Aadhar Card", notes: "Student and co-applicant (guardian)" },
-    { name: "PAN Card", notes: "Student or guardian" },
-    { name: "Address Proof", notes: "Voter ID, ration card, etc." },
-    { name: "Admission Letter", notes: "From the institution where admission is confirmed" },
-  ];
 
-  const processSteps = [
-    { step: 1, action: "Register on the official portal" },
-    { step: 2, action: "Fill the online application form" },
-    { step: 3, action: "Upload scanned documents" },
-    { step: 4, action: "Submit and print acknowledgment" },
-    { step: 5, action: "Attend document verification at DRCC" },
-  ];
+const StudentCreditCardScheme = async() => {
+ let pageData = {
+  "eligibility": [
+    {
+      "criteria": "Age",
+      "requirement": "Must be within 25 years at the time of application"
+    },
+    {
+      "criteria": "Residency",
+      "requirement": "Must be a permanent resident of Bihar"
+    },
+    {
+      "criteria": "Education",
+      "requirement": "Must have passed Class 12 from a recognized board"
+    },
+    {
+      "criteria": "Admission",
+      "requirement": "Must have secured admission in a recognized institution"
+    }
+  ],
+  "documents": [
+    {
+      "name": "10th and 12th Mark Sheets",
+      "notes": "Self-attested copies"
+    },
+    {
+      "name": "Aadhar Card",
+      "notes": "Student and co-applicant (guardian)"
+    },
+    {
+      "name": "PAN Card",
+      "notes": "Student or guardian"
+    },
+    {
+      "name": "Address Proof",
+      "notes": "Voter ID, ration card, etc."
+    },
+    {
+      "name": "Admission Letter",
+      "notes": "From the institution where admission is confirmed"
+    }
+  ],
+  "processSteps": [
+    {
+      "step": 1,
+      "action": "Register on the official portal"
+    },
+    {
+      "step": 2,
+      "action": "Fill the online application form"
+    },
+    {
+      "step": 3,
+      "action": "Upload scanned documents"
+    },
+    {
+      "step": 4,
+      "action": "Submit and print acknowledgment"
+    },
+    {
+      "step": 5,
+      "action": "Attend document verification at DRCC"
+    }
+  ],
+  "courses": [
+    {
+      "name": "BCA",
+      "duration": "3 Years",
+      "coverage": "Full tuition + other expenses"
+    },
+    {
+      "name": "BBA",
+      "duration": "3 Years",
+      "coverage": "Full tuition + other expenses"
+    },
+    {
+      "name": "B.Sc. IT",
+      "duration": "3 Years",
+      "coverage": "Full tuition + other expenses"
+    }
+  ]
+}
+const { data, error } = await fetchPageData("credit-card-scheme")
 
-  const courses = [
-    { name: "BCA", duration: "3 Years", coverage: "Full tuition + other expenses" },
-    { name: "BBA", duration: "3 Years", coverage: "Full tuition + other expenses" },
-    { name: "B.Sc. IT", duration: "3 Years", coverage: "Full tuition + other expenses" },
-  ];
+  const { eligibility, documents, processSteps, courses} = pageData
 
   return (
     <div className="relative overflow-hidden">

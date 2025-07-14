@@ -1,4 +1,4 @@
-// components/HeroSection.tsx
+
 import React from 'react';
 
 interface HeroSectionProps {

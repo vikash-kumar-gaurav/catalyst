@@ -1,4 +1,6 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
+import YouTubeVideoGallery from '@/components/YoutubeGallery';
+import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,8 +9,8 @@ export const metadata: Metadata = {
   keywords: "college administration, governing body, faculty, leadership, academic heads",
 };
 
-// JSON data for all sections
-const adminData = {
+
+let adminData = {
   introduction: {
     title: "Our Administrative Leadership",
     description: "The administration at Catalyst College ensures the smooth and strategic functioning of the institution, focusing on academic excellence, student welfare, staff development, and regulatory compliance. Our leadership is committed to transparency, innovation, and delivering quality education."
@@ -179,6 +181,10 @@ const adminData = {
   }
 };
 
+const  {data, error} = await fetchPageData("administration")
+
+adminData = data as any ?? adminData;
+
 export default function Administration() {
   return (
     <div className="bg-gray-50">
@@ -203,12 +209,12 @@ export default function Administration() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16">Messages From Leadership</h2>
-          
+
           {/* Chairman's Message */}
           <div className="flex flex-col md:flex-row gap-12 mb-20">
             <div className="md:w-1/3">
-              <img 
-                src={adminData.messages.chairman.image} 
+              <img
+                src={adminData.messages.chairman.image}
                 alt={adminData.messages.chairman.name}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -219,7 +225,7 @@ export default function Administration() {
             </div>
             <div className="md:w-2/3">
               <div className="prose max-w-none">
-                {adminData.messages.chairman.content.map((paragraph, index) => (
+                {adminData.messages.chairman.content.map((paragraph:string, index:number) => (
                   <p key={index} className="mb-4 text-lg">{paragraph}</p>
                 ))}
               </div>
@@ -229,8 +235,8 @@ export default function Administration() {
           {/* Director's Message */}
           <div className="flex flex-col md:flex-row-reverse gap-12 mb-20">
             <div className="md:w-1/3">
-              <img 
-                src={adminData.messages.director.image} 
+              <img
+                src={adminData.messages.director.image}
                 alt={adminData.messages.director.name}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -241,7 +247,7 @@ export default function Administration() {
             </div>
             <div className="md:w-2/3">
               <div className="prose max-w-none">
-                {adminData.messages.director.content.map((paragraph, index) => (
+                {adminData.messages.director.content.map((paragraph:string, index:number) => (
                   <p key={index} className="mb-4 text-lg">{paragraph}</p>
                 ))}
               </div>
@@ -251,8 +257,8 @@ export default function Administration() {
           {/* Center Head's Message */}
           <div className="flex flex-col md:flex-row gap-12 mb-20">
             <div className="md:w-1/3">
-              <img 
-                src={adminData.messages.centerHead.image} 
+              <img
+                src={adminData.messages.centerHead.image}
                 alt={adminData.messages.centerHead.name}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -263,7 +269,7 @@ export default function Administration() {
             </div>
             <div className="md:w-2/3">
               <div className="prose max-w-none">
-                {adminData.messages.centerHead.content.map((paragraph, index) => (
+                {adminData.messages.centerHead.content.map((paragraph:string, index:number) => (
                   <p key={index} className="mb-4 text-lg">{paragraph}</p>
                 ))}
               </div>
@@ -273,8 +279,8 @@ export default function Administration() {
           {/* Dean's Message */}
           <div className="flex flex-col md:flex-row-reverse gap-12">
             <div className="md:w-1/3">
-              <img 
-                src={adminData.messages.dean.image} 
+              <img
+                src={adminData.messages.dean.image}
                 alt={adminData.messages.dean.name}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -285,7 +291,7 @@ export default function Administration() {
             </div>
             <div className="md:w-2/3">
               <div className="prose max-w-none">
-                {adminData.messages.dean.content.map((paragraph, index) => (
+                {adminData.messages.dean.content.map((paragraph:string, index:number) => (
                   <p key={index} className="mb-4 text-lg">{paragraph}</p>
                 ))}
               </div>
@@ -298,15 +304,15 @@ export default function Administration() {
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16">Our Leadership Team</h2>
-          
+
           {/* Governing Body */}
           <div className="mb-16">
             <h3 className="text-2xl font-semibold mb-8 text-blue-800">Governing Body</h3>
             <div className="grid md:grid-cols-2 gap-8">
-              {adminData.leadership.governingBody.map((member, index) => (
+              {adminData.leadership.governingBody.map((member:any, index:number) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-6">
-                  <img 
-                    src={member.image} 
+                  <img
+                    src={member?.image}
                     alt={member.name}
                     className="w-32 h-32 object-cover rounded-full border-4 border-blue-100"
                   />
@@ -324,10 +330,10 @@ export default function Administration() {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold mb-8 text-blue-800">Administrative Heads</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {adminData.leadership.administrativeHeads.map((member, index) => (
+              {adminData.leadership.administrativeHeads.map((member:any, index:number) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <img 
-                    src={member.image} 
+                  <img
+                    src={member.image}
                     alt={member.name}
                     className="w-32 h-32 object-cover rounded-full border-4 border-blue-100 mx-auto mb-4"
                   />
@@ -343,10 +349,10 @@ export default function Administration() {
           <div>
             <h3 className="text-2xl font-semibold mb-8 text-blue-800">Department Heads</h3>
             <div className="grid md:grid-cols-3 gap-6">
-              {adminData.leadership.departmentHeads.map((member, index) => (
+              {adminData.leadership.departmentHeads.map((member:any, index:number) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md flex items-center gap-4">
-                  <img 
-                    src={member.image} 
+                  <img
+                    src={member.image}
                     alt={member.name}
                     className="w-20 h-20 object-cover rounded-full border-4 border-blue-100"
                   />
@@ -366,16 +372,16 @@ export default function Administration() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16">Administrative Committees</h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {adminData.committees.map((committee, index) => (
+            {adminData.committees.map((committee:any, index:any) => (
               <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
                 <h3 className="text-xl font-bold mb-3">{committee.name}</h3>
                 <p className="text-gray-700 mb-4">{committee.purpose}</p>
                 <div className="bg-blue-50 p-4 rounded">
                   <h4 className="font-semibold mb-2">Members:</h4>
                   <ul className="space-y-1">
-                    {committee.members.map((member, idx) => (
+                    {committee.members.map((member:any, idx:any) => (
                       <li key={idx} className="text-sm">• {member}</li>
                     ))}
                   </ul>
@@ -395,7 +401,7 @@ export default function Administration() {
               <h2 className="text-3xl font-bold mb-8">Our Faculty</h2>
               <p className="text-lg mb-6">{adminData.faculty.description}</p>
               <ul className="space-y-3">
-                {adminData.faculty.highlights.map((item, index) => (
+                {adminData.faculty.highlights.map((item:any, index:any) => (
                   <li key={index} className="flex items-start">
                     <span className="text-blue-500 mr-2">✓</span>
                     <span>{item}</span>
@@ -411,7 +417,7 @@ export default function Administration() {
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h3 className="text-xl font-semibold mb-4">Members:</h3>
                 <ul className="space-y-3">
-                  {adminData.advisoryCouncil.members.map((member, index) => (
+                  {adminData.advisoryCouncil.members.map((member:any, index:any) => (
                     <li key={index} className="flex justify-between border-b pb-2">
                       <span>{member.name}</span>
                       <span className="text-blue-600">{member.role}</span>
@@ -431,7 +437,7 @@ export default function Administration() {
           <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
             <p className="text-center mb-8">The Examination Cell is responsible for planning, executing, mentoring and monitoring of the examinations conducted in college.</p>
             <div className="grid md:grid-cols-2 gap-6">
-              {adminData.examinationCell.members.map((member, index) => (
+              {adminData.examinationCell.members.map((member:any, index:any) => (
                 <div key={index} className="bg-white p-4 rounded-lg shadow-xs flex items-center gap-4">
                   <div className="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center font-bold">
                     {index + 1}
@@ -462,6 +468,7 @@ export default function Administration() {
           </div>
         </div>
       </section>
+      <YouTubeVideoGallery />
     </div>
   );
 }

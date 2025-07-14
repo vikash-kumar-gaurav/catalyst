@@ -33,7 +33,9 @@ const nextConfig: NextConfig = {
       "c8.alamy.com",
       "i.ytimg.com",
       "media.cricheroes.in",
-      "images.remotePatterns"
+      "images.remotePatterns",
+      "careermahakumbh.com",
+      
     ],
 
     /**

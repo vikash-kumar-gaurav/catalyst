@@ -1,28 +1,190 @@
 import AllPageHero from '@/components/AllPageHeroSection';
+import { fetchPageData } from '@/lib/useFetchData';
 import { FaCalendarAlt, FaBookOpen, FaGraduationCap, FaHome, FaChalkboardTeacher } from 'react-icons/fa';
 import { GiTeacher } from 'react-icons/gi';
 import { MdEventNote, MdDateRange } from 'react-icons/md';
 
-const AcademicCalendarPage = () => {
+
+
+
+const AcademicCalendarPage = async() => {
+
+  let PageData = {
+  "heroSection": {
+    "imageUrl": "https://scontent.fdbd5-1.fna.fbcdn.net/v/t39.30808-6/486796764_1060363119452960_9116490955871950899_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=WsdWZqEv6-gQ7kNvwGd3cxN&_nc_oc=AdnX43NpI7vXQ7KHKPTMdRsVgiOLg9iLAV2EMZoois1uRnL6-mOdRsXEiS9uu93Cmz92MB_mGTj7QurXzWwpx_Ip&_nc_zt=23&_nc_ht=scontent.fdbd5-1.fna&_nc_gid=1oHk8Cit_nDXN-4xQkLhPw&oh=00_AfSC-ZjPVv4NFQKuFJRtIc2mHXqCFFgrQ-lOK8ayWKc3ag&oe=6875A3BB",
+    "tagline": "Acedmic - Calendar 2025 - 5028",
+    "title": "Calendar"
+  },
+  "semesterDates": [
+    {
+      "title": "Fall Semester 2023",
+      "dates": [
+        "Orientation: August 15-18",
+        "Classes Begin: August 21",
+        "Classes End: December 8",
+        "Final Exams: December 11-15"
+      ],
+      "image": "/images/fall-campus.jpg"
+    },
+    {
+      "title": "Spring Semester 2024",
+      "dates": [
+        "Orientation: January 8-10",
+        "Classes Begin: January 16",
+        "Spring Break: March 11-15",
+        "Classes End: May 3",
+        "Final Exams: May 6-10"
+      ],
+      "image": "/images/spring-campus.jpg"
+    },
+    {
+      "title": "Summer Sessions 2024",
+      "dates": [
+        "Session I: May 20 - June 28",
+        "Session II: July 1 - August 9",
+        "Intensive Courses: Various Dates"
+      ],
+      "image": "/images/summer-campus.jpg"
+    }
+  ],
+  "registrationDeadlines": {
+    "fall2023": [
+      {
+        "name": "Priority Registration",
+        "date": "April 3-14"
+      },
+      {
+        "name": "Open Registration",
+        "date": "April 17 - August 18"
+      },
+      {
+        "name": "Add/Drop Period",
+        "date": "August 21-25"
+      },
+      {
+        "name": "Withdrawal Deadline (Full Refund)",
+        "date": "September 15"
+      },
+      {
+        "name": "Withdrawal Deadline (Partial Refund)",
+        "date": "October 20"
+      }
+    ],
+    "spring2024": [
+      {
+        "name": "Priority Registration",
+        "date": "November 6-17"
+      },
+      {
+        "name": "Open Registration",
+        "date": "November 20 - January 12"
+      },
+      {
+        "name": "Add/Drop Period",
+        "date": "January 16-20"
+      },
+      {
+        "name": "Withdrawal Deadline (Full Refund)",
+        "date": "February 10"
+      },
+      {
+        "name": "Withdrawal Deadline (Partial Refund)",
+        "date": "March 15"
+      }
+    ]
+  },
+  "holidays": [
+    {
+      "date": "September 4",
+      "name": "Labor Day"
+    },
+    {
+      "date": "October 9",
+      "name": "Mahatma Gandhi Jayanti"
+    },
+    {
+      "date": "November 23-24",
+      "name": "Thanksgiving Break"
+    },
+    {
+      "date": "December 16 - January 15",
+      "name": "Winter Break"
+    },
+    {
+      "date": "March 11-15",
+      "name": "Spring Break"
+    },
+    {
+      "date": "April 14",
+      "name": "Bihar Diwas"
+    },
+    {
+      "date": "May 1",
+      "name": "May Day"
+    }
+  ],
+  "examinationSchedule": {
+    "fall2023": {
+      "midterm": "October 16-20",
+      "final": "December 11-15",
+      "finalNote": "8:30 AM - 11:30 AM & 2:00 PM - 5:00 PM daily",
+      "makeup": "January 8-10, 2024"
+    },
+    "spring2024": {
+      "midterm": "March 18-22",
+      "final": "May 6-10",
+      "finalNote": "8:30 AM - 11:30 AM & 2:00 PM - 5:00 PM daily",
+      "makeup": "May 20-22"
+    }
+  },
+  "graduation": {
+    "fall2023": {
+      "date": "December 16, 2023",
+      "deadline": "October 1, 2023"
+    },
+    "spring2024": {
+      "date": "May 18, 2024",
+      "deadline": "March 1, 2024"
+    },
+    "requirements": [
+      "Minimum 120 credits completed",
+      "2.5 cumulative GPA",
+      "All financial obligations cleared"
+    ]
+  },
+  "events": {
+    "orientation": {
+      "fall": "August 15-18, 2023",
+      "spring": "January 8-10, 2024"
+    },
+    "housing": {
+      "fall": "August 14, 2023",
+      "spring": "January 7, 2024"
+    },
+    "conferences": [
+      {
+        "name": "Research Symposium",
+        "date": "April 5-6, 2024"
+      },
+      {
+        "name": "Career Fair",
+        "dates": ["October 12, 2023", "March 8, 2024"]
+      }
+    ]
+  }
+}
+
+const { data, error} = await fetchPageData("academic-calendar")
+PageData = data as any ?? PageData;
+
   return (
     <div className="font-sans bg-gray-50">
       {/* Hero Section */}
-      {/* <section className="relative py-32 bg-gradient-to-r from-blue-800 to-indigo-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-500 rounded-full filter blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-serif">Academic Calendar 2023-2024</h1>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-8"></div>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Key dates and deadlines for your academic journey at CATALYST College
-            </p>
-          </div>
-        </div>
-      </section> */}
-      <AllPageHero imageUrl='https://scontent.fdbd5-1.fna.fbcdn.net/v/t39.30808-6/486796764_1060363119452960_9116490955871950899_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=WsdWZqEv6-gQ7kNvwGd3cxN&_nc_oc=AdnX43NpI7vXQ7KHKPTMdRsVgiOLg9iLAV2EMZoois1uRnL6-mOdRsXEiS9uu93Cmz92MB_mGTj7QurXzWwpx_Ip&_nc_zt=23&_nc_ht=scontent.fdbd5-1.fna&_nc_gid=1oHk8Cit_nDXN-4xQkLhPw&oh=00_AfSC-ZjPVv4NFQKuFJRtIc2mHXqCFFgrQ-lOK8ayWKc3ag&oe=6875A3BB' tagline='Acedmic - Calendar 2025 - 5028' title='Calendar' />
+      <AllPageHero 
+        imageUrl={PageData.heroSection.imageUrl} 
+        tagline={PageData.heroSection.tagline} 
+        title={PageData.heroSection.title} 
+      />
 
       {/* Main Calendar Content */}
       <section className="relative py-20 bg-white">
@@ -37,38 +199,7 @@ const AcademicCalendarPage = () => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Fall Semester 2023",
-                  dates: [
-                    "Orientation: August 15-18",
-                    "Classes Begin: August 21",
-                    "Classes End: December 8",
-                    "Final Exams: December 11-15"
-                  ],
-                  image: "/images/fall-campus.jpg"
-                },
-                {
-                  title: "Spring Semester 2024",
-                  dates: [
-                    "Orientation: January 8-10",
-                    "Classes Begin: January 16",
-                    "Spring Break: March 11-15",
-                    "Classes End: May 3",
-                    "Final Exams: May 6-10"
-                  ],
-                  image: "/images/spring-campus.jpg"
-                },
-                {
-                  title: "Summer Sessions 2024",
-                  dates: [
-                    "Session I: May 20 - June 28",
-                    "Session II: July 1 - August 9",
-                    "Intensive Courses: Various Dates"
-                  ],
-                  image: "/images/summer-campus.jpg"
-                }
-              ].map((semester, index) => (
+              {PageData.semesterDates.map((semester, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow">
                   <div className="h-48 overflow-hidden">
                     <img src={semester.image} alt={semester.title} className="w-full h-full object-cover" />
@@ -103,51 +234,23 @@ const AcademicCalendarPage = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">Fall 2023 Registration</h3>
                   <ul className="space-y-3">
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Priority Registration</span>
-                      <span className="font-medium">April 3-14</span>
-                    </li>
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Open Registration</span>
-                      <span className="font-medium">April 17 - August 18</span>
-                    </li>
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Add/Drop Period</span>
-                      <span className="font-medium">August 21-25</span>
-                    </li>
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Withdrawal Deadline (Full Refund)</span>
-                      <span className="font-medium">September 15</span>
-                    </li>
-                    <li className="flex justify-between py-2">
-                      <span className="text-gray-600">Withdrawal Deadline (Partial Refund)</span>
-                      <span className="font-medium">October 20</span>
-                    </li>
+                    {PageData.registrationDeadlines.fall2023.map((item, index) => (
+                      <li key={index} className="flex justify-between py-2 border-b border-gray-200">
+                        <span className="text-gray-600">{item.name}</span>
+                        <span className="font-medium">{item.date}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">Spring 2024 Registration</h3>
                   <ul className="space-y-3">
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Priority Registration</span>
-                      <span className="font-medium">November 6-17</span>
-                    </li>
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Open Registration</span>
-                      <span className="font-medium">November 20 - January 12</span>
-                    </li>
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Add/Drop Period</span>
-                      <span className="font-medium">January 16-20</span>
-                    </li>
-                    <li className="flex justify-between py-2 border-b border-gray-200">
-                      <span className="text-gray-600">Withdrawal Deadline (Full Refund)</span>
-                      <span className="font-medium">February 10</span>
-                    </li>
-                    <li className="flex justify-between py-2">
-                      <span className="text-gray-600">Withdrawal Deadline (Partial Refund)</span>
-                      <span className="font-medium">March 15</span>
-                    </li>
+                    {PageData.registrationDeadlines.spring2024.map((item, index) => (
+                      <li key={index} className="flex justify-between py-2 border-b border-gray-200">
+                        <span className="text-gray-600">{item.name}</span>
+                        <span className="font-medium">{item.date}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -168,15 +271,7 @@ const AcademicCalendarPage = () => {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-4">2023-2024 Academic Holidays</h3>
                   <div className="space-y-4">
-                    {[
-                      { date: "September 4", name: "Labor Day" },
-                      { date: "October 9", name: "Mahatma Gandhi Jayanti" },
-                      { date: "November 23-24", name: "Thanksgiving Break" },
-                      { date: "December 16 - January 15", name: "Winter Break" },
-                      { date: "March 11-15", name: "Spring Break" },
-                      { date: "April 14", name: "Bihar Diwas" },
-                      { date: "May 1", name: "May Day" }
-                    ].map((holiday, index) => (
+                    {PageData.holidays.map((holiday, index) => (
                       <div key={index} className="flex items-center py-2 border-b border-gray-100 last:border-0">
                         <div className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium mr-4">
                           {holiday.date}
@@ -216,16 +311,16 @@ const AcademicCalendarPage = () => {
                   <ul className="space-y-4">
                     <li>
                       <h4 className="font-semibold text-gray-700 mb-2">Midterm Examinations</h4>
-                      <p className="text-gray-600">October 16-20</p>
+                      <p className="text-gray-600">{PageData.examinationSchedule.fall2023.midterm}</p>
                     </li>
                     <li>
                       <h4 className="font-semibold text-gray-700 mb-2">Final Examinations</h4>
-                      <p className="text-gray-600">December 11-15</p>
-                      <p className="text-sm text-gray-500 mt-1">8:30 AM - 11:30 AM & 2:00 PM - 5:00 PM daily</p>
+                      <p className="text-gray-600">{PageData.examinationSchedule.fall2023.final}</p>
+                      <p className="text-sm text-gray-500 mt-1">{PageData.examinationSchedule.fall2023.finalNote}</p>
                     </li>
                     <li>
                       <h4 className="font-semibold text-gray-700 mb-2">Make-up Exams</h4>
-                      <p className="text-gray-600">January 8-10, 2024</p>
+                      <p className="text-gray-600">{PageData.examinationSchedule.fall2023.makeup}</p>
                     </li>
                   </ul>
                 </div>
@@ -234,16 +329,16 @@ const AcademicCalendarPage = () => {
                   <ul className="space-y-4">
                     <li>
                       <h4 className="font-semibold text-gray-700 mb-2">Midterm Examinations</h4>
-                      <p className="text-gray-600">March 18-22</p>
+                      <p className="text-gray-600">{PageData.examinationSchedule.spring2024.midterm}</p>
                     </li>
                     <li>
                       <h4 className="font-semibold text-gray-700 mb-2">Final Examinations</h4>
-                      <p className="text-gray-600">May 6-10</p>
-                      <p className="text-sm text-gray-500 mt-1">8:30 AM - 11:30 AM & 2:00 PM - 5:00 PM daily</p>
+                      <p className="text-gray-600">{PageData.examinationSchedule.spring2024.final}</p>
+                      <p className="text-sm text-gray-500 mt-1">{PageData.examinationSchedule.spring2024.finalNote}</p>
                     </li>
                     <li>
                       <h4 className="font-semibold text-gray-700 mb-2">Make-up Exams</h4>
-                      <p className="text-gray-600">May 20-22</p>
+                      <p className="text-gray-600">{PageData.examinationSchedule.spring2024.makeup}</p>
                     </li>
                   </ul>
                 </div>
@@ -266,20 +361,20 @@ const AcademicCalendarPage = () => {
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-1">Fall 2023 Commencement</h3>
-                      <p className="text-gray-600">December 16, 2023</p>
-                      <p className="text-sm text-gray-500">Application Deadline: October 1, 2023</p>
+                      <p className="text-gray-600">{PageData.graduation.fall2023.date}</p>
+                      <p className="text-sm text-gray-500">Application Deadline: {PageData.graduation.fall2023.deadline}</p>
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-1">Spring 2024 Commencement</h3>
-                      <p className="text-gray-600">May 18, 2024</p>
-                      <p className="text-sm text-gray-500">Application Deadline: March 1, 2024</p>
+                      <p className="text-gray-600">{PageData.graduation.spring2024.date}</p>
+                      <p className="text-sm text-gray-500">Application Deadline: {PageData.graduation.spring2024.deadline}</p>
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-1">Graduation Requirements</h3>
                       <ul className="list-disc list-inside text-gray-600 space-y-1">
-                        <li>Minimum 120 credits completed</li>
-                        <li>2.5 cumulative GPA</li>
-                        <li>All financial obligations cleared</li>
+                        {PageData.graduation.requirements.map((requirement, index) => (
+                          <li key={index}>{requirement}</li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -298,18 +393,18 @@ const AcademicCalendarPage = () => {
                   <div className="space-y-4">
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-1">New Student Orientation</h3>
-                      <p className="text-gray-600">Fall: August 15-18, 2023</p>
-                      <p className="text-gray-600">Spring: January 8-10, 2024</p>
+                      <p className="text-gray-600">Fall: {PageData.events.orientation.fall}</p>
+                      <p className="text-gray-600">Spring: {PageData.events.orientation.spring}</p>
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-1">Housing Move-In Dates</h3>
-                      <p className="text-gray-600">Fall Semester: August 14, 2023</p>
-                      <p className="text-gray-600">Spring Semester: January 7, 2024</p>
+                      <p className="text-gray-600">Fall Semester: {PageData.events.housing.fall}</p>
+                      <p className="text-gray-600">Spring Semester: {PageData.events.housing.spring}</p>
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-1">Academic Conferences</h3>
-                      <p className="text-gray-600">Research Symposium: April 5-6, 2024</p>
-                      <p className="text-gray-600">Career Fair: October 12, 2023 & March 8, 2024</p>
+                      <p className="text-gray-600">{PageData.events.conferences[0].name}: {PageData.events.conferences[0].date}</p>
+                      <p className="text-gray-600">{PageData.events.conferences[1].name}: {PageData.events.conferences[1].date}</p>
                     </div>
                   </div>
                 </div>

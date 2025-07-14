@@ -229,7 +229,7 @@ const newsItems = [
     category: 'news',
     isNew: true,
     isFeatured: true,
-    image: ""
+    image: "https://images.unsplash.com/photo-1719159381981-1327b22aff9b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: '2',
@@ -250,7 +250,7 @@ const newsItems = [
     date: '2025-05-20',
     category: 'event',
     isFeatured: true,
-    image: ""
+    image: "https://plus.unsplash.com/premium_photo-1665203421659-09089ede4ffa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: '4',
@@ -259,7 +259,7 @@ const newsItems = [
     excerpt: 'The newly formed cell will support student ventures with seed funding and mentorship.',
     date: '2025-05-10',
     category: 'news',
-    image: ""
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: '5',
@@ -383,14 +383,16 @@ const testimonials = [
 export default async function Home() {
   let response;
   try {
-    response = await fetch("http://192.168.1.67:8000/api/v1/catalyst/home/")
-    response = await response.json();
-
+    response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_PAGES_API}/home`)
+    console.log(response);
+    
   } catch (error) {
     console.log(error);
 
   }
-
+//  return (
+//   <div>hello</div>
+//  )
   return (
     <div className="bg-gradient-to-br from-indigo-50 to-purple-100">
       {/* ──────────────── HERO ──────────────── */}

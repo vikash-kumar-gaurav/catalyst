@@ -1,65 +1,76 @@
 import HeroSection from "@/components/newHeroImageForAllPage";
+import { fetchPageData } from "@/lib/useFetchData";
 import React from "react";
 
 import { FaRupeeSign, FaAward, FaFileAlt, FaHandsHelping, FaPhoneAlt, FaHeart, FaUserTie, FaBookOpen, FaArrowRight, FaCheckCircle, FaHandHoldingHeart } from "react-icons/fa";
 import { GiReceiveMoney, GiGraduateCap } from "react-icons/gi";
 
-const FeeStructurePage = () => {
-    const programs = [
-        {
-            name: "BCA",
-            tuition: 35000,
-            admission: 5000,
-            exam: 2000,
-            library: 1000,
-            other: 1500,
-        },
-        {
-            name: "BBA",
-            tuition: 32000,
-            admission: 5000,
-            exam: 2000,
-            library: 1000,
-            other: 1500,
-        },
-        {
-            name: "B.Sc. IT",
-            tuition: 38000,
-            admission: 5000,
-            exam: 2000,
-            library: 1000,
-            other: 1500,
-        },
-    ];
+const FeeStructurePage = async() => {
+    let pageData = {
+  "programs": [
+    {
+      "name": "BCA",
+      "tuition": 35000,
+      "admission": 5000,
+      "exam": 2000,
+      "library": 1000,
+      "other": 1500
+    },
+    {
+      "name": "BBA",
+      "tuition": 32000,
+      "admission": 5000,
+      "exam": 2000,
+      "library": 1000,
+      "other": 1500
+    },
+    {
+      "name": "B.Sc. IT",
+      "tuition": 38000,
+      "admission": 5000,
+      "exam": 2000,
+      "library": 1000,
+      "other": 1500
+    }
+  ],
+  "scholarships": [
+    {
+      "title": "Ladli Beti Yojna",
+      "benefit": "50% Tuition Fee Discount",
+      "eligibility": "Female students who are the only girl child",
+      "icon": "FaAward"
+    },
+    {
+      "title": "Bravery Scheme",
+      "benefit": "100% Fee Waiver",
+      "eligibility": "Children of defense personnel martyred in duty",
+      "icon": "GiReceiveMoney"
+    },
+    {
+      "title": "Merit Scholarship",
+      "benefit": "Up to 25% Fee Discount",
+      "eligibility": "Students with 90%+ in previous qualification",
+      "icon": "GiGraduateCap"
+    }
+  ],
+  "heroSection": {
+    "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "title": "Affordable Education for All",
+    "description": "Transparent fee structure with multiple financial support options to make quality education accessible"
+  }
+}
+const { data, error} = await fetchPageData("fee-structure")
+pageData = data as any ?? pageData;
 
-    const scholarships = [
-        {
-            title: "Ladli Beti Yojna",
-            benefit: "50% Tuition Fee Discount",
-            eligibility: "Female students who are the only girl child",
-            icon: <FaAward className="text-pink-500 text-2xl" />,
-        },
-        {
-            title: "Bravery Scheme",
-            benefit: "100% Fee Waiver",
-            eligibility: "Children of defense personnel martyred in duty",
-            icon: <GiReceiveMoney className="text-red-500 text-2xl" />,
-        },
-        {
-            title: "Merit Scholarship",
-            benefit: "Up to 25% Fee Discount",
-            eligibility: "Students with 90%+ in previous qualification",
-            icon: <GiGraduateCap className="text-blue-500 text-2xl" />,
-        },
-    ];
+const { heroSection,programs, scholarships} = pageData
 
     return (
         <div className="relative overflow-hidden">
 
             <HeroSection
-                title="Affordable Education for All"
-                description="Transparent fee structure with multiple financial support options to make quality education accessible"
-                imageUrl="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                title={heroSection.title}
+                description={heroSection.description}
+                imageUrl={heroSection.imageUrl}
                 overlayOpacity={0.7}
                 height="lg"
             />

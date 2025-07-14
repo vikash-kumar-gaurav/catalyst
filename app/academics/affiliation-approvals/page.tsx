@@ -1,77 +1,87 @@
 
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { FaUniversity, FaFilePdf, FaAward, FaShieldAlt, FaRegCheckCircle, FaHandshake } from 'react-icons/fa';
 import { GiArchiveResearch, GiDiploma } from 'react-icons/gi';
 import { MdGavel, MdOutlineApproval } from 'react-icons/md';
 
-const AffiliationPage = () => {
-  const statutoryBodies = [
+const AffiliationPage = async() => {
+ let pageData = {
+  "statutoryBodies": [
     {
-      name: "University Grants Commission (UGC)",
-      status: "Recognized under Section 2(f) and 12(B)",
-      logo: "/ugc-logo.svg" // Replace with actual path
+      "name": "University Grants Commission (UGC)",
+      "status": "Recognized under Section 2(f) and 12(B)",
+      "logo": "/ugc-logo.svg"
     },
     {
-      name: "All India Council for Technical Education (AICTE)",
-      status: "Approved for technical programs",
-      logo: "/aicte-logo.svg"
+      "name": "All India Council for Technical Education (AICTE)",
+      "status": "Approved for technical programs",
+      "logo": "/aicte-logo.svg"
     },
     {
-      name: "State Government",
-      status: "Permission to run UG/PG courses",
-      logo: "/state-govt-logo.svg"
+      "name": "State Government",
+      "status": "Permission to run UG/PG courses",
+      "logo": "/state-govt-logo.svg"
     },
     {
-      name: "National Assessment and Accreditation Council (NAAC)",
-      status: "Accredited with 'A' Grade (3.51/4.00)",
-      logo: "/naac-logo.svg"
+      "name": "National Assessment and Accreditation Council (NAAC)",
+      "status": "Accredited with 'A' Grade (3.51/4.00)",
+      "logo": "/naac-logo.svg"
     }
-  ];
+  ],
+  "approvedCourses": [
+    {
+      "program": "BCA",
+      "affiliatedTo": "XYZ University",
+      "approvedBy": ["AICTE", "State Govt.", "UGC"]
+    },
+    {
+      "program": "BBA",
+      "affiliatedTo": "XYZ University",
+      "approvedBy": ["State Govt.", "UGC"]
+    },
+    {
+      "program": "B.Sc. IT",
+      "affiliatedTo": "XYZ University",
+      "approvedBy": ["UGC"]
+    }
+  ],
+  "documents": [
+    {
+      "name": "AICTE Approval Letter",
+      "type": "PDF",
+      "size": "2.4 MB",
+      "icon": "FaFilePdf"
+    },
+    {
+      "name": "UGC Recognition Letter",
+      "type": "PDF",
+      "size": "1.8 MB",
+      "icon": "GiArchiveResearch"
+    },
+    {
+      "name": "University Affiliation Letter",
+      "type": "PDF",
+      "size": "3.2 MB",
+      "icon": "FaUniversity"
+    },
+    {
+      "name": "NAAC Accreditation Certificate",
+      "type": "View",
+      "size": "High Res",
+      "icon": "FaAward"
+    }
+  ],
+  "heroSection": {
+    "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "title": "Affiliations & Approvals",
+    "description": "Our commitment to quality education recognized by statutory bodies and accreditation councils"
+  }
+}
 
-  const approvedCourses = [
-    {
-      program: "BCA",
-      affiliatedTo: "XYZ University",
-      approvedBy: ["AICTE", "State Govt.", "UGC"]
-    },
-    {
-      program: "BBA",
-      affiliatedTo: "XYZ University",
-      approvedBy: ["State Govt.", "UGC"]
-    },
-    {
-      program: "B.Sc. IT",
-      affiliatedTo: "XYZ University",
-      approvedBy: ["UGC"]
-    }
-  ];
-
-  const documents = [
-    {
-      name: "AICTE Approval Letter",
-      type: "PDF",
-      size: "2.4 MB",
-      icon: <FaFilePdf className="text-red-500 text-2xl" />
-    },
-    {
-      name: "UGC Recognition Letter",
-      type: "PDF",
-      size: "1.8 MB",
-      icon: <GiArchiveResearch className="text-blue-500 text-2xl" />
-    },
-    {
-      name: "University Affiliation Letter",
-      type: "PDF",
-      size: "3.2 MB",
-      icon: <FaUniversity className="text-indigo-500 text-2xl" />
-    },
-    {
-      name: "NAAC Accreditation Certificate",
-      type: "View",
-      size: "High Res",
-      icon: <FaAward className="text-yellow-500 text-2xl" />
-    }
-  ];
+const { data , error} = await fetchPageData("affiliation-&-approvals")
+pageData = data as any ?? pageData
+const { statutoryBodies, heroSection, documents, approvedCourses} = pageData
 
   return (
     <div className="bg-gray-50 w-full overflow-hidden">
@@ -89,9 +99,9 @@ const AffiliationPage = () => {
 
       {/* Hero Section */}
       <HeroSection
-        title="Affiliations & Approvals"
-        description="Our commitment to quality education recognized by statutory bodies and accreditation councils"
-        imageUrl="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        title={heroSection.title}
+        description={heroSection.description}
+        imageUrl={heroSection.imageUrl}
         overlayOpacity={0.7}
         height="lg"
       />

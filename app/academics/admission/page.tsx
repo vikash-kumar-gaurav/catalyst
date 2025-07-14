@@ -1,89 +1,112 @@
 
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { FaGraduationCap, FaFileAlt, FaRupeeSign, FaCalendarAlt, FaPhone, FaEnvelope, FaUniversity, FaQuestionCircle } from 'react-icons/fa';
 import { GiArchiveResearch, GiAchievement } from 'react-icons/gi';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 import { MdOutlinePayment, MdOutlineSchool } from 'react-icons/md';
 
-const AdmissionPage = () => {
-  const programs = [
+const AdmissionPage = async() => {
+  let AdmissionData = {
+  "programs": [
     {
-      name: "BCA (Computer Applications)",
-      duration: "3 Years",
-      intake: 120,
-      affiliation: "XYZ University",
-      accreditation: "NAAC A+ Grade",
-      description: "Comprehensive program covering programming, databases, web development, and software engineering."
+      "name": "BCA (Computer Applications)",
+      "duration": "3 Years",
+      "intake": 120,
+      "affiliation": "XYZ University",
+      "accreditation": "NAAC A+ Grade",
+      "description": "Comprehensive program covering programming, databases, web development, and software engineering."
     },
     {
-      name: "BBA (Management Studies)",
-      duration: "3 Years",
-      intake: 120,
-      affiliation: "XYZ University",
-      accreditation: "NAAC A+ Grade",
-      description: "Develops business acumen with specializations in Marketing, Finance, and Human Resources."
+      "name": "BBA (Management Studies)",
+      "duration": "3 Years",
+      "intake": 120,
+      "affiliation": "XYZ University",
+      "accreditation": "NAAC A+ Grade",
+      "description": "Develops business acumen with specializations in Marketing, Finance, and Human Resources."
     },
     {
-      name: "B.Sc. IT (Information Technology)",
-      duration: "3 Years",
-      intake: 60,
-      affiliation: "XYZ University",
-      accreditation: "NAAC A+ Grade",
-      description: "Focuses on IT infrastructure, networking, cybersecurity, and emerging technologies."
+      "name": "B.Sc. IT (Information Technology)",
+      "duration": "3 Years",
+      "intake": 60,
+      "affiliation": "XYZ University",
+      "accreditation": "NAAC A+ Grade",
+      "description": "Focuses on IT infrastructure, networking, cybersecurity, and emerging technologies."
     }
-  ];
-
-  const feeStructure = [
+  ],
+  "feeStructure": [
     {
-      program: "BCA",
-      tuitionFee: "₹35,000 – ₹50,000",
-      totalFee: "₹1.05L – ₹1.5L",
-      hostelFee: "₹40,000/year"
+      "program": "BCA",
+      "tuitionFee": "₹35,000 – ₹50,000",
+      "totalFee": "₹1.05L – ₹1.5L",
+      "hostelFee": "₹40,000/year"
     },
     {
-      program: "BBA",
-      tuitionFee: "₹30,000 – ₹45,000",
-      totalFee: "₹90K – ₹1.35L",
-      hostelFee: "₹40,000/year"
+      "program": "BBA",
+      "tuitionFee": "₹30,000 – ₹45,000",
+      "totalFee": "₹90K – ₹1.35L",
+      "hostelFee": "₹40,000/year"
     },
     {
-      program: "B.Sc. IT",
-      tuitionFee: "₹35,000 – ₹55,000",
-      totalFee: "₹1.05L – ₹1.65L",
-      hostelFee: "₹40,000/year"
+      "program": "B.Sc. IT",
+      "tuitionFee": "₹35,000 – ₹55,000",
+      "totalFee": "₹1.05L – ₹1.65L",
+      "hostelFee": "₹40,000/year"
     }
-  ];
-
-  const importantDates = [
-    { event: "Application Opens", date: "April 1, 2025" },
-    { event: "Last Date to Apply", date: "June 15, 2025" },
-    { event: "Counseling Begins", date: "June 20, 2025" },
-    { event: "Admission Deadline", date: "July 15, 2025" },
-    { event: "Session Starts", date: "August 1, 2025" }
-  ];
-
-  const faqs = [
+  ],
+  "importantDates": [
     {
-      question: "Can Commerce students apply for BCA?",
-      answer: "Yes, Commerce students with Mathematics in 10+2 can apply for BCA."
+      "event": "Application Opens",
+      "date": "April 1, 2025"
     },
     {
-      question: "Is there an entrance exam for admission?",
-      answer: "Admission is merit-based for all programs. No entrance exam is required."
+      "event": "Last Date to Apply",
+      "date": "June 15, 2025"
     },
     {
-      question: "What are the hostel facilities like?",
-      answer: "We provide AC/Non-AC hostel rooms with WiFi, mess, laundry, and 24/7 security."
+      "event": "Counseling Begins",
+      "date": "June 20, 2025"
+    },
+    {
+      "event": "Admission Deadline",
+      "date": "July 15, 2025"
+    },
+    {
+      "event": "Session Starts",
+      "date": "August 1, 2025"
     }
-  ];
+  ],
+  "faqs": [
+    {
+      "question": "Can Commerce students apply for BCA?",
+      "answer": "Yes, Commerce students with Mathematics in 10+2 can apply for BCA."
+    },
+    {
+      "question": "Is there an entrance exam for admission?",
+      "answer": "Admission is merit-based for all programs. No entrance exam is required."
+    },
+    {
+      "question": "What are the hostel facilities like?",
+      "answer": "We provide AC/Non-AC hostel rooms with WiFi, mess, laundry, and 24/7 security."
+    }
+  ],
+  "HeroSection":{
+    "ImageUrl":"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "title":"Admissions 2025-28",
+    "Description":"Begin your journey towards academic excellence with our industry-aligned undergraduate programs",
+  }
+}
+
+const { data, error} = await fetchPageData("admission")
+ AdmissionData = data as any ?? AdmissionData
 
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
       <HeroSection
-        title="Admissions 2025-26"
-        description="Begin your journey towards academic excellence with our industry-aligned undergraduate programs"
-        imageUrl="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        title={AdmissionData.HeroSection.title}
+        description={AdmissionData.HeroSection.Description}
+        imageUrl={AdmissionData.HeroSection.ImageUrl}
         overlayOpacity={0.3}
         height="lg"
       />
@@ -125,7 +148,7 @@ const AdmissionPage = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
+            {AdmissionData.programs.map((program, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                 <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <FaGraduationCap className="text-indigo-600 text-2xl" />
@@ -356,7 +379,7 @@ const AdmissionPage = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  {importantDates.map((date, index) => (
+                  {AdmissionData.importantDates.map((date, index) => (
                     <tr key={index} className="hover:bg-gray-50 transition-colors">
                       <td className="py-4 px-4 font-medium text-gray-800">{date.event}</td>
                       <td className="py-4 px-4">{date.date}</td>
@@ -379,7 +402,7 @@ const AdmissionPage = () => {
             </div>
             
             <div className="space-y-4">
-              {faqs.map((faq, index) => (
+              {AdmissionData.faqs.map((faq, index) => (
                 <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
                   <button className="w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors">
                     <div className="flex justify-between items-center">

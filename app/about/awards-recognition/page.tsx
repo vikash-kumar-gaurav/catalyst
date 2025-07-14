@@ -1,4 +1,5 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -29,8 +30,13 @@ const TrophyIcon = () => (
   </svg>
 );
 
-// JSON data
-const awardsData = {
+
+let awardsData = {
+  heroData:{
+    heroImageURL:"https://plus.unsplash.com/premium_photo-1751516658465-afa8ea548f63?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzM3x8fGVufDB8fHx8fA%3D%3D",
+    heading:"Awards ",
+    tagline:" Award section",
+  },
   introduction: {
     title: "Celebrating Excellence in Education",
     content: "At Catalyst College, excellence is a tradition. Our relentless pursuit of academic innovation, industry integration, and student empowerment has been recognized at regional and national levels. These accolades reflect our institutional success and the outstanding achievements of our students and faculty."
@@ -188,14 +194,19 @@ const awardsData = {
   ]
 };
 
+let {data, error} = await fetchPageData("awards-&-recognition")
+console.log(data);
+
+awardsData = data as any ?? awardsData;
+
 export default function AwardsPage() {
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
       <HeroSection
-        title="Our Awards & Recognition"
-        description="Celebrating excellence in education, innovation, and student success"
-        imageUrl="/images/awards-hero.jpg"
+        title={awardsData.heroData.heading}
+        description={awardsData.heroData.tagline}
+        imageUrl={awardsData.heroData.heroImageURL}
         overlayOpacity={0.4}
         height="lg"
       />
