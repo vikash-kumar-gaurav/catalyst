@@ -1,10 +1,12 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
 import { fetchPageData } from '@/lib/useFetchData';
 import Head from 'next/head';
-// Data structure within the same file
+
+
+export default async function InfrastructurePage() {
 let infrastructureData = {
   "hero": {
-    "title": "Our Infrastructure",
+    "title": "Catalyst Infrastructure ",
     "description": "A technology-enabled campus designed for academic excellence and student growth",
     "imageUrl": "https://scontent-del1-1.xx.fbcdn.net/v/t39.30808-6/487824369_1061032899385982_1193664897519214924_n.jpg",
     "overlayOpacity": 0.3,
@@ -109,11 +111,11 @@ let infrastructureData = {
 }
 
 const { data ,error } = await fetchPageData("infrastructure")
+console.log(data);
 
-infrastructureData = data as any;
 
-export default function InfrastructurePage() {
-  const {  sections } = infrastructureData;
+infrastructureData = data as any ?? infrastructureData;
+const { sections } = infrastructureData;
 
   return (
     <>
