@@ -33,9 +33,9 @@ const AboutUsPage = () => {
             <HeroSection
                 title="About CATALYST College"
                 description="Discover the story behind Bihar's most transformative educational institution"
-                imageUrl="https://scontent-del1-1.xx.fbcdn.net/v/t39.30808-6/487824369_1061032899385982_1193664897519214924_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UAH4nV-dwPcQ7kNvwFn4P2i&_nc_oc=Adm8iAKJkwWEO4yn_3UAc2VCIpI-mz9XKDw8pcatjOtFx9HVzVa4kvheyEabgoLYAnk&_nc_zt=23&_nc_ht=scontent-del1-1.xx&_nc_gid=mrL_lZzKA688qeHVUfFB9Q&oh=00_AfQhFQEsJK8EB36IRtFX_GMpY-8F3tcSjhwNGZ2v_p6HZA&oe=6875794D"
-                overlayOpacity={0.3}
-                height="lg"
+                imageUrl="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/cimage_placement_2025_photoshot_yat3oc.jpg"
+                overlayOpacity={0.5}
+                height="sm"
             />
 
             {/* College Identity */}
@@ -72,13 +72,13 @@ const AboutUsPage = () => {
                                 value: "2008",
                                 label: "Year Established",
                                 description: "Founded during Bihar's educational renaissance with just 47 students",
-                                image: "/images/founding.jpg", // Replace with actual path
+                                image: "",
                                 color: "from-blue-50 to-blue-100",
                                 border: "border-blue-200"
                             },
                             {
                                 icon: <GiTeacher className="text-4xl" />,
-                                value: "300+",
+                                value: "50+",
                                 label: "Expert Faculty",
                                 description: "Including IIM/IIT alumni and industry veterans with 10+ years experience",
                                 image: "/images/faculty.jpg", // Replace with actual path
@@ -179,7 +179,7 @@ const AboutUsPage = () => {
                                     <p className="text-sm text-center text-gray-600">ISO 9001:2008 Certified</p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center justify-center">
-                                    <img src="/images/aima-badge.png" alt="AIMA Award" className="h-16 mb-4" />
+                                    <img src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/AIMA_award_zhh76f.png" alt="AIMA Award" className="h-16 mb-4" />
                                     <p className="text-sm text-center text-gray-600">AIMA Award Winner</p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center justify-center">
@@ -187,7 +187,7 @@ const AboutUsPage = () => {
                                     <p className="text-sm text-center text-gray-600">University Affiliated</p>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center justify-center">
-                                    <img src="/images/education-today-badge.png" alt="Education Today" className="h-16 mb-4" />
+                                    <img src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/cimage_placement_2025_photoshot_yat3oc.jpg" alt="Education Today" className="h-16 mb-4" />
                                     <p className="text-sm text-center text-gray-600">Best in Bihar</p>
                                 </div>
                             </div>
@@ -268,7 +268,7 @@ const AboutUsPage = () => {
                                         </p>
                                         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                             <img
-                                                src="/images/inauguration.jpg"
+                                                src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556791/CM_nitish_Kumar_cutting_ribbon_rtnost.png"
                                                 alt="College inauguration"
                                                 className="w-full h-full object-cover"
                                             />
@@ -318,7 +318,7 @@ const AboutUsPage = () => {
                                         </p>
                                         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                             <img
-                                                src="/images/first-placements.jpg"
+                                                src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752557262/b1c0977d-2569-4567-980b-ba8e00ddb82e.png"
                                                 alt="First placement drive"
                                                 className="w-full h-full object-cover"
                                             />
@@ -368,7 +368,7 @@ const AboutUsPage = () => {
                                         </p>
                                         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                             <img
-                                                src="/images/aima-award.jpg"
+                                                src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/AIMA_award_zhh76f.png"
                                                 alt="AIMA award ceremony"
                                                 className="w-full h-full object-cover"
                                             />
@@ -418,7 +418,7 @@ const AboutUsPage = () => {
                                         </p>
                                         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                             <img
-                                                src="/images/digital-classes.jpg"
+                                                src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752558426/85a9d452-5d0d-4407-8ec1-d876c5d5e0d8.png"
                                                 alt="Digital classroom"
                                                 className="w-full h-full object-cover"
                                             />
@@ -550,7 +550,7 @@ const AboutUsPage = () => {
                         <div className="lg:w-1/2 relative">
                             <div className="bg-white p-1 rounded-xl shadow-lg">
                                 <img
-                                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                    src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752557837/c8aa83db-01ba-43a1-bdfe-00568b13b50a.png"
                                     alt="College Campus"
                                     className="w-full h-auto rounded-lg"
                                 />

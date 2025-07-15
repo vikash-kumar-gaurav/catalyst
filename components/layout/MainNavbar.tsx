@@ -110,8 +110,8 @@ export default function MainNavbar({ isFixed = false }: MainNavbarProps) {
           <Image
             src="https://catalystcollege.in/Catalyst_logo.jpg"
             alt="CIMAGE Group of Institutions"
-            width={240}
-            height={60}
+            width={100}
+            height={80}
             className="w-auto transition-all duration-300"
             priority
           />

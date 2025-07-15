@@ -381,25 +381,25 @@ const testimonials = [
 
 
 export default async function Home() {
-  let response;
-  try {
-    response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_PAGES_API}/home`)
-    console.log(response);
+  // let response;
+  // try {
+  //   response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_PAGES_API}/home`)
+  //   console.log(response);
     
-  } catch (error) {
-    console.log(error);
+  // } catch (error) {
+  //   console.log(error);
 
-  }
+  // }
 //  return (
 //   <div>hello</div>
 //  )
   return (
     <div className="bg-gradient-to-br from-indigo-50 to-purple-100">
       {/* ──────────────── HERO ──────────────── */}
-      <HeroImage data={heroData || response.hero_section} />
+      <HeroImage data={heroData } />
 
       {/* -----------------------about Us ------------------------------ */}
-      <CollegeFacilities campusFacility={campusFacility || response.campus_facility} />
+      <CollegeFacilities campusFacility={campusFacility } />
       {/* --------------------glallery section -------------------- */}
       <section className="relative py-8 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         {/* Subtle grid pattern background */}
@@ -431,7 +431,7 @@ export default async function Home() {
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
               <div className="p-1"> {/* Adds subtle inner spacing */}
                 <BentoGrid
-                  images={imageItems || response.cimage_glances}
+                  images={imageItems }
                 />
               </div>
             </div>
@@ -489,7 +489,7 @@ export default async function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(courses || response?.courses)?.map((course: any, index: number) => (
+            {(courses )?.map((course: any, index: number) => (
               <div
                 key={index}
                 className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100"
@@ -532,7 +532,7 @@ export default async function Home() {
         </div>
       </section>
       {/* --------------workshops and internships----------------- */}
-      <ProgramsSection programs={workshops || response.workshops} />
+      <ProgramsSection programs={workshops } />
       {/* ________________CallBackRequest___________ */}
       <CallbackRequestSection />
 
