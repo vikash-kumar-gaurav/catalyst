@@ -201,7 +201,7 @@ const PublicationsPage: NextPage = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200">
-                      {category.items.map((item, index) => (
+                      {category.items.map((item:any, index) => (
                         <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                           <td className="py-4 px-4">{item.year}</td>
                           <td className="py-4 px-4 font-medium">{item.title}</td>

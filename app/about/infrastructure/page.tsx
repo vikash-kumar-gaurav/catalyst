@@ -113,7 +113,7 @@ const { data ,error } = await fetchPageData("infrastructure")
 infrastructureData = data as any;
 
 export default function InfrastructurePage() {
-  const {  hero, sections } = infrastructureData;
+  const {  sections } = infrastructureData;
 
   return (
     <>
