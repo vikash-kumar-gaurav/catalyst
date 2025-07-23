@@ -1,160 +1,160 @@
 // app/publications/page.tsx
 import { NextPage } from 'next';
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 
 // JSON data for publications
-const publicationsData = {
-  hero: {
-    title: "Research Publications",
-    description: "Showcasing the intellectual contributions of our faculty and students",
-    imageUrl: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
-    overlayOpacity: 0.4,
-    height: "lg"
+let publicationsData = {
+  "hero": {
+    "title": "Research Publications",
+    "description": "Showcasing the intellectual contributions of our faculty and students",
+    "imageUrl": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
+    "overlayOpacity": 0.4,
+    "height": "lg"
   },
-  introduction: {
-    title: "Academic Publications at Tech University",
-    content: "At Tech University, research and academic publications are an integral part of our commitment to knowledge creation, critical inquiry, and innovation. Our faculty and students actively contribute to peer-reviewed journals, national and international conferences, books, and creative works. This page highlights our growing repository of intellectual contributions."
+  "introduction": {
+    "title": "Academic Publications at Tech University",
+    "content": "At Tech University, research and academic publications are an integral part of our commitment to knowledge creation, critical inquiry, and innovation. Our faculty and students actively contribute to peer-reviewed journals, national and international conferences, books, and creative works. This page highlights our growing repository of intellectual contributions."
   },
-  categories: [
+  "categories": [
     {
-      id: "journals",
-      name: "Journal Publications",
-      icon: "📄",
-      items: [
+      "id": "journals",
+      "name": "Journal Publications",
+      "icon": "📄",
+      "items": [
         {
-          year: "2024",
-          title: "AI-Powered Attendance System in EdTech",
-          authors: "Prof. R. Sharma, Ankit",
-          journal: "IJRET",
-          identifier: "ISSN: 1234-5678",
-          link: "#"
+          "year": "2024",
+          "title": "AI-Powered Attendance System in EdTech",
+          "authors": "Prof. R. Sharma, Ankit",
+          "journal": "IJRET",
+          "identifier": "ISSN: 1234-5678",
+          "link": "#"
         },
         {
-          year: "2023",
-          title: "Mobile Commerce Adoption among Rural Youth",
-          authors: "Dr. S. Verma",
-          journal: "Scopus Journal of Marketing",
-          identifier: "DOI: 10.1016/j.jm.2023.05.012",
-          link: "#"
+          "year": "2023",
+          "title": "Mobile Commerce Adoption among Rural Youth",
+          "authors": "Dr. S. Verma",
+          "journal": "Scopus Journal of Marketing",
+          "identifier": "DOI: 10.1016/j.jm.2023.05.012",
+          "link": "#"
         },
         {
-          year: "2023",
-          title: "Sustainable Energy Solutions for Smart Cities",
-          authors: "Dr. A. Patel, M. Gupta",
-          journal: "IEEE Transactions on Sustainable Energy",
-          identifier: "DOI: 10.1109/TSTE.2023.1234567",
-          link: "#"
+          "year": "2023",
+          "title": "Sustainable Energy Solutions for Smart Cities",
+          "authors": "Dr. A. Patel, M. Gupta",
+          "journal": "IEEE Transactions on Sustainable Energy",
+          "identifier": "DOI: 10.1109/TSTE.2023.1234567",
+          "link": "#"
         }
       ]
     },
     {
-      id: "books",
-      name: "Books & Chapters",
-      icon: "📘",
-      items: [
+      "id": "books",
+      "name": "Books & Chapters",
+      "icon": "📘",
+      "items": [
         {
-          year: "2024",
-          title: "Advanced Machine Learning Techniques",
-          authors: "Dr. N. Kapoor",
-          publisher: "Springer Nature",
-          identifier: "ISBN: 978-3-031-12345-6",
-          link: "#"
+          "year": "2024",
+          "title": "Advanced Machine Learning Techniques",
+          "authors": "Dr. N. Kapoor",
+          "publisher": "Springer Nature",
+          "identifier": "ISBN: 978-3-031-12345-6",
+          "link": "#"
         },
         {
-          year: "2023",
-          title: "Chapter: Cybersecurity in IoT Ecosystems",
-          authors: "Prof. M. Joshi",
-          publisher: "In: IoT Security Handbook (Elsevier)",
-          identifier: "ISBN: 978-0-12-821123-4",
-          link: "#"
+          "year": "2023",
+          "title": "Chapter: Cybersecurity in IoT Ecosystems",
+          "authors": "Prof. M. Joshi",
+          "publisher": "In: IoT Security Handbook (Elsevier)",
+          "identifier": "ISBN: 978-0-12-821123-4",
+          "link": "#"
         }
       ]
     },
     {
-      id: "conferences",
-      name: "Conference Papers",
-      icon: "🎤",
-      items: [
+      "id": "conferences",
+      "name": "Conference Papers",
+      "icon": "🎤",
+      "items": [
         {
-          year: "2024",
-          title: "Blockchain Applications in Supply Chain",
-          authors: "Dr. R. Gupta, S. Kumar",
-          conference: "International Conference on Blockchain (ICBC 2024), Tokyo",
-          identifier: "pp. 123-134",
-          link: "#"
+          "year": "2024",
+          "title": "Blockchain Applications in Supply Chain",
+          "authors": "Dr. R. Gupta, S. Kumar",
+          "conference": "International Conference on Blockchain (ICBC 2024), Tokyo",
+          "identifier": "pp. 123-134",
+          "link": "#"
         },
         {
-          year: "2023",
-          title: "Augmented Reality in Education",
-          authors: "Prof. S. Desai, A. Sharma",
-          conference: "IEEE TALE 2023, Sydney",
-          identifier: "DOI: 10.1109/TALE.2023.1234567",
-          link: "#"
+          "year": "2023",
+          "title": "Augmented Reality in Education",
+          "authors": "Prof. S. Desai, A. Sharma",
+          "conference": "IEEE TALE 2023, Sydney",
+          "identifier": "DOI: 10.1109/TALE.2023.1234567",
+          "link": "#"
         }
       ]
     },
     {
-      id: "student",
-      name: "Student Research",
-      icon: "🧪",
-      items: [
+      "id": "student",
+      "name": "Student Research",
+      "icon": "🧪",
+      "items": [
         {
-          year: "2024",
-          title: "Waste Management Using IoT",
-          authors: "R. Verma, S. Singh (B.Tech Final Year)",
-          journal: "Student Research Journal, Vol. 5(2)",
-          identifier: "pp. 45-52",
-          link: "#"
+          "year": "2024",
+          "title": "Waste Management Using IoT",
+          "authors": "R. Verma, S. Singh (B.Tech Final Year)",
+          "journal": "Student Research Journal, Vol. 5(2)",
+          "identifier": "pp. 45-52",
+          "link": "#"
         }
       ]
     }
   ],
-  highlightedAuthors: [
+  "highlightedAuthors": [
     {
-      name: "Prof. Riya Sharma",
-      department: "Computer Science",
-      achievements: [
+      "name": "Prof. Amit Shukla",
+      "department": "IT Faculty",
+      "achievements": [
         "12 International Journal Papers",
         "3 Scopus-indexed Articles",
         "Invited Speaker at IIM Indore Research Colloquium",
         "Best Paper Award at ICICT 2023"
       ],
-      photo: "/images/profiles/prof-riya-sharma.jpg"
+      "cover_photo": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741219/486682911_1059488162873789_2936820642328847177_n_w7dlmc.jpg",
+      "profile_photo": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752744394/68fa36c2-de43-406c-b4bf-6466c2ed96ac.png"
     },
     {
-      name: "Dr. Amit Patel",
-      department: "Electrical Engineering",
-      achievements: [
+      "name": "Neeraj Poddar",
+      "department": "English Faculty",
+      "achievements": [
         "8 Journal Publications (IEEE, Springer)",
         "2 Patents filed",
         "Editorial Board Member: Journal of Sustainable Energy"
       ],
-      photo: "/images/profiles/dr-amit-patel.jpg"
+      "cover_photo": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741219/486682911_1059488162873789_2936820642328847177_n_w7dlmc.jpg",
+      "profile_photo": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752745570/n_p_wutnea.jpg"
     }
   ],
-  resources: [
+  "resources": [
     {
-      title: "Annual Publication Report 2023–24",
-      format: "PDF",
-      size: "2.4 MB",
-      link: "#"
+      "title": "Annual Publication Report 2023–24",
+      "format": "PDF",
+      "size": "2.4 MB",
+      "link": "#"
     },
     {
-      title: "Research Paper Submission Guidelines",
-      format: "PDF",
-      size: "1.1 MB",
-      link: "#"
-    },
-    {
-      title: "UGC CARE Journal List",
-      format: "External Link",
-      size: "",
-      link: "https://ugccare.unipune.ac.in/"
+      "title": "Research Paper Submission Guidelines",
+      "format": "PDF",
+      "size": "1.1 MB",
+      "link": "#"
     }
   ]
-};
+}
 
-const PublicationsPage: NextPage = () => {
+
+const PublicationsPage: NextPage = async() => {
+  const { data, error} = await fetchPageData("publications")
+  publicationsData = data as any ?? publicationsData
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -229,41 +229,75 @@ const PublicationsPage: NextPage = () => {
       </section>
 
       {/* Highlighted Authors */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Highlighted Faculty Authors</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {publicationsData.highlightedAuthors.map((author, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="flex items-start">
-                  <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden mr-6">
-                    <img 
-                      src={author.photo} 
-                      alt={author.name}
-                      width={96}
-                      height={96}
-                      className="object-cover w-full h-full"
-                    />
+<section className="py-16 bg-gray-50 mx-auto">
+  <div className="container mx-auto px-4 sm:px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-gray-900 mb-3">Featured Faculty Scholars</h2>
+      <p className="text-gray-600 text-lg max-w-3xl mx-auto">Celebrating our distinguished academic contributors and their groundbreaking work</p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto items-center">
+      {publicationsData.highlightedAuthors.map((author, index) => (
+        <div 
+          key={index} 
+          className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
+        >
+          {/* Large full-width image container */}
+          <div className="h-48 w-full relative overflow-hidden">
+            <img 
+              src={author.cover_photo} 
+              alt={author.name}
+              className="object-cover w-full h-full"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
+
+          {/* Profile image floating over the banner */}
+          <div className="relative -mt-16 mx-6">
+            <div className="w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden">
+              <img 
+                src={author.profile_photo} 
+                alt={author.name}
+                width={128}
+                height={128}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+
+          {/* Content area */}
+          <div className="px-6 pb-6 pt-2">
+            <h3 className="text-2xl font-bold text-gray-800 mt-2">{author.name}</h3>
+            <p className="text-blue-600 font-medium mb-4">{author.department}</p>
+            
+            <ul className="space-y-3 mb-6">
+              {author.achievements.map((achievement, idx) => (
+                <li key={idx} className="flex items-start">
+                  <div className="bg-blue-100 p-1 rounded-full mr-3 flex-shrink-0 mt-1">
+                    <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-800">{author.name}</h3>
-                    <p className="text-gray-600 mb-3">{author.department}</p>
-                    <ul className="space-y-2">
-                      {author.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="text-indigo-600 mr-2">•</span>
-                          <span className="text-gray-700">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
+                  <span className="text-gray-700">{achievement}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    <div className="text-center mt-16">
+      <button className="inline-flex items-center px-8 py-3.5 text-lg font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg transition-all">
+        Explore All Faculty Members
+        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
 
       {/* Resources */}
       <section className="py-16 bg-white">

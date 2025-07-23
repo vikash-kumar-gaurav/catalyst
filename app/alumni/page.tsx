@@ -88,10 +88,7 @@ const alumniData = {
 };
 
 const AlumniPage: NextPage = () => {
-  // This would be replaced with actual API call
-  // const { data, error } = useSWR('/api/alumni', fetcher);
-  // if (error) return <div>Failed to load</div>;
-  // if (!data) return <div>Loading...</div>;
+
 
   return (
     <>
@@ -271,10 +268,9 @@ const AlumniPage: NextPage = () => {
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Where Our Alumni Work</h2>
             <div className="flex flex-wrap justify-center gap-6">
               {alumniData.companies.map((company, index) => (
-                <div key={index} className="bg-white px-6 py-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center">
-                  <svg className="w-8 h-8 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
+                <div key={index} className="bg-white  py-4  px-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 justify-center flex items-center">
+
+
                   <span className="text-lg font-medium text-gray-800">{company}</span>
                 </div>
               ))}

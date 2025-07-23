@@ -1,91 +1,94 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
+import { fetchPageData } from '@/lib/useFetchData';
 
-const GrievancePage: NextPage = () => {
+const GrievancePage: NextPage = async() => {
   // Grievance data
-  const grievanceData = {
-    objective: "The Grievance Redressal Cell at Catalyst College is committed to creating a safe, supportive, and inclusive academic environment. The Cell provides a transparent mechanism for students, faculty, and staff to voice their concerns and get timely resolutions.",
-    purposes: [
-      "To uphold the dignity of all stakeholders by ensuring that grievances are resolved impartially and promptly",
-      "To maintain a peaceful and conducive educational environment",
-      "To promote accountability and transparency in college operations"
-    ],
-    types: [
-      "Academic concerns (teaching quality, exam delays, unfair grading)",
-      "Harassment, bullying, or discrimination (including caste, gender, religion)",
-      "Infrastructure (classrooms, labs, hostels, sanitation)",
-      "Administration (fees, ID cards, certificates, scholarships)",
-      "Any other issue affecting a student's academic or personal well-being"
-    ],
-    note: "Cases of sexual harassment will be handled by the Internal Complaints Committee (ICC) as per UGC/AICTE norms.",
-    mechanism: [
-      {
-        step: "Submission of Complaint",
-        details: "Fill out the online grievance form or submit a written complaint in the Grievance Box placed on campus."
-      },
-      {
-        step: "Review",
-        details: "The Grievance Cell will review the complaint in a confidential manner within 7 working days."
-      },
-      {
-        step: "Resolution",
-        details: "The matter will be resolved through consultation with relevant departments or authorities, with feedback given to the complainant."
-      },
-      {
-        step: "Escalation (if needed)",
-        details: "If unresolved, the grievance may be escalated to the Principal or Governing Body."
-      }
-    ],
-    committee: [
-      {
-        name: "Prof. ABC Verma",
-        designation: "Dean (Student Welfare)",
-        role: "Chairperson",
-        email: "dean@catalystcollege.in"
-      },
-      {
-        name: "Ms. Ritu Sharma",
-        designation: "Faculty, Dept. of IT",
-        role: "Member",
-        email: "ritu.sharma@catalystcollege.in"
-      },
-      {
-        name: "Mr. Rajeev Yadav",
-        designation: "Administrative Officer",
-        role: "Member Secretary",
-        email: "rajeev@catalystcollege.in"
-      },
-      {
-        name: "Student Rep.",
-        designation: "Final Year Student (BBM)",
-        role: "Student Representative",
-        email: "grievance@catalystcollege.in"
-      }
-    ],
-    submissionMethods: [
-      {
-        method: "Email",
-        details: "grievance@catalystcollege.in",
-        icon: "📩"
-      },
-      {
-        method: "Online Form",
-        details: "Submit Your Grievance",
-        icon: "📝",
-        link: "/submit-grievance"
-      },
-      {
-        method: "Physical Box",
-        details: "Located outside the Admin Office",
-        icon: "📮"
-      }
-    ],
-    policies: [
-      "Grievance Redressal Policy PDF",
-      "AICTE/UGC Guidelines",
-      "Code of Conduct Manual"
-    ]
-  };
+  let grievanceData = {
+  "objective": "The Grievance Redressal Cell at Catalyst College is committed to creating a safe, supportive, and inclusive academic environment. The Cell provides a transparent mechanism for students, faculty, and staff to voice their concerns and get timely resolutions.",
+  "purposes": [
+    "To uphold the dignity of all stakeholders by ensuring that grievances are resolved impartially and promptly",
+    "To maintain a peaceful and conducive educational environment",
+    "To promote accountability and transparency in college operations"
+  ],
+  "types": [
+    "Academic concerns (teaching quality, exam delays, unfair grading)",
+    "Harassment, bullying, or discrimination (including caste, gender, religion)",
+    "Infrastructure (classrooms, labs, hostels, sanitation)",
+    "Administration (fees, ID cards, certificates, scholarships)",
+    "Any other issue affecting a student's academic or personal well-being"
+  ],
+  "note": "Cases of sexual harassment will be handled by the Internal Complaints Committee (ICC) as per UGC/AICTE norms.",
+  "mechanism": [
+    {
+      "step": "Submission of Complaint",
+      "details": "Fill out the online grievance form or submit a written complaint in the Grievance Box placed on campus."
+    },
+    {
+      "step": "Review",
+      "details": "The Grievance Cell will review the complaint in a confidential manner within 7 working days."
+    },
+    {
+      "step": "Resolution",
+      "details": "The matter will be resolved through consultation with relevant departments or authorities, with feedback given to the complainant."
+    },
+    {
+      "step": "Escalation (if needed)",
+      "details": "If unresolved, the grievance may be escalated to the Principal or Governing Body."
+    }
+  ],
+  "committee": [
+    {
+      "name": "Prof. ABC Verma",
+      "designation": "Dean (Student Welfare)",
+      "role": "Chairperson",
+      "email": "dean@catalystcollege.in"
+    },
+    {
+      "name": "Ms. Ritu Sharma",
+      "designation": "Faculty, Dept. of IT",
+      "role": "Member",
+      "email": "ritu.sharma@catalystcollege.in"
+    },
+    {
+      "name": "Mr. Rajeev Yadav",
+      "designation": "Administrative Officer",
+      "role": "Member Secretary",
+      "email": "rajeev@catalystcollege.in"
+    },
+    {
+      "name": "Student Rep.",
+      "designation": "Final Year Student (BBM)",
+      "role": "Student Representative",
+      "email": "grievance@catalystcollege.in"
+    }
+  ],
+  "submissionMethods": [
+    {
+      "method": "Email",
+      "details": "grievance@catalystcollege.in",
+      "icon": "📩"
+    },
+    {
+      "method": "Online Form",
+      "details": "Submit Your Grievance",
+      "icon": "📝",
+      "link": "/submit-grievance"
+    },
+    {
+      "method": "Physical Box",
+      "details": "Located outside the Admin Office",
+      "icon": "📮"
+    }
+  ],
+  "policies": [
+    "Grievance Redressal Policy PDF",
+    "AICTE/UGC Guidelines",
+    "Code of Conduct Manual"
+  ]
+}
+const { data, error} = await fetchPageData("grievance-cell");
+grievanceData = data as any ?? grievanceData
 
   return (
     <>

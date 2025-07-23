@@ -1,4 +1,5 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { FaUsers, FaBrain, FaLaptopCode, FaFileAlt, FaComments, FaCertificate, FaDownload } from 'react-icons/fa';
@@ -29,165 +30,215 @@ export const metadata: Metadata = {
   },
 };
 
-const CareerTraining = () => {
-  // Training modules data
-  const trainingModules = [
-    {
-      title: "Soft Skills Training",
-      icon: <FaUsers className="w-8 h-8 text-blue-600" />,
-      description: "Developing essential interpersonal skills for professional success",
-      components: [
-        "Communication (verbal & written)",
-        "Group discussions & public speaking",
-        "Professional etiquette & grooming",
-        "Conflict resolution & emotional intelligence"
-      ],
-      partners: ["T.I.M.E Institute", "British Council", "SmartTalk"],
-      image: "/images/soft-skills.jpg"
+ let pageData = {
+    "page_name": "career-training",
+    "galleryImages": [
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752837198/images_cltmar.jpg",
+            "caption": "Soft Skills Workshop"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752832349/487798706_1061838152638790_7457525024258014507_n_tqdgbo.jpg",
+            "caption": "Aptitude Training Session"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741171/487548216_1062974769191795_6092592449283881455_n_hpz3nv.jpg",
+            "caption": "Technical Bootcamp"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741045/487175424_1062679725887966_2454054122195283312_n_fqrclw.jpg",
+            "caption": "Resume Building Workshop"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752666402/487100257_1060368222785783_6577551285305459797_n_xu3y2t.jpg",
+            "caption": "Mock Interview Session"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752832078/WhatsApp_Image_2025-07-18_at_15.17.50_2a297882_syiaaz.jpg",
+            "caption": "Certification Ceremony"
+        }
+    ],
+    "heroSection": {
+        "imageURL": "https://images.unsplash.com/photo-1565688527174-775059ac429c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Equipping students with technical proficiency, soft skills, and real-world competencies for career success",
+        "title": "Career Training Programs"
     },
-    {
-      title: "Aptitude & Reasoning",
-      icon: <FaBrain className="w-8 h-8 text-purple-600" />,
-      description: "Mastering quantitative, logical and analytical abilities for placements",
-      components: [
-        "Quantitative Aptitude",
-        "Logical Reasoning",
-        "Data Interpretation",
-        "Weekly mock tests with analytics"
-      ],
-      partners: ["T.I.M.E Institute", "Amcat", "CoCubes"],
-      image: "/images/aptitude.jpg"
-    },
-    {
-      title: "Technical Training",
-      icon: <FaLaptopCode className="w-8 h-8 text-green-600" />,
-      description: "Domain-specific skill development for IT and business students",
-      components: [
-        "Programming (Java, Python, C++) - BCA/BSc IT",
-        "Web development & DBMS",
-        "Financial modeling (Excel) - BBA",
-        "Digital marketing & business simulations"
-      ],
-      partners: ["AWS Academy", "Microsoft Learn", "Google Digital Garage"],
-      image: "/images/technical.jpg"
-    },
-    {
-      title: "Resume & LinkedIn",
-      icon: <FaFileAlt className="w-8 h-8 text-orange-600" />,
-      description: "Crafting professional profiles that stand out to recruiters",
-      components: [
-        "Personalized CV reviews",
-        "LinkedIn profile optimization",
-        "Cover letter writing",
-        "ATS-friendly resume building"
-      ],
-      partners: ["Internshala Trainings", "Canva", "Zety"],
-      image: "/images/resume.jpg"
-    },
-    {
-      title: "Mock Interviews",
-      icon: <FaComments className="w-8 h-8 text-red-600" />,
-      description: "Simulated interview experiences with detailed feedback",
-      components: [
-        "One-on-one HR & technical mocks",
-        "Recorded sessions for self-review",
-        "Company-specific interview drills",
-        "Group discussion simulations"
-      ],
-      partners: ["Alumni Network", "TCS iON", "Placement Cell"],
-      image: "/images/mock-interview.jpg"
-    },
-    {
-      title: "Certifications",
-      icon: <FaCertificate className="w-8 h-8 text-indigo-600" />,
-      description: "Industry-recognized certifications to boost employability",
-      components: [
-        "AWS Cloud Foundations",
-        "Microsoft Office Specialist",
-        "Google Analytics Certification",
-        "Tally ERP9 & Advanced Excel"
-      ],
-      partners: ["AWS Educate", "Microsoft Learn", "Google Digital Garage"],
-      image: "/images/certification.jpg"
-    }
-  ];
+    "testimonials": [
+        {
+            "quote": "The career training sessions helped me crack my TCS interview with confidence. The mock interviews were especially valuable.",
+            "name": "Vishal",
+            "program": "BCA, Batch 2025",
+            "company": "Placed at Delloite",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840736/WhatsApp_Image_2025-07-18_at_17.41.30_f740107d_xrxnwk.jpg"
+        },
+        {
+            "quote": "The soft skills training transformed my communication abilities and helped me secure a marketing role at HDFC Bank.",
+            "name": "Priya Sharma",
+            "program": "BBA, Batch 2023",
+            "company": "Placed at HDFC Bank",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840857/download_bxlxfr.jpg"
+        },
+        {
+            "quote": "The technical bootcamps gave me hands-on experience that was directly applicable during my Infosys interview process.",
+            "name": "Amit Kumar",
+            "program": "BSc IT, Batch 2024",
+            "company": "Placed at Infosys",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840893/download_zb0npp.png"
+        }
+    ],
+    "trainingModules": [
+        {
+            "title": "Soft Skills Training",
+            "description": "Developing essential interpersonal skills for professional success",
+            "components": [
+                "Communication (verbal & written)",
+                "Group discussions & public speaking",
+                "Professional etiquette & grooming",
+                "Conflict resolution & emotional intelligence"
+            ],
+            "partners": [
+                "T.I.M.E Institute",
+                "British Council",
+                "SmartTalk"
+            ],
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752919825/494608295_24081939498077728_4856999343403822621_n_imhj7l.jpg"
+        },
+        {
+            "title": "Aptitude & Reasoning",
+            "description": "Mastering quantitative, logical and analytical abilities for placements",
+            "components": [
+                "Quantitative Aptitude",
+                "Logical Reasoning",
+                "Data Interpretation",
+                "Weekly mock tests with analytics"
+            ],
+            "partners": [
+                "T.I.M.E Institute",
+                "Amcat",
+                "CoCubes"
+            ],
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752919981/486520224_1056737996482139_4728716234509543803_n_i9m5wx.jpg"
+        },
+        {
+            "title": "Technical Training",
+            "description": "Domain-specific skill development for IT and business students",
+            "components": [
+                "Programming (Java, Python, C++) - BCA/BSc IT",
+                "Web development & DBMS",
+                "Financial modeling (Excel) - BBA",
+                "Digital marketing & business simulations"
+            ],
+            "partners": [
+                "AWS Academy",
+                "Microsoft Learn",
+                "Google Digital Garage"
+            ],
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752827027/486300369_1055984116557527_4023767572347415079_n_h3ujez.jpg"
+        },
+        {
+            "title": "Resume & LinkedIn",
+            "description": "Crafting professional profiles that stand out to recruiters",
+            "components": [
+                "Personalized CV reviews",
+                "LinkedIn profile optimization",
+                "Cover letter writing",
+                "ATS-friendly resume building"
+            ],
+            "partners": [
+                "Internshala Trainings",
+                "Canva",
+                "Zety"
+            ],
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752920185/images_qwkj7x.jpg"
+        },
+        {
+            "title": "Mock Interviews",
+            "description": "Simulated interview experiences with detailed feedback",
+            "components": [
+                "One-on-one HR & technical mocks",
+                "Recorded sessions for self-review",
+                "Company-specific interview drills",
+                "Group discussion simulations"
+            ],
+            "partners": [
+                "Alumni Network",
+                "TCS iON",
+                "Placement Cell"
+            ],
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752666397/486627742_1060368422785763_7035592271524232960_n_uw11i6.jpg"
+        },
+        {
+            "title": "Certifications",
+            "description": "Industry-recognized certifications to boost employability",
+            "components": [
+                "AWS Cloud Foundations",
+                "Microsoft Office Specialist",
+                "Google Analytics Certification",
+                "Tally ERP9 & Advanced Excel"
+            ],
+            "partners": [
+                "AWS Educate",
+                "Microsoft Learn",
+                "Google Digital Garage"
+            ],
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752920390/1750579193283_sej8dw.jpg"
+        }
+    ],
+    "trainingPartners": [
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753341/download_lptm8v.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753202/download_dpcuui.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753189/download_mjqx63.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753151/download_cmf47v.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753138/download_cjyies.jpg",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753126/download_oyqbjr.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753114/download_yrgmjz.png"
+    ],
+    "trainingSchedule": [
+        {
+            "year": "1st Year",
+            "focus": "Foundation Skills",
+            "delivery": "Weekly in-class sessions",
+            "activities": [
+                "Basic communication",
+                "IT fundamentals",
+                "Professional etiquette"
+            ]
+        },
+        {
+            "year": "2nd Year",
+            "focus": "Technical & Aptitude",
+            "delivery": "Bootcamps & labs",
+            "activities": [
+                "Programming skills",
+                "Aptitude training",
+                "Domain knowledge"
+            ]
+        },
+        {
+            "year": "3rd Year",
+            "focus": "Placement Preparation",
+            "delivery": "Intensive workshops",
+            "activities": [
+                "Mock interviews",
+                "Resume building",
+                "Company-specific prep"
+            ]
+        }
+    ]
+}
+const CareerTraining = async() => {
+const { data, error} = await fetchPageData("career-training")
+pageData = data as any ?? pageData
+const { galleryImages, testimonials, trainingPartners,trainingSchedule, trainingModules, heroSection} = pageData
 
-  // Training schedule
-  const trainingSchedule = [
-    {
-      year: "1st Year",
-      focus: "Foundation Skills",
-      delivery: "Weekly in-class sessions",
-      activities: ["Basic communication", "IT fundamentals", "Professional etiquette"]
-    },
-    {
-      year: "2nd Year",
-      focus: "Technical & Aptitude",
-      delivery: "Bootcamps & labs",
-      activities: ["Programming skills", "Aptitude training", "Domain knowledge"]
-    },
-    {
-      year: "3rd Year",
-      focus: "Placement Preparation",
-      delivery: "Intensive workshops",
-      activities: ["Mock interviews", "Resume building", "Company-specific prep"]
-    }
-  ];
-
-  // Training partners
-  const trainingPartners = [
-    "/logos/time.png",
-    "/logos/internshala.png",
-    "/logos/aws.png",
-    "/logos/microsoft.png",
-    "/logos/google.png",
-    "/logos/tcs-ion.png",
-    "/logos/british-council.png",
-    "/logos/smarttalk.png"
-  ];
-
-  // Testimonials
-  const testimonials = [
-    {
-      quote: "The career training sessions helped me crack my TCS interview with confidence. The mock interviews were especially valuable.",
-      name: "Raj Mehta",
-      program: "BCA, Batch 2024",
-      company: "Placed at TCS",
-      image: "/images/student-1.jpg"
-    },
-    {
-      quote: "The soft skills training transformed my communication abilities and helped me secure a marketing role at HDFC Bank.",
-      name: "Priya Sharma",
-      program: "BBA, Batch 2023",
-      company: "Placed at HDFC Bank",
-      image: "/images/student-2.jpg"
-    },
-    {
-      quote: "The technical bootcamps gave me hands-on experience that was directly applicable during my Infosys interview process.",
-      name: "Amit Kumar",
-      program: "BSc IT, Batch 2024",
-      company: "Placed at Infosys",
-      image: "/images/student-3.jpg"
-    }
-  ];
-
-  // Gallery images
-  const galleryImages = [
-    { src: "/images/training-1.jpg", caption: "Soft Skills Workshop" },
-    { src: "/images/training-2.jpg", caption: "Aptitude Training Session" },
-    { src: "/images/training-3.jpg", caption: "Technical Bootcamp" },
-    { src: "/images/training-4.jpg", caption: "Resume Building Workshop" },
-    { src: "/images/training-5.jpg", caption: "Mock Interview Session" },
-    { src: "/images/training-6.jpg", caption: "Certification Ceremony" }
-  ];
 
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
       <HeroSection
-        title="Career Training Programs"
-        description="Equipping students with technical proficiency, soft skills, and real-world competencies for career success"
-        imageUrl="https://images.unsplash.com/photo-1565688527174-775059ac429c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title={heroSection.title}
+        description={heroSection.description}
+        imageUrl={heroSection.imageURL}
         overlayOpacity={0.4}
         height="lg"
       />
@@ -224,9 +275,6 @@ const CareerTraining = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="mr-4">
-                    {module.icon}
-                  </div>
                   <h3 className="text-xl font-bold text-gray-800">{module.title}</h3>
                 </div>
                 <p className="text-gray-600 mb-4">{module.description}</p>
@@ -350,7 +398,7 @@ const CareerTraining = () => {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
+                  <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                     <div className="w-full p-4 bg-gradient-to-t from-black to-transparent">
                       <p className="text-white font-medium">{image.caption}</p>
                     </div>

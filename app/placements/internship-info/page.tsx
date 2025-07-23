@@ -1,4 +1,5 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { FaBriefcase, FaCalendarAlt, FaUniversity, FaBuilding, FaUserTie, FaFileDownload } from 'react-icons/fa';
@@ -27,140 +28,136 @@ export const metadata: Metadata = {
     ],
   },
 };
-
-const InternshipInfo = () => {
-  // Internship types data
-  const internshipTypes = [
+let pageData = {
+  "internshipTypes": [
     {
-      type: "Summer Internship",
-      duration: "4-8 weeks",
-      eligibility: "End of 2nd year",
-      description: "Intensive project work during summer break",
-      icon: <FaBriefcase className="text-blue-500 text-2xl" />
+      "type": "Summer Internship",
+      "duration": "4-8 weeks",
+      "eligibility": "End of 2nd year",
+      "description": "Intensive project work during summer break",
+      "icon": "FaBriefcase"
     },
     {
-      type: "Semester Internship",
-      duration: "3-6 months",
-      eligibility: "Final year students",
-      description: "Credit-based professional experience",
-      icon: <FaCalendarAlt className="text-green-500 text-2xl" />
+      "type": "Semester Internship",
+      "duration": "3-6 months",
+      "eligibility": "Final year students",
+      "description": "Credit-based professional experience",
+      "icon": "FaCalendarAlt"
     },
     {
-      type: "Virtual Internship",
-      duration: "1-3 months",
-      eligibility: "All years",
-      description: "Remote projects with flexible scheduling",
-      icon: <FaUniversity className="text-purple-500 text-2xl" />
+      "type": "Virtual Internship",
+      "duration": "1-3 months",
+      "eligibility": "All years",
+      "description": "Remote projects with flexible scheduling",
+      "icon": "FaUniversity"
     },
     {
-      type: "Live Projects",
-      duration: "Ongoing",
-      eligibility: "Faculty recommendation",
-      description: "Real-world assignments from companies",
-      icon: <FaBuilding className="text-orange-500 text-2xl" />
+      "type": "Live Projects",
+      "duration": "Ongoing",
+      "eligibility": "Faculty recommendation",
+      "description": "Real-world assignments from companies",
+      "icon": "FaBuilding"
     }
-  ];
-
-  // Support services
-  const supportServices = [
+  ],
+  "supportServices": [
     "Dedicated internship portal with curated opportunities",
     "Resume and LinkedIn profile workshops",
     "Mock interview sessions with industry professionals",
     "Faculty mentorship for project guidance",
     "Tie-ups with Internshala, TCS iON, and AICTE",
     "Regular industry interaction sessions"
-  ];
-
-  // Process steps
-  const processSteps = [
-    { step: 1, title: "Application", description: "Submit form through college portal" },
-    { step: 2, title: "Preparation", description: "Attend resume and interview workshops" },
-    { step: 3, title: "Placement", description: "Get matched with companies" },
-    { step: 4, title: "Approval", description: "Faculty review and approval" },
-    { step: 5, title: "Execution", description: "Complete internship period" },
-    { step: 6, title: "Evaluation", description: "Submit report and present outcomes" }
-  ];
-
-  // Top companies
-  const topCompanies = [
-    "/logos/infosys.png",
-    "/logos/hdfc.png",
-    "/logos/tcs-ion.png",
-    "/logos/zoho.png",
-    "/logos/amazon.png",
-    "/logos/razorpay.png",
-    "/logos/swiggy.png",
-    "/logos/startup-india.png"
-  ];
-
-  // Role examples
-  const roleExamples = [
+  ],
+  "processSteps": [
+    { "step": 1, "title": "Application", "description": "Submit form through college portal" },
+    { "step": 2, "title": "Preparation", "description": "Attend resume and interview workshops" },
+    { "step": 3, "title": "Placement", "description": "Get matched with companies" },
+    { "step": 4, "title": "Approval", "description": "Faculty review and approval" },
+    { "step": 5, "title": "Execution", "description": "Complete internship period" },
+    { "step": 6, "title": "Evaluation", "description": "Submit report and present outcomes" }
+  ],
+  "topCompanies": [
+    "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753341/download_lptm8v.png",
+    "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753202/download_dpcuui.png",
+    "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753189/download_mjqx63.png",
+    "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753151/download_cmf47v.png",
+    "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753138/download_cjyies.jpg",
+    "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753126/download_oyqbjr.png",
+    "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753114/download_yrgmjz.png"
+  ],
+  "roleExamples": [
     {
-      program: "BBA",
-      roles: ["Marketing Intern", "Sales Trainee", "HR Assistant", "Business Analyst"],
-      image: "/images/bba-intern.jpg"
+      "program": "BBA",
+      "roles": ["Marketing Intern", "Sales Trainee", "HR Assistant", "Business Analyst"],
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740679/484966724_1053174710171801_7945179237414533460_n_lpdeax.jpg"
     },
     {
-      program: "BCA",
-      roles: ["Web Dev Intern", "Technical Support", "QA Tester", "App Developer"],
-      image: "/images/bca-intern.jpg"
+      "program": "BCA",
+      "roles": ["Web Dev Intern", "Technical Support", "QA Tester", "App Developer"],
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840736/WhatsApp_Image_2025-07-18_at_17.41.30_f740107d_xrxnwk.jpg"
     },
     {
-      program: "BSc IT",
-      roles: ["Data Analyst", "Network Assistant", "IT Support", "Security Trainee"],
-      image: "/images/bscit-intern.jpg"
+      "program": "BSc IT",
+      "roles": ["Data Analyst", "Network Assistant", "IT Support", "Security Trainee"],
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740741/487301788_1062568922565713_5457511864499874592_n_l65esw.jpg"
     }
-  ];
-
-  // Testimonials
-  const testimonials = [
+  ],
+  "testimonials": [
     {
-      quote: "My internship at Zoho gave me hands-on experience in full-stack development and led to a pre-placement offer.",
-      name: "Priya Mehta",
-      program: "BCA, 2024",
-      company: "Zoho",
-      image: "/images/student-1.jpg"
+      "quote": "My internship at Zoho gave me hands-on experience in full-stack development and led to a pre-placement offer.",
+      "name": "Priya Mehta",
+      "program": "BCA, 2024",
+      "company": "Zoho",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840857/download_bxlxfr.jpg"
     },
     {
-      quote: "Working as a digital marketing intern at a startup helped me build a strong portfolio that impressed recruiters.",
-      name: "Rohit Sharma",
-      program: "BBA, 2023",
-      company: "Local Startup",
-      image: "/images/student-2.jpg"
+      "quote": "Working as a digital marketing intern at a startup helped me build a strong portfolio that impressed recruiters.",
+      "name": "Rohit Sharma",
+      "program": "BBA, 2023",
+      "company": "Local Startup",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840893/download_zb0npp.png"
     },
     {
-      quote: "The semester internship at TCS iON gave me industry exposure that complemented my classroom learning perfectly.",
-      name: "Amit Kumar",
-      program: "BSc IT, 2024",
-      company: "TCS iON",
-      image: "/images/student-3.jpg"
+      "quote": "The semester internship at TCS iON gave me industry exposure that complemented my classroom learning perfectly.",
+      "name": "Amit Kumar",
+      "program": "BSc IT, 2024",
+      "company": "TCS iON",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840893/download_zb0npp.png"
     }
-  ];
+  ],
+  "downloads": [
+    { "name": "Internship Guidelines", "format": "PDF", "size": "1.2MB" },
+    { "name": "Internship Report Format", "format": "DOCX", "size": "0.8MB" },
+    { "name": "Offer Letter Template", "format": "PDF", "size": "0.5MB" },
+    { "name": "NDA Agreement", "format": "DOCX", "size": "1.0MB" }
+  ],
+  "calendarEvents": [
+    { "activity": "Orientation Session", "timeline": "January / June" },
+    { "activity": "Applications Open", "timeline": "March & November" },
+    { "activity": "Internship Period", "timeline": "May-July / Dec-Feb" },
+    { "activity": "Report Submission", "timeline": "August / March" },
+    { "activity": "Evaluation Viva", "timeline": "September / April" }
+  ],
+  "heroSection": {
+    "imageUrl": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740770/487872091_1062568942565711_1649777733350717587_n_l1whum.jpg",
+    "description": "Gain real-world experience and build professional skills with our structured internship programs",
+    "title": "Industry Immersion Through Internships"
+  }
+}
+const InternshipInfo = async () => {
 
-  // Downloads
-  const downloads = [
-    { name: "Internship Guidelines", format: "PDF", size: "1.2MB" },
-    { name: "Internship Report Format", format: "DOCX", size: "0.8MB" },
-    { name: "Offer Letter Template", format: "PDF", size: "0.5MB" },
-    { name: "NDA Agreement", format: "DOCX", size: "1.0MB" }
-  ];
+  const { data, error } = await fetchPageData("internship-info");
+  pageData = data as any ?? pageData
 
-  // Calendar
-  const calendarEvents = [
-    { activity: "Orientation Session", timeline: "January / June" },
-    { activity: "Applications Open", timeline: "March & November" },
-    { activity: "Internship Period", timeline: "May-July / Dec-Feb" },
-    { activity: "Report Submission", timeline: "August / March" },
-    { activity: "Evaluation Viva", timeline: "September / April" }
-  ];
+  const { heroSection, calendarEvents, downloads, testimonials, roleExamples, topCompanies, processSteps, supportServices, internshipTypes } = pageData
+
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section with new design */}
       <HeroSection
-        title="Industry Immersion Through Internships"
-        description="Gain real-world experience and build professional skills with our structured internship programs"
-        imageUrl="/images/internship-hero.jpg"
+        title={heroSection.title}
+        description={heroSection.description}
+        imageUrl={heroSection.imageUrl}
         overlayOpacity={0.3}
         height="xl"
 
@@ -193,7 +190,7 @@ const InternshipInfo = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Internship Programs</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {internshipTypes.map((internship, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-t-4 border-blue-500">
@@ -272,16 +269,16 @@ const InternshipInfo = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Internship Partners & Roles</h2>
-          
+
           {/* Company Logos - Carousel Style */}
           <div className="mb-16">
             <div className="relative overflow-hidden">
               <div className="flex space-x-8 animate-marquee whitespace-nowrap">
                 {topCompanies.map((logo, index) => (
                   <div key={index} className="flex-shrink-0 h-16 w-32 relative">
-                    <Image 
+                    <Image
                       src={logo}
-                      alt={`Company logo ${index+1}`}
+                      alt={`Company logo ${index + 1}`}
                       fill
                       className="object-contain"
                     />
@@ -296,7 +293,7 @@ const InternshipInfo = () => {
             {roleExamples.map((program, index) => (
               <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg">
                 <div className="h-64 relative">
-                  <Image 
+                  <Image
                     src={program.image}
                     alt={`${program.program} internship`}
                     fill
@@ -327,7 +324,7 @@ const InternshipInfo = () => {
       <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Internship Success Stories</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
@@ -338,7 +335,7 @@ const InternshipInfo = () => {
                 </div>
                 <div className="bg-gray-50 p-6 flex items-center">
                   <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image 
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
                       width={48}

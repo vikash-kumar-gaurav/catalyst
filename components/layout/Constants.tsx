@@ -39,8 +39,8 @@ export const navItems = [
         name: 'Program',
         href: '/program',
         submenu: [
-            { name: 'BCA ( AKU / PPU )', href: '/program//bca' },
-            { name: 'BBA ( AKU / PPU )', href: '/program//bba' },
+            { name: 'BCA', href: '/program//bca' },
+            { name: 'BBA', href: '/program//bba' },
             { name: 'B.Sc - IT', href: '/program//bsc-it' },
             { name: 'Departmental Activities', href: '/program/departmental-activities' },
         ]
@@ -85,7 +85,7 @@ export const navItems = [
         name:"Student Support",
         href:'/student-support',
         submenu:[
-            {name:"Scholarship", href:'/student-support/scholorship'},
+            {name:"Scholarship", href:'/student-support/scholarship'},
             {name:"counseling", href:'/student-support/counseling'},
             {name:"Grievence Cell", href:'/student-support/grievance-cell'},
             {name:"SC/ST/OBC/Minority/Disability Cell", href:'/student-support/minority-cell'},

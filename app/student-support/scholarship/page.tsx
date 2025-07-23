@@ -1,4 +1,5 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { FaFemale, FaShieldAlt, FaRupeeSign, FaFileAlt, FaUniversity } from 'react-icons/fa';
@@ -29,89 +30,94 @@ export const metadata: Metadata = {
   },
 };
 
-const ScholarshipPage = () => {
-  // Scholarship schemes data
-  const scholarshipSchemes = [
-    {
-      name: "Ladli Beti Yojna",
-      benefit: "50% Tuition Fee Waiver",
-      eligibility: [
-        "Female students from Bihar",
-        "Registered under Ladli Beti Scheme",
-        "Permanent residents of Bihar"
-      ],
-      documents: [
-        "Ladli Beti certificate",
-        "Domicile certificate",
-        "Aadhaar card",
-        "Admission proof"
-      ],
-      process: "Submit documents to college office within first month of semester",
-      icon: <FaFemale className="text-pink-600 text-4xl" />,
-      image: "/images/ladli-beti.jpg"
+const ScholarshipPage = async() => {
+ let pageData = {
+    "page_name": "scholarship",
+    "heroSection": {
+        "imageUrl": "https://scontent-del2-1.xx.fbcdn.net/v/t39.30808-6/495201106_24104693695802308_6178365650416442704_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=x5ZtWmoQ2-8Q7kNvwHCkjBk&_nc_oc=AdnmBR5DN92aGNgXj_pNxmaKfmUBYiYcsNUgFNrBoBmFOqOT7Ww0T2SpLc_LiQcfPFE&_nc_zt=23&_nc_ht=scontent-del2-1.xx&_nc_gid=WR1KRZXJhPevIo1t0cUKJA&oh=00_AfSsAUP2HhCvmcTlmfcGkFuFYs4VgdfMe5jmqXrjdsFgZA&oe=687D3F01",
+        "title": "Scholarship Opportunities",
+        "description": "Financial support schemes for deserving students across BBA, BCA, and BSc IT programs"
     },
-    {
-      name: "Army Personnel Scholarship",
-      benefit: "100% Tuition Fee Waiver",
-      eligibility: [
-        "Children of Indian Army officials",
-        "Killed in line of duty",
-        "Valid supporting documents"
-      ],
-      documents: [
-        "Army casualty certificate",
-        "Proof of relationship",
-        "Academic records",
-        "ID proof"
-      ],
-      process: "Application reviewed by Scholarship Committee",
-      icon: <FaShieldAlt className="text-red-600 text-4xl" />,
-      image: "/images/army-scholarship.jpg"
-    },
-    {
-      name: "Bihar Student Credit Card",
-      benefit: "Financial support up to ₹4 Lakhs",
-      eligibility: [
-        "Bihar residents",
-        "Completed 12th grade",
-        "Enrolled in approved UG programs"
-      ],
-      documents: [
-        "Aadhaar card",
-        "Residence proof",
-        "Academic certificates",
-        "College admission letter"
-      ],
-      process: "Apply online through Bihar government portal",
-      icon: <FaRupeeSign className="text-green-600 text-4xl" />,
-      image: "/images/credit-card.jpg",
-      isCreditCard: true
-    }
-  ];
-
-  // Testimonials
-  const testimonials = [
-    {
-      quote: "The Ladli Beti scholarship enabled me to pursue BCA without financial burden on my family. I'm grateful for this opportunity.",
-      name: "Priya Kumari",
-      program: "BCA, 2nd Year"
-    },
-    {
-      quote: "As the daughter of a martyred soldier, the Army scholarship honors my father's sacrifice while supporting my education.",
-      name: "Anjali Singh",
-      program: "BBA, 3rd Year"
-    }
-  ];
+    "scholarshipSchemes": [
+        {
+            "name": "Ladli Beti Yojna",
+            "benefit": "50% Tuition Fee Waiver",
+            "eligibility": [
+                "Female students from Bihar",
+                "Registered under Ladli Beti Scheme",
+                "Permanent residents of Bihar"
+            ],
+            "documents": [
+                "Ladli Beti certificate",
+                "Domicile certificate",
+                "Aadhaar card",
+                "Admission proof"
+            ],
+            "process": "Submit documents to college office within first month of semester",
+            "image": "https://scontent-del1-2.xx.fbcdn.net/v/t39.30808-6/484973894_1049466820542590_4188318013415976733_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4jHLe6ywfk0Q7kNvwEAqgl3&_nc_oc=AdnTPsLsOEJwiYJVdAI5-Hd9RkVCkOTcP67JGmiwfZJKgQxQ8PhYIAdyTSmGJGjUzV4&_nc_zt=23&_nc_ht=scontent-del1-2.xx&_nc_gid=DVn3H4bKPjMNoPoxZO7cPA&oh=00_AfR3SYiMGyXWxQhQLpk7C2eZzU65wXQQDMIXody3r9Faog&oe=687D6155"
+        },
+        {
+            "name": "Army Personnel Scholarship",
+            "benefit": "100% Tuition Fee Waiver",
+            "eligibility": [
+                "Children of Indian Army officials",
+                "Killed in line of duty",
+                "Valid supporting documents"
+            ],
+            "documents": [
+                "Army casualty certificate",
+                "Proof of relationship",
+                "Academic records",
+                "ID proof"
+            ],
+            "process": "Application reviewed by Scholarship Committee",
+            "image": "https://scontent-del1-1.xx.fbcdn.net/v/t39.30808-6/487492028_10084259264938987_7845960401148750502_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KqT8DppbIlkQ7kNvwFaKjcm&_nc_oc=AdmlmglUim0frIS1r2SfU5y_ZUWLc6QlHCe1yyacTVaBpFSQRJ98R0pMsUSdH72xDa8&_nc_zt=23&_nc_ht=scontent-del1-1.xx&_nc_gid=d6r_PKoYfXaToi1yAUPiEg&oh=00_AfQhPJVRrsU3yDjl-xQR1Fepl_2o1__mvQJNUIzm58l9DQ&oe=687D5249"
+        },
+        {
+            "name": "Bihar Student Credit Card",
+            "benefit": "Financial support up to ₹4 Lakhs",
+            "eligibility": [
+                "Bihar residents",
+                "Completed 12th grade",
+                "Enrolled in approved UG programs"
+            ],
+            "documents": [
+                "Aadhaar card",
+                "Residence proof",
+                "Academic certificates",
+                "College admission letter"
+            ],
+            "process": "Apply online through Bihar government portal",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752924735/download_q32wr2.jpg",
+            "isCreditCard": true
+        }
+    ],
+    "testimonials": [
+        {
+            "quote": "The Ladli Beti scholarship enabled me to pursue BCA without financial burden on my family. I'm grateful for this opportunity.",
+            "name": "Priya Kumari",
+            "program": "BCA, 2nd Year"
+        },
+        {
+            "quote": "As the daughter of a martyred soldier, the Army scholarship honors my father's sacrifice while supporting my education.",
+            "name": "Anjali Singh",
+            "program": "BBA, 3rd Year"
+        }
+    ]
+}
+ const { data , error}  = await fetchPageData("scholarship")
+pageData = data as any ?? pageData
+const { heroSection, scholarshipSchemes, testimonials} = pageData
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}
       <HeroSection
-        title="Scholarship Opportunities"
-        description="Financial support schemes for deserving students across BBA, BCA, and BSc IT programs"
-        imageUrl="/images/scholarship-hero.jpg"
+        title={heroSection.title}
+        description={heroSection.description}
+        imageUrl={heroSection.imageUrl}
         overlayOpacity={0.3}
-        height="lg"
+        height="xl"
       />
 
       {/* Introduction Section */}
@@ -146,9 +152,6 @@ const ScholarshipPage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                     <div className="flex items-center">
-                      <div className="mr-4">
-                        {scheme.icon}
-                      </div>
                       <h3 className="text-2xl font-bold text-white">{scheme.name}</h3>
                     </div>
                   </div>

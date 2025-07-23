@@ -1,17 +1,19 @@
 
+import YoutubePlayer from '@/components/VideoPlayer'
+import { fetchPageData } from '@/lib/useFetchData'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "BCA Program | Catalyst College Patna - Premier Computer Application Degree in Bihar",
-  description: "3-year industry-focused BCA program with specializations in Software Development, Cloud Computing, and AI Fundamentals. 95% placement record | AKU-affiliated | State-of-the-art computer labs",
+  description: "3-year industry-focused BCA program with specializations in Software Development, Cloud Computing, and AI Fundamentals. 95% placement record | PPU-affiliated | State-of-the-art computer labs",
   keywords: [
     "Best BCA College Patna",
     "BCA in Bihar",
     "Computer Applications Degree Patna",
     "Catalyst College BCA",
     "Top BCA College Bihar",
-    "AKU affiliated BCA",
+    " affiliated BCA",
     "BCA with placement guarantee",
     "BCA admission 2024",
     "BCA syllabus and subjects",
@@ -53,69 +55,87 @@ export const metadata: Metadata = {
   }
 }
 
-const bcaProgram = {
-  overview: {
-    title: "Bachelor of Computer Applications (BCA)",
-    intro: "Catalyst College Patna's BCA program bridges the gap between academic learning and industry requirements through intensive practical training and project-based learning.",
-    highlights: [
-      "AKU-affiliated 3-year degree program",
-      "95% placement record in 2023",
-      "1000+ hours of practical coding",
-      "Mandatory industry internship",
-      "AWS Educate Cloud Computing Program"
+let bcaProgram = {
+  "page_name": "bca",
+  "admission": {
+    "eligibility": [
+      "10+2 from any stream with Mathematics/Computer Science",
+      "Minimum 50% marks in 12th standard",
+      "Basic computer literacy preferred",
+      "No age restriction"
     ],
-    skills: [
-      "Full-Stack Development",
-      "Database Management",
-      "Object-Oriented Programming",
-      "Web & Mobile App Development",
-      "Cloud Computing Basics",
-      "Software Engineering Principles"
-    ],
-    accreditation: "NAAC 'A' Grade | AWS Educate Member | Microsoft Learn Partner"
-  },
-  whyChoose: {
-    title: "Why Catalyst College for BCA?",
-    features: [
+    "process": [
       {
-        title: "Industry-Ready Curriculum",
-        description: "Updated annually with inputs from Patna IT companies and alumni working in MNCs",
-        icon: "/svg/curriculum.svg"
+        "step": "1. Online Application",
+        "description": "Submit form at admissions.catalystcollege.edu.in with ₹500 fee"
       },
       {
-        title: "Coding Intensive",
-        description: "150+ programming assignments across 6 semesters with code reviews",
-        icon: "/svg/coding.svg"
+        "step": "2. Basic Aptitude Test",
+        "description": "Logical reasoning and math test (online/offline option)"
       },
       {
-        title: "Project-Based Learning",
-        description: "Build 10+ real-world projects including a final year software product",
-        icon: "/svg/projects.svg"
+        "step": "3. Personal Interaction",
+        "description": "Faculty interview to assess interest in computing"
       },
       {
-        title: "Certification Integration",
-        description: "Earn AWS Cloud, Microsoft Azure, and Oracle certifications alongside degree",
-        icon: "/svg/certification.svg"
-      },
-      {
-        title: "Startup Support",
-        description: "Seed funding up to ₹2 lakhs for student software startups",
-        icon: "/svg/startup.svg"
-      },
-      {
-        title: "Hackathon Culture",
-        description: "Regular coding competitions with Bihar IT Association",
-        icon: "/svg/hackathon.svg"
+        "step": "4. Enrollment",
+        "description": "Document verification and first semester fee payment"
       }
+    ],
+    "deadlines": {
+      "Early Bird": "May 15, 2024",
+      "Regular": "June 30, 2024",
+      "Extended": "July 31, 2024"
+    },
+    "documents": [
+      "10th & 12th original marksheets",
+      "Transfer Certificate",
+      "Caste Certificate (if applicable)",
+      "Passport photos (4 copies)",
+      "Aadhar Card copy"
     ]
   },
-  curriculum: {
-    structure: {
-      duration: "3 Years | 6 Semesters",
-      credits: "144 Credit Hours (AKU Pattern)",
-      pattern: "70% Practical | 30% Theory"
+  "careers": {
+    "roles": [
+      "Software Developer",
+      "Web Developer",
+      "System Analyst",
+      "Database Administrator",
+      "Cloud Support Associate",
+      "IT Consultant",
+      "Quality Analyst",
+      "Technical Writer"
+    ],
+    "placement": {
+      "rate": "95%",
+      "average": "₹4 LPA",
+      "highest": "₹8.9 LPA",
+      "companies": [
+        "https://static.vecteezy.com/system/resources/previews/020/336/451/non_2x/infosys-logo-infosys-icon-free-free-vector.jpg",
+        "https://www.tcs.com/content/dam/global-tcs/en/images/who-we-are/media-kit/tcs-light-logo.png",
+        "https://www.wipro.com/content/dam/wipro/social-icons/wipro_new_logo.svg",
+        "https://az-ci-afde-prd-arena-01-e7fmh3dxacbgeyh5.z01.azurefd.net/-/media/images/maruti/marutisuzuki/global/maruti-logo.webp?h=39&w=194&la=en&hash=A8D386DD695C25850B9EE818532657AC",
+        "https://e7.pngegg.com/pngimages/892/32/png-clipart-icici-bank-logo-bank-logos-thumbnail.png"
+      ]
     },
-    coreSubjects: [
+    "internship": {
+      "partners": [
+        "PatnaTech Solutions",
+        "Digital Bihar Initiative",
+        "Bihar Startup Network",
+        "State Bank IT Division",
+        "Patna Smart City Project"
+      ],
+      "duration": "Minimum 6 weeks mandatory in 5th semester"
+    }
+  },
+  "curriculum": {
+    "structure": {
+      "duration": "3 Years | 6 Semesters",
+      "credits": "144 Credit Hours (PPU Pattern)",
+      "pattern": "70% Practical | 30% Theory"
+    },
+    "coreSubjects": [
       "Programming in C",
       "Data Structures using C++",
       "Database Management Systems",
@@ -127,7 +147,7 @@ const bcaProgram = {
       "Python for Applications",
       "Discrete Mathematics"
     ],
-    specializations: {
+    "specializations": {
       "Software Development": [
         "Advanced Java Technologies",
         "Python Frameworks (Django/Flask)",
@@ -150,229 +170,291 @@ const bcaProgram = {
         "AI Ethics and Governance"
       ]
     },
-    labs: [
+    "labs": [
       {
-        name: "Advanced Programming Lab",
-        equipment: "50+ high-end workstations with VS Code, IntelliJ, PyCharm",
-        image: "/images/bca/programming-lab.jpg"
+        "name": "Advanced Programming Lab",
+        "equipment": "50+ high-end workstations with VS Code, IntelliJ, PyCharm",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752748006/486081166_1055984106557528_2486189336089163725_n_k0b9yp.jpg"
       },
       {
-        name: "Cloud Computing Lab",
-        equipment: "AWS/Azure sandbox accounts, Cloud simulation tools",
-        image: "/images/bca/cloud-lab.jpg"
+        "name": "Cloud Computing Lab",
+        "equipment": "AWS/Azure sandbox accounts, Cloud simulation tools",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752748121/rackspace-open-compute-logo-bw_iaejor.jpg"
       }
     ]
   },
-  admission: {
-    eligibility: [
-      "10+2 from any stream with Mathematics/Computer Science",
-      "Minimum 50% marks in 12th standard",
-      "Basic computer literacy preferred",
-      "No age restriction"
-    ],
-    process: [
-      {
-        step: "1. Online Application",
-        description: "Submit form at admissions.catalystcollege.edu.in with ₹500 fee",
-        icon: "/svg/application.svg"
-      },
-      {
-        step: "2. Basic Aptitude Test",
-        description: "Logical reasoning and math test (online/offline option)",
-        icon: "/svg/test.svg"
-      },
-      {
-        step: "3. Personal Interaction",
-        description: "Faculty interview to assess interest in computing",
-        icon: "/svg/interview.svg"
-      },
-      {
-        step: "4. Enrollment",
-        description: "Document verification and first semester fee payment",
-        icon: "/svg/enrollment.svg"
-      }
-    ],
-    deadlines: {
-      "Early Bird": "May 15, 2024",
-      "Regular": "June 30, 2024",
-      "Extended": "July 31, 2024"
-    },
-    documents: [
-      "10th & 12th original marksheets",
-      "Transfer Certificate",
-      "Caste Certificate (if applicable)",
-      "Passport photos (4 copies)",
-      "Aadhar Card copy"
-    ]
-  },
-  careers: {
-    roles: [
-      "Software Developer",
-      "Web Developer",
-      "System Analyst",
-      "Database Administrator",
-      "Cloud Support Associate",
-      "IT Consultant",
-      "Quality Analyst",
-      "Technical Writer"
-    ],
-    placement: {
-      rate: "95%",
-      average: "₹3.5 LPA",
-      highest: "₹8.9 LPA",
-      companies: [
-        "/images/recruiters/infosys.png",
-        "/images/recruiters/tcs.png",
-        "/images/recruiters/patnatech.png",
-        "/images/recruiters/bihar-it-hub.png",
-        "/images/recruiters/amazon.png"
-      ]
-    },
-    internship: {
-      partners: [
-        "PatnaTech Solutions",
-        "Digital Bihar Initiative",
-        "Bihar Startup Network",
-        "State Bank IT Division",
-        "Patna Smart City Project"
-      ],
-      duration: "Minimum 6 weeks mandatory in 5th semester"
-    }
-  },
-  faculty: [
+  "faculty": [
     {
-      name: "Dr. Sanjay Kumar",
-      designation: "Professor & HOD (BCA)",
-      qualification: "PhD (Computer Science), IIT Patna",
-      expertise: "Software Engineering",
-      experience: "18 years (ex-Infosys)",
-      image: "/images/faculty/sanjay-kumar.jpg"
+      "name": "Amit shukhla",
+      "designation": "Professor & HOD (BCA)",
+      "qualification": "PhD (Computer Science), IIT Patna",
+      "expertise": "Software Engineering",
+      "experience": "18 years",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752744394/68fa36c2-de43-406c-b4bf-6466c2ed96ac.png"
     },
     {
-      name: "Prof. Neha Singh",
-      designation: "Associate Professor",
-      qualification: "MCA, NIT Patna",
-      expertise: "Cloud Computing",
-      experience: "12 years industry experience",
-      image: "/images/faculty/neha-singh.jpg"
+      "name": "Murli Manohar",
+      "designation": "Cyber Secutity Expert",
+      "qualification": "MCA",
+      "expertise": "Cloud Computing",
+      "experience": "12 years industry experience",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746925/Murli-Sir_a6peoy.jpg"
     }
   ],
-  studentLife: {
-    clubs: [
+  "fees": {
+    "structure": [
       {
-        name: "CodeChef Chapter",
-        description: "Competitive programming club with weekly contests",
-        image: "/images/clubs/codechef.jpg"
+        "item": "Tuition Fee",
+        "amount": "₹58,000/year"
       },
       {
-        name: "Web Wizards",
-        description: "Frontend development and design collective",
-        image: "/images/clubs/web-wizards.jpg"
+        "item": "Lab Fee",
+        "amount": "₹12,000/year"
+      },
+      {
+        "item": "Exam Fee",
+        "amount": "₹3,500/semester"
+      },
+      {
+        "item": "Development Kit",
+        "amount": "₹8,000 (one-time)"
       }
     ],
-    events: [
+    "scholarships": [
       {
-        name: "ByteFest",
-        description: "Annual coding festival with 50+ colleges participating",
-        image: "/images/events/bytefest.jpg"
+        "name": "Bihar Student Credit Card",
+        "amount": "Up to ₹4 lakhs"
       },
       {
-        name: "HackPatna",
-        description: "36-hour hackathon solving local community problems",
-        image: "/images/events/hackpatna.jpg"
+        "name": "Tech Genius Scholarship",
+        "amount": "30% fee waiver for programming competition winners"
+      },
+      {
+        "name": "Girls in Tech Scholarship",
+        "amount": "25% fee waiver for female students"
       }
     ]
   },
-  fees: {
-    structure: [
+  "overview": {
+    "title": "Bachelor of Computer Applications (BCA)",
+    "intro": "Catalyst College Patna's BCA program bridges the gap between academic learning and industry requirements through intensive practical training and project-based learning.",
+    "highlights": [
+      "PPU-affiliated 3-year degree program",
+      "95% placement record in 2023",
+      "1000+ hours of practical coding",
+      "Mandatory industry internship",
+      "AWS Educate Cloud Computing Program"
+    ],
+    "skills": [
+      "Full-Stack Development",
+      "Database Management",
+      "Object-Oriented Programming",
+      "Web & Mobile App Development",
+      "Cloud Computing Basics",
+      "Software Engineering Principles"
+    ],
+    "accreditation": "NAAC excellent Grade | AWS Educate Member | Microsoft Learn Partner"
+  },
+  "studentLife": {
+    "clubs": [
       {
-        item: "Tuition Fee",
-        amount: "₹58,000/year"
+        "name": "CodeChef Chapter",
+        "description": "Competitive programming club with weekly contests",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747310/486678604_1059585816197357_640593102037474519_n_helyxg.jpg"
       },
       {
-        item: "Lab Fee",
-        amount: "₹12,000/year"
-      },
-      {
-        item: "Exam Fee",
-        amount: "₹3,500/semester"
-      },
-      {
-        item: "Development Kit",
-        amount: "₹8,000 (one-time)"
+        "name": "Web Wizards",
+        "description": "Frontend development and design collective",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747260/d3f5cab9-1303-45d1-b76b-d13cd3445503.png"
       }
     ],
-    scholarships: [
+    "events": [
       {
-        name: "Bihar Student Credit Card",
-        amount: "Up to ₹4 lakhs"
+        "name": "BootCamps",
+        "description": "Monthly coding festival with 1000 colleges participating",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747110/486057045_1056585686497370_2858634788722645153_n_boowwi.jpg"
       },
       {
-        name: "Tech Genius Scholarship",
-        amount: "30% fee waiver for programming competition winners"
-      },
-      {
-        name: "Girls in Tech Scholarship",
-        amount: "25% fee waiver for female students"
+        "name": "Code Combat",
+        "description": "8-hour hackathon solving local community problems",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg"
       }
     ]
   },
-  faqs: [
-    {
-      question: "What is the difference between BCA and B.Tech?",
-      answer: "BCA focuses more on application development and practical software skills, while B.Tech provides deeper engineering knowledge. BCA is 3 years vs B.Tech's 4 years."
-    },
-    {
-      question: "Can I pursue MCA after BCA?",
-      answer: "Yes, our BCA program fully qualifies you for MCA programs across India. Many of our graduates pursue MCA at NITs and other top institutions."
-    },
-    {
-      question: "Is mathematics compulsory for BCA?",
-      answer: "Yes, you need Mathematics as a subject in 10+2 to be eligible for our BCA program."
-    }
-  ]
+  "whyChoose": {
+    "title": "Why Catalyst College for BCA?",
+    "features": [
+      {
+        "title": "Industry-Ready Curriculum",
+        "description": "Updated annually with inputs from Patna IT companies and alumni working in MNCs",
+        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752665750/power_bi_workshop_agtwqa.png"
+      },
+      {
+        "title": "Coding Intensive",
+        "description": "150+ programming assignments across 6 semesters with code reviews",
+        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
+      },
+      {
+        "title": "Project-Based Learning",
+        "description": "Build 10+ real-world projects including a final year software product",
+        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741088/486592318_1058965042926101_237695966334437774_n_fhh3p6.jpg"
+      },
+      {
+        "title": "Certification Integration",
+        "description": "Earn AWS Cloud, Microsoft Azure, and Oracle certifications alongside degree",
+        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746556/481173779_9865881320110117_613508857674207901_n_z2gp41.jpg"
+      },
+      {
+        "title": "Startup Support",
+        "description": "Seed funding up to ₹2 lakhs for student software startups",
+        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752745794/5fbc02e8-8fdd-40b2-8549-5f5ba7299e5c.png"
+      },
+      {
+        "title": "Hackathon Culture",
+        "description": "Regular coding competitions with Bihar IT Association",
+        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg"
+      }
+    ]
+  }
 }
+const myVideos = [
+  { id: 'eLguMx7KLNc', title: 'Why to choose CIMAGE College| Best BCA College, Patna' },
+  { id: 'rO7Vi_94g0Q', title: 'CIMAGE Campus Tour | Campus Reel | Futuristic College' },
+  { id: 'mepCtekz-sI', title: 'CIMAGE PATNA is live' },
+  { id: 'g8GRsU84qJc', title: 'Process, Courses & Guidance by Prof. Neeraj Poddar' },
+  { id: 'xsMbNI11SyE', title: 'Best BCA College in Patna | Reality of CIMAGE' },
+  { id: 'nmPNN0MiAAE', title: 'CIMAGE Campus Tour | College Vlog Made by Students' },
+  { id: 'Yi7LgIBYE6Q', title: 'CIMAGE College Vlog' }
+];
+const { data, error } = await fetchPageData("bca");
+console.log(data);
 
-export default function BCAPage() {
+bcaProgram = data as any ?? bcaProgram
+
+
+export default async function BCAPage() {
+
+  const { data, error } = await fetchPageData("")
   return (
     <div className="bg-white">
-      {/* Hero Section with Code Background */}
-      <div className="relative bg-gradient-to-r from-blue-900 to-purple-900 overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-[url('/svg/code-pattern.svg')]"></div>
-        <div className="relative max-w-7xl mx-auto px-4 py-28 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {bcaProgram.overview.title}
+
+      <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-30"></div>
+        </div>
+
+        {/* Geometric pattern overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 1200 600"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 L1200,0 L1200,600 Q600,300 0,600 Z"
+              fill="white"
+            ></path>
+          </svg>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:pt-12 lg:pb-18">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Content section */}
+            <div className="relative z-10">
+              {/* Program badge */}
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-8">
+                <span className="text-blue-200 text-sm font-medium tracking-wider">
+                  UNDERGRADUATE PROGRAM
+                </span>
+              </div>
+
+              {/* Main heading with gradient text */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-purple-200">
+                  {bcaProgram.overview.title}
+                </span>
               </h1>
-              <p className="mt-6 text-xl text-blue-100 max-w-3xl">
+
+              {/* Description */}
+              <p className="text-xl text-blue-100 max-w-2xl mb-8 leading-relaxed">
                 {bcaProgram.overview.intro}
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+
+              {/* Stats mockup */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">3</div>
+                  <div className="text-sm text-blue-200">Years Duration</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">100+</div>
+                  <div className="text-sm text-blue-200">Industry Projects</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">90%</div>
+                  <div className="text-sm text-blue-200">Placement Rate</div>
+                </div>
+              </div>
+
+              {/* CTA buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="#admission"
-                  className="px-6 py-3 bg-white text-blue-800 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+                  href="/register"
+                  className="px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-blue-50 transition-all duration-300 hover:shadow-lg flex items-center justify-center"
                 >
                   Apply Now
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
                 </a>
                 <a
                   href="#curriculum"
-                  className="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-800 transition-colors"
+                  className="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-xl hover:border-white/50 hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
                 >
-                  View Curriculum
+                  Explore Curriculum
                 </a>
               </div>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+
+            {/* Image section with floating elements */}
+            <div className="relative h-80 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 group">
+              {/* Main image */}
               <Image
-                src="/images/bca/hero-students.jpg"
+                src="https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740831/486873408_1062197215936217_8435744219966123771_n_hjraq7.jpg"
                 alt="BCA students at computer lab"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
               />
+
             </div>
           </div>
+        </div>
+
+        {/* Wave separator */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden transform rotate-180">
+          <svg
+            className="relative block w-full h-20"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              fill="white"
+              opacity=".25"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              fill="white"
+              opacity=".5"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="white"
+            ></path>
+          </svg>
         </div>
       </div>
 
@@ -430,10 +512,10 @@ export default function BCAPage() {
 
           <div className="mt-16">
             <h3 className="text-2xl font-medium text-center text-gray-900 mb-6">Technical Skills You'll Master</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-center ">
               {bcaProgram.overview.skills.map((skill, index) => (
                 <div key={index} className="bg-white p-3 rounded-lg shadow-xs border border-gray-200 text-center">
-                  <p className="text-sm font-medium text-gray-700">{skill}</p>
+                  <p className="text-sm font-medium text-gray-700 min-h-12 flex items-center">{skill}</p>
                 </div>
               ))}
             </div>
@@ -442,35 +524,46 @@ export default function BCAPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="text-center mb-16">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Catalyst College?</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Bihar's Best BCA Program
+              Bihar's Premier BCA Program
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {bcaProgram.whyChoose.features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-4">
-                  <Image 
-                    src={feature.icon} 
-                    alt="" 
-                    width={32} 
-                    height={32} 
-                    className="text-blue-600"
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              >
+                {/* Image Container - Larger and full-width */}
+                <div className="h-60 w-full overflow-hidden">
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <h3 className="text-xl font-medium text-gray-900">{feature.title}</h3>
-                <p className="mt-2 text-gray-600">{feature.description}</p>
+
+                {/* Content Container */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+
+      {/* ----adding the youtube videos --------- */}
+      <YoutubePlayer title='my youtube videos' description='see all of it' videos={myVideos} />
       {/* Curriculum Section */}
       <section id="curriculum" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -514,7 +607,7 @@ export default function BCAPage() {
                     <div key={specialization} className="bg-white p-4 rounded-lg shadow-xs border border-gray-200">
                       <h4 className="text-lg font-medium text-blue-800">{specialization}</h4>
                       <ul className="mt-3 space-y-2">
-                        {subjects.slice(0, 3).map((subject, idx) => (
+                        {subjects.map((subject, idx) => (
                           <li key={idx} className="flex items-start">
                             <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
@@ -523,9 +616,6 @@ export default function BCAPage() {
                           </li>
                         ))}
                       </ul>
-                      <button className="mt-3 text-sm text-blue-600 hover:text-blue-800 font-medium">
-                        View all {subjects.length} subjects →
-                      </button>
                     </div>
                   ))}
                 </div>
@@ -629,7 +719,7 @@ export default function BCAPage() {
 
           <div className="mt-16 text-center">
             <a
-              href="#"
+              href="/register"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
             >
               Begin Your Application

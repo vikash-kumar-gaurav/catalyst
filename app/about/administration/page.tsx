@@ -1,5 +1,5 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
-import YouTubeVideoGallery from '@/components/YoutubeGallery';
+
 import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 
@@ -468,7 +468,6 @@ export default function Administration() {
           </div>
         </div>
       </section>
-      <YouTubeVideoGallery />
     </div>
   );
 }

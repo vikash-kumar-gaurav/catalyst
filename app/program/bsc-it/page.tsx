@@ -1,17 +1,18 @@
 // app/bscit/page.tsx
+import { fetchPageData } from '@/lib/useFetchData'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "BSc IT Program | Catalyst College Patna - Premier IT Education in Bihar",
-  description: "3-year industry-focused BSc in Information Technology with specializations in Software Development, Data Science, and Cybersecurity. 94% placement record | AKU-affiliated | State-of-the-art labs",
+  description: "3-year industry-focused BSc in Information Technology with specializations in Software Development, Data Science, and Cybersecurity. 94% placement record | PPU-affiliated | State-of-the-art labs",
   keywords: [
     "Best BSc IT College Patna",
     "BSc IT in Bihar",
     "Information Technology Degree Patna",
     "Catalyst College BSc IT",
     "Top IT College Bihar",
-    "AKU affiliated BSc IT"
+    "PPU affiliated BSc IT"
   ],
   openGraph: {
     title: "BSc IT Program | Catalyst College Patna",
@@ -27,340 +28,404 @@ export const metadata: Metadata = {
   },
 }
 
-const bscitProgram = {
-  overview: {
-    title: "Bachelor of Science in Information Technology (BSc IT)",
-    intro: "Catalyst College Patna's BSc IT program equips students with cutting-edge technical skills through hands-on learning in our advanced labs and industry collaborations.",
-    highlights: [
-      "AKU-affiliated 3-year degree program",
-      "94% placement record in 2023",
-      "Project-based learning approach",
-      "Guaranteed industry internship",
-      "Cisco Networking Academy partnered"
-    ],
-    skills: [
-      "Full-Stack Development",
-      "Data Analysis & Visualization",
-      "Cybersecurity Fundamentals",
-      "Cloud Computing",
-      "Database Management",
-      "AI/ML Basics"
-    ],
-    accreditation: "NAAC 'A' Grade | Cisco Networking Academy | Microsoft Learn Partner"
-  },
-  whyChoose: {
-    title: "Why Choose Our BSc IT Program?",
-    features: [
-      {
-        title: "Advanced Computing Labs",
-        description: "Access to specialized labs: Cisco Networking, AI/ML, Cybersecurity, and Software Development",
-        icon: "/svg/lab.svg"
-      },
-      {
-        title: "Industry-Aligned Curriculum",
-        description: "Courses designed with Patna's IT companies like PatnaTech Solutions and Bihar IT Hub",
-        icon: "/svg/curriculum.svg"
-      },
-      {
-        title: "Certification Integration",
-        description: "Earn professional certs in Cisco, Microsoft, AWS alongside your degree",
-        icon: "/svg/certification.svg"
-      },
-      {
-        title: "Startup Incubation",
-        description: "Dedicated support for student tech startups through Catalyst Tech Garage",
-        icon: "/svg/incubator.svg"
-      },
-      {
-        title: "Faculty Practitioners",
-        description: "Learn from professors with 10+ years experience at TCS, Infosys, and Patna-based IT firms",
-        icon: "/svg/faculty.svg"
-      },
-      {
-        title: "Hackathon Culture",
-        description: "Regular coding competitions with prizes from Bihar IT Association",
-        icon: "/svg/hackathon.svg"
-      }
-    ]
-  },
-  curriculum: {
-    structure: {
-      duration: "3 Years | 6 Semesters",
-      credits: "140 Credit Hours (AKU Pattern)",
-      pattern: "60% Practical | 40% Theory"
+let bscitProgram = {
+    "page_name": "bsc-it",
+    "admission": {
+        "eligibility": [
+            "10+2 with Mathematics as compulsory subject",
+            "Minimum 50% marks in 12th standard",
+            "Basic computer knowledge preferred",
+            "No age restriction"
+        ],
+        "process": [
+            {
+                "step": "1. Online Application",
+                "description": "Fill form at admissions.catalystcollege.in with ₹800 fee",
+                "icon": "/svg/application.svg"
+            },
+            {
+                "step": "2. Aptitude Test",
+                "description": "Basic math and logical reasoning test (online/offline)",
+                "icon": "/svg/test.svg"
+            },
+            {
+                "step": "3. Counseling Session",
+                "description": "Interactive session with faculty",
+                "icon": "/svg/counseling.svg"
+            },
+            {
+                "step": "4. Enrollment",
+                "description": "Document verification and fee payment",
+                "icon": "/svg/enrollment.svg"
+            }
+        ],
+        "deadlines": {
+            "Early Admission": "May 20, 2024",
+            "Regular Admission": "June 30, 2024",
+            "Late Admission": "July 25, 2024"
+        }
     },
-    coreSubjects: [
-      "Programming Fundamentals",
-      "Data Structures & Algorithms",
-      "Computer Networks",
-      "Database Management Systems",
-      "Web Technologies",
-      "Operating Systems",
-      "Software Engineering",
-      "Object-Oriented Programming",
-      "Computer Organization",
-      "Discrete Mathematics"
-    ],
-    specializations: {
-      "Software Development": [
-        "Advanced Java/Python",
-        "Mobile App Development",
-        "DevOps Practices",
-        "UI/UX Design",
-        "Agile Methodologies"
-      ],
-      "Data Science": [
-        "Python for Data Science",
-        "Machine Learning Basics",
-        "Big Data Analytics",
-        "Data Visualization",
-        "Statistical Methods"
-      ],
-      "Cybersecurity": [
-        "Ethical Hacking",
-        "Network Security",
-        "Cyber Laws",
-        "Digital Forensics",
-        "Cryptography"
-      ]
+    "careers": {
+        "roles": [
+            "Software Developer",
+            "IT Support Specialist",
+            "Data Analyst",
+            "Network Administrator",
+            "Cybersecurity Analyst",
+            "Database Administrator",
+            "Web Developer",
+            "Cloud Engineer"
+        ],
+        "placement": {
+            "rate": "94%",
+            "average": "₹3.8 LPA",
+            "highest": "₹9.2 LPA",
+            "companies": [
+                "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753341/download_lptm8v.png",
+                "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753202/download_dpcuui.png",
+                "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753189/download_mjqx63.png",
+                "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753151/download_cmf47v.png",
+                "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753138/download_cjyies.jpg",
+                "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753126/download_oyqbjr.png",
+                "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753114/download_yrgmjz.png"
+            ]
+        },
+        "internship": {
+            "partners": [
+                "PatnaTech Solutions",
+                "Bihar IT Hub",
+                "Digital Bihar Initiative",
+                "Patna Smart City Project",
+                "State Bank of India IT Division"
+            ],
+            "duration": "Minimum 8 weeks mandatory in 5th semester"
+        }
     },
-    labs: [
-      "Cisco Networking Lab",
-      "Software Development Lab",
-      "Data Science Lab",
-      "Cybersecurity Lab",
-      "Cloud Computing Lab"
-    ]
-  },
-  admission: {
-    eligibility: [
-      "10+2 with Mathematics as compulsory subject",
-      "Minimum 50% marks in 12th standard",
-      "Basic computer knowledge preferred",
-      "No age restriction"
-    ],
-    process: [
-      {
-        step: "1. Online Application",
-        description: "Fill form at admissions.catalystcollege.edu.in with ₹600 fee",
-        icon: "/svg/application.svg"
-      },
-      {
-        step: "2. Aptitude Test",
-        description: "Basic math and logical reasoning test (online/offline)",
-        icon: "/svg/test.svg"
-      },
-      {
-        step: "3. Counseling Session",
-        description: "Interactive session with faculty",
-        icon: "/svg/counseling.svg"
-      },
-      {
-        step: "4. Enrollment",
-        description: "Document verification and fee payment",
-        icon: "/svg/enrollment.svg"
-      }
-    ],
-    deadlines: {
-      "Early Admission": "May 20, 2024",
-      "Regular Admission": "June 30, 2024",
-      "Late Admission": "July 25, 2024"
-    }
-  },
-  careers: {
-    roles: [
-      "Software Developer",
-      "IT Support Specialist",
-      "Data Analyst",
-      "Network Administrator",
-      "Cybersecurity Analyst",
-      "Database Administrator",
-      "Web Developer",
-      "Cloud Engineer"
-    ],
-    placement: {
-      rate: "94%",
-      average: "₹3.8 LPA",
-      highest: "₹9.2 LPA",
-      companies: [
-        "/images/recruiters/tcs.png",
-        "/images/recruiters/infosys.png",
-        "/images/recruiters/patnatech.png",
-        "/images/recruiters/bihar-it-hub.png",
-        "/images/recruiters/wipro.png"
-      ]
+    "curriculum": {
+        "structure": {
+            "duration": "3 Years | 6 Semesters",
+            "credits": "140 Credit Hours (PPU Pattern)",
+            "pattern": "60% Practical | 40% Theory"
+        },
+        "coreSubjects": [
+            "Programming Fundamentals",
+            "Data Structures & Algorithms",
+            "Computer Networks",
+            "Database Management Systems",
+            "Web Technologies",
+            "Operating Systems",
+            "Software Engineering",
+            "Object-Oriented Programming",
+            "Computer Organization",
+            "Discrete Mathematics"
+        ],
+        "specializations": {
+            "Software Development": [
+                "Advanced Java/Python",
+                "Mobile App Development",
+                "DevOps Practices",
+                "UI/UX Design",
+                "Agile Methodologies"
+            ],
+            "Data Science": [
+                "Python for Data Science",
+                "Machine Learning Basics",
+                "Big Data Analytics",
+                "Data Visualization",
+                "Statistical Methods"
+            ],
+            "Cybersecurity": [
+                "Ethical Hacking",
+                "Network Security",
+                "Cyber Laws",
+                "Digital Forensics",
+                "Cryptography"
+            ]
+        },
+        "labs": [
+            "Cisco Networking Lab",
+            "Software Development Lab",
+            "Data Science Lab",
+            "Cybersecurity Lab",
+            "Cloud Computing Lab"
+        ]
     },
-    internship: {
-      partners: [
-        "PatnaTech Solutions",
-        "Bihar IT Hub",
-        "Digital Bihar Initiative",
-        "Patna Smart City Project",
-        "State Bank of India IT Division"
-      ],
-      duration: "Minimum 8 weeks mandatory in 5th semester"
-    }
-  },
-  faculty: [
-    {
-      name: "Dr. Anil Kumar",
-      designation: "Professor & HOD (IT)",
-      qualification: "PhD (Computer Science), IIT Patna",
-      expertise: "Network Security",
-      experience: "15 years (ex-TCS Cybersecurity)",
-      image: "/images/faculty/anil-kumar.jpg"
+    "facilities": {
+        "labs": [
+            {
+                "name": "Cisco Networking Lab",
+                "equipment": "20 Cisco routers/switches, Packet Tracer software",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752752131/download_xcegoa.jpg"
+            },
+            {
+                "name": "Data Science Lab",
+                "equipment": "High-performance workstations with Python/R, Tableau",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
+            }
+        ],
+        "library": {
+            "volumes": "5000+ IT-specific books/journals",
+            "digital": "Access to IEEE Xplore, ACM Digital Library"
+        }
     },
-    {
-      name: "Prof. Priya Sharma",
-      designation: "Associate Professor",
-      qualification: "MTech (Software Systems), NIT Patna",
-      expertise: "Data Science",
-      experience: "10 years industry experience",
-      image: "/images/faculty/priya-sharma.jpg"
+    "faculty": [
+        {
+            "name": "Amit shukhla",
+            "designation": "Professor & HOD (BCA)",
+            "qualification": "PhD (Computer Science), IIT Patna",
+            "expertise": "Software Engineering",
+            "experience": "18 years",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752744394/68fa36c2-de43-406c-b4bf-6466c2ed96ac.png"
+        },
+        {
+            "name": "Murli Manohar",
+            "designation": "Cyber Secutity Expert",
+            "qualification": "MCA",
+            "expertise": "Cloud Computing",
+            "experience": "12 years industry experience",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746925/Murli-Sir_a6peoy.jpg"
+        }
+    ],
+    "fees": {
+        "structure": [
+            {
+                "item": "Tuition Fee",
+                "amount": "₹60,000/year"
+            },
+            {
+                "item": "Lab Fee",
+                "amount": "₹10,000/year"
+            },
+            {
+                "item": "Exam Fee",
+                "amount": "₹3,500/semester"
+            },
+            {
+                "item": "Industry Certification Fee",
+                "amount": "₹5,000 (one-time)"
+            }
+        ],
+        "scholarships": [
+            {
+                "name": "Bihar Student Credit Card",
+                "amount": "Up to ₹4 lakhs"
+            },
+            {
+                "name": "Tech Talent Scholarship",
+                "amount": "25% fee waiver for coding competition winners"
+            }
+        ]
+    },
+    "herosection": {
+        "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752665750/power_bi_workshop_agtwqa.png"
+    },
+    "overview": {
+        "title": "Bachelor of Science in Information Technology (BSc IT)",
+        "intro": "Catalyst College Patna's BSc IT program equips students with cutting-edge technical skills through hands-on learning in our advanced labs and industry collaborations.",
+        "highlights": [
+            "PPU-affiliated 3-year degree program",
+            "94% placement record in 2023",
+            "Project-based learning approach",
+            "Guaranteed industry internship",
+            "Cisco Networking Academy partnered"
+        ],
+        "skills": [
+            "Full-Stack Development",
+            "Data Analysis & Visualization",
+            "Cybersecurity Fundamentals",
+            "Cloud Computing",
+            "Database Management",
+            "AI/ML Basics"
+        ],
+        "accreditation": "NAAC excellent Grade | Cisco Networking Academy | Microsoft Learn Partner"
+    },
+    "studentLife": {
+        "clubs": [
+            {
+                "name": "Code Catalyst",
+                "description": "Weekly coding challenges and hackathon preparation",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747310/486678604_1059585816197357_640593102037474519_n_helyxg.jpg"
+            },
+            {
+                "name": "Cyber Warriors",
+                "description": "Cybersecurity competitions and CTF events",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747260/d3f5cab9-1303-45d1-b76b-d13cd3445503.png"
+            }
+        ],
+        "events": [
+            {
+                "name": "TechVista",
+                "description": "Annual tech fest with 100+ participants from Bihar",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747110/486057045_1056585686497370_2858634788722645153_n_boowwi.jpg"
+            },
+            {
+                "name": "HackBihar",
+                "description": "48-hour hackathon solving Bihar's digital challenges",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg"
+            }
+        ]
+    },
+    "whyChoose": {
+        "title": "Why Choose Our BSc IT Program?",
+        "features": [
+            {
+                "title": "Advanced Computing Labs",
+                "description": "Access to specialized labs: Cisco Networking, AI/ML, Cybersecurity, and Software Development",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752827027/486300369_1055984116557527_4023767572347415079_n_h3ujez.jpg"
+            },
+            {
+                "title": "Industry-Aligned Curriculum",
+                "description": "Courses designed with Patna's IT companies like PatnaTech Solutions and Bihar IT Hub",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741171/487548216_1062974769191795_6092592449283881455_n_hpz3nv.jpg"
+            },
+            {
+                "title": "Certification Integration",
+                "description": "Earn professional certs in Cisco, Microsoft, AWS alongside your degree",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752751220/1750165678325_uwvafe.jpg"
+            },
+            {
+                "title": "Startup Incubation",
+                "description": "Dedicated support for student tech startups through Catalyst Tech Garage",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752751502/3843a019-baf0-40e0-97b4-f548462aacf7.png"
+            },
+            {
+                "title": "Faculty Practitioners",
+                "description": "Learn from professors with 10+ years experience at TCS, Infosys, and Patna-based IT firms",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740770/487872091_1062568942565711_1649777733350717587_n_l1whum.jpg"
+            },
+            {
+                "title": "Hackathon Culture",
+                "description": "Regular coding competitions with prizes from Bihar IT Association",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
+            }
+        ]
     }
-  ],
-  studentLife: {
-    clubs: [
-      {
-        name: "Code Catalyst",
-        description: "Weekly coding challenges and hackathon preparation",
-        image: "/images/clubs/code-catalyst.jpg"
-      },
-      {
-        name: "Cyber Warriors",
-        description: "Cybersecurity competitions and CTF events",
-        image: "/images/clubs/cyber-warriors.jpg"
-      }
-    ],
-    events: [
-      {
-        name: "TechVista",
-        description: "Annual tech fest with 100+ participants from Bihar",
-        image: "/images/events/techvista.jpg"
-      },
-      {
-        name: "HackBihar",
-        description: "48-hour hackathon solving Bihar's digital challenges",
-        image: "/images/events/hackbihar.jpg"
-      }
-    ]
-  },
-  facilities: {
-    labs: [
-      {
-        name: "Cisco Networking Lab",
-        equipment: "20 Cisco routers/switches, Packet Tracer software",
-        image: "/images/labs/cisco-lab.jpg"
-      },
-      {
-        name: "Data Science Lab",
-        equipment: "High-performance workstations with Python/R, Tableau",
-        image: "/images/labs/ds-lab.jpg"
-      }
-    ],
-    library: {
-      volumes: "5000+ IT-specific books/journals",
-      digital: "Access to IEEE Xplore, ACM Digital Library"
-    }
-  },
-  fees: {
-    structure: [
-      {
-        item: "Tuition Fee",
-        amount: "₹60,000/year"
-      },
-      {
-        item: "Lab Fee",
-        amount: "₹10,000/year"
-      },
-      {
-        item: "Exam Fee",
-        amount: "₹3,500/semester"
-      },
-      {
-        item: "Industry Certification Fee",
-        amount: "₹5,000 (one-time)"
-      }
-    ],
-    scholarships: [
-      {
-        name: "Bihar Student Credit Card",
-        amount: "Up to ₹4 lakhs"
-      },
-      {
-        name: "Tech Talent Scholarship",
-        amount: "25% fee waiver for coding competition winners"
-      }
-    ]
-  }
 }
 
-export default function BScITPage() {
+
+export default async function BScITPage() {
+  const { data, error} = await fetchPageData("bsc-it")
+bscitProgram = data as any ?? bscitProgram
   return (
     <div className="bg-white">
       {/* Hero Section with Tech Background */}
-      <div className="relative bg-gradient-to-r from-blue-900 to-indigo-900 overflow-hidden">
+<div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+        {/* Decorative elements */}
         <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-30"></div>
+        </div>
+
+        {/* Geometric pattern overlay */}
+        <div className="absolute inset-0 opacity-10">
           <svg
-            className="absolute inset-0 w-full h-full"
-            preserveAspectRatio="xMidYMid slice"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 1463 360"
+            className="w-full h-full"
+            viewBox="0 0 1200 600"
+            preserveAspectRatio="none"
           >
             <path
-              fill="url(#tech-pattern)"
-              d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
-            />
-            <defs>
-              <linearGradient
-                id="tech-pattern"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="#6366f1" />
-              </linearGradient>
-            </defs>
+              d="M0,0 L1200,0 L1200,600 Q600,300 0,600 Z"
+              fill="white"
+            ></path>
           </svg>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 py-28 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {bscitProgram.overview.title}
+
+        <div className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Content section */}
+            <div className="relative z-10">
+              {/* Program badge */}
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-8">
+                <span className="text-blue-200 text-sm font-medium tracking-wider">
+                  UNDERGRADUATE PROGRAM
+                </span>
+              </div>
+
+              {/* Main heading with gradient text */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-purple-200">
+                  {bscitProgram.overview.title}
+                </span>
               </h1>
-              <p className="mt-6 text-xl text-blue-100 max-w-3xl">
+
+              {/* Description */}
+              <p className="text-xl text-blue-100 max-w-2xl mb-8 leading-relaxed">
                 {bscitProgram.overview.intro}
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+
+              {/* Stats mockup */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">3</div>
+                  <div className="text-sm text-blue-200">Years Duration</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">100+</div>
+                  <div className="text-sm text-blue-200">Industry Projects</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">90%</div>
+                  <div className="text-sm text-blue-200">Placement Rate</div>
+                </div>
+              </div>
+
+              {/* CTA buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="#admission"
-                  className="px-6 py-3 bg-white text-blue-800 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+                  href="/register"
+                  className="px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-blue-50 transition-all duration-300 hover:shadow-lg flex items-center justify-center"
                 >
                   Apply Now
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
                 </a>
                 <a
-                  href="#labs"
-                  className="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-800 transition-colors"
+                  href="#curriculum"
+                  className="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-xl hover:border-white/50 hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
                 >
-                  Explore Labs
+                  Explore Curriculum
                 </a>
               </div>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+
+            {/* Image section with floating elements */}
+            <div className="relative h-80 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 group">
+              {/* Main image */}
               <Image
-                src="/images/bscit/hero-coding.jpg"
-                alt="BSc IT students working in lab"
+                src={bscitProgram.herosection.imageURL}
+                alt="Bsc-it students at computer lab"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
               />
+
             </div>
           </div>
+        </div>
+
+        {/* Wave separator */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden transform rotate-180">
+          <svg
+            className="relative block w-full h-20"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              fill="white"
+              opacity=".25"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              fill="white"
+              opacity=".5"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="white"
+            ></path>
+          </svg>
         </div>
       </div>
 
@@ -430,34 +495,44 @@ export default function BScITPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Our BSc IT?</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Bihar's Most Practical IT Education
-            </p>
-          </div>
+<section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <span className="inline-block px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full mb-4">
+        Why Our BSc IT?
+      </span>
+      <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+        Bihar's Most <span className="text-blue-600">Practical IT Education</span>
+      </h2>
+    </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {bscitProgram.whyChoose.features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-4">
-                  <Image 
-                    src={feature.icon} 
-                    alt="" 
-                    width={32} 
-                    height={32} 
-                    className="text-blue-600"
-                  />
-                </div>
-                <h3 className="text-xl font-medium text-gray-900">{feature.title}</h3>
-                <p className="mt-2 text-gray-600">{feature.description}</p>
-              </div>
-            ))}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {bscitProgram.whyChoose.features.map((feature, index) => (
+        <div 
+          key={index} 
+          className="group relative bg-white p-0 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+        >
+          {/* Image Container */}
+          <div className="h-48 w-full overflow-hidden">
+            <Image 
+              src={feature.icon} 
+              alt={feature.title}
+              width={400}
+              height={240}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+          
+          {/* Content */}
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+            <p className="text-gray-600 leading-relaxed">{feature.description}</p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Curriculum Section */}
       <section id="curriculum" className="py-16 bg-white">
@@ -502,7 +577,7 @@ export default function BScITPage() {
                     <div key={specialization} className="bg-white p-4 rounded-lg shadow-xs border border-gray-200">
                       <h4 className="text-lg font-medium text-blue-800">{specialization}</h4>
                       <ul className="mt-3 space-y-2">
-                        {subjects.slice(0, 3).map((subject, idx) => (
+                        {subjects.map((subject, idx) => (
                           <li key={idx} className="flex items-start">
                             <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
@@ -511,9 +586,6 @@ export default function BScITPage() {
                           </li>
                         ))}
                       </ul>
-                      <button className="mt-3 text-sm text-blue-600 hover:text-blue-800 font-medium">
-                        View all {subjects.length} subjects →
-                      </button>
                     </div>
                   ))}
                 </div>
@@ -617,7 +689,7 @@ export default function BScITPage() {
 
           <div className="mt-16 text-center">
             <a
-              href="#"
+              href="/register"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
             >
               Begin Your Application
@@ -838,7 +910,7 @@ export default function BScITPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href="#admission"
+              href="/register"
               className="px-6 py-3 bg-white text-blue-800 font-medium rounded-lg hover:bg-blue-100"
             >
               Apply Now
@@ -848,12 +920,6 @@ export default function BScITPage() {
               className="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-800"
             >
               Download Brochure
-            </a>
-            <a
-              href="#"
-              className="px-6 py-3 text-white font-medium rounded-lg hover:text-blue-200"
-            >
-              Chat with Current Students
             </a>
           </div>
         </div>

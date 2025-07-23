@@ -1,6 +1,8 @@
+import { fetchPageData } from '@/lib/useFetchData';
+import { ArrowUpIcon } from 'lucide-react';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { FaCalendarAlt, FaUsers, FaLaptopCode, FaChartLine, FaHandsHelping, FaTrophy } from 'react-icons/fa';
+import { FaCalendarAlt, FaUsers, FaLaptopCode, FaChartLine, FaHandsHelping, FaTrophy, FaArrowRight } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Departmental Activities | Catalyst College Patna',
@@ -23,168 +25,199 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-const DepartmentalActivities = () => {
-  const activities = [
+let pageData ={
+  "activities": [
     {
-      category: 'Seminars & Expert Talks',
-      items: [
+      "category": "Seminars & Expert Talks",
+      "items": [
         {
-          title: 'AI in Business Strategy',
-          programs: ['BBA', 'BCA'],
-          date: 'March 15, 2024',
-          image: '/images/seminar-ai.jpg',
-          description: 'Joint seminar exploring AI applications in business decision making'
+          "title": "AI in Business Strategy",
+          "programs": ["BBA", "BCA"],
+          "date": "March 15, 2024",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828414/fe9e2f11-4087-4f43-aa60-9bd2d6f5eb01.png",
+          "description": "Joint seminar exploring AI applications in business decision making"
         },
         {
-          title: 'Cybersecurity Basics',
-          programs: ['BSc IT', 'BCA'],
-          date: 'February 28, 2024',
-          image: '/images/cyber-security.jpg',
-          description: 'Essential cybersecurity practices for IT professionals'
+          "title": "Cybersecurity Basics",
+          "programs": ["BSc IT", "BCA"],
+          "date": "February 28, 2024",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828495/488922405_23916388957966117_1283071211367299069_n_cfbbii.jpg",
+          "description": ""
         }
       ]
     },
     {
-      category: 'Workshops & Training',
-      items: [
+      "category": "Workshops & Training",
+      "items": [
         {
-          title: 'Python for Beginners',
-          programs: ['BCA', 'BSc IT'],
-          date: 'January 20, 2024',
-          image: '/images/python-workshop.jpg',
-          description: 'Hands-on coding workshop covering Python fundamentals'
+          "title": "Python for Beginners",
+          "programs": ["BCA", "BSc IT"],
+          "date": "January 20, 2024",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828584/485090290_1053184353504170_7489473702427463248_n_jcpvvt.jpg",
+          "description": "Hands-on coding workshop covering Python fundamentals"
         },
         {
-          title: 'Excel for Financial Modeling',
-          programs: ['BBA'],
-          date: 'November 10, 2023',
-          image: '/images/excel-workshop.jpg',
-          description: 'Advanced Excel techniques for financial analysis'
+          "title": "Excel for Financial Modeling",
+          "programs": ["BBA"],
+          "date": "November 10, 2023",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828728/download_hnd6ie.png",
+          "description": "Full tutorial of Excel"
         }
       ]
     },
     {
-      category: 'Industrial Visits',
-      items: [
+      "category": "Industrial Visits",
+      "items": [
         {
-          title: 'Infosys Tech Park Visit',
-          programs: ['BCA', 'BSc IT'],
-          date: 'December 5, 2023',
-          image: '/images/infosys-visit.jpg',
-          description: 'Exposure to corporate IT infrastructure and workflows'
+          "title": "Steel Process Factory",
+          "programs": ["BCA", "BSc IT"],
+          "date": "December 5, 2023",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828851/486151393_1055702869918985_3352829412523095400_n_p5bn95.jpg",
+          "description": "Exposure to Iron Process and supply"
         },
         {
-          title: 'Parle-G Plant Visit',
-          programs: ['BBA'],
-          date: 'October 18, 2023',
-          image: '/images/parle-visit.jpg',
-          description: 'Understanding manufacturing and supply chain management'
+          "title": "Butter D-lite Plant Visit",
+          "programs": ["BBA"],
+          "date": "October 18, 2023",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828867/487555599_1061839282638677_5498399053034687482_n_rc1arw.jpg",
+          "description": "Understanding manufacturing and supply chain management"
         }
       ]
     },
     {
-      category: 'Tech & Business Fests',
-      items: [
+      "category": "Tech & Business Fests",
+      "items": [
         {
-          title: 'INNOVA 2K24',
-          programs: ['BBA', 'BCA', 'BSc IT'],
-          date: 'March 1-3, 2024',
-          image: '/images/innova-fest.jpg',
-          description: 'Annual inter-department fest with 20+ events'
+          "title": "Career MahaKumbh",
+          "programs": ["BBA", "BCA", "BSc IT"],
+          "date": "02 August 2025",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752829184/487039934_1062569379232334_8104513723895339455_n_vfdssr.jpg",
+          "description": "Annual inter-department fest with 20+ events"
         }
       ]
     },
     {
-      category: 'Competitions',
-      items: [
+      "category": "Competitions",
+      "items": [
         {
-          title: 'CodeStorm Hackathon',
-          programs: ['BCA', 'BSc IT'],
-          date: 'February 10, 2024',
-          image: '/images/codestorm.jpg',
-          description: '24-hour coding competition with industry judges'
+          "title": "Code Combat",
+          "programs": ["BCA", "BSc IT"],
+          "date": "February 10, 2024",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg",
+          "description": "24-hour coding competition with industry judges"
         },
         {
-          title: 'Market Masters',
-          programs: ['BBA'],
-          date: 'January 25, 2024',
-          image: '/images/market-masters.jpg',
-          description: 'Simulated stock trading competition'
+          "title": "Market Masters",
+          "programs": ["BBA"],
+          "date": "January 25, 2024",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752831252/494024698_24052016884403323_2194228380363041065_n_vb8e5b.jpg",
+          "description": "Simulated stock trading competition"
         }
       ]
     },
     {
-      category: 'Clubs & Student Bodies',
-      items: [
+      "category": "Clubs & Student Bodies",
+      "items": [
         {
-          title: 'Tech Club Activities',
-          programs: ['BCA', 'BSc IT'],
-          date: 'Ongoing',
-          image: '/images/tech-club.jpg',
-          description: 'Regular meetups on emerging technologies'
+          "title": "Tech Club Activities",
+          "programs": ["BCA", "BSc IT"],
+          "date": "Ongoing",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747110/486057045_1056585686497370_2858634788722645153_n_boowwi.jpg",
+          "description": "Regular meetups on emerging technologies"
         },
         {
-          title: 'Management Club Events',
-          programs: ['BBA'],
-          date: 'Ongoing',
-          image: '/images/mgmt-club.jpg',
-          description: 'Business case studies and leadership workshops'
+          "title": "Management Club Events",
+          "programs": ["BBA"],
+          "date": "Ongoing",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752831411/488245573_1064934782329127_4396540362937987045_n_g1lnja.jpg",
+          "description": "Business case studies and leadership workshops"
         }
       ]
     },
     {
-      category: 'Social Outreach',
-      items: [
+      "category": "Social Outreach",
+      "items": [
         {
-          title: 'Blood Donation Camp',
-          programs: ['BBA', 'BCA', 'BSc IT'],
-          date: 'October 1, 2023',
-          image: '/images/blood-donation.jpg',
-          description: 'Annual blood donation drive in collaboration with Red Cross'
+          "title": "Blood Donation Camp",
+          "programs": ["BBA", "BCA", "BSc IT"],
+          "date": "October 1, 2023",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741326/488217060_1064882295667709_1999050953493412670_n_k0rev3.jpg",
+          "description": "Annual blood donation drive in collaboration with Red Cross"
         },
         {
-          title: 'Tech for Society',
-          programs: ['BCA', 'BSc IT'],
-          date: 'September 2023',
-          image: '/images/tech-society.jpg',
-          description: 'Students developed website for local NGO'
+          "title": "Tech for Society",
+          "programs": ["BCA", "BSc IT"],
+          "date": "September 2023",
+          "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752829478/67257742_10157123718725520_8146137322111369216_n_owyqln.jpg",
+          "description": "Students developed website for local NGO"
         }
       ]
     }
-  ];
-
-  const stats = [
-    { value: '25+', label: 'Workshops Conducted', icon: <FaLaptopCode className="w-8 h-8" /> },
-    { value: '8', label: 'Industrial Visits', icon: <FaChartLine className="w-8 h-8" /> },
-    { value: '500+', label: 'Students Participated', icon: <FaUsers className="w-8 h-8" /> },
-    { value: '15', label: 'Expert Sessions', icon: <FaCalendarAlt className="w-8 h-8" /> },
-    { value: '3', label: 'Major Fests', icon: <FaTrophy className="w-8 h-8" /> },
-    { value: '10+', label: 'CSR Initiatives', icon: <FaHandsHelping className="w-8 h-8" /> }
-  ];
-
-  const testimonials = [
+  ],
+  "gallery": [
     {
-      quote: "The app development bootcamp helped me land an internship at a leading tech firm!",
-      author: "Riya Sharma",
-      program: "BCA, 3rd Year"
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752832078/WhatsApp_Image_2025-07-18_at_15.17.50_2a297882_syiaaz.jpg",
+      "caption": "Cash Prize"
     },
     {
-      quote: "Organizing BizQuiz enhanced my leadership and event management skills tremendously.",
-      author: "Akash Verma",
-      program: "BBA, 2nd Year"
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752832349/487798706_1061838152638790_7457525024258014507_n_tqdgbo.jpg",
+      "caption": "Industrial Visit "
     },
     {
-      quote: "Our industrial visit to Infosys gave me clarity about corporate expectations and work culture.",
-      author: "Priyanka Singh",
-      program: "BSc IT, Final Year"
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740831/486873408_1062197215936217_8435744219966123771_n_hjraq7.jpg",
+      "caption": "Workshop on Power BI"
     },
     {
-      quote: "The department activities bridge the gap between theoretical knowledge and practical application effectively.",
-      author: "Prof. Rajiv Kumar",
-      position: "HOD, Computer Applications"
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741316/487286892_1064883055667633_5024952859530526660_n_lbq9yo.jpg",
+      "caption": "Blood Donation Camp 2023"
+    },
+    {
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740468/485734238_1052423500246922_2889030121503606787_n_qfov2y.jpg",
+      "caption": "Krititirth"
+    },
+    {
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752832588/486603351_1058956489593623_3298960217531760490_n_k3ului.jpg",
+      "caption": "Annual Sports Day"
     }
-  ];
+  ],
+  "stats": [
+    { "value": "25+", "label": "Workshops Conducted"},
+    { "value": "8", "label": "Industrial Visits" },
+    { "value": "500+", "label": "Students Participated" },
+    { "value": "15", "label": "Expert Sessions" },
+    { "value": "3", "label": "Major Fests" },
+    { "value": "10+", "label": "CSR Initiatives" }
+  ],
+  "testimonials": [
+    {
+      "quote": "The app development bootcamp helped me land an internship at a leading tech firm!",
+      "author": "Riya Sharma",
+      "program": "BCA, 3rd Year"
+    },
+    {
+      "quote": "Organizing BizQuiz enhanced my leadership and event management skills tremendously.",
+      "author": "Akash Verma",
+      "program": "BBA, 2nd Year"
+    },
+    {
+      "quote": "Our industrial visit to Infosys gave me clarity about corporate expectations and work culture.",
+      "author": "Priyanka Singh",
+      "program": "BSc IT, Final Year"
+    },
+    {
+      "quote": "The department activities bridge the gap between theoretical knowledge and practical application effectively.",
+      "author": "Prof. Rajiv Kumar",
+      "position": "HOD, Computer Applications"
+    }
+  ]
+}
+
+const DepartmentalActivities = async() => {
+
+  const { data , error} = await fetchPageData("departmental- activities")
+  pageData = data as any ?? pageData
+  const { testimonials, stats, activities } = pageData
+
 
   return (
     <div className="relative overflow-hidden">
@@ -220,9 +253,6 @@ const DepartmentalActivities = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {stats.map((stat, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
-                <div className="text-blue-600 flex justify-center mb-4">
-                  {stat.icon}
-                </div>
                 <h3 className="text-3xl font-bold text-gray-800">{stat.value}</h3>
                 <p className="text-gray-600 mt-2">{stat.label}</p>
               </div>
@@ -232,68 +262,98 @@ const DepartmentalActivities = () => {
       </section>
 
       {/* Activities by Category */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Departmental Activities</h2>
-        
-        <div className="space-y-16">
-          {activities.map((activityCategory, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6">
-                <h3 className="text-2xl font-bold text-white">{activityCategory.category}</h3>
-              </div>
-              <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-                {activityCategory.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="flex flex-col md:flex-row gap-6">
-                    <div className="w-full md:w-1/3 h-48 relative rounded-lg overflow-hidden">
-                      <Image 
-                        src={item.image} 
-                        alt={item.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="w-full md:w-2/3">
-                      <h4 className="text-xl font-semibold text-gray-800">{item.title}</h4>
-                      <div className="flex items-center mt-2 text-sm text-gray-600">
-                        <FaCalendarAlt className="mr-2 text-blue-500" />
-                        <span>{item.date}</span>
-                        <span className="mx-2">|</span>
-                        <FaUsers className="mr-2 text-blue-500" />
-                        <span>{item.programs.join(', ')}</span>
-                      </div>
-                      <p className="mt-3 text-gray-600">{item.description}</p>
-                    </div>
+
+       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50">
+      <div className="text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Departmental Activities</span>
+        </h2>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Explore the diverse range of events, workshops, and competitions that define our vibrant academic community.
+        </p>
+      </div>
+
+      <div className="mt-16 space-y-16">
+        {activities.map((activityCategory, index) => (
+          <div key={index}>
+            {/* Category Title */}
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 pb-3 border-b-2 border-indigo-200">
+              {activityCategory.category}
+            </h3>
+
+            {/* Grid of Activity Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+              {activityCategory.items.map((item, itemIndex) => (
+                <div
+                  key={itemIndex}
+                  className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 flex flex-col overflow-hidden"
+                >
+                  {/* Image Container */}
+                  <div className="relative h-56 w-full overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                   </div>
-                ))}
-              </div>
+
+                  {/* Content Container */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                      <span className="flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                        <FaCalendarAlt className="mr-1.5" />
+                        {item.date}
+                      </span>
+                      <span className="flex items-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-semibold">
+                        <FaUsers className="mr-1.5" />
+                        {item.programs.join(' & ')}
+                      </span>
+                    </div>
+
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      {item.title}
+                    </h4>
+                    
+                    <p className="text-gray-600 leading-relaxed flex-grow mb-4">
+                      {item.description}
+                    </p>
+
+                    <a
+                      href="#"
+                      className="mt-auto group inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors duration-300"
+                    >
+                      Learn More
+                      <ArrowUpIcon />
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        ))}
+      </div>
+    </section>
 
       {/* Photo Gallery */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Gallery Highlights</h2>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { src: '/images/gallery-1.jpg', caption: 'INNOVA 2K24 Fest' },
-              { src: '/images/gallery-2.jpg', caption: 'Industrial Visit to Tech Park' },
-              { src: '/images/gallery-3.jpg', caption: 'Workshop on AI Applications' },
-              { src: '/images/gallery-4.jpg', caption: 'Blood Donation Camp 2023' },
-              { src: '/images/gallery-5.jpg', caption: 'Business Quiz Competition' },
-              { src: '/images/gallery-6.jpg', caption: 'Annual Sports Day' },
-            ].map((image, index) => (
+            {pageData.gallery.map((image, index) => (
               <div key={index} className="relative group rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                 <div className="h-64 relative">
-                  <Image 
+                  <Image
                     src={image.src}
                     alt={image.caption}
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
+                  <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                     <div className="w-full p-4 bg-gradient-to-t from-black to-transparent">
                       <p className="text-white font-medium">{image.caption}</p>
                     </div>
@@ -302,7 +362,7 @@ const DepartmentalActivities = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-10 text-center">
             <button className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
               View Full Gallery
@@ -312,17 +372,12 @@ const DepartmentalActivities = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">What Our Community Says</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i}>★</span>
-                ))}
-              </div>
               <blockquote className="text-lg text-gray-700 mb-6">
                 "{testimonial.quote}"
               </blockquote>

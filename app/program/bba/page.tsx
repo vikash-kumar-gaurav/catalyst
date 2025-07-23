@@ -1,17 +1,18 @@
 // app/bba/page.tsx
+import { fetchPageData } from '@/lib/useFetchData'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "BBA Program | Catalyst College Patna - Premier Business Education in Bihar",
-  description: "3-year industry-integrated BBA program with specializations in Marketing, Finance, HR & Analytics. 92% placement record | AKU-affiliated | Bihar's top business college",
+  description: "3-year industry-integrated BBA program with specializations in Marketing, Finance, HR & Analytics. 92% placement record | -affiliated | Bihar's top business college",
   keywords: [
     "Best BBA College Patna",
     "BBA in Bihar",
     "Business Administration Patna",
     "Catalyst College BBA",
     "Top BBA College Bihar",
-    "AKU affiliated BBA"
+    "PPU affiliated BBA"
   ],
   openGraph: {
     title: "BBA Program | Catalyst College Patna",
@@ -27,69 +28,99 @@ export const metadata: Metadata = {
   },
 }
 
-const bbaProgram = {
-  overview: {
-    title: "Bachelor of Business Administration (BBA)",
-    intro: "Catalyst College Patna's BBA program molds aspiring students into industry-ready business professionals through our unique blend of academic rigor and practical exposure.",
-    highlights: [
-      "AKU-affiliated 3-year degree program",
-      "92% placement record in 2023",
-      "Industry-designed curriculum",
-      "Summer internship guarantee",
-      "Bloomberg Finance Lab access"
+let bbaProgram = {
+  "page_name": "bba",
+  "admission": {
+    "eligibility": [
+      "10+2 from any recognized board with minimum 50% marks",
+      "No age restriction",
+      "English as compulsory subject",
+      "Direct admission based on merit (No entrance exam)"
     ],
-    skills: [
-      "Business Strategy Formulation",
-      "Financial Analysis & Reporting",
-      "Digital Marketing Execution",
-      "Leadership & Team Management",
-      "Data-Driven Decision Making",
-      "Entrepreneurial Mindset"
+    "process": [
+      {
+        "step": "1. Application",
+        "description": "Submit online form with ₹500 fee",
+        "icon": "/svg/application.svg"
+      },
+      {
+        "step": "2. Document Verification",
+        "description": "Upload 10th/12th marksheets, TC, and photos",
+        "icon": "/svg/verification.svg"
+      },
+      {
+        "step": "3. Counseling",
+        "description": "Optional campus interaction session",
+        "icon": "/svg/counseling.svg"
+      },
+      {
+        "step": "4. Enrollment",
+        "description": "Fee payment & orientation program",
+        "icon": "/svg/enrollment.svg"
+      }
     ],
-    accreditation: "Accredited by National Assessment and Accreditation Council (NAAC 'A' Grade)"
+    "deadlines": {
+      "Early Bird": "May 15, 2024",
+      "Regular": "June 30, 2024",
+      "Extended": "July 31, 2024"
+    },
+    "documents": [
+      "10th & 12th original marksheets",
+      "Transfer Certificate",
+      "Migration Certificate (if applicable)",
+      "Caste Certificate (for reserved category)",
+      "Passport size photographs (4 copies)",
+      "Aadhar Card copy"
+    ]
   },
-  whyChoose: {
-    title: "Why Catalyst College for BBA?",
-    features: [
+  "careers": {
+    "roles": [
+      "Business Analyst",
+      "Marketing Executive",
+      "Financial Advisor",
+      "HR Recruiter",
+      "Operations Coordinator",
+      "Entrepreneur",
+      "Digital Marketer",
+      "Sales Manager"
+    ],
+    "placement": {
+      "rate": "92%",
+      "average": "₹3.2 LPA",
+      "highest": "₹7.5 LPA",
+      "companies": [
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753341/download_lptm8v.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753202/download_dpcuui.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753189/download_mjqx63.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753151/download_cmf47v.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753114/download_yrgmjz.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753126/download_oyqbjr.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753138/download_cjyies.jpg"
+      ]
+    },
+    "alumni": [
       {
-        title: "Patna's Business Network",
-        description: "Direct recruitment partnerships with 50+ Bihar-based companies including Patna Industrial Association members",
-        icon: "/svg/network.svg"
-      },
-      {
-        title: "Learn from Practitioners",
-        description: "70% faculty with 10+ years corporate experience including ex-managers from TATA, HDFC, and Patna-based enterprises",
-        icon: "/svg/faculty.svg"
-      },
-      {
-        title: "Live Business Projects",
-        description: "Solve real challenges from our partner companies like Bihar State Credit Bank and Patna Retail Association",
-        icon: "/svg/projects.svg"
-      },
-      {
-        title: "Entrepreneurship Cell",
-        description: "Incubation support with seed funding up to ₹5 lakhs for student startups",
-        icon: "/svg/startup.svg"
-      },
-      {
-        title: "Global Perspective",
-        description: "International case studies and optional summer school at Singapore Management University",
-        icon: "/svg/global.svg"
-      },
-      {
-        title: "Digital-First Learning",
-        description: "Access to Coursera, Harvard Business Publishing, and our AI-powered business simulator",
-        icon: "/svg/digital.svg"
+        "name": "Rahul Kumar",
+        "position": "Area Manager",
+        "company": "HDFC Bank",
+        "quote": "The practical finance projects at Catalyst gave me unmatched exposure to real banking operations.",
+        "image": "/images/alumni/rahul.jpg"
       }
     ]
   },
-  curriculum: {
-    structure: {
-      duration: "3 Years | 6 Semesters",
-      credits: "132 Credit Hours (AKU Pattern)",
-      pattern: "Choice-Based Credit System (CBCS)"
+  "contact": {
+    "email": "bba.admissions@catalystcollege.edu.in",
+    "phone": "+91 1234567890",
+    "address": "Catalyst College Campus, Bailey Road, Patna - 800014",
+    "hours": "Monday-Saturday: 9:00 AM - 5:00 PM"
+  },
+  "curriculum": {
+    "structure": {
+      "duration": "3 Years | 6 Semesters",
+      "credits": "132 Credit Hours (PPU Pattern)",
+      "pattern": "Choice-Based Credit System (CBCS)"
     },
-    coreSubjects: [
+    "coreSubjects": [
       "Principles of Management",
       "Financial Accounting",
       "Business Economics",
@@ -101,9 +132,21 @@ const bbaProgram = {
       "Human Resource Management",
       "Business Communication",
       "Business Environment in Bihar",
-      "Entrepreneurship Development"
+      "Entrepreneurship Development",
+      "Corporate Finance",
+      "Cost and Management Accounting",
+      "Supply Chain Management",
+      "Consumer Behavior",
+      "International Business",
+      "Strategic Management",
+      "Management Information Systems",
+      "Business Ethics and Corporate Governance",
+      "Research Methodology",
+      "E-Commerce and Digital Marketing",
+      "Project Management"
     ],
-    specializations: {
+    
+    "specializations": {
       "Marketing": [
         "Consumer Behavior & Market Research",
         "Digital Marketing & E-Commerce",
@@ -133,231 +176,262 @@ const bbaProgram = {
         "AI in Business Decision Making"
       ]
     },
-    semesterBreakdown: [
+    "semesterBreakdown": [
       {
-        semester: "Semester 1",
-        subjects: [
+        "semester": "Semester 1",
+        "subjects": [
           "Principles of Management",
           "Business Economics",
           "Financial Accounting",
           "Business Mathematics",
           "Business Communication"
         ]
-      },
-      // Include all 6 semesters...
-    ]
-  },
-  admission: {
-    eligibility: [
-      "10+2 from any recognized board with minimum 50% marks",
-      "No age restriction",
-      "English as compulsory subject",
-      "Direct admission based on merit (No entrance exam)"
-    ],
-    process: [
-      {
-        step: "1. Application",
-        description: "Submit online form with ₹500 fee",
-        icon: "/svg/application.svg"
-      },
-      {
-        step: "2. Document Verification",
-        description: "Upload 10th/12th marksheets, TC, and photos",
-        icon: "/svg/verification.svg"
-      },
-      {
-        step: "3. Counseling",
-        description: "Optional campus interaction session",
-        icon: "/svg/counseling.svg"
-      },
-      {
-        step: "4. Enrollment",
-        description: "Fee payment & orientation program",
-        icon: "/svg/enrollment.svg"
       }
-    ],
-    deadlines: {
-      "Early Bird": "May 15, 2024",
-      "Regular": "June 30, 2024",
-      "Extended": "July 31, 2024"
-    },
-    documents: [
-      "10th & 12th original marksheets",
-      "Transfer Certificate",
-      "Migration Certificate (if applicable)",
-      "Caste Certificate (for reserved category)",
-      "Passport size photographs (4 copies)",
-      "Aadhar Card copy"
     ]
   },
-  careers: {
-    roles: [
-      "Business Analyst",
-      "Marketing Executive",
-      "Financial Advisor",
-      "HR Recruiter",
-      "Operations Coordinator",
-      "Entrepreneur",
-      "Digital Marketer",
-      "Sales Manager"
-    ],
-    placement: {
-      rate: "92%",
-      average: "₹3.2 LPA",
-      highest: "₹7.5 LPA",
-      companies: [
-        "/images/recruiters/hdfc.png",
-        "/images/recruiters/icici.png",
-        "/images/recruiters/patna-industrial.png",
-        "/images/recruiters/bihar-startup.png",
-        "/images/recruiters/edelweiss.png"
-      ]
-    },
-    alumni: [
-      {
-        name: "Rahul Kumar",
-        position: "Area Manager",
-        company: "HDFC Bank",
-        quote: "The practical finance projects at Catalyst gave me unmatched exposure to real banking operations.",
-        image: "/images/alumni/rahul.jpg"
-      },
-      // Add more alumni...
-    ]
-  },
-  faculty: [
+  "faculty": [
     {
-      name: "Dr. Amit Sukhla",
-      designation: "Professor & HOD",
-      qualification: "PhD (Management), IIM Ahmedabad",
-      expertise: "Marketing Strategy",
-      experience: "18 years (ex-TATA Consumer)",
-      image: "/images/faculty/amit-sukhla.jpg"
-    },
-    // Add more faculty...
+      "name": "Dr. Amit Sukhla",
+      "designation": "Professor & HOD",
+      "qualification": "PhD (Management), IIM Ahmedabad",
+      "expertise": "Marketing Strategy",
+      "experience": "18 years (ex-TATA Consumer)",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752744394/68fa36c2-de43-406c-b4bf-6466c2ed96ac.png"
+    }
   ],
-  studentLife: {
-    clubs: [
+  "fees": {
+    "structure": [
       {
-        name: "Catalyst Business Club",
-        description: "Organizes stock simulations, case competitions",
-        image: "/images/clubs/business-club.jpg"
-      },
-      // Add more clubs...
-    ],
-    events: [
-      {
-        name: "Arthashastra",
-        description: "Annual management fest with 50+ colleges",
-        image: "/images/events/arthashastra.jpg"
-      },
-      // Add more events...
-    ]
-  },
-  fees: {
-    structure: [
-      {
-        item: "Tuition Fee",
-        amount: "₹55,000/year"
+        "item": "Tuition Fee",
+        "amount": "₹55,000/year"
       },
       {
-        item: "Lab/Resource Fee",
-        amount: "₹8,000/year"
+        "item": "Lab/Resource Fee",
+        "amount": "₹8,000/year"
       },
       {
-        item: "Exam Fee",
-        amount: "₹3,000/semester"
+        "item": "Exam Fee",
+        "amount": "₹3,000/semester"
       },
       {
-        item: "Caution Deposit",
-        amount: "₹5,000 (refundable)"
+        "item": "Caution Deposit",
+        "amount": "₹5,000 (refundable)"
       }
     ],
-    scholarships: [
+    "scholarships": [
       {
-        name: "Bihar Student Credit Card",
-        amount: "Up to ₹4 lakhs"
+        "name": "Bihar Student Credit Card",
+        "amount": "Up to ₹4 lakhs"
       },
       {
-        name: "EBC Scholarship",
-        amount: "25% fee waiver"
-      },
-      // Add more scholarships...
+        "name": "EBC Scholarship",
+        "amount": "25% fee waiver"
+      }
     ]
   },
-  contact: {
-    email: "bba.admissions@catalystcollege.edu.in",
-    phone: "+91 1234567890",
-    address: "Catalyst College Campus, Bailey Road, Patna - 800014",
-    hours: "Monday-Saturday: 9:00 AM - 5:00 PM"
+  "heroSection": {
+    "imageUrl": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752748962/68751330_2644774165554238_1799719007876546560_n_dcbapx.jpg"
+  },
+  "overview": {
+    "title": "Bachelor of Business Administration (BBA)",
+    "intro": "Catalyst College Patna's BBA program molds aspiring students into industry-ready business professionals through our unique blend of academic rigor and practical exposure.",
+    "highlights": [
+      "PPU-affiliated 3-year degree program",
+      "92% placement record in 2023",
+      "Industry-designed curriculum",
+      "Summer internship guarantee",
+      "Bloomberg Finance Lab access"
+    ],
+    "skills": [
+      "Business Strategy Formulation",
+      "Financial Analysis & Reporting",
+      "Digital Marketing Execution",
+      "Leadership & Team Management",
+      "Data-Driven Decision Making",
+      "Entrepreneurial Mindset"
+    ],
+    "accreditation": "Accredited by National Assessment and Accreditation Council (NAAC 'A' Grade)"
+  },
+  "studentLife": {
+    "clubs": [
+      {
+        "name": "Catalyst Business Club",
+        "description": "Organizes stock simulations, case competitions",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752745794/5fbc02e8-8fdd-40b2-8549-5f5ba7299e5c.png"
+      }
+    ],
+    "events": [
+      {
+        "name": "Arthashastra",
+        "description": "Annual management fest with whole campus",
+        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746556/481173779_9865881320110117_613508857674207901_n_z2gp41.jpg"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "Why Catalyst College for BBA?",
+    "features": [
+      {
+        "title": "Patna's Business Network",
+        "description": "Direct recruitment partnerships with 50+ Bihar-based companies including Patna Industrial Association members",
+        "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752837198/images_cltmar.jpg"
+      },
+      {
+        "title": "Learn from Practitioners",
+        "description": "70% faculty with 10+ years corporate experience including ex-managers from TATA, HDFC, and Patna-based enterprises",
+        "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752837146/1714817147281_sdao3g.jpg"
+      },
+      {
+        "title": "Live Business Projects",
+        "description": "Solve real challenges from our partner companies like Bihar State Credit Bank and Patna Retail Association",
+        "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752837104/download_ombx0h.jpg"
+      },
+      {
+        "title": "Entrepreneurship Cell",
+        "description": "Incubation support with seed funding up to ₹50 thousands for student startups",
+        "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752751502/3843a019-baf0-40e0-97b4-f548462aacf7.png"
+      },
+      {
+        "title": "Global Perspective",
+        "description": "International case studies and optional summer school at Singapore Management University",
+        "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752749733/486290682_1057437386412200_7750465166561672240_n_oakb5b.jpg"
+      },
+      {
+        "title": "Digital-First Learning",
+        "description": "Access to Coursera, Harvard Business Publishing, and our AI-powered business simulator",
+        "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
+      }
+    ]
   }
 }
 
-export default function BBAPage() {
+
+
+
+export default async function BBAPage() {
+
+  const { data, error } = await fetchPageData("bba")
+  bbaProgram = data as any ?? bbaProgram
   return (
     <div className="bg-white">
       {/* Hero Section with Animated Background */}
-      <div className="relative bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+        {/* Decorative elements */}
         <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-30"></div>
+        </div>
+
+        {/* Geometric pattern overlay */}
+        <div className="absolute inset-0 opacity-10">
           <svg
-            className="absolute inset-0 w-full h-full"
-            preserveAspectRatio="xMidYMid slice"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 1463 360"
+            className="w-full h-full"
+            viewBox="0 0 1200 600"
+            preserveAspectRatio="none"
           >
             <path
-              fill="url(#hero-background)"
-              d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
-            />
-            <defs>
-              <linearGradient
-                id="hero-background"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="#2563eb" />
-              </linearGradient>
-            </defs>
+              d="M0,0 L1200,0 L1200,600 Q600,300 0,600 Z"
+              fill="white"
+            ></path>
           </svg>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 py-28 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {bbaProgram.overview.title}
+
+        <div className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:pt-12 lg:pb-18">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Content section */}
+            <div className="relative z-10">
+              {/* Program badge */}
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-8">
+                <span className="text-blue-200 text-sm font-medium tracking-wider">
+                  UNDERGRADUATE PROGRAM
+                </span>
+              </div>
+
+              {/* Main heading with gradient text */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-purple-200">
+                  {bbaProgram.overview.title}
+                </span>
               </h1>
-              <p className="mt-6 text-xl text-blue-100 max-w-3xl">
+
+              {/* Description */}
+              <p className="text-xl text-blue-100 max-w-2xl mb-8 leading-relaxed">
                 {bbaProgram.overview.intro}
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+
+              {/* Stats mockup */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">3</div>
+                  <div className="text-sm text-blue-200">Years Duration</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">100+</div>
+                  <div className="text-sm text-blue-200">Marketing Projects</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">90%</div>
+                  <div className="text-sm text-blue-200">Placement Rate</div>
+                </div>
+              </div>
+
+              {/* CTA buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="#admission"
-                  className="px-6 py-3 bg-white text-blue-800 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+                  href="/register"
+                  className="px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-blue-50 transition-all duration-300 hover:shadow-lg flex items-center justify-center"
                 >
                   Apply Now
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
                 </a>
                 <a
                   href="#curriculum"
-                  className="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-800 transition-colors"
+                  className="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-xl hover:border-white/50 hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
                 >
-                  View Curriculum
+                  Explore Curriculum
                 </a>
               </div>
             </div>
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl">
+
+            {/* Image section with floating elements */}
+            <div className="relative h-80 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 group">
+              {/* Main image */}
               <Image
-                src="/images/bba/hero-students.jpg"
-                alt="BBA students at Catalyst College"
+                src={bbaProgram.heroSection.imageUrl}
+                alt="BBA students at computer lab"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
               />
+
             </div>
           </div>
+        </div>
+
+        {/* Wave separator */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden transform rotate-180">
+          <svg
+            className="relative block w-full h-20"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              fill="white"
+              opacity=".25"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              fill="white"
+              opacity=".5"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="white"
+            ></path>
+          </svg>
         </div>
       </div>
 
@@ -427,29 +501,35 @@ export default function BBAPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-10 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Catalyst College?</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Bihar's Most Industry-Connected BBA Program
-            </p>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full mb-4">
+              Why Catalyst College?
+            </span>
+            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+              Bihar's Most Industry-Connected <span className="text-blue-600">BBA Program</span>
+            </h2>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {bbaProgram.whyChoose.features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-4">
-                  <Image 
-                    src={feature.icon} 
-                    alt="" 
-                    width={32} 
-                    height={32} 
-                    className="text-blue-600"
+              <div
+                key={index}
+                className="relative bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+              >
+                <div className="relative h-48 w-full mb-6 rounded-lg overflow-hidden">
+                  <Image
+                    src={feature.imageURL}
+                    alt={feature.title}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <h3 className="text-xl font-medium text-gray-900">{feature.title}</h3>
-                <p className="mt-2 text-gray-600">{feature.description}</p>
+                <div className="px-2">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -457,7 +537,7 @@ export default function BBAPage() {
       </section>
 
       {/* Curriculum Section */}
-      <section id="curriculum" className="py-16 bg-white">
+      <section id="curriculum" className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Curriculum</h2>
@@ -499,7 +579,7 @@ export default function BBAPage() {
                     <div key={specialization} className="bg-white p-4 rounded-lg shadow-xs border border-gray-200">
                       <h4 className="text-lg font-medium text-blue-800">{specialization}</h4>
                       <ul className="mt-3 space-y-2">
-                        {subjects.slice(0, 3).map((subject, idx) => (
+                        {subjects.map((subject, idx) => (
                           <li key={idx} className="flex items-start">
                             <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
@@ -508,9 +588,6 @@ export default function BBAPage() {
                           </li>
                         ))}
                       </ul>
-                      <button className="mt-3 text-sm text-blue-600 hover:text-blue-800 font-medium">
-                        View all {subjects.length} subjects →
-                      </button>
                     </div>
                   ))}
                 </div>
@@ -521,7 +598,7 @@ export default function BBAPage() {
       </section>
 
       {/* Admission Process */}
-      <section id="admission" className="py-16 bg-gray-50">
+      <section id="admission" className="py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Admission</h2>
@@ -673,7 +750,7 @@ export default function BBAPage() {
       </section>
 
       {/* Faculty Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Faculty</h2>
@@ -712,7 +789,7 @@ export default function BBAPage() {
       </section>
 
       {/* Student Life */}
-      <section className="py-16 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Student Life</h2>
@@ -771,7 +848,7 @@ export default function BBAPage() {
       </section>
 
       {/* Fees & Scholarships */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Financials</h2>
@@ -818,67 +895,6 @@ export default function BBAPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Contact</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Get In Touch
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-blue-50 p-8 rounded-xl">
-              <h3 className="text-xl font-medium text-gray-900 mb-4">Admission Office</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.email}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.phone}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.address}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="ml-3 text-gray-700">{bbaProgram.contact.hours}</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-medium text-gray-900 mb-4">Campus Visit</h3>
-              <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/bba/campus-map.jpg"
-                  alt="Catalyst College Campus Map"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="mt-4">
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                  Download Campus Map
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="bg-blue-800">
@@ -891,7 +907,7 @@ export default function BBAPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href="#admission"
+              href="/register"
               className="px-6 py-3 bg-white text-blue-800 font-medium rounded-lg hover:bg-blue-100"
             >
               Apply Now
@@ -901,12 +917,6 @@ export default function BBAPage() {
               className="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-800"
             >
               Schedule Campus Visit
-            </a>
-            <a
-              href="#"
-              className="px-6 py-3 text-white font-medium rounded-lg hover:text-blue-200"
-            >
-              Download Brochure
             </a>
           </div>
         </div>

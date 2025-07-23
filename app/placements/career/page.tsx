@@ -1,4 +1,5 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { FaChalkboardTeacher, FaFlask, FaUserTie, FaFileAlt, FaHandshake, FaAward, FaBuilding } from 'react-icons/fa';
@@ -28,116 +29,132 @@ export const metadata: Metadata = {
   },
 };
 
-const CareersPage = () => {
-  // Current job openings
-  const jobOpenings = [
+const CareersPage =async() => {
+
+  let pageData = {
+  "jobOpenings": [
     {
-      position: "Assistant Professor - BBA",
-      department: "Business Administration",
-      type: "Full-time",
-      deadline: "31 July 2025",
-      experience: "2+ years teaching experience",
-      qualification: "Ph.D. or Master's with NET",
-      applyLink: "#apply",
-      jdLink: "/jds/assistant-professor-bba.pdf"
+      "position": "Assistant Professor - BBA",
+      "department": "Business Administration",
+      "type": "Full-time",
+      "deadline": "31 July 2025",
+      "experience": "2+ years teaching experience",
+      "qualification": "Ph.D. or Master's with NET",
+      "applyLink": "#apply",
+      "jdLink": "/jds/assistant-professor-bba.pdf"
     },
     {
-      position: "Lab Assistant",
-      department: "Computer Science",
-      type: "Contract",
-      deadline: "15 August 2025",
-      experience: "1+ years lab management",
-      qualification: "BCA/BSc IT with technical skills",
-      applyLink: "#apply",
-      jdLink: "/jds/lab-assistant.pdf"
+      "position": "Lab Assistant",
+      "department": "Computer Science",
+      "type": "Contract",
+      "deadline": "15 August 2025",
+      "experience": "1+ years lab management",
+      "qualification": "BCA/BSc IT with technical skills",
+      "applyLink": "#apply",
+      "jdLink": "/jds/lab-assistant.pdf"
     },
     {
-      position: "Admission Counselor",
-      department: "Administration",
-      type: "Full-time",
-      deadline: "20 July 2025",
-      experience: "2+ years in student counseling",
-      qualification: "Graduate with communication skills",
-      applyLink: "#apply",
-      jdLink: "/jds/admission-counselor.pdf"
+      "position": "Admission Counselor",
+      "department": "Administration",
+      "type": "Full-time",
+      "deadline": "20 July 2025",
+      "experience": "2+ years in student counseling",
+      "qualification": "Graduate with communication skills",
+      "applyLink": "#apply",
+      "jdLink": "/jds/admission-counselor.pdf"
     },
     {
-      position: "Assistant Professor - BCA",
-      department: "Computer Applications",
-      type: "Full-time",
-      deadline: "31 July 2025",
-      experience: "2+ years teaching experience",
-      qualification: "Ph.D. or Master's with NET",
-      applyLink: "#apply",
-      jdLink: "/jds/assistant-professor-bca.pdf"
+      "position": "Assistant Professor - BCA",
+      "department": "Computer Applications",
+      "type": "Full-time",
+      "deadline": "31 July 2025",
+      "experience": "2+ years teaching experience",
+      "qualification": "Ph.D. or Master's with NET",
+      "applyLink": "#apply",
+      "jdLink": "/jds/assistant-professor-bca.pdf"
     }
-  ];
-
-  // Benefits
-  const benefits = [
+  ],
+  "benefits": [
     {
-      title: "Professional Growth",
-      description: "Regular faculty development programs and conference opportunities",
-      icon: <FaChalkboardTeacher className="w-8 h-8 text-blue-600" />
+      "title": "Professional Growth",
+      "description": "Regular faculty development programs and conference opportunities",
+      "icon": "FaChalkboardTeacher"
     },
     {
-      title: "Research Support",
-      description: "Access to labs, journals, and research grants",
-      icon: <FaFlask className="w-8 h-8 text-green-600" />
+      "title": "Research Support",
+      "description": "Access to labs, journals, and research grants",
+      "icon": "FaFlask"
     },
     {
-      title: "Competitive Compensation",
-      description: "As per UGC 7th Pay Commission norms with bonuses",
-      icon: <FaAward className="w-8 h-8 text-purple-600" />
+      "title": "Competitive Compensation",
+      "description": "As per UGC 7th Pay Commission norms with bonuses",
+      "icon": "FaAward"
     },
     {
-      title: "Modern Facilities",
-      description: "State-of-the-art classrooms and campus amenities",
-      icon: <FaBuilding className="w-8 h-8 text-orange-600" />
+      "title": "Modern Facilities",
+      "description": "State-of-the-art classrooms and campus amenities",
+      "icon": "FaBuilding"
     }
-  ];
-
-  // Application process
-  const processSteps = [
-    { step: 1, title: "Review Openings", description: "Explore current job opportunities" },
-    { step: 2, title: "Prepare Documents", description: "CV, cover letter, and credentials" },
-    { step: 3, title: "Submit Application", description: "Email or online form submission" },
-    { step: 4, title: "Selection Process", description: "Interviews and demo lectures" },
-    { step: 5, title: "Onboarding", description: "Orientation and joining formalities" }
-  ];
-
-  // Testimonials
-  const testimonials = [
+  ],
+  "processSteps": [
+    { "step": 1, "title": "Review Openings", "description": "Explore current job opportunities" },
+    { "step": 2, "title": "Prepare Documents", "description": "CV, cover letter, and credentials" },
+    { "step": 3, "title": "Submit Application", "description": "Email or online form submission" },
+    { "step": 4, "title": "Selection Process", "description": "Interviews and demo lectures" },
+    { "step": 5, "title": "Onboarding", "description": "Orientation and joining formalities" }
+  ],
+  "testimonials": [
     {
-      quote: "Teaching at Catalyst College has been incredibly fulfilling. The institution encourages innovation and research in every domain.",
-      name: "Dr. A. Verma",
-      position: "Associate Professor, BCA Department",
-      image: "/images/faculty-1.jpg"
+      "quote": "Teaching at Catalyst College has been incredibly fulfilling. The institution encourages innovation and research in every domain.",
+      "name": "Dr. A. Verma",
+      "position": "Associate Professor, BCA Department",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840893/download_zb0npp.png"
     },
     {
-      quote: "The collaborative environment and professional development opportunities make this a wonderful place to grow your career.",
-      name: "Ms. Priya Sharma",
-      position: "Admission Counselor",
-      image: "/images/faculty-2.jpg"
+      "quote": "The collaborative environment and professional development opportunities make this a wonderful place to grow your career.",
+      "name": "Ms. Priya Sharma",
+      "position": "Admission Counselor",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840857/download_bxlxfr.jpg"
     }
-  ];
+  ],
+  "galleryImages": [
+    {
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752914011/514414669_1134115595411045_302502792642437531_n_zgvadr.jpg",
+      "caption": "Modern Classroom"
+    },
+    {
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752827027/486300369_1055984116557527_4023767572347415079_n_h3ujez.jpg",
+      "caption": "Computer Lab"
+    },
+    {
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752923665/cc907ded-0f25-4fdd-bd4c-35fa374c2c9b.png",
+      "caption": "Faculty Development Program"
+    },
+    {
+      "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752923705/images_lctjy2.jpg",
+      "caption": "Staff Room"
+    }
+  ],
+  "heroSection": {
+    "imageUrl": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752923757/how-asking-for-feedback-can-power-your-career-growth_kqk8xm.jpg",
+    "description": "Join our team of passionate educators and professionals in creating transformative learning experiences",
+    "title": "Build Your Career With Us"
+  }
+}
 
-  // Gallery images
-  const galleryImages = [
-    { src: "/images/campus-1.jpg", caption: "Modern Classroom" },
-    { src: "/images/campus-2.jpg", caption: "Computer Lab" },
-    { src: "/images/campus-3.jpg", caption: "Faculty Development Program" },
-    { src: "/images/campus-4.jpg", caption: "Staff Lounge" }
-  ];
+const { data, error} = await fetchPageData("career")
+pageData = data as any ?? pageData
+
+
+const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpenings} = pageData
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}
       <HeroSection
-        title="Build Your Career With Us"
-        // subtitle="Shape the future of education at Catalyst College Patna"
-        description="Join our team of passionate educators and professionals in creating transformative learning experiences"
-        imageUrl="/images/careers-hero.jpg"
+        title={heroSection.title}
+        description={ heroSection.description}
+        imageUrl={ heroSection.imageUrl}
         overlayOpacity={0.3}
         height="xl"
 
@@ -312,7 +329,7 @@ const CareersPage = () => {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
+                  <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                     <div className="w-full p-4 bg-gradient-to-t from-black to-transparent">
                       <p className="text-white font-medium">{image.caption}</p>
                     </div>

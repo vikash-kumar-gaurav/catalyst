@@ -1,23 +1,24 @@
 // app/ipr-cell/page.tsx
 import { NextPage } from 'next';
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 
 // JSON data for the IPR Cell
-const iprCellData = {
-  hero: {
-    title: "Intellectual Property Rights (IPR) Cell",
-    description: "Protecting innovation through awareness, training, and legal support",
-    imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    overlayOpacity: 0.3,
-    height: "lg"
+let iprCellData = {
+  "hero": {
+    "title": "Intellectual Property Rights (IPR) Cell",
+    "description": "Protecting innovation through awareness, training, and legal support",
+    "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    "overlayOpacity": 0.3,
+    "height": "lg"
   },
-  introduction: {
-    title: "About the IPR Cell",
-    content: "The Intellectual Property Rights (IPR) Cell at Tech University is established to foster a culture of innovation and intellectual property protection among students and faculty. The cell facilitates awareness, capacity building, and support for patent filing, copyright registration, and other IPR processes. It ensures that innovative work is legally protected and ethically managed."
+  "introduction": {
+    "title": "About the IPR Cell",
+    "content": "The Intellectual Property Rights (IPR) Cell at Tech University is established to foster a culture of innovation and intellectual property protection among students and faculty. The cell facilitates awareness, capacity building, and support for patent filing, copyright registration, and other IPR processes. It ensures that innovative work is legally protected and ethically managed."
   },
-  objectives: {
-    title: "Objectives of the IPR Cell",
-    items: [
+  "objectives": {
+    "title": "Objectives of the IPR Cell",
+    "items": [
       "Promote awareness of intellectual property rights and responsibilities",
       "Guide students and faculty in patenting, publishing, and commercialization",
       "Conduct workshops, seminars, and IPR drives",
@@ -25,49 +26,29 @@ const iprCellData = {
       "Develop and enforce the institution's IPR policy"
     ]
   },
-  composition: {
-    title: "IPR Cell Composition",
-    members: [
-      {
-        name: "Dr. Anil Kumar",
-        designation: "Principal",
-        role: "Chairperson"
-      },
-      {
-        name: "Prof. Riya Sharma",
-        designation: "IPR Coordinator",
-        role: "Coordinator"
-      },
-      {
-        name: "Mr. Suresh Singh",
-        designation: "Legal Advisor (External)",
-        role: "Legal Guidance"
-      },
-      {
-        name: "Ms. Tanvi Raj",
-        designation: "Faculty, Dept. of CS",
-        role: "Member"
-      },
-      {
-        name: "Mr. Arvind Sinha",
-        designation: "Research Scholar",
-        role: "Member (Student rep.)"
-      }
+  "composition": {
+    "title": "IPR Cell Composition",
+    "members": [
+      { "name": "Dr. Anil Kumar", "designation": "Principal", "role": "Chairperson" },
+      { "name": "Prof. Riya Sharma", "designation": "IPR Coordinator", "role": "Coordinator" },
+      { "name": "Mr. Suresh Singh", "designation": "Legal Advisor (External)", "role": "Legal Guidance" },
+      { "name": "Ms. Tanvi Raj", "designation": "Faculty, Dept. of CS", "role": "Member" },
+      { "name": "Mr. Arvind Sinha", "designation": "Research Scholar", "role": "Member (Student rep.)" }
     ]
   },
-  policy: {
-    title: "Institutional IPR Policy",
-    summaryPoints: [
+  "policy": {
+    "title": "Institutional IPR Policy",
+    "summaryPoints": [
       "Ownership of IP created during funded research",
       "Revenue sharing between college and inventor",
       "Patent application process and filing timeline",
       "Use of external legal or IP consultants"
     ],
-    downloadLink: "/documents/ipr-policy.pdf"
+    "downloadLink": "/documents/ipr-policy.pdf"
   },
-  services: {
-    title: "Services Provided",
-    items: [
+  "services": {
+    "title": "Services Provided",
+    "items": [
       "Patent search and novelty analysis",
       "Support in drafting patent applications",
       "Collaboration with registered patent attorneys",
@@ -76,48 +57,27 @@ const iprCellData = {
       "Research journal guidance for original works"
     ]
   },
-  achievements: {
-    title: "IPR Achievements",
-    items: [
-      {
-        title: "Smart Water Tap",
-        type: "Patent",
-        inventors: "Prof. Riya Sharma",
-        status: "Filed",
-        year: "2024"
-      },
-      {
-        title: "Attendance Tracker",
-        type: "Copyright",
-        inventors: "BCA Final Year Team",
-        status: "Registered",
-        year: "2023"
-      }
+  "achievements": {
+    "title": "IPR Achievements",
+    "items": [
+      { "title": "Smart Water Tap", "type": "Patent", "inventors": "Prof. Riya Sharma", "status": "Filed", "year": "2024" },
+      { "title": "Attendance Tracker", "type": "Copyright", "inventors": "BCA Final Year Team", "status": "Registered", "year": "2023" }
     ]
   },
-  events: {
-    title: "Upcoming IPR Events",
-    items: [
-      {
-        title: "IPR Awareness Workshop",
-        date: "October 15, 2024",
-        speaker: "Dr. Mehta (Patent Attorney)"
-      },
-      {
-        title: "Patent Drafting Training",
-        date: "November 5-6, 2024",
-        speaker: "Mr. Suresh Singh"
-      },
-      {
-        title: "Student Innovation Protection Drive",
-        date: "December 10-12, 2024",
-        speaker: "IPR Cell Team"
-      }
+  "events": {
+    "title": "Upcoming IPR Events",
+    "items": [
+      { "title": "IPR Awareness Workshop", "date": "October 15, 2024", "speaker": "Dr. Mehta (Patent Attorney)" },
+      { "title": "Patent Drafting Training", "date": "November 5-6, 2024", "speaker": "Mr. Suresh Singh" },
+      { "title": "Student Innovation Protection Drive", "date": "December 10-12, 2024", "speaker": "IPR Cell Team" }
     ]
   }
-};
+}
 
-const IprCellPage: NextPage = () => {
+
+const IprCellPage: NextPage = async() => {
+  const { data, error} = await fetchPageData("ipr-cell")
+ iprCellData = data as any ?? iprCellData
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}

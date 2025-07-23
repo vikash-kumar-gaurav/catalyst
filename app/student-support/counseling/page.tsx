@@ -1,19 +1,164 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
 import HeroSection from '@/components/newHeroImageForAllPage';
-// Temporary data - will be replaced with API calls
-const counselingData = {
-    introduction: {
-        title: "Student Counseling Services",
-        description: "At CImage College, we believe every student deserves personal, academic, and emotional support to thrive. Our counseling services are confidential, professional, and designed to help you succeed in all aspects of college life.",
-        quote: "Your mental health is just as important as your academic success. We're here to help you balance both."
+import { fetchPageData } from '@/lib/useFetchData';
+
+let pageData = {
+    "page_name": "counseling",
+    "booking": {
+        "title": "Schedule a Counseling Session",
+        "methods": [
+            {
+                "type": "Walk-in Hours",
+                "description": "Visit us during our walk-in hours for immediate support",
+                "details": "Monday-Friday: 10 AM - 1 PM\nCounseling Room (Block A, 2nd Floor)",
+                "icon": "🚶‍♂️"
+            },
+            {
+                "type": "Online Booking",
+                "description": "Fill our simple online form to request an appointment",
+                "link": "/book-counseling",
+                "icon": "💻"
+            }
+        ]
     },
-    services: [
+    "careerMahakumbh": {
+        "title": "Career Mahakumbh",
+        "description": "India's largest career fair connecting students with top employers and career opportunities",
+        "features": [
+            "1000+ top recruiting companies from diverse sectors",
+            "50,000+ job opportunities across experience levels",
+            "Career guidance sessions by industry experts",
+            "Skill development workshops and certification opportunities"
+        ],
+        "stats": {
+            "companies": "1000+",
+            "jobs": "50K+",
+            "sectors": "10+",
+            "cities": "5+"
+        },
+        "testimonials": [
+            {
+                "name": "Rahul Sharma",
+                "position": "Placed at Amazon",
+                "quote": "Career Mahakumbh connected me with multiple companies in one place. I received 3 job offers!",
+                "photo": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840893/download_zb0npp.png"
+            },
+            {
+                "name": "Priya Patel",
+                "position": "Placed at Deloitte",
+                "quote": "The resume workshops and mock interviews were incredibly helpful for my preparation.",
+                "photo": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840857/download_bxlxfr.jpg"
+            },
+            {
+                "name": "Amit Kumar",
+                "position": "Founder, TechStart",
+                "quote": "As a recruiter, we found exceptional talent at Career Mahakumbh. Highly recommended!",
+                "photo": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840893/download_zb0npp.png"
+            }
+        ],
+        "images": [
+            {
+                "url": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740741/487301788_1062568922565713_5457511864499874592_n_l65esw.jpg",
+                "imageAlternate": "Career Mahakumbh Event - Image 1"
+            },
+            {
+                "url": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740764/487170883_1062569279232344_2250675696457092391_n_c4lubh.jpg",
+                "imageAlternate": "Career Mahakumbh Event - Image 6"
+            },
+            {
+                "url": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740741/487301788_1062568922565713_5457511864499874592_n_l65esw.jpg",
+                "imageAlternate": "Career Mahakumbh Event - Image 12"
+            },
+            {
+                "url": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752926173/487039934_1062569379232334_8104513723895339455_n_lrclwg.jpg",
+                "imageAlternate": "Career Mahakumbh Event - Image 9"
+            }
+        ]
+    },
+    "confidentiality": {
+        "statement": "All counseling sessions are completely confidential unless there is a risk of harm to yourself or others. We follow strict ethical guidelines to protect your privacy and create a safe space for open discussion.",
+        "exceptions": [
+            "Risk of harm to self or others",
+            "Abuse or neglect of minors",
+            "Court-ordered disclosure"
+        ]
+    },
+    "counselors": [
         {
-            type: "Academic Counseling",
-            icon: "📚",
-            description: "Get guidance on your academic journey and overcome challenges in your studies.",
-            details: [
+            "name": "Dr. Priya Sharma",
+            "role": "Head Counselor",
+            "qualification": "PhD in Psychology, 12 years experience",
+            "specialization": "Career Counseling, Academic Stress",
+            "photo": "/counselors/priya-sharma.jpg"
+        },
+        {
+            "name": "Rahul Kumar",
+            "role": "Career Counselor",
+            "qualification": "MA in Career Guidance, Certified Career Coach",
+            "specialization": "Resume Building, Interview Skills",
+            "photo": "/counselors/rahul-kumar.jpg"
+        },
+        {
+            "name": "Anjali Patel",
+            "role": "Student Wellness Counselor",
+            "qualification": "MSW, Trauma-Informed Care Specialist",
+            "specialization": "Mental Health, Relationship Issues",
+            "photo": "/counselors/anjali-patel.jpg"
+        }
+    ],
+    "events": [
+        {
+            "title": "Managing Exam Anxiety Workshop",
+            "date": "2024-09-15",
+            "time": "3:00 PM - 5:00 PM",
+            "location": "Auditorium, Block C"
+        },
+        {
+            "title": "Resume Masterclass",
+            "date": "2024-10-05",
+            "time": "2:00 PM - 4:00 PM",
+            "location": "Career Center, Block B"
+        }
+    ],
+    "heroSection": {
+        "imageUrl": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752927606/WhatsApp_Image_2025-07-19_at_17.46.49_fcb8ec33_mdu3no.jpg",
+        "title": "Student Counseling Services",
+        "description": "Begin your journey towards academic excellence with our industry-aligned undergraduate programs"
+    },
+    "introduction": {
+        "title": "Student Counseling Services",
+        "description": "At CImage College, we believe every student deserves personal, academic, and emotional support to thrive. Our counseling services are confidential, professional, and designed to help you succeed in all aspects of college life.",
+        "quote": "Your mental health is just as important as your academic success. We're here to help you balance both."
+    },
+    "resources": [
+        {
+            "title": "Time Management Guide",
+            "type": "PDF",
+            "link": "/resources/time-management.pdf"
+        },
+        {
+            "title": "Exam Stress Handbook",
+            "type": "PDF",
+            "link": "/resources/exam-stress.pdf"
+        },
+        {
+            "title": "Career Aptitude Test",
+            "type": "Online Tool",
+            "link": "https://career-test.cimage.edu"
+        },
+        {
+            "title": "Mental Health Awareness",
+            "type": "Brochure",
+            "link": "/resources/mental-health.pdf"
+        }
+    ],
+    "services": [
+        {
+            "type": "Academic Counseling",
+            "icon": "📚",
+            "description": "Get guidance on your academic journey and overcome challenges in your studies.",
+            "details": [
                 "Course selection advice and academic planning",
                 "Exam preparation and study strategies",
                 "Time management techniques",
@@ -22,10 +167,10 @@ const counselingData = {
             ]
         },
         {
-            type: "Career Counseling",
-            icon: "💼",
-            description: "Discover your career path and prepare for professional success.",
-            details: [
+            "type": "Career Counseling",
+            "icon": "💼",
+            "description": "Discover your career path and prepare for professional success.",
+            "details": [
                 "Career aptitude and personality assessments",
                 "Resume writing and interview preparation",
                 "Higher education guidance (CAT, GATE, UPSC, etc.)",
@@ -34,10 +179,10 @@ const counselingData = {
             ]
         },
         {
-            type: "Personal Counseling",
-            icon: "🧠",
-            description: "Support for your emotional well-being and personal development.",
-            details: [
+            "type": "Personal Counseling",
+            "icon": "🧠",
+            "description": "Support for your emotional well-being and personal development.",
+            "details": [
                 "Stress and anxiety management",
                 "Relationship and peer pressure issues",
                 "Self-esteem and confidence building",
@@ -45,185 +190,14 @@ const counselingData = {
                 "Referrals to professional psychologists when needed"
             ]
         }
-    ],
-    booking: {
-        title: "Schedule a Counseling Session",
-        methods: [
-            {
-                type: "Online Booking",
-                description: "Fill our simple online form to request an appointment",
-                link: "/book-counseling",
-                icon: "💻"
-            },
-            {
-                type: "Walk-in Hours",
-                description: "Visit us during our walk-in hours for immediate support",
-                details: "Monday-Friday: 10 AM - 1 PM\nCounseling Room (Block A, 2nd Floor)",
-                icon: "🚶‍♂️"
-            },
-            {
-                type: "Emergency Contact",
-                description: "For urgent mental health support",
-                details: "24/7 Helpline: +91 9876543210",
-                icon: "🚨"
-            }
-        ]
-    },
-    counselors: [
-        {
-            name: "Dr. Priya Sharma",
-            role: "Head Counselor",
-            qualification: "PhD in Psychology, 12 years experience",
-            specialization: "Career Counseling, Academic Stress",
-            photo: "/counselors/priya-sharma.jpg"
-        },
-        {
-            name: "Rahul Kumar",
-            role: "Career Counselor",
-            qualification: "MA in Career Guidance, Certified Career Coach",
-            specialization: "Resume Building, Interview Skills",
-            photo: "/counselors/rahul-kumar.jpg"
-        },
-        {
-            name: "Anjali Patel",
-            role: "Student Wellness Counselor",
-            qualification: "MSW, Trauma-Informed Care Specialist",
-            specialization: "Mental Health, Relationship Issues",
-            photo: "/counselors/anjali-patel.jpg"
-        }
-    ],
-    resources: [
-        {
-            title: "Time Management Guide",
-            type: "PDF",
-            link: "/resources/time-management.pdf"
-        },
-        {
-            title: "Exam Stress Handbook",
-            type: "PDF",
-            link: "/resources/exam-stress.pdf"
-        },
-        {
-            title: "Career Aptitude Test",
-            type: "Online Tool",
-            link: "https://career-test.cimage.edu"
-        },
-        {
-            title: "Mental Health Awareness",
-            type: "Brochure",
-            link: "/resources/mental-health.pdf"
-        }
-    ],
-    events: [
-        {
-            title: "Managing Exam Anxiety Workshop",
-            date: "2024-09-15",
-            time: "3:00 PM - 5:00 PM",
-            location: "Auditorium, Block C"
-        },
-        {
-            title: "Resume Masterclass",
-            date: "2024-10-05",
-            time: "2:00 PM - 4:00 PM",
-            location: "Career Center, Block B"
-        },
-        {
-            title: "Mindfulness Meditation Sessions",
-            date: "Every Wednesday",
-            time: "4:00 PM - 5:00 PM",
-            location: "Yoga Room, Block A"
-        }
-    ],
-    confidentiality: {
-        statement: "All counseling sessions are completely confidential unless there is a risk of harm to yourself or others. We follow strict ethical guidelines to protect your privacy and create a safe space for open discussion.",
-        exceptions: [
-            "Risk of harm to self or others",
-            "Abuse or neglect of minors",
-            "Court-ordered disclosure"
-        ]
-    },
-    emergencyContacts: [
-        {
-            name: "College Counseling Helpline",
-            number: "+91 9876543210",
-            available: "24/7"
-        },
-        {
-            name: "National Mental Health Helpline",
-            number: "1800-123-4567",
-            available: "24/7"
-        },
-        {
-            name: "Nearest Emergency Hospital",
-            number: "+91 9876543211",
-            available: "24/7"
-        }
-    ],
-    careerMahakumbh: {
-        title: "Career Mahakumbh",
-        description: "India's largest career fair connecting students with top employers and career opportunities",
-        features: [
-            "1000+ top recruiting companies from diverse sectors",
-            "50,000+ job opportunities across experience levels",
-            "Career guidance sessions by industry experts",
-            "Skill development workshops and certification opportunities"
-        ],
-        stats: {
-            companies: "1000+",
-            jobs: "50K+",
-            sectors: "10+",
-            cities: "5+"
-        },
-        testimonials: [
-            {
-                name: "Rahul Sharma",
-                position: "Placed at Amazon",
-                quote: "Career Mahakumbh connected me with multiple companies in one place. I received 3 job offers!",
-                photo: "https://cimage.in/sitepanel/uploads/news/WhatsApp%20Image%202024-01-12%20at%2017-23-41_c0134a3e.jpg"
-            },
-            {
-                name: "Priya Patel",
-                position: "Placed at Deloitte",
-                quote: "The resume workshops and mock interviews were incredibly helpful for my preparation.",
-                photo: "https://cimage.in/sitepanel/uploads/aboutus/cimage-about-cm.jpg"
-            },
-            {
-                name: "Amit Kumar",
-                position: "Founder, TechStart",
-                quote: "As a recruiter, we found exceptional talent at Career Mahakumbh. Highly recommended!",
-                photo: "https://careermahakumbh.com/img/Career_Mahakumbh_Banner2.jpg"
-            }
-        ],
-        images : [
-    {
-        url: "https://careermahakumbh.com/mahakumbh_pics/1.jpg",
-        imageAlternate: "Career Mahakumbh Event - Image 1"
-    },
-    {
-        url: "https://careermahakumbh.com/mahakumbh_pics/6.jpg",
-        imageAlternate: "Career Mahakumbh Event - Image 6"
-    },
-    {
-        url: "https://careermahakumbh.com/mahakumbh_pics/12.jpg",
-        imageAlternate: "Career Mahakumbh Event - Image 12"
-    },
-    {
-        url: "https://careermahakumbh.com/mahakumbh_pics/9.jpg",
-        imageAlternate: "Career Mahakumbh Event - Image 9"
-    }
-]
+    ]
+}
 
-    }
-};
 
-const CounselingPage: NextPage = () => {
-    // This would be replaced with actual API call
-    // const { data, error } = useSWR('/api/counseling', fetcher);
-    // if (error) return <div>Failed to load</div>;
-    // if (!data) return <div>Loading...</div>;
+const CounselingPage: NextPage = async () => {
 
-    // Using the local JSON data for now
-    const data = counselingData;
+    // const { data, error } = await fetchPageData("counseling")
+    // pageData = data as any ?? pageData
 
     return (
         <>
@@ -242,9 +216,9 @@ const CounselingPage: NextPage = () => {
 
                 {/* Introduction Section */}
                 <HeroSection
-                    title="Student Counseling Services"
-                    description="Begin your journey towards academic excellence with our industry-aligned undergraduate programs"
-                    imageUrl="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    title={pageData.heroSection.title}
+                    description={pageData.heroSection.description}
+                    imageUrl={pageData.heroSection.imageUrl}
                     overlayOpacity={0.3}
                     height="lg"
                 />
@@ -253,7 +227,7 @@ const CounselingPage: NextPage = () => {
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Counseling Services</h2>
                         <div className="grid md:grid-cols-3 gap-8">
-                            {data.services.map((service, index) => (
+                            {pageData.services.map((service, index) => (
                                 <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200">
                                     <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 text-white">
                                         <div className="text-4xl mb-4">{service.icon}</div>
@@ -279,11 +253,11 @@ const CounselingPage: NextPage = () => {
                 </section>
 
                 {/* Booking Section */}
-                <section className="py-16 bg-gray-50">
+                <section className="py-16 bg-gray-50 flex items-center justify-center">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">{data.booking.title}</h2>
+                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">{pageData.booking.title}</h2>
                         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            {data.booking.methods.map((method, index) => (
+                            {pageData.booking.methods.map((method, index) => (
                                 <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
                                     <div className="text-4xl mb-4">{method.icon}</div>
                                     <h3 className="text-xl font-bold mb-3 text-gray-800">{method.type}</h3>
@@ -308,7 +282,7 @@ const CounselingPage: NextPage = () => {
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Meet Our Counselors</h2>
                         <div className="grid md:grid-cols-3 gap-8">
-                            {data.counselors.map((counselor, index) => (
+                            {pageData.counselors.map((counselor, index) => (
                                 <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
                                     <div className="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
                                         <img
@@ -339,7 +313,7 @@ const CounselingPage: NextPage = () => {
                                 <h2 className="text-3xl font-bold mb-8 text-gray-800">Resources & Downloads</h2>
                                 <div className="bg-white rounded-xl shadow-md p-6">
                                     <ul className="space-y-4">
-                                        {data.resources.map((resource, index) => (
+                                        {pageData.resources.map((resource, index) => (
                                             <li key={index} className="flex items-start">
                                                 <div className="bg-blue-100 p-2 rounded-lg mr-4">
                                                     {resource.type === "PDF" ? (
@@ -371,7 +345,7 @@ const CounselingPage: NextPage = () => {
                                 <h2 className="text-3xl font-bold mb-8 text-gray-800">Upcoming Events</h2>
                                 <div className="bg-white rounded-xl shadow-md p-6">
                                     <ul className="space-y-6">
-                                        {data.events.map((event, index) => (
+                                        {pageData.events.map((event, index) => (
                                             <li key={index} className="pb-6 border-b border-gray-100 last:border-0 last:pb-0">
                                                 <div className="flex">
                                                     <div className="bg-blue-100 text-blue-800 rounded-lg p-3 mr-4 text-center flex-shrink-0">
@@ -419,10 +393,10 @@ const CounselingPage: NextPage = () => {
                     <div className="container mx-auto px-6 max-w-4xl">
                         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Confidentiality & Ethics</h2>
                         <div className="bg-blue-50 border border-blue-100 rounded-xl p-8">
-                            <p className="text-lg text-gray-800 mb-6">{data.confidentiality.statement}</p>
+                            <p className="text-lg text-gray-800 mb-6">{pageData.confidentiality.statement}</p>
                             <h3 className="font-bold text-gray-800 mb-3">Exceptions to Confidentiality:</h3>
                             <ul className="space-y-2">
-                                {data.confidentiality.exceptions.map((exception, index) => (
+                                {pageData.confidentiality.exceptions.map((exception, index) => (
                                     <li key={index} className="flex items-start">
                                         <svg className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -435,141 +409,151 @@ const CounselingPage: NextPage = () => {
                     </div>
                 </section>
 
-                {/* Emergency Contacts Section */}
-                <section className="py-16 bg-gray-50">
-                    <div className="container mx-auto px-6">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Emergency Contacts</h2>
-                        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                            {data.emergencyContacts.map((contact, index) => (
-                                <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-                                    <div className="bg-red-600 p-4 text-white">
-                                        <h3 className="text-xl font-bold">{contact.name}</h3>
-                                        <p className="text-sm opacity-90">{contact.available}</p>
-                                    </div>
-                                    <div className="p-6">
-                                        <div className="text-2xl font-mono font-bold text-gray-800 mb-4">{contact.number}</div>
-                                        <a href={`tel:${contact.number.replace(/\D/g, '')}`} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 transition-colors duration-300">
-                                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                            </svg>
-                                            Call Now
-                                        </a>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
 
                 {/* Career Mahakumbh Section */}
                 <section className="py-16 bg-gradient-to-r from-blue-800 to-indigo-900 text-white">
-                    <div className="container mx-auto px-6">
-                        <div className="max-w-12xl mx-auto">
-                            <div className="text-center mb-12">
-                                <h2 className="text-4xl font-bold mb-4">{data.careerMahakumbh.title}</h2>
-                                <p className="text-xl max-w-3xl mx-auto opacity-90">
-                                    {data.careerMahakumbh.description}
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="max-w-7xl mx-auto">
+                            {/* Header Section */}
+                            <div className="text-center mb-16">
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                                    {pageData.careerMahakumbh.title}
+                                </h2>
+                                <p className="text-lg sm:text-xl max-w-3xl mx-auto opacity-90">
+                                    {pageData.careerMahakumbh.description}
                                 </p>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-6 items-start">
+                            {/* Main Content */}
+                            <div className="grid lg:grid-cols-2 gap-8 items-start">
                                 {/* Left Column - Content */}
                                 <div className="space-y-6">
-                                    <div className="p-5 bg-blue-900/20 rounded-xl border border-blue-400/20">
-                                        <h3 className="text-xl font-semibold mb-4 text-white">Event Highlights</h3>
+                                    {/* Features Box */}
+                                    <div className="p-6 bg-blue-900/20 rounded-xl border border-blue-400/20 backdrop-blur-sm">
+                                        <h3 className="text-xl font-semibold mb-4 text-white flex items-center">
+                                            <svg className="w-6 h-6 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                            </svg>
+                                            Event Highlights
+                                        </h3>
                                         <ul className="space-y-3">
-                                            {data.careerMahakumbh.features.map((feature, index) => (
-                                                <li key={index} className="flex items-start">
-                                                    <div className="bg-yellow-400 text-blue-900 p-1 rounded-full mr-3 flex-shrink-0">
+                                            {pageData.careerMahakumbh.features.map((feature, index) => (
+                                                <li key={index} className="flex items-start group">
+                                                    <div className="bg-yellow-400 text-blue-900 p-1 rounded-full mr-3 flex-shrink-0 transform group-hover:scale-110 transition-transform">
                                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                                         </svg>
                                                     </div>
-                                                    <span className="text-blue-100/90 text-sm md:text-base">{feature}</span>
+                                                    <span className="text-blue-100/90 text-base group-hover:text-white transition-colors">{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <div className="bg-blue-900/20 p-3 rounded-lg border border-blue-400/20 text-center">
-                                            <div className="text-2xl font-bold text-white">{data.careerMahakumbh.stats.companies}</div>
-                                            <div className="text-xs opacity-80 text-blue-100">Companies</div>
-                                        </div>
-                                        <div className="bg-blue-900/20 p-3 rounded-lg border border-blue-400/20 text-center">
-                                            <div className="text-2xl font-bold text-white">{data.careerMahakumbh.stats.jobs}</div>
-                                            <div className="text-xs opacity-80 text-blue-100">Jobs</div>
-                                        </div>
-                                        <div className="bg-blue-900/20 p-3 rounded-lg border border-blue-400/20 text-center">
-                                            <div className="text-2xl font-bold text-white">{data.careerMahakumbh.stats.sectors}</div>
-                                            <div className="text-xs opacity-80 text-blue-100">Sectors</div>
-                                        </div>
-                                        <div className="bg-blue-900/20 p-3 rounded-lg border border-blue-400/20 text-center">
-                                            <div className="text-2xl font-bold text-white">{data.careerMahakumbh.stats.cities}</div>
-                                            <div className="text-xs opacity-80 text-blue-100">Cities</div>
-                                        </div>
+                                    {/* Stats Grid */}
+                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                        {[
+                                            { value: pageData.careerMahakumbh.stats.companies, label: "Companies" },
+                                            { value: pageData.careerMahakumbh.stats.jobs, label: "Jobs" },
+                                            { value: pageData.careerMahakumbh.stats.sectors, label: "Sectors" },
+                                            { value: pageData.careerMahakumbh.stats.cities, label: "Cities" }
+                                        ].map((stat, index) => (
+                                            <div key={index} className="bg-blue-900/20 p-4 rounded-lg border border-blue-400/20 text-center hover:bg-blue-900/30 transition-colors">
+                                                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>
+                                                <div className="text-xs sm:text-sm opacity-80 text-blue-100">{stat.label}</div>
+                                            </div>
+                                        ))}
                                     </div>
 
-                                    <div className="flex flex-col-2  gap-3 justify-center ">
+                                    {/* CTA Buttons */}
+                                    <div className="flex flex-col sm:flex-row gap-4 pt-2">
                                         <a
                                             href="https://careermahakumbh.com/"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium rounded-lg transition-all text-lg"
+                                            className="flex-1 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium rounded-lg transition-all text-center flex items-center justify-center gap-2"
                                         >
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                            </svg>
                                             Official Website
                                         </a>
                                         <a
                                             href="https://careermahakumbh.com/registration"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-4 py-2 border border-yellow-400 hover:bg-yellow-400/10 text-yellow-400 font-medium rounded-lg transition-all text-lg"
+                                            className="flex-1 px-6 py-3 border-2 border-yellow-400 hover:bg-yellow-400/10 text-yellow-400 font-medium rounded-lg transition-all text-center flex items-center justify-center gap-2"
                                         >
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                            </svg>
                                             Register Now
                                         </a>
                                     </div>
                                 </div>
 
                                 {/* Right Column - Image Gallery */}
-                                <div className="grid grid-cols-2 gap-3 h-full">
-                                    {data.careerMahakumbh.images.map((image, index) => (
+                                <div className="grid grid-cols-2 gap-4 h-full">
+                                    {pageData.careerMahakumbh.images.map((image, index) => (
                                         <div
                                             key={index}
-                                            className="relative rounded-lg overflow-hidden aspect-square"
+                                            className="relative rounded-xl overflow-hidden aspect-square group"
                                         >
                                             <img
                                                 src={image.url}
                                                 alt={`Career Mahakumbh event ${index + 1}`}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                                                loading="lazy"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-3">
-                                                <span className="text-white text-xs">{image.imageAlternate}</span>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <span className="text-white text-sm font-medium">{image.imageAlternate}</span>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            {/* Testimonials */}
-                            <div className="mt-16">
-                                <h3 className="text-2xl font-semibold mb-8 text-center">What Participants Say</h3>
-                                <div className="grid md:grid-cols-3 gap-6">
-                                    {data.careerMahakumbh.testimonials.map((testimonial, index) => (
-                                        <div key={index} className=" bg-opacity-10 p-6 rounded-xl border border-white border-opacity-20">
+                            {/* Testimonials Section */}
+                            <div className="mt-20">
+                                <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center relative">
+                                    <span className="relative inline-block">
+                                        What Participants Say
+                                        <span className="absolute bottom-0 left-0 w-full h-1 bg-yellow-400 rounded-full transform translate-y-1"></span>
+                                    </span>
+                                </h3>
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {pageData.careerMahakumbh.testimonials.map((testimonial, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-blue-900/10 p-6 rounded-xl border border-white/20 hover:border-yellow-400/50 transition-all hover:shadow-lg hover:translate-y-[-4px]"
+                                        >
                                             <div className="flex items-center mb-4">
-                                                <div className="w-12 h-12 rounded-full bg-blue-600 mr-4 overflow-hidden">
+                                                <div className="w-12 h-12 rounded-full bg-blue-600 mr-4 overflow-hidden border-2 border-yellow-400">
                                                     <img
                                                         src={testimonial.photo}
                                                         alt={testimonial.name}
                                                         className="w-full h-full object-cover"
+                                                        loading="lazy"
                                                     />
                                                 </div>
                                                 <div>
-                                                    <h4 className="font-bold">{testimonial.name}</h4>
+                                                    <h4 className="font-bold text-white">{testimonial.name}</h4>
                                                     <p className="text-sm opacity-80">{testimonial.position}</p>
                                                 </div>
                                             </div>
-                                            <p className="italic">"{testimonial.quote}"</p>
+                                            <div className="relative">
+                                                <div className="absolute -top-3 left-6 w-6 h-6 bg-blue-900/10 border-l border-t border-white/20 rotate-45 transform origin-bottom-right group-hover:border-yellow-400/50 transition-all"></div>
+                                                <p className="relative bg-blue-900/10 border border-white/20 rounded-lg p-6 italic text-blue-100 group-hover:border-yellow-400/50 transition-all duration-300 group-hover:shadow-lg">
+                                                    <span className="absolute top-3 left-4 text-yellow-400 text-3xl opacity-60">“</span>
+                                                    <span className="block pl-6 pr-2 pb-2 pt-1 text-lg leading-relaxed">
+                                                        {testimonial.quote}
+                                                    </span>
+                                                    <span className="absolute bottom-3 right-4 text-yellow-400 text-3xl opacity-60">”</span>
+                                                    <span className="absolute bottom-2 right-4 text-xs text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                                        — {testimonial.name}
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -579,25 +563,7 @@ const CounselingPage: NextPage = () => {
                 </section>
             </main>
 
-            <style>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        .animate-float-delay {
-          animation: float 6s ease-in-out infinite 2s;
-        }
-        .animate-float-delay2 {
-          animation: float 6s ease-in-out infinite 4s;
-        }
-      `}</style>
+           
         </>
     );
 };

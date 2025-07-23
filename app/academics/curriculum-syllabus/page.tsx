@@ -1,9 +1,11 @@
+import HeroSection from '@/components/newHeroImageForAllPage';
+import YoutubePlayer from '@/components/VideoPlayer';
 import { fetchPageData } from '@/lib/useFetchData';
 import { FaBook, FaLaptopCode, FaChartLine, FaMicrophone, FaUsers, FaUserTie } from 'react-icons/fa';
 import { GiTeacher } from 'react-icons/gi';
 import { MdComputer, MdOutlineWorkspaces } from 'react-icons/md';
 
-// Icon mapping object
+
 const iconComponents = {
   FaBook,
   FaLaptopCode,
@@ -16,213 +18,212 @@ const iconComponents = {
   MdOutlineWorkspaces
 };
 
-const CurriculumPage = async() => {
-let curriculumData = {
-  "heroSection": {
-    "title": "Curriculum & Syllabus",
-    "description": "Comprehensive academic framework combining university syllabus with value-added programs",
-    "gradientFrom": "from-blue-800",
-    "gradientTo": "to-indigo-900"
-  },
-  "programsOverview": {
-    "title": "Our Academic Programs",
-    "description": "CATALYST College offers industry-aligned programs that combine university curriculum with essential add-on courses for holistic development",
-    "programs": [
-      {
-        "icon": "FaLaptopCode",
-        "title": "BCA (Bachelor of Computer Applications)",
-        "description": "3-year program focusing on software development, database management, and web technologies",
-        "image": "/images/bca-class.jpg",
-        "color": "text-blue-600"
-      },
-      {
-        "icon": "FaChartLine",
-        "title": "BBA (Bachelor of Business Administration)",
-        "description": "3-year program covering management principles, marketing, finance, and entrepreneurship",
-        "image": "/images/bba-class.jpg",
-        "color": "text-indigo-600"
-      },
-      {
-        "icon": "MdComputer",
-        "title": "BSc IT (Bachelor of Science in Information Technology)",
-        "description": "3-year program emphasizing IT infrastructure, networking, and system administration",
-        "image": "/images/bscit-class.jpg",
-        "color": "text-purple-600"
-      }
-    ]
-  },
-  "universitySyllabus": {
-    "title": "University Syllabus Structure",
-    "note": {
-      "title": "Note on University Syllabus",
-      "content": "The above represents a sample of core subjects. Complete syllabus documents are available with the academic office. University syllabus is revised every 3 years - current version implemented from 2022-23 academic session."
+const CurriculumPage = async () => {
+  let curriculumData = {
+    "heroSection": {
+      "title": "Curriculum & Syllabus",
+      "description": "Comprehensive academic framework combining university syllabus with value-added programs",
+      "imageUrl":"https://images.unsplash.com/photo-1682685795557-976f03aca7b2?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
-    "years": [
-      {
-        "year": "BCA - Year 1",
-        "subjects": [
-          "Computer Fundamentals and Office Automation",
-          "Programming Principles and Algorithms",
-          "Computer Organization and Architecture",
-          "Business Accounting",
-          "Mathematics-I",
-          "English Communication"
-        ]
+    "programsOverview": {
+      "title": "Our Academic Programs",
+      "description": "CATALYST College offers industry-aligned programs that combine university curriculum with essential add-on courses for holistic development",
+      "programs": [
+        {
+          "icon": "FaLaptopCode",
+          "title": "BCA (Bachelor of Computer Applications)",
+          "description": "3-year program focusing on software development, database management, and web technologies",
+          "image": "/images/bca-class.jpg",
+          "color": "text-blue-600"
+        },
+        {
+          "icon": "FaChartLine",
+          "title": "BBA (Bachelor of Business Administration)",
+          "description": "3-year program covering management principles, marketing, finance, and entrepreneurship",
+          "image": "/images/bba-class.jpg",
+          "color": "text-indigo-600"
+        },
+        {
+          "icon": "MdComputer",
+          "title": "BSc IT (Bachelor of Science in Information Technology)",
+          "description": "3-year program emphasizing IT infrastructure, networking, and system administration",
+          "image": "/images/bscit-class.jpg",
+          "color": "text-purple-600"
+        }
+      ]
+    },
+    "universitySyllabus": {
+      "title": "University Syllabus Structure",
+      "note": {
+        "title": "Note on University Syllabus",
+        "content": "The above represents a sample of core subjects. Complete syllabus documents are available with the academic office. University syllabus is revised every 3 years - current version implemented from 2022-23 academic session."
       },
-      {
-        "year": "BCA - Year 2",
-        "subjects": [
-          "Data Structures Using C",
-          "Database Management Systems",
-          "Operating Systems",
-          "Software Engineering",
-          "Web Technologies",
-          "Mathematics-II"
-        ]
-      },
-      {
-        "year": "BBA - Year 1",
-        "subjects": [
-          "Principles of Management",
-          "Business Economics",
-          "Financial Accounting",
-          "Business Mathematics",
-          "Business Communication",
-          "Computer Applications in Business"
-        ]
-      },
-      {
-        "year": "BSc IT - Year 3",
-        "subjects": [
-          "Network Security",
-          "Cloud Computing",
-          "Internet of Things",
-          "Project Work",
-          "Elective: AI/ML or Cyber Security"
-        ]
+      "years": [
+        {
+          "year": "BCA - Year 1",
+          "subjects": [
+            "Computer Fundamentals and Office Automation",
+            "Programming Principles and Algorithms",
+            "Computer Organization and Architecture",
+            "Business Accounting",
+            "Mathematics-I",
+            "English Communication"
+          ]
+        },
+        {
+          "year": "BCA - Year 2",
+          "subjects": [
+            "Data Structures Using C",
+            "Database Management Systems",
+            "Operating Systems",
+            "Software Engineering",
+            "Web Technologies",
+            "Mathematics-II"
+          ]
+        },
+        {
+          "year": "BBA - Year 1",
+          "subjects": [
+            "Principles of Management",
+            "Business Economics",
+            "Financial Accounting",
+            "Business Mathematics",
+            "Business Communication",
+            "Computer Applications in Business"
+          ]
+        },
+        {
+          "year": "BSc IT - Year 3",
+          "subjects": [
+            "Network Security",
+            "Cloud Computing",
+            "Internet of Things",
+            "Project Work",
+            "Elective: AI/ML or Cyber Security"
+          ]
+        }
+      ]
+    },
+    "addOnSubjects": {
+      "title": "Value-Added Add-On Subjects",
+      "description": "Our specially designed add-on courses complement the university syllabus and provide students with competitive edge in the job market",
+      "categories": [
+        {
+          "title": "Technical Add-Ons (For BCA/BSc IT)",
+          "courses": [
+            "Full Stack Development with MERN",
+            "Python for Data Science",
+            "Cloud Computing with AWS",
+            "Mobile App Development (Flutter)",
+            "UI/UX Design Principles",
+            "Cyber Security Fundamentals"
+          ],
+          "icon": "FaLaptopCode"
+        },
+        {
+          "title": "Business Add-Ons (For BBA)",
+          "courses": [
+            "Digital Marketing Certification",
+            "Financial Modeling with Excel",
+            "Business Analytics with Power BI",
+            "Entrepreneurship Development",
+            "Advanced Excel for Managers",
+            "Stock Market Operations"
+          ],
+          "icon": "FaChartLine"
+        }
+      ],
+      "highlights": [
+        {
+          "title": "Industry Certification",
+          "desc": "Earn verifiable certificates from tech partners"
+        },
+        {
+          "title": "Project-Based Learning",
+          "desc": "Hands-on training with real-world applications"
+        },
+        {
+          "title": "Expert Faculty",
+          "desc": "Taught by industry professionals"
+        }
+      ]
+    },
+    "professionalDevelopment": {
+      "title": "Professional Development Program",
+      "description": "Our comprehensive professional development modules prepare students for corporate success beyond academic knowledge",
+      "modules": [
+        {
+          "title": "Workshop Series",
+          "icon": "MdOutlineWorkspaces",
+          "items": [
+            "Resume Building Workshop",
+            "LinkedIn Profile Optimization",
+            "Personal Branding",
+            "Mock Interview Sessions"
+          ]
+        },
+        {
+          "title": "Public Speaking",
+          "icon": "FaMicrophone",
+          "items": [
+            "Speech Preparation",
+            "Presentation Skills",
+            "Voice Modulation",
+            "Overcoming Stage Fear"
+          ]
+        },
+        {
+          "title": "Group Discussions",
+          "icon": "FaUsers",
+          "items": [
+            "GD Techniques",
+            "Current Affairs Preparation",
+            "Leadership in GD",
+            "Body Language"
+          ]
+        },
+        {
+          "title": "Corporate Etiquette",
+          "icon": "FaUserTie",
+          "items": [
+            "Business Communication",
+            "Email Etiquette",
+            "Meeting Protocols",
+            "Professional Attire"
+          ]
+        }
+      ],
+      "structure": {
+        "duration": "6 semesters (Integrated with regular curriculum)",
+        "certification": "CATALYST Professional Readiness Certificate",
+        "evaluation": "Practical assessments + Corporate panel interviews"
       }
-    ]
-  },
-  "addOnSubjects": {
-    "title": "Value-Added Add-On Subjects",
-    "description": "Our specially designed add-on courses complement the university syllabus and provide students with competitive edge in the job market",
-    "categories": [
-      {
-        "title": "Technical Add-Ons (For BCA/BSc IT)",
-        "courses": [
-          "Full Stack Development with MERN",
-          "Python for Data Science",
-          "Cloud Computing with AWS",
-          "Mobile App Development (Flutter)",
-          "UI/UX Design Principles",
-          "Cyber Security Fundamentals"
-        ],
-        "icon": "FaLaptopCode"
-      },
-      {
-        "title": "Business Add-Ons (For BBA)",
-        "courses": [
-          "Digital Marketing Certification",
-          "Financial Modeling with Excel",
-          "Business Analytics with Power BI",
-          "Entrepreneurship Development",
-          "Advanced Excel for Managers",
-          "Stock Market Operations"
-        ],
-        "icon": "FaChartLine"
-      }
-    ],
-    "highlights": [
-      {
-        "title": "Industry Certification",
-        "desc": "Earn verifiable certificates from tech partners"
-      },
-      {
-        "title": "Project-Based Learning",
-        "desc": "Hands-on training with real-world applications"
-      },
-      {
-        "title": "Expert Faculty",
-        "desc": "Taught by industry professionals"
-      }
-    ]
-  },
-  "professionalDevelopment": {
-    "title": "Professional Development Program",
-    "description": "Our comprehensive professional development modules prepare students for corporate success beyond academic knowledge",
-    "modules": [
-      {
-        "title": "Workshop Series",
-        "icon": "MdOutlineWorkspaces",
-        "items": [
-          "Resume Building Workshop",
-          "LinkedIn Profile Optimization",
-          "Personal Branding",
-          "Mock Interview Sessions"
-        ]
-      },
-      {
-        "title": "Public Speaking",
-        "icon": "FaMicrophone",
-        "items": [
-          "Speech Preparation",
-          "Presentation Skills",
-          "Voice Modulation",
-          "Overcoming Stage Fear"
-        ]
-      },
-      {
-        "title": "Group Discussions",
-        "icon": "FaUsers",
-        "items": [
-          "GD Techniques",
-          "Current Affairs Preparation",
-          "Leadership in GD",
-          "Body Language"
-        ]
-      },
-      {
-        "title": "Corporate Etiquette",
-        "icon": "FaUserTie",
-        "items": [
-          "Business Communication",
-          "Email Etiquette",
-          "Meeting Protocols",
-          "Professional Attire"
-        ]
-      }
-    ],
-    "structure": {
-      "duration": "6 semesters (Integrated with regular curriculum)",
-      "certification": "CATALYST Professional Readiness Certificate",
-      "evaluation": "Practical assessments + Corporate panel interviews"
+    },
+    "downloadSection": {
+      "title": "Detailed Syllabus Documents",
+      "description": "Download complete syllabus PDFs for each program with semester-wise breakdown",
+      "buttons": [
+        {
+          "text": "BCA Syllabus",
+          "icon": "FaBook",
+          "color": "bg-blue-600 hover:bg-blue-700"
+        },
+        {
+          "text": "BBA Syllabus",
+          "icon": "FaChartLine",
+          "color": "bg-indigo-600 hover:bg-indigo-700"
+        },
+        {
+          "text": "BSc IT Syllabus",
+          "icon": "MdComputer",
+          "color": "bg-purple-600 hover:bg-purple-700"
+        }
+      ]
     }
-  },
-  "downloadSection": {
-    "title": "Detailed Syllabus Documents",
-    "description": "Download complete syllabus PDFs for each program with semester-wise breakdown",
-    "buttons": [
-      {
-        "text": "BCA Syllabus",
-        "icon": "FaBook",
-        "color": "bg-blue-600 hover:bg-blue-700"
-      },
-      {
-        "text": "BBA Syllabus",
-        "icon": "FaChartLine",
-        "color": "bg-indigo-600 hover:bg-indigo-700"
-      },
-      {
-        "text": "BSc IT Syllabus",
-        "icon": "MdComputer",
-        "color": "bg-purple-600 hover:bg-purple-700"
-      }
-    ]
   }
-}
-const { data , error} = await fetchPageData("curriculum-&-syllabus");
+  const { data, error } = await fetchPageData("curriculum-&-syllabus");
 
-curriculumData = data as any ?? curriculumData
+  curriculumData = data as any ?? curriculumData
 
   const renderIcon = (
     iconName: keyof typeof iconComponents,
@@ -235,24 +236,20 @@ curriculumData = data as any ?? curriculumData
   return (
     <div className="font-sans bg-gray-50">
       {/* Hero Section */}
-      <section className={`relative py-32 bg-gradient-to-r ${curriculumData.heroSection.gradientFrom} ${curriculumData.heroSection.gradientTo} text-white overflow-hidden`}>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-500 rounded-full filter blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-serif">{curriculumData.heroSection.title}</h1>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-8"></div>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              {curriculumData.heroSection.description}
-            </p>
-          </div>
-        </div>
-      </section>
+
+      <HeroSection
+      title={curriculumData.heroSection.title}
+        description={curriculumData.heroSection.description}
+        imageUrl={curriculumData.heroSection.imageUrl}
+        overlayOpacity={0.4}
+        height={"md"}
+      />
+
+      <YoutubePlayer/>
+
 
       {/* Programs Overview */}
-      <section className="relative py-20 bg-white">
+      <section className="relative py-8 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto mb-16 text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">{curriculumData.programsOverview.title}</h2>

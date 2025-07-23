@@ -1,23 +1,24 @@
 // app/research-policy/page.tsx
 import { NextPage } from 'next';
 import HeroSection from '@/components/newHeroImageForAllPage'
+import { fetchPageData } from '@/lib/useFetchData';
 
 // JSON data for research policy
-const researchPolicyData = {
-  hero: {
-    title: "Research Policy",
-    description: "Guidelines and framework for promoting excellence in research",
-    imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    overlayOpacity: 0.4,
-    height: "lg"
+let researchPolicyData = {
+  "hero": {
+    "title": "Research Policy",
+    "description": "Guidelines and framework for promoting excellence in research",
+    "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    "overlayOpacity": 0.4,
+    "height": "lg"
   },
-  introduction: {
-    title: "Research Policy of Tech University",
-    content: "This Research Policy outlines the principles and procedures adopted by Tech University to promote and regulate research activities within the institution. The policy aims to nurture a culture of academic inquiry, innovation, and socially relevant research while upholding the highest standards of ethics and integrity."
+  "introduction": {
+    "title": "Research Policy of Tech University",
+    "content": "This Research Policy outlines the principles and procedures adopted by Tech University to promote and regulate research activities within the institution. The policy aims to nurture a culture of academic inquiry, innovation, and socially relevant research while upholding the highest standards of ethics and integrity."
   },
-  objectives: {
-    title: "Objectives",
-    items: [
+  "objectives": {
+    "title": "Objectives",
+    "items": [
       "Foster research across disciplines and departments",
       "Encourage participation in national and international research projects",
       "Support faculty and student research through funding, time, and resources",
@@ -26,63 +27,63 @@ const researchPolicyData = {
       "Establish guidelines for plagiarism, ethics, and IPR"
     ]
   },
-  scope: {
-    title: "Scope and Applicability",
-    items: [
+  "scope": {
+    "title": "Scope and Applicability",
+    "items": [
       "Applies to all faculty, research staff, and students",
       "Covers funded and unfunded research",
       "Includes basic research, applied projects, publications, and consultancy"
     ]
   },
-  governance: {
-    title: "Research Governance Structure",
-    bodies: [
+  "governance": {
+    "title": "Research Governance Structure",
+    "bodies": [
       {
-        name: "Research Advisory Committee",
-        role: "Oversees all research activities and policy implementation"
+        "name": "Research Advisory Committee",
+        "role": "Oversees all research activities and policy implementation"
       },
       {
-        name: "Dean of Research",
-        role: "Provides strategic direction and leadership"
+        "name": "Dean of Research",
+        "role": "Provides strategic direction and leadership"
       },
       {
-        name: "IQAC",
-        role: "Integrates research quality into institutional processes"
+        "name": "IQAC",
+        "role": "Integrates research quality into institutional processes"
       },
       {
-        name: "IPR Cell",
-        role: "Manages patents, copyrights, and intellectual property"
+        "name": "IPR Cell",
+        "role": "Manages patents, copyrights, and intellectual property"
       },
       {
-        name: "Ethics Committee",
-        role: "Reviews ethical aspects of research projects"
+        "name": "Ethics Committee",
+        "role": "Reviews ethical aspects of research projects"
       }
     ]
   },
-  funding: {
-    title: "Research Funding & Support",
-    items: [
+  "funding": {
+    "title": "Research Funding & Support",
+    "items": [
       {
-        type: "Internal Grants",
-        details: "Seed funding up to ₹50,000 for promising research proposals"
+        "type": "Internal Grants",
+        "details": "Seed funding up to ₹50,000 for promising research proposals"
       },
       {
-        type: "Conference Support",
-        details: "Duty leave and partial funding for presenting at conferences"
+        "type": "Conference Support",
+        "details": "Duty leave and partial funding for presenting at conferences"
       },
       {
-        type: "External Grants",
-        details: "Assistance in applying for UGC, DST, ICSSR, AICTE, DBT grants"
+        "type": "External Grants",
+        "details": "Assistance in applying for UGC, DST, ICSSR, AICTE, DBT grants"
       },
       {
-        type: "Publication Incentives",
-        details: "Cash awards for Scopus/Web of Science publications (₹10,000-25,000)"
+        "type": "Publication Incentives",
+        "details": "Cash awards for Scopus/Web of Science publications (₹10,000-25,000)"
       }
     ]
   },
-  publication: {
-    title: "Publication Guidelines",
-    items: [
+  "publication": {
+    "title": "Publication Guidelines",
+    "items": [
       "Publish in reputed journals (UGC-CARE, Scopus indexed)",
       "Mandatory plagiarism check (similarity < 15%) using approved tools",
       "Clear authorship guidelines following ICMJE standards",
@@ -90,9 +91,9 @@ const researchPolicyData = {
       "Open access publishing encouraged where feasible"
     ]
   },
-  ethics: {
-    title: "Ethical Guidelines",
-    items: [
+  "ethics": {
+    "title": "Ethical Guidelines",
+    "items": [
       "Institutional Ethics Committee approval required for human/animal studies",
       "Zero tolerance for plagiarism, data falsification, and misrepresentation",
       "Protection of vulnerable groups and indigenous knowledge",
@@ -100,56 +101,60 @@ const researchPolicyData = {
       "Proper data management and retention policies"
     ]
   },
-  collaborations: {
-    title: "Collaborations & Consultancy",
-    items: [
+  "collaborations": {
+    "title": "Collaborations & Consultancy",
+    "items": [
       "MoUs with industry partners for joint research projects",
       "Clear guidelines for sponsored research and consultancy services",
       "IP ownership determined before project commencement",
       "Revenue sharing: 70% inventor, 20% department, 10% institution"
     ]
   },
-  ipr: {
-    title: "Intellectual Property Rights",
-    items: [
+  "ipr": {
+    "title": "Intellectual Property Rights",
+    "items": [
       "Institution owns IP from funded research, shared with creators",
       "IPR Cell provides filing support and legal guidance",
       "Royalty distribution as per collaboration agreements",
       "Technology transfer facilitated through institutional channels"
     ]
   },
-  monitoring: {
-    title: "Monitoring & Evaluation",
-    items: [
+  "monitoring": {
+    "title": "Monitoring & Evaluation",
+    "items": [
       "Annual research performance review through IQAC",
       "Faculty research metrics included in appraisal system",
       "Policy reviewed every 3 years by Research Committee",
       "Dashboard tracking publications, patents, and funded projects"
     ]
   },
-  resources: [
+  "resources": [
     {
-      title: "Full Research Policy Document",
-      format: "PDF",
-      size: "1.8 MB",
-      link: "#"
+      "title": "Full Research Policy Document",
+      "format": "PDF",
+      "size": "1.8 MB",
+      "link": "#"
     },
     {
-      title: "Research Proposal Template",
-      format: "DOCX",
-      size: "0.2 MB",
-      link: "#"
+      "title": "Research Proposal Template",
+      "format": "DOCX",
+      "size": "0.2 MB",
+      "link": "#"
     },
     {
-      title: "Ethics Committee Application Form",
-      format: "PDF",
-      size: "0.5 MB",
-      link: "#"
+      "title": "Ethics Committee Application Form",
+      "format": "PDF",
+      "size": "0.5 MB",
+      "link": "#"
     }
   ]
-};
+}
 
-const ResearchPolicyPage: NextPage = () => {
+
+const ResearchPolicyPage: NextPage = async() => {
+  const { data, error} = await fetchPageData("research-policy");
+  researchPolicyData = data as any ?? researchPolicyData
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}

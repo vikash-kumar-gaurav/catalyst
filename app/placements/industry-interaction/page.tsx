@@ -1,7 +1,8 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
+import { fetchPageData } from '@/lib/useFetchData';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { FaChalkboardTeacher, FaBuilding, FaProjectDiagram, FaGraduationCap, FaHandshake, FaUserTie, FaQuoteLeft } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 export const metadata: Metadata = {
     title: 'Industry Interaction | Catalyst College Patna',
@@ -24,138 +25,150 @@ export const metadata: Metadata = {
         type: 'website',
     },
 };
-
-const IndustryInteraction = () => {
-    const activities = [
+let pageData = {
+    "page_name": "industry-interaction",
+    "activities": [
         {
-            title: "Guest Lectures & Industry Talks",
-            icon: <FaChalkboardTeacher className="w-8 h-8 text-blue-600" />,
-            description: "Regular sessions by professionals across sectors covering emerging trends and industry practices",
-            examples: [
+            "title": "Guest Lectures & Industry Talks",
+            "description": "Regular sessions by professionals across sectors covering emerging trends and industry practices",
+            "examples": [
                 "Mr. Ajay Kumar, VP – HDFC Bank: 'Digital Transformation in BFSI'",
                 "Ms. Priya Sharma, Data Scientist - Amazon: 'AI in Business Applications'",
                 "Mr. Rakesh Verma, Cybersecurity Expert - IBM: 'Enterprise Security Fundamentals'"
             ],
-            image: "/images/guest-lecture.jpg"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828495/488922405_23916388957966117_1283071211367299069_n_cfbbii.jpg"
         },
         {
-            title: "Industrial Visits",
-            icon: <FaBuilding className="w-8 h-8 text-green-600" />,
-            description: "Organized visits to factories, IT parks, and corporate offices for practical exposure",
-            examples: [
+            "title": "Industrial Visits",
+            "description": "Organized visits to factories, IT parks, and corporate offices for practical exposure",
+            "examples": [
                 "Infosys Campus (Bangalore) – BCA & BSc IT students",
                 "Coca-Cola Bottling Unit – BBA students",
                 "Patna Software Technology Park – All programs"
             ],
-            image: "/images/industrial-visit.jpg"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828851/486151393_1055702869918985_3352829412523095400_n_p5bn95.jpg"
         },
         {
-            title: "Live Projects & Internships",
-            icon: <FaProjectDiagram className="w-8 h-8 text-purple-600" />,
-            description: "Industry-sponsored projects where students work on real business challenges",
-            examples: [
+            "title": "Live Projects & Internships",
+            "description": "Industry-sponsored projects where students work on real business challenges",
+            "examples": [
                 "Social Media Audit Project for local e-commerce startup",
                 "Inventory Management System for retail chain",
                 "Data Analytics project for healthcare provider"
             ],
-            image: "/images/live-projects.jpg"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741088/486592318_1058965042926101_237695966334437774_n_fhh3p6.jpg"
         },
         {
-            title: "Corporate Training",
-            icon: <FaGraduationCap className="w-8 h-8 text-orange-600" />,
-            description: "Skill development workshops conducted by industry partners",
-            examples: [
+            "title": "Corporate Training",
+            "description": "Skill development workshops conducted by industry partners",
+            "examples": [
                 "TCS iON Career Edge - Soft Skills",
                 "AWS Academy Cloud Foundations",
                 "NASSCOM FutureSkills Prime - Data Analytics"
             ],
-            image: "/images/corporate-training.jpg"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752751502/3843a019-baf0-40e0-97b4-f548462aacf7.png"
         },
         {
-            title: "MoUs & Partnerships",
-            icon: <FaHandshake className="w-8 h-8 text-red-600" />,
-            description: "Formal collaborations with leading organizations for knowledge sharing",
-            examples: [
+            "title": "MoUs & Partnerships",
+            "description": "Formal collaborations with leading organizations for knowledge sharing",
+            "examples": [
                 "Infosys Springboard for digital skills",
                 "NASSCOM for future-ready curriculum",
                 "AWS Academy for cloud computing"
             ],
-            image: "/images/mou-signing.jpg"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752914011/514414669_1134115595411045_302502792642437531_n_zgvadr.jpg"
         },
         {
-            title: "Alumni-Industry Connect",
-            icon: <FaUserTie className="w-8 h-8 text-indigo-600" />,
-            description: "Our alumni in industry mentor current students and facilitate networking",
-            examples: [
+            "title": "Alumni-Industry Connect",
+            "description": "Our alumni in industry mentor current students and facilitate networking",
+            "examples": [
                 "Alumni mentorship program",
                 "Industry referral network",
                 "Career guidance sessions"
             ],
-            image: "/images/alumni-meet.jpg"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741171/487548216_1062974769191795_6092592449283881455_n_hpz3nv.jpg"
         }
-    ];
-
-    const advisoryBoard = [
+    ],
+    "advisoryBoard": [
         {
-            name: "Mr. Sanjay Gupta",
-            position: "VP Technology, Infosys",
-            expertise: "IT Services & Digital Transformation"
-        },
-        {
-            name: "Ms. Anjali Mishra",
-            position: "HR Director, Deloitte India",
-            expertise: "Talent Acquisition & Development"
-        },
-        {
-            name: "Mr. Rajesh Kumar",
-            position: "CEO, Patna Tech Solutions",
-            expertise: "Entrepreneurship & Startups"
-        },
-        {
-            name: "Ms. Priyanka Singh",
-            position: "Marketing Head, HDFC Bank",
-            expertise: "Digital Marketing & Banking"
+            "name": "Amit Sukhla",
+            "position": "It faculty",
+            "expertise": "IT Services & Digital Transformation",
+            "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752744394/68fa36c2-de43-406c-b4bf-6466c2ed96ac.png"
         }
-    ];
-
-    const testimonials = [
+    ],
+    "gallery": [
         {
-            quote: "The students from Catalyst College come well-prepared with strong fundamentals and practical exposure to real business challenges.",
-            author: "Ms. Neha Sharma",
-            position: "HR Manager, Infosys"
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740866/486615226_1058967089592563_3517955570577837187_n_fjsbul.jpg",
+            "caption": "Guest Lecture"
         },
         {
-            quote: "We consistently find Catalyst graduates to be among the most industry-ready, thanks to their hands-on project experience.",
-            author: "Mr. Amit Patel",
-            position: "Talent Acquisition, TCS"
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752828867/487555599_1061839282638677_5498399053034687482_n_rc1arw.jpg",
+            "caption": "Industrial Visit to Tech Park"
         },
         {
-            quote: "The college's focus on live projects gives students a distinct advantage in understanding actual workplace requirements.",
-            author: "Mr. Rakesh Verma",
-            position: "CTO, Patna Tech Park"
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752914370/470232576_9054499931237117_4437534863518638791_n_ffntdw.jpg",
+            "caption": "MoU Signing Ceremony"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752832349/487798706_1061838152638790_7457525024258014507_n_tqdgbo.jpg",
+            "caption": "Corporate Training Session"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752751660/a0bf2c08-4c4b-48fb-9af2-ebda6d154a04.png",
+            "caption": "Live Project Presentation"
+        },
+        {
+            "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740500/495580619_24182591184679225_1524845308338981122_n_ocuieq.jpg",
+            "caption": "Advisory Board Meeting"
         }
-    ];
+    ],
+    "heroSection": {
+        "title": "Industry Interaction",
+        "description": "Bridging academia and industry through corporate collaborations and real-world learning",
+        "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    "partnerLogos": [
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753341/download_lptm8v.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753202/download_dpcuui.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753189/download_mjqx63.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753151/download_cmf47v.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753138/download_cjyies.jpg",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753126/download_oyqbjr.png",
+        "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752753114/download_yrgmjz.png"
+    ],
+    "testimonials": [
+        {
+            "quote": "The students from Catalyst College come well-prepared with strong fundamentals and practical exposure to real business challenges.",
+            "author": "Ms. Neha Sharma",
+            "position": "HR Manager, Infosys"
+        },
+        {
+            "quote": "We consistently find Catalyst graduates to be among the most industry-ready, thanks to their hands-on project experience.",
+            "author": "Mr. Amit Patel",
+            "position": "Talent Acquisition, TCS"
+        },
+        {
+            "quote": "The college's focus on live projects gives students a distinct advantage in understanding actual workplace requirements.",
+            "author": "Mr. Rakesh Verma",
+            "position": "CTO, Patna Tech Park"
+        }
+    ]
+}
 
-    const partnerLogos = [
-        "/logos/infosys.png",
-        "/logos/tcs.png",
-        "/logos/deloitte.png",
-        "/logos/ibm.png",
-        "/logos/amazon.png",
-        "/logos/hdfc.png",
-        "/logos/nasscom.png",
-        "/logos/aws.png",
-        "/logos/wipro.png",
-        "/logos/accenture.png"
-    ];
+const IndustryInteraction = async () => {
+
+    const { data, error } = await fetchPageData("industry-interaction")
+    pageData = data as any ?? pageData
+    const { heroSection, partnerLogos, testimonials, advisoryBoard, activities, gallery } = pageData
 
     return (
         <div className="bg-gray-50">
             {/* Hero Section */}
             <HeroSection
-                title="Industry Interaction"
-                description="Bridging academia and industry through corporate collaborations and real-world learning"
-                imageUrl="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                title={heroSection.title}
+                description={heroSection.description}
+                imageUrl={heroSection.imageUrl}
                 overlayOpacity={0.5}
                 height="lg"
             />
@@ -192,9 +205,6 @@ const IndustryInteraction = () => {
                             </div>
                             <div className="p-6">
                                 <div className="flex items-center mb-4">
-                                    <div className="mr-4">
-                                        {activity.icon}
-                                    </div>
                                     <h3 className="text-xl font-bold text-gray-800">{activity.title}</h3>
                                 </div>
                                 <p className="text-gray-600 mb-4">{activity.description}</p>
@@ -225,7 +235,7 @@ const IndustryInteraction = () => {
                             <div key={index} className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
                                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
                                     <Image
-                                        src={`/images/advisor-${index + 1}.jpg`}
+                                        src={member.imageURL}
                                         alt={member.name}
                                         width={96}
                                         height={96}
@@ -288,14 +298,7 @@ const IndustryInteraction = () => {
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Industry Interaction Gallery</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[
-                        { src: '/images/gallery-industry-1.jpg', caption: 'Guest Lecture by Infosys VP' },
-                        { src: '/images/gallery-industry-2.jpg', caption: 'Industrial Visit to Tech Park' },
-                        { src: '/images/gallery-industry-3.jpg', caption: 'MoU Signing Ceremony' },
-                        { src: '/images/gallery-industry-4.jpg', caption: 'Corporate Training Session' },
-                        { src: '/images/gallery-industry-5.jpg', caption: 'Live Project Presentation' },
-                        { src: '/images/gallery-industry-6.jpg', caption: 'Advisory Board Meeting' },
-                    ].map((image, index) => (
+                    {gallery.map((image, index) => (
                         <div key={index} className="relative group rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                             <div className="h-64 relative">
                                 <Image
@@ -304,7 +307,7 @@ const IndustryInteraction = () => {
                                     fill
                                     className="object-cover"
                                 />
-                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
+                                <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                                     <div className="w-full p-4 bg-gradient-to-t from-black to-transparent">
                                         <p className="text-white font-medium">{image.caption}</p>
                                     </div>

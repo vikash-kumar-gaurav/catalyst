@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
+import { fetchPageData } from '@/lib/useFetchData';
 
 interface Scholarship {
   name: string;
@@ -25,70 +26,72 @@ interface SupportData {
   facultySupport: FacultyMember[];
 }
 
-const StudentSupportPage: NextPage = () => {
+const StudentSupportPage: NextPage = async () => {
 
-  const supportData: SupportData = {
-    commitment: "Catalyst College is committed to fostering an inclusive campus environment that supports students from Scheduled Castes (SC), Scheduled Tribes (ST), Other Backward Classes (OBC), and Minority communities. We aim to ensure equal academic opportunities, social justice, and holistic development for all.",
-    supportServices: [
+  let supportData: SupportData = {
+    "commitment": "Catalyst College is committed to fostering an inclusive campus environment that supports students from Scheduled Castes (SC), Scheduled Tribes (ST), Other Backward Classes (OBC), and Minority communities. We aim to ensure equal academic opportunities, social justice, and holistic development for all.",
+    "supportServices": [
       "Remedial Coaching for academically weaker students",
       "Career Counseling for government exams, competitive exams, and private sector jobs",
       "Mentorship Programs with faculty and senior students",
       "Free or subsidized study material and access to e-resources"
     ],
-    scholarships: [
+    "scholarships": [
       {
-        name: "Post-Matric Scholarship for SC/ST/OBC",
-        eligibleGroup: "SC/ST/OBC",
-        fundingAgency: "Govt. of Bihar / Ministry of SJ&E"
+        "name": "Post-Matric Scholarship for SC/ST/OBC",
+        "eligibleGroup": "SC/ST/OBC",
+        "fundingAgency": "Govt. of Bihar / Ministry of SJ&E"
       },
       {
-        name: "Minority Merit-cum-Means Scholarship",
-        eligibleGroup: "Religious minorities",
-        fundingAgency: "Ministry of Minority Affairs"
+        "name": "Minority Merit-cum-Means Scholarship",
+        "eligibleGroup": "Religious minorities",
+        "fundingAgency": "Ministry of Minority Affairs"
       },
       {
-        name: "Bihar MCM Scholarship",
-        eligibleGroup: "All categories (incl. OBC/SC/ST)",
-        fundingAgency: "Govt. of Bihar"
+        "name": "Bihar MCM Scholarship",
+        "eligibleGroup": "All categories (incl. OBC/SC/ST)",
+        "fundingAgency": "Govt. of Bihar"
       },
       {
-        name: "National Fellowship & Scholarship for Higher Education",
-        eligibleGroup: "ST",
-        fundingAgency: "Ministry of Tribal Affairs"
+        "name": "National Fellowship & Scholarship for Higher Education",
+        "eligibleGroup": "ST",
+        "fundingAgency": "Ministry of Tribal Affairs"
       }
     ],
-    grievanceRedressal: {
-      description: "We have a dedicated Equal Opportunity Cell and Grievance Cell to ensure no student is discriminated against based on caste, religion, or background. Complaints are handled confidentially and resolved promptly.",
-      reportLink: "/grievance-form"
+    "grievanceRedressal": {
+      "description": "We have a dedicated Equal Opportunity Cell and Grievance Cell to ensure no student is discriminated against based on caste, religion, or background. Complaints are handled confidentially and resolved promptly.",
+      "reportLink": "/grievance-form"
     },
-    capacityBuilding: [
+    "capacityBuilding": [
       "Awareness sessions on constitutional rights and social justice",
       "Special talks on role models from marginalized communities",
       "Annual events to celebrate diversity and inclusion"
     ],
-    facultySupport: [
+    "facultySupport": [
       {
-        name: "Prof. A.K. Jha",
-        designation: "Dean (Student Affairs)",
-        responsibility: "Overall In-charge"
+        "name": "Prof. A.K. Jha",
+        "designation": "Dean (Student Affairs)",
+        "responsibility": "Overall In-charge"
       },
       {
-        name: "Ms. Shalini Kumari",
-        designation: "SC/ST/OBC Coordinator",
-        responsibility: "Scholarship & grievance help"
+        "name": "Ms. Shalini Kumari",
+        "designation": "SC/ST/OBC Coordinator",
+        "responsibility": "Scholarship & grievance help"
       },
       {
-        name: "Mr. Imran Alam",
-        designation: "Minority Cell Convener",
-        responsibility: "Community support & outreach"
+        "name": "Mr. Imran Alam",
+        "designation": "Minority Cell Convener",
+        "responsibility": "Community support & outreach"
       },
       {
-        name: "Student Volunteers",
-        designation: "Peer Support Team",
-        responsibility: "Mentoring & onboarding"
+        "name": "Student Volunteers",
+        "designation": "Peer Support Team",
+        "responsibility": "Mentoring & onboarding"
       }
     ]
-  };
+  }
+  const { data, error } = await fetchPageData("minority-cell");
+  supportData = data as any ?? supportData
 
   return (
     <>

@@ -1,16 +1,17 @@
 
+import { fetchPageData } from '@/lib/useFetchData';
 import { NextPage } from 'next';
 import Image from 'next/image';
 
 // JSON data for the innovation hub
-const innovationHubData = {
-  introduction: {
-    title: "Innovation Hub at Tech University",
-    description: "The Innovation Hub at Tech University is a collaborative space designed to spark creativity, foster problem-solving, and build a culture of entrepreneurship and applied innovation. Supported by institutional and industry stakeholders, it empowers students and faculty to transform ideas into impact through hands-on projects, mentorship, and startup incubation."
+let innovationHubData = {
+  "introduction": {
+    "title": "Innovation Hub at Tech University",
+    "description": "The Innovation Hub at Tech University is a collaborative space designed to spark creativity, foster problem-solving, and build a culture of entrepreneurship and applied innovation. Supported by institutional and industry stakeholders, it empowers students and faculty to transform ideas into impact through hands-on projects, mentorship, and startup incubation."
   },
-  vision: {
-    title: "Our Vision & Objectives",
-    objectives: [
+  "vision": {
+    "title": "Our Vision & Objectives",
+    "objectives": [
       "Nurture innovative thinking and entrepreneurial skills",
       "Support student-led research and product development",
       "Facilitate industry-academia collaboration",
@@ -18,99 +19,103 @@ const innovationHubData = {
       "Host hackathons, idea challenges, workshops, and exhibitions"
     ]
   },
-  components: {
-    title: "Key Components",
-    items: [
+  "components": {
+    "title": "Key Components",
+    "items": [
       {
-        icon: "🚀",
-        title: "Startup Support Desk",
-        description: "Mentorship, business model guidance, pitch preparation"
+        "icon": "🚀",
+        "title": "Startup Support Desk",
+        "description": "Mentorship, business model guidance, pitch preparation"
       },
       {
-        icon: "🔬",
-        title: "Innovation Lab",
-        description: "Equipped with tools for prototyping (IoT kits, 3D printing, etc.)"
+        "icon": "🔬",
+        "title": "Innovation Lab",
+        "description": "Equipped with tools for prototyping (IoT kits, 3D printing, etc.)"
       },
       {
-        icon: "🧑‍🏫",
-        title: "Mentorship Programs",
-        description: "Industry mentors & faculty advisors"
+        "icon": "🧑‍🏫",
+        "title": "Mentorship Programs",
+        "description": "Industry mentors & faculty advisors"
       },
       {
-        icon: "🏢",
-        title: "Incubation Cell / IIC",
-        description: "For nurturing early-stage ideas"
+        "icon": "🏢",
+        "title": "Incubation Cell / IIC",
+        "description": "For nurturing early-stage ideas"
       },
       {
-        icon: "🎯",
-        title: "Idea Portal",
-        description: "Online platform to collect innovative ideas from students"
+        "icon": "🎯",
+        "title": "Idea Portal",
+        "description": "Online platform to collect innovative ideas from students"
       },
       {
-        icon: "🧪",
-        title: "Mini Research Projects",
-        description: "Seed funding for selected student/faculty research"
+        "icon": "🧪",
+        "title": "Mini Research Projects",
+        "description": "Seed funding for selected student/faculty research"
       },
       {
-        icon: "🎤",
-        title: "Events & Competitions",
-        description: "Hackathons, idea fests, demo days, poster presentations"
+        "icon": "🎤",
+        "title": "Events & Competitions",
+        "description": "Hackathons, idea fests, demo days, poster presentations"
       }
     ]
   },
-  successStories: {
-    title: "Recent Innovations & Success Stories",
-    projects: [
+  "successStories": {
+    "title": "Recent Innovations & Success Stories",
+    "projects": [
       {
-        name: "Smart Bin",
-        area: "IoT & Clean Tech",
-        outcome: "Selected for TIDE Pre-Incubation"
+        "name": "Smart Bin",
+        "area": "IoT & Clean Tech",
+        "outcome": "Selected for TIDE Pre-Incubation"
       },
       {
-        name: "StudyKart App",
-        area: "EdTech",
-        outcome: "Won ₹50,000 grant from IIC"
+        "name": "StudyKart App",
+        "area": "EdTech",
+        "outcome": "Won ₹50,000 grant from IIC"
       },
       {
-        name: "Solar Cart Design",
-        area: "Renewable Energy",
-        outcome: "Presented at State Tech Fair"
+        "name": "Solar Cart Design",
+        "area": "Renewable Energy",
+        "outcome": "Presented at State Tech Fair"
       }
     ]
   },
-  collaborations: {
-    title: "Industry & Academic Collaborations",
-    partners: [
+  "collaborations": {
+    "title": "Industry & Academic Collaborations",
+    "partners": [
       "TCS iON Innovation Labs",
       "AWS Academy / Microsoft Learn",
       "IIC (MoE Innovation Cell) status",
       "Local startup incubators or angel networks"
     ]
   },
-  events: {
-    title: "Upcoming Activities",
-    calendar: [
+  "events": {
+    "title": "Upcoming Activities",
+    "calendar": [
       {
-        name: "Innovation Week 2024",
-        date: "October 15-20, 2024"
+        "name": "Innovation Week 2024",
+        "date": "October 15-20, 2024"
       },
       {
-        name: "Hackathon on Sustainability",
-        date: "September 28-29, 2024"
+        "name": "Hackathon on Sustainability",
+        "date": "September 28-29, 2024"
       },
       {
-        name: "Idea Pitching Camp",
-        date: "Monthly (1st Friday)"
+        "name": "Idea Pitching Camp",
+        "date": "Monthly (1st Friday)"
       },
       {
-        name: "FDP on Design Thinking",
-        date: "November 10-12, 2024"
+        "name": "FDP on Design Thinking",
+        "date": "November 10-12, 2024"
       }
     ]
   }
-};
+}
 
-const InnovationHubPage: NextPage = () => {
+
+const InnovationHubPage: NextPage = async() => {
+
+  const { data, error} = await fetchPageData("innovation-hub")
+innovationHubData = data as any ?? innovationHubData
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}

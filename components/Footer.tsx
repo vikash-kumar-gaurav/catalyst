@@ -213,3 +213,5 @@ const FooterLink = ({ url, name }:{url:string, name:string}) => (
 );
 
 export default Footer;
+
+

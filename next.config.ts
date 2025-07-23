@@ -190,6 +190,39 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "*.fbcdn.net",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "static.vecteezy.com",
+        pathname: "/**"
+      },{
+        protocol: "https",
+        hostname: "www.tcs.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "www.wipro.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "az-ci-afde-prd-arena-01-e7fmh3dxacbgeyh5.z01.azurefd.net",
+        pathname: "/**"
+      },{
+        protocol: "https",
+        hostname: "e7.pngegg.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "cimagecollege.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname:  "res.cloudinary.com",
+        pathname: "/**"
       }
     ]
   }

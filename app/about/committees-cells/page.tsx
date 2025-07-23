@@ -163,11 +163,13 @@ let committeeData = {
   ]
 };
 
-const {data, error} = await fetchPageData("committees-&-cells")
 
 
-committeeData = data as any ?? committeeData;
-export default function CommitteesPage(/*{ committeeData }*/) {
+
+
+export default async function CommitteesPage() {
+  const {data, error} = await fetchPageData("committees-&-cells")
+  committeeData = data as any ?? committeeData;
   const { hero, introduction, committees } = committeeData;
 
   return (
@@ -189,7 +191,7 @@ export default function CommitteesPage(/*{ committeeData }*/) {
         <link rel="canonical" href="https://www.catalystcollege.edu.in/committees" />
       </Head>
 
-      <HeroSection imageUrl={hero.imageUrl} title={hero.title} description={hero.description} />
+      <HeroSection imageUrl={hero.imageUrl} title={hero.title} description={hero.description} height='md' />
 
       <div className="container mx-auto px-4 py-12">
         {/* Introduction Section */}
