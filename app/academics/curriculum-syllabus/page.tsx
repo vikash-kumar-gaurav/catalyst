@@ -1,5 +1,4 @@
 import HeroSection from '@/components/newHeroImageForAllPage';
-import YoutubePlayer from '@/components/VideoPlayer';
 import { fetchPageData } from '@/lib/useFetchData';
 import { FaBook, FaLaptopCode, FaChartLine, FaMicrophone, FaUsers, FaUserTie } from 'react-icons/fa';
 import { GiTeacher } from 'react-icons/gi';
@@ -245,7 +244,7 @@ const CurriculumPage = async () => {
         height={"md"}
       />
 
-      <YoutubePlayer/>
+
 
 
       {/* Programs Overview */}
