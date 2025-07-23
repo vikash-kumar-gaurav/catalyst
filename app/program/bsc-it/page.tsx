@@ -1,4 +1,5 @@
 // app/bscit/page.tsx
+import YoutubePlayer from '@/components/VideoPlayer'
 import { fetchPageData } from '@/lib/useFetchData'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -117,7 +118,21 @@ let bscitProgram = {
             "Software Engineering",
             "Object-Oriented Programming",
             "Computer Organization",
-            "Discrete Mathematics"
+            "Discrete Mathematics",
+            "Design and Analysis of Algorithms",
+            "Cloud Computing",
+            "Cyber Security and Ethical Hacking",
+            "Artificial Intelligence and Machine Learning",
+            "Mobile Application Development",
+            "Data Science and Analytics",
+            "Internet of Things (IoT)",
+            "Big Data Technologies",
+            "Computer Graphics and Multimedia",
+            "Theory of Computation",
+            "Human-Computer Interaction",
+            "Business Intelligence",
+            "Parallel and Distributed Computing",
+            "IT Project Management"
         ],
         "specializations": {
             "Software Development": [
@@ -299,17 +314,41 @@ let bscitProgram = {
                 "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
             }
         ]
-    }
+    },
+    "youtubeDescription": "Discover the BSc IT program—curriculum deep dives, tech comparisons, and student-led demos.",
+    "youtubeVideos": [
+        {
+            "id": "GwN9ZrdGays",
+            "title": "B.Sc.IT Course at CIMAGE College Patna",
+            "description": "Official overview of the BSc IT curriculum, campus facilities, and career prospects."
+        },
+        {
+            "id": "RsZpFfr_ZAw",
+            "title": "BSc IT vs BCA: Which Course Offers More in Tech?",
+            "description": "Comparative guide to help students choose between BSc IT and BCA programs."
+        },
+        {
+            "id": "kekzFYFZ7Cc",
+            "title": "Half adder circuit explained by a student of BSc‑IT",
+            "description": "Hands-on demo of digital logic concepts by a BSc IT 2nd‑year student."
+        },
+        {
+            "id": "sGq6FsvTtyw",
+            "title": "Best College for BSc‑IT at CIMAGE Group of Institutions",
+            "description": "Promotional video highlighting CIMAGE’s BSc‑IT offerings, faculty, and infrastructure."
+        }
+    ],
+    "youtubetitle": "Explore Our BSc IT Insights"
 }
 
 
 export default async function BScITPage() {
-  const { data, error} = await fetchPageData("bsc-it")
-bscitProgram = data as any ?? bscitProgram
+  const { data, error } = await fetchPageData("bsc-it")
+  bscitProgram = data as any ?? bscitProgram
   return (
     <div className="bg-white">
       {/* Hero Section with Tech Background */}
-<div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-30"></div>
@@ -495,44 +534,44 @@ bscitProgram = data as any ?? bscitProgram
       </section>
 
       {/* Why Choose Section */}
-<section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <span className="inline-block px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full mb-4">
-        Why Our BSc IT?
-      </span>
-      <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-        Bihar's Most <span className="text-blue-600">Practical IT Education</span>
-      </h2>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {bscitProgram.whyChoose.features.map((feature, index) => (
-        <div 
-          key={index} 
-          className="group relative bg-white p-0 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
-        >
-          {/* Image Container */}
-          <div className="h-48 w-full overflow-hidden">
-            <Image 
-              src={feature.icon} 
-              alt={feature.title}
-              width={400}
-              height={240}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full mb-4">
+              Why Our BSc IT?
+            </span>
+            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+              Bihar's Most <span className="text-blue-600">Practical IT Education</span>
+            </h2>
           </div>
-          
-          {/* Content */}
-          <div className="p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-            <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {bscitProgram.whyChoose.features.map((feature, index) => (
+              <div
+                key={index}
+                className="group relative bg-white p-0 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+              >
+                {/* Image Container */}
+                <div className="h-48 w-full overflow-hidden">
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={400}
+                    height={240}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Curriculum Section */}
       <section id="curriculum" className="py-16 bg-white">
@@ -594,7 +633,8 @@ bscitProgram = data as any ?? bscitProgram
           </div>
         </div>
       </section>
-
+      {/* --------youtube section-------- */}
+      <YoutubePlayer videos={bscitProgram.youtubeVideos} title={bscitProgram.youtubetitle} description={bscitProgram.youtubeDescription} />
       {/* Labs Section */}
       <section id="labs" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

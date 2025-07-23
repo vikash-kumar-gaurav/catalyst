@@ -1,4 +1,5 @@
-// app/bba/page.tsx
+
+import YoutubePlayer from '@/components/VideoPlayer'
 import { fetchPageData } from '@/lib/useFetchData'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -145,7 +146,6 @@ let bbaProgram = {
       "E-Commerce and Digital Marketing",
       "Project Management"
     ],
-    
     "specializations": {
       "Marketing": [
         "Consumer Behavior & Market Research",
@@ -302,7 +302,31 @@ let bbaProgram = {
         "imageURL": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
       }
     ]
-  }
+  },
+  "youtubeDescription": "Dive into our academic stories, campus vibes, and daily learning adventures through curated videos.",
+  "youtubeVideos": [
+    {
+      "id": "hyKzgWd6qWg",
+      "title": "Different Levels of Strategic Management by 4th Sem",
+      "description": "In-depth lecture on various strategic levels in organizations by CIMAGE BBA 4th semester students."
+    },
+    {
+      "id": "ELScL8tvTVM",
+      "title": "BBA 4th STRATEGIC MANAGEMENT CIMAGE College, Patna",
+      "description": "Student presentation covering strategic management concepts as part of the 4th semester curriculum."
+    },
+    {
+      "id": "0KYEXTGBd08",
+      "title": "BBA 5th sem, Retail mgmt, Revision, 23/3/22",
+      "description": "Revision session on Retail Management for 5th semester BBA students at CIMAGE College."
+    },
+    {
+      "id": "LpyHfURuVJw",
+      "title": "Strategic Management – As they learned. BBA‑4th Sem",
+      "description": "BBA 4th semester students share learnings and insights from their Strategic Management course."
+    }
+  ],
+  "youtubetitle": "Explore Our Inspiring YouTube Journey"
 }
 
 
@@ -336,7 +360,7 @@ export default async function BBAPage() {
           </svg>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:pt-12 lg:pb-18">
+        <div className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:pt-12 lg:pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Content section */}
             <div className="relative z-10">
@@ -748,6 +772,9 @@ export default async function BBAPage() {
           </div>
         </div>
       </section>
+      {/* -----------youtube section ------------ */}
+      <YoutubePlayer title={bbaProgram.youtubetitle} description={bbaProgram.youtubeDescription} videos={bbaProgram.youtubeVideos} />
+
 
       {/* Faculty Section */}
       <section className="py-8 bg-gray-50">
@@ -894,6 +921,7 @@ export default async function BBAPage() {
           </div>
         </div>
       </section>
+
 
 
       {/* CTA Section */}

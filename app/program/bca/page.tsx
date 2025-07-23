@@ -55,286 +55,321 @@ export const metadata: Metadata = {
   }
 }
 
-let bcaProgram = {
-  "page_name": "bca",
-  "admission": {
-    "eligibility": [
-      "10+2 from any stream with Mathematics/Computer Science",
-      "Minimum 50% marks in 12th standard",
-      "Basic computer literacy preferred",
-      "No age restriction"
-    ],
-    "process": [
-      {
-        "step": "1. Online Application",
-        "description": "Submit form at admissions.catalystcollege.edu.in with ₹500 fee"
-      },
-      {
-        "step": "2. Basic Aptitude Test",
-        "description": "Logical reasoning and math test (online/offline option)"
-      },
-      {
-        "step": "3. Personal Interaction",
-        "description": "Faculty interview to assess interest in computing"
-      },
-      {
-        "step": "4. Enrollment",
-        "description": "Document verification and first semester fee payment"
-      }
-    ],
-    "deadlines": {
-      "Early Bird": "May 15, 2024",
-      "Regular": "June 30, 2024",
-      "Extended": "July 31, 2024"
+let bcaProgram ={
+    "page_name": "bca",
+    "admission": {
+        "eligibility": [
+            "10+2 from any stream with Mathematics/Computer Science",
+            "Minimum 50% marks in 12th standard",
+            "Basic computer literacy preferred",
+            "No age restriction"
+        ],
+        "process": [
+            {
+                "step": "1. Online Application",
+                "description": "Submit form at admissions.catalystcollege.edu.in with ₹500 fee"
+            },
+            {
+                "step": "2. Basic Aptitude Test",
+                "description": "Logical reasoning and math test (online/offline option)"
+            },
+            {
+                "step": "3. Personal Interaction",
+                "description": "Faculty interview to assess interest in computing"
+            },
+            {
+                "step": "4. Enrollment",
+                "description": "Document verification and first semester fee payment"
+            }
+        ],
+        "deadlines": {
+            "Early Bird": "May 15, 2024",
+            "Regular": "June 30, 2024",
+            "Extended": "July 31, 2024"
+        },
+        "documents": [
+            "10th & 12th original marksheets",
+            "Transfer Certificate",
+            "Caste Certificate (if applicable)",
+            "Passport photos (4 copies)",
+            "Aadhar Card copy"
+        ]
     },
-    "documents": [
-      "10th & 12th original marksheets",
-      "Transfer Certificate",
-      "Caste Certificate (if applicable)",
-      "Passport photos (4 copies)",
-      "Aadhar Card copy"
-    ]
-  },
-  "careers": {
-    "roles": [
-      "Software Developer",
-      "Web Developer",
-      "System Analyst",
-      "Database Administrator",
-      "Cloud Support Associate",
-      "IT Consultant",
-      "Quality Analyst",
-      "Technical Writer"
-    ],
-    "placement": {
-      "rate": "95%",
-      "average": "₹4 LPA",
-      "highest": "₹8.9 LPA",
-      "companies": [
-        "https://static.vecteezy.com/system/resources/previews/020/336/451/non_2x/infosys-logo-infosys-icon-free-free-vector.jpg",
-        "https://www.tcs.com/content/dam/global-tcs/en/images/who-we-are/media-kit/tcs-light-logo.png",
-        "https://www.wipro.com/content/dam/wipro/social-icons/wipro_new_logo.svg",
-        "https://az-ci-afde-prd-arena-01-e7fmh3dxacbgeyh5.z01.azurefd.net/-/media/images/maruti/marutisuzuki/global/maruti-logo.webp?h=39&w=194&la=en&hash=A8D386DD695C25850B9EE818532657AC",
-        "https://e7.pngegg.com/pngimages/892/32/png-clipart-icici-bank-logo-bank-logos-thumbnail.png"
-      ]
+    "careers": {
+        "roles": [
+            "Software Developer",
+            "Web Developer",
+            "System Analyst",
+            "Database Administrator",
+            "Cloud Support Associate",
+            "IT Consultant",
+            "Quality Analyst",
+            "Technical Writer"
+        ],
+        "placement": {
+            "rate": "95%",
+            "average": "₹4 LPA",
+            "highest": "₹8.9 LPA",
+            "companies": [
+                "https://static.vecteezy.com/system/resources/previews/020/336/451/non_2x/infosys-logo-infosys-icon-free-free-vector.jpg",
+                "https://www.tcs.com/content/dam/global-tcs/en/images/who-we-are/media-kit/tcs-light-logo.png",
+                "https://www.wipro.com/content/dam/wipro/social-icons/wipro_new_logo.svg",
+                "https://az-ci-afde-prd-arena-01-e7fmh3dxacbgeyh5.z01.azurefd.net/-/media/images/maruti/marutisuzuki/global/maruti-logo.webp?h=39&w=194&la=en&hash=A8D386DD695C25850B9EE818532657AC",
+                "https://e7.pngegg.com/pngimages/892/32/png-clipart-icici-bank-logo-bank-logos-thumbnail.png"
+            ]
+        },
+        "internship": {
+            "partners": [
+                "PatnaTech Solutions",
+                "Digital Bihar Initiative",
+                "Bihar Startup Network",
+                "State Bank IT Division",
+                "Patna Smart City Project"
+            ],
+            "duration": "Minimum 6 weeks mandatory in 5th semester"
+        }
     },
-    "internship": {
-      "partners": [
-        "PatnaTech Solutions",
-        "Digital Bihar Initiative",
-        "Bihar Startup Network",
-        "State Bank IT Division",
-        "Patna Smart City Project"
-      ],
-      "duration": "Minimum 6 weeks mandatory in 5th semester"
-    }
-  },
-  "curriculum": {
-    "structure": {
-      "duration": "3 Years | 6 Semesters",
-      "credits": "144 Credit Hours (PPU Pattern)",
-      "pattern": "70% Practical | 30% Theory"
+    "curriculum": {
+        "structure": {
+            "duration": "3 Years | 6 Semesters",
+            "credits": "144 Credit Hours (PPU Pattern)",
+            "pattern": "70% Practical | 30% Theory"
+        },
+        "coreSubjects": [
+            "Programming in C",
+            "Data Structures using C++",
+            "Database Management Systems",
+            "Operating Systems",
+            "Computer Networks",
+            "Web Technologies",
+            "Software Engineering",
+            "Java Programming",
+            "Python for Applications",
+            "Discrete Mathematics",
+            "Computer Organization and Architecture",
+            "Object-Oriented Programming (OOP)",
+            "Design and Analysis of Algorithms",
+            "Cloud Computing",
+            "Mobile Application Development",
+            "Artificial Intelligence and Machine Learning",
+            "Cyber Security and Ethical Hacking",
+            "Theory of Computation",
+            "Data Warehousing and Data Mining",
+            "Big Data Analytics",
+            "Internet of Things (IoT)",
+            "Business Intelligence",
+            "Computer Graphics and Multimedia"
+        ],
+        "specializations": {
+            "Software Development": [
+                "Advanced Java Technologies",
+                "Python Frameworks (Django/Flask)",
+                "Mobile App Development",
+                "DevOps Fundamentals",
+                "Microservices Architecture"
+            ],
+            "Cloud Computing": [
+                "AWS Cloud Essentials",
+                "Microsoft Azure Fundamentals",
+                "Cloud Security",
+                "Serverless Computing",
+                "Containerization with Docker"
+            ],
+            "AI Fundamentals": [
+                "Python for AI/ML",
+                "Machine Learning Basics",
+                "Natural Language Processing",
+                "Computer Vision Fundamentals",
+                "AI Ethics and Governance"
+            ]
+        },
+        "labs": [
+            {
+                "name": "Advanced Programming Lab",
+                "equipment": "50+ high-end workstations with VS Code, IntelliJ, PyCharm",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752748006/486081166_1055984106557528_2486189336089163725_n_k0b9yp.jpg"
+            },
+            {
+                "name": "Cloud Computing Lab",
+                "equipment": "AWS/Azure sandbox accounts, Cloud simulation tools",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752748121/rackspace-open-compute-logo-bw_iaejor.jpg"
+            }
+        ]
     },
-    "coreSubjects": [
-      "Programming in C",
-      "Data Structures using C++",
-      "Database Management Systems",
-      "Operating Systems",
-      "Computer Networks",
-      "Web Technologies",
-      "Software Engineering",
-      "Java Programming",
-      "Python for Applications",
-      "Discrete Mathematics"
+    "faculty": [
+        {
+            "name": "Amit shukhla",
+            "designation": "Professor & HOD (BCA)",
+            "qualification": "PhD (Computer Science), IIT Patna",
+            "expertise": "Software Engineering",
+            "experience": "18 years",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752744394/68fa36c2-de43-406c-b4bf-6466c2ed96ac.png"
+        },
+        {
+            "name": "Murli Manohar",
+            "designation": "Cyber Secutity Expert",
+            "qualification": "MCA",
+            "expertise": "Cloud Computing",
+            "experience": "12 years industry experience",
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746925/Murli-Sir_a6peoy.jpg"
+        }
     ],
-    "specializations": {
-      "Software Development": [
-        "Advanced Java Technologies",
-        "Python Frameworks (Django/Flask)",
-        "Mobile App Development",
-        "DevOps Fundamentals",
-        "Microservices Architecture"
-      ],
-      "Cloud Computing": [
-        "AWS Cloud Essentials",
-        "Microsoft Azure Fundamentals",
-        "Cloud Security",
-        "Serverless Computing",
-        "Containerization with Docker"
-      ],
-      "AI Fundamentals": [
-        "Python for AI/ML",
-        "Machine Learning Basics",
-        "Natural Language Processing",
-        "Computer Vision Fundamentals",
-        "AI Ethics and Governance"
-      ]
+    "fees": {
+        "structure": [
+            {
+                "item": "Tuition Fee",
+                "amount": "₹58,000/year"
+            },
+            {
+                "item": "Lab Fee",
+                "amount": "₹12,000/year"
+            },
+            {
+                "item": "Exam Fee",
+                "amount": "₹3,500/semester"
+            },
+            {
+                "item": "Development Kit",
+                "amount": "₹8,000 (one-time)"
+            }
+        ],
+        "scholarships": [
+            {
+                "name": "Bihar Student Credit Card",
+                "amount": "Up to ₹4 lakhs"
+            },
+            {
+                "name": "Tech Genius Scholarship",
+                "amount": "30% fee waiver for programming competition winners"
+            },
+            {
+                "name": "Girls in Tech Scholarship",
+                "amount": "25% fee waiver for female students"
+            }
+        ]
     },
-    "labs": [
-      {
-        "name": "Advanced Programming Lab",
-        "equipment": "50+ high-end workstations with VS Code, IntelliJ, PyCharm",
-        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752748006/486081166_1055984106557528_2486189336089163725_n_k0b9yp.jpg"
-      },
-      {
-        "name": "Cloud Computing Lab",
-        "equipment": "AWS/Azure sandbox accounts, Cloud simulation tools",
-        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752748121/rackspace-open-compute-logo-bw_iaejor.jpg"
-      }
-    ]
-  },
-  "faculty": [
-    {
-      "name": "Amit shukhla",
-      "designation": "Professor & HOD (BCA)",
-      "qualification": "PhD (Computer Science), IIT Patna",
-      "expertise": "Software Engineering",
-      "experience": "18 years",
-      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752744394/68fa36c2-de43-406c-b4bf-6466c2ed96ac.png"
+    "overview": {
+        "title": "Bachelor of Computer Applications (BCA)",
+        "intro": "Catalyst College Patna's BCA program bridges the gap between academic learning and industry requirements through intensive practical training and project-based learning.",
+        "highlights": [
+            "PPU-affiliated 3-year degree program",
+            "95% placement record in 2023",
+            "1000+ hours of practical coding",
+            "Mandatory industry internship",
+            "AWS Educate Cloud Computing Program"
+        ],
+        "skills": [
+            "Full-Stack Development",
+            "Database Management",
+            "Object-Oriented Programming",
+            "Web & Mobile App Development",
+            "Cloud Computing Basics",
+            "Software Engineering Principles"
+        ],
+        "accreditation": "NAAC excellent Grade | AWS Educate Member | Microsoft Learn Partner"
     },
-    {
-      "name": "Murli Manohar",
-      "designation": "Cyber Secutity Expert",
-      "qualification": "MCA",
-      "expertise": "Cloud Computing",
-      "experience": "12 years industry experience",
-      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746925/Murli-Sir_a6peoy.jpg"
-    }
-  ],
-  "fees": {
-    "structure": [
-      {
-        "item": "Tuition Fee",
-        "amount": "₹58,000/year"
-      },
-      {
-        "item": "Lab Fee",
-        "amount": "₹12,000/year"
-      },
-      {
-        "item": "Exam Fee",
-        "amount": "₹3,500/semester"
-      },
-      {
-        "item": "Development Kit",
-        "amount": "₹8,000 (one-time)"
-      }
+    "studentLife": {
+        "clubs": [
+            {
+                "name": "CodeChef Chapter",
+                "description": "Competitive programming club with weekly contests",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747310/486678604_1059585816197357_640593102037474519_n_helyxg.jpg"
+            },
+            {
+                "name": "Web Wizards",
+                "description": "Frontend development and design collective",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747260/d3f5cab9-1303-45d1-b76b-d13cd3445503.png"
+            }
+        ],
+        "events": [
+            {
+                "name": "BootCamps",
+                "description": "Monthly coding festival with 1000 colleges participating",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747110/486057045_1056585686497370_2858634788722645153_n_boowwi.jpg"
+            },
+            {
+                "name": "Code Combat",
+                "description": "8-hour hackathon solving local community problems",
+                "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg"
+            }
+        ]
+    },
+    "whyChoose": {
+        "title": "Why Catalyst College for BCA?",
+        "features": [
+            {
+                "title": "Industry-Ready Curriculum",
+                "description": "Updated annually with inputs from Patna IT companies and alumni working in MNCs",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752665750/power_bi_workshop_agtwqa.png"
+            },
+            {
+                "title": "Coding Intensive",
+                "description": "150+ programming assignments across 6 semesters with code reviews",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
+            },
+            {
+                "title": "Project-Based Learning",
+                "description": "Build 10+ real-world projects including a final year software product",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741088/486592318_1058965042926101_237695966334437774_n_fhh3p6.jpg"
+            },
+            {
+                "title": "Certification Integration",
+                "description": "Earn AWS Cloud, Microsoft Azure, and Oracle certifications alongside degree",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746556/481173779_9865881320110117_613508857674207901_n_z2gp41.jpg"
+            },
+            {
+                "title": "Startup Support",
+                "description": "Seed funding up to ₹2 lakhs for student software startups",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752745794/5fbc02e8-8fdd-40b2-8549-5f5ba7299e5c.png"
+            },
+            {
+                "title": "Hackathon Culture",
+                "description": "Regular coding competitions with Bihar IT Association",
+                "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg"
+            }
+        ]
+    },
+    "youtubeVideos": [
+        {
+            "id": "eLguMx7KLNc",
+            "title": "Why to choose CIMAGE College| Best BCA College, Patna"
+        },
+        {
+            "id": "rO7Vi_94g0Q",
+            "title": "CIMAGE Campus Tour | Campus Reel | Futuristic College"
+        },
+        {
+            "id": "mepCtekz-sI",
+            "title": "CIMAGE PATNA is live"
+        },
+        {
+            "id": "g8GRsU84qJc",
+            "title": "Process, Courses & Guidance by Prof. Neeraj Poddar"
+        },
+        {
+            "id": "xsMbNI11SyE",
+            "title": "Best BCA College in Patna | Reality of CIMAGE"
+        },
+        {
+            "id": "nmPNN0MiAAE",
+            "title": "CIMAGE Campus Tour | College Vlog Made by Students"
+        },
+        {
+            "id": "Yi7LgIBYE6Q",
+            "title": "CIMAGE College Vlog"
+        }
     ],
-    "scholarships": [
-      {
-        "name": "Bihar Student Credit Card",
-        "amount": "Up to ₹4 lakhs"
-      },
-      {
-        "name": "Tech Genius Scholarship",
-        "amount": "30% fee waiver for programming competition winners"
-      },
-      {
-        "name": "Girls in Tech Scholarship",
-        "amount": "25% fee waiver for female students"
-      }
-    ]
-  },
-  "overview": {
-    "title": "Bachelor of Computer Applications (BCA)",
-    "intro": "Catalyst College Patna's BCA program bridges the gap between academic learning and industry requirements through intensive practical training and project-based learning.",
-    "highlights": [
-      "PPU-affiliated 3-year degree program",
-      "95% placement record in 2023",
-      "1000+ hours of practical coding",
-      "Mandatory industry internship",
-      "AWS Educate Cloud Computing Program"
-    ],
-    "skills": [
-      "Full-Stack Development",
-      "Database Management",
-      "Object-Oriented Programming",
-      "Web & Mobile App Development",
-      "Cloud Computing Basics",
-      "Software Engineering Principles"
-    ],
-    "accreditation": "NAAC excellent Grade | AWS Educate Member | Microsoft Learn Partner"
-  },
-  "studentLife": {
-    "clubs": [
-      {
-        "name": "CodeChef Chapter",
-        "description": "Competitive programming club with weekly contests",
-        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747310/486678604_1059585816197357_640593102037474519_n_helyxg.jpg"
-      },
-      {
-        "name": "Web Wizards",
-        "description": "Frontend development and design collective",
-        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747260/d3f5cab9-1303-45d1-b76b-d13cd3445503.png"
-      }
-    ],
-    "events": [
-      {
-        "name": "BootCamps",
-        "description": "Monthly coding festival with 1000 colleges participating",
-        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752747110/486057045_1056585686497370_2858634788722645153_n_boowwi.jpg"
-      },
-      {
-        "name": "Code Combat",
-        "description": "8-hour hackathon solving local community problems",
-        "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg"
-      }
-    ]
-  },
-  "whyChoose": {
-    "title": "Why Catalyst College for BCA?",
-    "features": [
-      {
-        "title": "Industry-Ready Curriculum",
-        "description": "Updated annually with inputs from Patna IT companies and alumni working in MNCs",
-        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752665750/power_bi_workshop_agtwqa.png"
-      },
-      {
-        "title": "Coding Intensive",
-        "description": "150+ programming assignments across 6 semesters with code reviews",
-        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740814/487511434_1062197365936202_4767026600859138500_n_sconf7.jpg"
-      },
-      {
-        "title": "Project-Based Learning",
-        "description": "Build 10+ real-world projects including a final year software product",
-        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752741088/486592318_1058965042926101_237695966334437774_n_fhh3p6.jpg"
-      },
-      {
-        "title": "Certification Integration",
-        "description": "Earn AWS Cloud, Microsoft Azure, and Oracle certifications alongside degree",
-        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752746556/481173779_9865881320110117_613508857674207901_n_z2gp41.jpg"
-      },
-      {
-        "title": "Startup Support",
-        "description": "Seed funding up to ₹2 lakhs for student software startups",
-        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752745794/5fbc02e8-8fdd-40b2-8549-5f5ba7299e5c.png"
-      },
-      {
-        "title": "Hackathon Culture",
-        "description": "Regular coding competitions with Bihar IT Association",
-        "icon": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740409/485146986_1053170816838857_6978447644490651086_n_vuedb7.jpg"
-      }
-    ]
-  }
+    "heroImage": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740866/486615226_1058967089592563_3517955570577837187_n_fjsbul.jpg",
+    "youtubeDescription": "view our accademic taily routine ",
+    "youtubetitle": "out youtube videos"
 }
-const myVideos = [
-  { id: 'eLguMx7KLNc', title: 'Why to choose CIMAGE College| Best BCA College, Patna' },
-  { id: 'rO7Vi_94g0Q', title: 'CIMAGE Campus Tour | Campus Reel | Futuristic College' },
-  { id: 'mepCtekz-sI', title: 'CIMAGE PATNA is live' },
-  { id: 'g8GRsU84qJc', title: 'Process, Courses & Guidance by Prof. Neeraj Poddar' },
-  { id: 'xsMbNI11SyE', title: 'Best BCA College in Patna | Reality of CIMAGE' },
-  { id: 'nmPNN0MiAAE', title: 'CIMAGE Campus Tour | College Vlog Made by Students' },
-  { id: 'Yi7LgIBYE6Q', title: 'CIMAGE College Vlog' }
-];
-const { data, error } = await fetchPageData("bca");
-console.log(data);
 
-bcaProgram = data as any ?? bcaProgram
 
 
 export default async function BCAPage() {
 
-  const { data, error } = await fetchPageData("")
+const { data, error } = await fetchPageData("bca");
+bcaProgram = data as any ?? bcaProgram
   return (
     <div className="bg-white">
 
@@ -422,7 +457,7 @@ export default async function BCAPage() {
             <div className="relative h-80 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 group">
               {/* Main image */}
               <Image
-                src="https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740831/486873408_1062197215936217_8435744219966123771_n_hjraq7.jpg"
+                src={bcaProgram.heroImage}
                 alt="BCA students at computer lab"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -563,7 +598,7 @@ export default async function BCAPage() {
 
 
       {/* ----adding the youtube videos --------- */}
-      <YoutubePlayer title='my youtube videos' description='see all of it' videos={myVideos} />
+      <YoutubePlayer title={bcaProgram.youtubetitle} description={bcaProgram.youtubeDescription} videos={bcaProgram.youtubeVideos} />
       {/* Curriculum Section */}
       <section id="curriculum" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

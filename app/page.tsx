@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 }
 
 const heroData = {
-  hero_img_url: "./15.jpeg",
+  hero_img_url: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753270808/517124044_1140604534762151_4895265090587035788_n_akow3w.jpg",
   duration: "2025 - 2028",
   tagline: "Shape your future with excellence — Enroll today in top-notch programs crafted for tomorrow's leaders."
 }
@@ -381,17 +381,7 @@ const testimonials = [
 
 
 export default async function Home() {
-  // let response;
-  // try {
-  //   response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_PAGES_API}/home`)
-  //   console.log(response);
-    
-  // } catch (error) {
-  //   console.log(error);
-
-  // }
-//  return (
-//   <div>hello</div>
+ 
 //  )
   return (
     <div className="bg-gradient-to-br from-indigo-50 to-purple-100">
@@ -419,7 +409,7 @@ export default async function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Cimage</span> at a Glance
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Life</span> at Cimage
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Explore our vibrant campus life through stunning visual narratives
