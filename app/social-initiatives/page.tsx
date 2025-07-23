@@ -155,7 +155,7 @@ let socialData ={
                 "alt": "College cricket team"
             },
             {
-                "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753272843/510317731_1126615716161033_1299775679840386401_n_lk9l3v.jpg",
+                "src": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753272887/486823452_1058955299593742_2361378191897172965_n_tzsocb.jpg",
                 "alt": "Badminton"
             },
             {

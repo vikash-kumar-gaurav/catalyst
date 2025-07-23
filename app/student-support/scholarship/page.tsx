@@ -34,7 +34,7 @@ const ScholarshipPage = async() => {
  let pageData = {
     "page_name": "scholarship",
     "heroSection": {
-        "imageUrl": "https://scontent-del2-1.xx.fbcdn.net/v/t39.30808-6/495201106_24104693695802308_6178365650416442704_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=x5ZtWmoQ2-8Q7kNvwHCkjBk&_nc_oc=AdnmBR5DN92aGNgXj_pNxmaKfmUBYiYcsNUgFNrBoBmFOqOT7Ww0T2SpLc_LiQcfPFE&_nc_zt=23&_nc_ht=scontent-del2-1.xx&_nc_gid=WR1KRZXJhPevIo1t0cUKJA&oh=00_AfSsAUP2HhCvmcTlmfcGkFuFYs4VgdfMe5jmqXrjdsFgZA&oe=687D3F01",
+        "imageUrl": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752839829/486697322_1061169472705658_3251323799160285940_n_ctnnsm.jpg",
         "title": "Scholarship Opportunities",
         "description": "Financial support schemes for deserving students across BBA, BCA, and BSc IT programs"
     },
@@ -54,7 +54,7 @@ const ScholarshipPage = async() => {
                 "Admission proof"
             ],
             "process": "Submit documents to college office within first month of semester",
-            "image": "https://scontent-del1-2.xx.fbcdn.net/v/t39.30808-6/484973894_1049466820542590_4188318013415976733_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4jHLe6ywfk0Q7kNvwEAqgl3&_nc_oc=AdnTPsLsOEJwiYJVdAI5-Hd9RkVCkOTcP67JGmiwfZJKgQxQ8PhYIAdyTSmGJGjUzV4&_nc_zt=23&_nc_ht=scontent-del1-2.xx&_nc_gid=DVn3H4bKPjMNoPoxZO7cPA&oh=00_AfR3SYiMGyXWxQhQLpk7C2eZzU65wXQQDMIXody3r9Faog&oe=687D6155"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753273760/maxresdefault_i8hyux.jpg"
         },
         {
             "name": "Army Personnel Scholarship",
@@ -71,7 +71,7 @@ const ScholarshipPage = async() => {
                 "ID proof"
             ],
             "process": "Application reviewed by Scholarship Committee",
-            "image": "https://scontent-del1-1.xx.fbcdn.net/v/t39.30808-6/487492028_10084259264938987_7845960401148750502_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KqT8DppbIlkQ7kNvwFaKjcm&_nc_oc=AdmlmglUim0frIS1r2SfU5y_ZUWLc6QlHCe1yyacTVaBpFSQRJ98R0pMsUSdH72xDa8&_nc_zt=23&_nc_ht=scontent-del1-1.xx&_nc_gid=d6r_PKoYfXaToi1yAUPiEg&oh=00_AfQhPJVRrsU3yDjl-xQR1Fepl_2o1__mvQJNUIzm58l9DQ&oe=687D5249"
+            "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753273653/HD-wallpaper-indian-soldiers-with-flag-indian-army_kfjjc6.jpg"
         },
         {
             "name": "Bihar Student Credit Card",
@@ -105,6 +105,7 @@ const ScholarshipPage = async() => {
         }
     ]
 }
+
  const { data , error}  = await fetchPageData("scholarship")
 pageData = data as any ?? pageData
 const { heroSection, scholarshipSchemes, testimonials} = pageData
