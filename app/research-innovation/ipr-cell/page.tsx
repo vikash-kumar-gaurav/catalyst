@@ -244,7 +244,7 @@ const IprCellPage: NextPage = async() => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gray-800 text-white">
+      {/* <section className="py-16 bg-gray-800 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Need IPR Support?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -254,7 +254,7 @@ const IprCellPage: NextPage = async() => {
             Contact Us
           </button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

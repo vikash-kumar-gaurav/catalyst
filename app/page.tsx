@@ -329,7 +329,7 @@ const testimonials = [
     course: "Full Stack Web Development",
     duration: "6 months",
     review: "Got placed at Amazon after project-based learning here. The faculty support was phenomenal.",
-    photo: "https://scontent.fpat11-2.fna.fbcdn.net/v/t39.30808-6/471334012_1088249496361515_2617594531183237883_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=ZcVoOhnBgCEQ7kNvwE3ZpeE&_nc_oc=AdnckqJtzmt-mcKqjHIwIvxwYv9jpkhzqR7VMAccvzRgZQO_D7VtBlOgJNyX67irtMKhbXdkuRMm8rsLqc-JMaiC&_nc_zt=23&_nc_ht=scontent.fpat11-2.fna&_nc_gid=TjQkvxW7vDLE84SvYtyBxg&oh=00_AfQ_MHMnRSJsbWNWcfSNquwSQFYtUcPhDJ-JNcJoWJkzww&oe=6874F068",
+    photo: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840893/download_zb0npp.png",
     company: "Amazon",
     rating: 5
   },

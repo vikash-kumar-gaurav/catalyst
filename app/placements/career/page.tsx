@@ -161,7 +161,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
       />
 
       {/* Working at College Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Working at Catalyst College Patna</h2>
@@ -178,7 +178,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
       </section>
 
       {/* Current Openings Section */}
-      <section id="openings" className="py-16 bg-blue-50">
+      <section id="openings" className="py-4 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Current Job Openings</h2>
           
@@ -229,7 +229,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-16">
+      <section id="benefits" className="py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why Join Our Team?</h2>
           
@@ -245,7 +245,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
       </section>
 
       {/* Application Process */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-4 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">How to Apply</h2>
           
@@ -280,7 +280,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
       </section>
 
       {/* Testimonials */}
-      <section className="py-16">
+      <section className="py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Hear From Our Team</h2>
           
@@ -312,7 +312,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
       </section>
 
       {/* Campus Gallery */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-4 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Campus Environment</h2>
           
@@ -339,7 +339,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-4 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-blue-600 rounded-2xl shadow-xl p-8 md:p-10 text-white">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -391,7 +391,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

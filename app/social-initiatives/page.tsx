@@ -366,7 +366,7 @@ export default async function SocialInitiatives() {
       />
 
       {/* Purpose Section */}
-      <section className="py-20 mx-auto max-w-7xl ">
+      <section className="py-8 mx-auto max-w-7xl ">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="p-8 md:p-12">
             <h2 className="text-4xl font-bold text-center mb-8">{socialData.purpose.title}</h2>
@@ -405,7 +405,7 @@ export default async function SocialInitiatives() {
       </section>
 
       {/* Blood Donation Section */}
-      <section className="py-20 bg-red-50">
+      <section className="py-8 bg-red-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">{socialData.bloodDonation.title}</h2>
@@ -483,7 +483,7 @@ export default async function SocialInitiatives() {
       </section>
 
       {/* helping needy on the ocassion of saraswatipuja */}
-      <section className="bg-gradient-to-b from-white to-blue-50 py-12">
+      <section className="bg-gradient-to-b from-white to-blue-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="text-center mb-16">

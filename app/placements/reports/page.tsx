@@ -509,7 +509,7 @@ const PlacementReports = async () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      {/* <section className="py-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Join Our Success Story</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
@@ -527,7 +527,7 @@ const PlacementReports = async () => {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

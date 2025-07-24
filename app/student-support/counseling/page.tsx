@@ -26,16 +26,16 @@ let pageData = {
         "title": "Career Mahakumbh",
         "description": "India's largest career fair connecting students with top employers and career opportunities",
         "features": [
-            "1000+ top recruiting companies from diverse sectors",
-            "50,000+ job opportunities across experience levels",
+            "100+project live demos",
+            "25+ career opportunities to build your future",
             "Career guidance sessions by industry experts",
             "Skill development workshops and certification opportunities"
         ],
         "stats": {
-            "companies": "1000+",
-            "jobs": "50K+",
+            "project": "100+",
+            "career": "25+",
             "sectors": "10+",
-            "cities": "5+"
+            "days": "3+"
         },
         "testimonials": [
             {
@@ -196,8 +196,8 @@ let pageData = {
 
 const CounselingPage: NextPage = async () => {
 
-    // const { data, error } = await fetchPageData("counseling")
-    // pageData = data as any ?? pageData
+    const { data, error } = await fetchPageData("counseling")
+    pageData = data as any ?? pageData
 
     return (
         <>
@@ -453,10 +453,10 @@ const CounselingPage: NextPage = async () => {
                                     {/* Stats Grid */}
                                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                                         {[
-                                            { value: pageData.careerMahakumbh.stats.companies, label: "Companies" },
-                                            { value: pageData.careerMahakumbh.stats.jobs, label: "Jobs" },
-                                            { value: pageData.careerMahakumbh.stats.sectors, label: "Sectors" },
-                                            { value: pageData.careerMahakumbh.stats.cities, label: "Cities" }
+                                            { value: pageData.careerMahakumbh.stats.project, label: "projects" },
+                                            { value: pageData.careerMahakumbh.stats.career, label: "career" },
+                                            { value: pageData.careerMahakumbh.stats.sectors, label: "sectors" },
+                                            { value: pageData.careerMahakumbh.stats.days, label: "days" }
                                         ].map((stat, index) => (
                                             <div key={index} className="bg-blue-900/20 p-4 rounded-lg border border-blue-400/20 text-center hover:bg-blue-900/30 transition-colors">
                                                 <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>

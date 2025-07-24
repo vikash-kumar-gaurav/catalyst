@@ -244,7 +244,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       />
 
       {/* Introduction Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="PY-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-white rounded-xl shadow-lg p-8 md:p-10">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Career Readiness Approach</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
@@ -259,7 +259,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       </section>
 
       {/* Training Modules Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Comprehensive Training Modules</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -305,7 +305,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       </section>
 
       {/* Training Schedule Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-10 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Three-Year Training Roadmap</h2>
           
@@ -331,7 +331,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       </section>
 
       {/* Training Partners Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Training Partners</h2>
         
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
@@ -351,7 +351,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Student Success Stories</h2>
           
@@ -384,7 +384,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Training in Action</h2>
           
@@ -411,7 +411,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       </section>
 
       {/* Resources Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Career Resources</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -445,7 +445,7 @@ const { galleryImages, testimonials, trainingPartners,trainingSchedule, training
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-10 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Boost Your Career?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
