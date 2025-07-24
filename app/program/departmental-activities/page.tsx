@@ -232,7 +232,7 @@ const DepartmentalActivities = async() => {
       </div>
 
       {/* Introduction Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-white rounded-xl shadow-lg p-8 md:p-10">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Academic & Co-Curricular Excellence</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
@@ -263,7 +263,7 @@ const DepartmentalActivities = async() => {
 
       {/* Activities by Category */}
 
-       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50">
+       <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-50">
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Departmental Activities</span>
@@ -339,7 +339,7 @@ const DepartmentalActivities = async() => {
     </section>
 
       {/* Photo Gallery */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Gallery Highlights</h2>
 
@@ -372,7 +372,7 @@ const DepartmentalActivities = async() => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
+      <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">What Our Community Says</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -398,7 +398,7 @@ const DepartmentalActivities = async() => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Experience Catalyst College?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
