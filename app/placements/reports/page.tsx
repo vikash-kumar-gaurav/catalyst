@@ -34,12 +34,62 @@ export const metadata: Metadata = {
     title: 'Placement Reports | Catalyst College Patna',
     description: 'Detailed placement statistics and success stories of our graduates',
     images: ['https://catalystcollegepatna.edu.in/images/placement-og.jpg'],
-  },
+  }
 };
 
 const PlacementReports = async () => {
 
   let pageData = {
+    "placements": [
+    {
+      "id": 1,
+      "year": "2025",
+      "studentsPlaced": 328,
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752665743/cimage_placement_2025_photoshot_ehit1d.jpg",
+      "highlights": [
+        "18% increase from previous year",
+        "Highest package: ₹18 LPA",
+        "Average package: ₹5.2 LPA"
+      ],
+      "topCompanies": ["TCS", "Infosys", "Wipro", "Accenture", "Cognizant", "HCL", "Tech Mahindra", "Capgemini"]
+    },
+    {
+      "id": 2,
+      "year": "2024",
+      "studentsPlaced": 278,
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753347367/487811222_1061169542705651_219839437781063715_n_itc6tx.jpg",
+      "highlights": [
+        "15% increase from previous year",
+        "Highest package: ₹16 LPA",
+        "Average package: ₹4.8 LPA"
+      ],
+      "topCompanies": ["IBM", "Deloitte", "PwC", "EY", "KPMG", "Mindtree", "L&T Infotech", "Mphasis"]
+    },
+    {
+      "id": 3,
+      "year": "2023",
+      "studentsPlaced": 242,
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753349325/482066055_1044840577671881_8853778612889271315_n_q23h0b.jpg",
+      "highlights": [
+        "12% increase from previous year",
+        "Highest package: ₹14 LPA",
+        "Average package: ₹4.2 LPA"
+      ],
+      "topCompanies": ["Amazon", "Flipkart", "Zomato", "Swiggy", "Paytm", "Byju's", "Unacademy", "OYO"]
+    },
+    {
+      "id": 4,
+      "year": "2022",
+      "studentsPlaced": 216,
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753349932/491914204_23986609060944106_1302111434289028491_n_edlyuh.jpg",
+      "highlights": [
+        "10% increase from previous year",
+        "Highest package: ₹12 LPA",
+        "Average package: ₹3.8 LPA"
+      ],
+      "topCompanies": ["ICICI Bank", "HDFC Bank", "Axis Bank", "Kotak Mahindra", "Bajaj Finserv", "SBI", "PNB", "IndusInd Bank"]
+    }
+  ],
     "heroSection": {
       "title": "Placement Reports 2024-25",
       "description": "Celebrating our students' success with industry-leading placements across BBA, BCA, and BSc IT programs",
@@ -144,7 +194,7 @@ const PlacementReports = async () => {
   const { data, error } = await fetchPageData("placement-reports")
   pageData = data as any ?? pageData
 
-  const { heroSection, galleryImages, testimonials, programStats, topRecruiters, placementStats, annualReports, collegePlacementChart } = pageData
+  const { heroSection, galleryImages,placements, testimonials, programStats, topRecruiters, placementStats, annualReports, collegePlacementChart } = pageData
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
@@ -173,8 +223,83 @@ const PlacementReports = async () => {
         </div>
       </section>
 
+      {/* ------------placements images ---------------- */}
+
+        <section className="py-8 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Yearly Placement Records
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our consistent track record of placing students in top companies across various industries
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {placements.map((placement) => (
+            <div 
+              key={placement.id}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="relative h-48 overflow-hidden">
+                {/* Replace with actual image or placeholder */}
+               <img src={placement.image} alt={placement.image} className='object-center object-cover' />
+                <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full shadow-md">
+                  <span className="font-bold text-blue-600">{placement.year}</span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {placement.studentsPlaced}+ Placements
+                  </h3>
+                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    {Math.round((placement.studentsPlaced / placements[0].studentsPlaced) * 100)}%
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                    Highlights
+                  </h4>
+                  <ul className="space-y-1">
+                    {placement.highlights.map((highlight, index) => (
+                      <li key={index} className="flex items-start">
+                        <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-700">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                    Top Recruiters
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {placement.topCompanies.map((company, index) => (
+                      <span 
+                        key={index}
+                        className="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                      >
+                        {company}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
       {/* Download Reports Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-4 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Annual Placement Reports</h2>
 
@@ -195,21 +320,11 @@ const PlacementReports = async () => {
               ))}
             </div>
           </div>
-
-          <div className="mt-8 text-center">
-            <a
-              href="/reports/placement-brochure.pdf"
-              className="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
-              download
-            >
-              Download Complete Placement Brochure
-            </a>
-          </div>
         </div>
       </section>
 
       {/* Key Statistics Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Placement Statistics</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -335,7 +450,7 @@ const PlacementReports = async () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-8 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Success Stories</h2>
 
@@ -369,7 +484,7 @@ const PlacementReports = async () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Placement Moments</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -394,7 +509,7 @@ const PlacementReports = async () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Join Our Success Story</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">

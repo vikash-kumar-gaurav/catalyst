@@ -99,6 +99,7 @@ const courses = [
     title: "Bachelor of Computer Applications (BCA)",
     duration: "3 years",
     description: "Comprehensive foundation in software development, data structures, and emerging tech trends.",
+    link:'/program/bca',
     highlights: [
       "Live projects & hackathons",
       "Internships in top IT firms",
@@ -108,6 +109,7 @@ const courses = [
   {
     title: "Bachelor of Business Administration (BBA)",
     duration: "3 years",
+    link:'/program/bba',
     description: "Management-focused program with real-world business case studies and entrepreneurial training.",
     highlights: [
       "Industry mentorship programs",
@@ -118,6 +120,7 @@ const courses = [
   {
     title: "Bachelor of Science in Information Technology (BSc IT)",
     duration: "3 years",
+    link:'/program/bsc-it',
     description: "Curriculum covering web development, networks, cloud, and cybersecurity with practical exposure.",
     highlights: [
       "Certifications: AWS, CompTIA, Cisco",
@@ -447,7 +450,7 @@ export default async function Home() {
         </div>
       </section>
       {/* ---------course details-------------- */}
-      <section className="relative py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <section className="relative py-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -512,9 +515,11 @@ export default async function Home() {
                     </ul>
                   </div>
 
-                  <button className="w-full px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors duration-300 group-hover:border-blue-300">
+                  <Link href={course.link}>
+                      <button className="w-full px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors duration-300 group-hover:border-blue-300">
                     Explore Program
                   </button>
+                  </Link>
                 </div>
               </div>
             ))}

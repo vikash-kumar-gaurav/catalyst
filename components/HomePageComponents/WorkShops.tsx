@@ -57,7 +57,7 @@ const ProgramsSection = ({ programs }: ProgramsSectionProps) => {
     <section className="bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="container mx-auto px-4">
         {/* Heading */}
-        <div className="mb-16 text-center">
+        <div className="mb-2 text-center">
           <span className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-600">
             Experiential Learning
           </span>
@@ -71,7 +71,7 @@ const ProgramsSection = ({ programs }: ProgramsSectionProps) => {
 
         {/* Tabs */}
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-wrap justify-center gap-2">
+          <div className="mb-4 flex flex-wrap justify-center gap-2">
             <div className="inline-flex rounded-xl border border-gray-200 bg-white p-1 shadow-sm overflow-scroll sm:overflow-hidden">
               {(["all", "workshops", "internships", "tours", "industry-visits"] as const).map(tab => (
                 <button
@@ -156,31 +156,6 @@ const ProgramsSection = ({ programs }: ProgramsSectionProps) => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Footer CTAs */}
-        <div className="mt-20 text-center">
-          <div className="inline-flex flex-col gap-4 sm:flex-row">
-            <Link  href="/programs" className="flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:from-blue-700 hover:to-blue-600 hover:shadow-xl">
-              Explore All Programs
-              <svg
-                className="ml-2 h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-            <button className="flex items-center justify-center rounded-xl border-2 border-blue-600 bg-white px-8 py-4 font-semibold text-blue-600 shadow-lg transition-all hover:bg-blue-50 hover:shadow-xl">
-              Request More Information
-            </button>
           </div>
         </div>
       </div>

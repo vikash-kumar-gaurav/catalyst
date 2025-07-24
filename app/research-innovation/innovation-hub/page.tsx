@@ -156,13 +156,13 @@ innovationHubData = data as any ?? innovationHubData
       </section>
 
       {/* Key Components */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-4 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">{innovationHubData.components.title}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {innovationHubData.components.items.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div className="text-4xl mb-4">{item.icon}</div>
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center">
+                <div className="text-6xl mb-4 text-center">{item.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
               </div>
@@ -172,7 +172,7 @@ innovationHubData = data as any ?? innovationHubData
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 bg-white">
+      <section className="py-4 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">{innovationHubData.successStories.title}</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -188,7 +188,7 @@ innovationHubData = data as any ?? innovationHubData
       </section>
 
       {/* Collaborations */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-4 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">{innovationHubData.collaborations.title}</h2>
           <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
@@ -202,7 +202,7 @@ innovationHubData = data as any ?? innovationHubData
       </section>
 
       {/* Upcoming Events */}
-      <section className="py-16 bg-indigo-600 text-white">
+      <section className="py-4 bg-indigo-600 text-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12">{innovationHubData.events.title}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -216,18 +216,6 @@ innovationHubData = data as any ?? innovationHubData
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-800 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Innovate?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join our innovation community and turn your ideas into reality.
-          </p>
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
-            Get Involved
-          </button>
-        </div>
-      </section>
     </div>
   );
 };

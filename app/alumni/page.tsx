@@ -1,8 +1,14 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
+import HeroSection from '@/components/newHeroImageForAllPage';
 
-// Temporary data - will be replaced with API calls
+
 const alumniData = {
+  heroSection:{
+    imageURL:"https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752840137/486062223_1056593913163214_903525736881095147_n_cunjj0.jpg",
+    description:"Reconnect, share your journey, and stay part of our growing community.",
+    title:"Alumni Hub"
+  },
   welcome: {
     title: "Catalyst College Alumni Network",
     description: "The Alumni Association of Catalyst College is a thriving community of professionals, entrepreneurs, researchers, and social leaders who continue to be an integral part of our journey. Our alumni are our pride — their achievements reflect the academic and cultural strength of our institution.",
@@ -62,7 +68,7 @@ const alumniData = {
     }
   ],
   companies: [
-    "Google", "Microsoft", "Amazon", "TCS", "Infosys", "Deloitte", 
+    "Google", "Microsoft", "Amazon", "TCS", "Infosys", "Deloitte",
     "Intel", "IBM", "Adobe", "Wipro", "Accenture", "TechStart"
   ],
   events: [
@@ -104,61 +110,19 @@ const AlumniPage: NextPage = () => {
 
       <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-blue-800 to-purple-900 text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
-              <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="white" strokeWidth="2" strokeDasharray="5,5" />
-            </svg>
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 mb-10 md:mb-0">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">{alumniData.welcome.title}</h1>
-                <p className="text-xl mb-8">{alumniData.welcome.description}</p>
-                <a href="#register" className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition duration-300 inline-flex items-center">
-                  Join Our Network
-                  <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </a>
-              </div>
-              <div className="md:w-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" className="w-full h-auto">
-                  <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3B82F6" />
-                      <stop offset="100%" stopColor="#8B5CF6" />
-                    </linearGradient>
-                  </defs>
-                  <g transform="translate(250,250)">
-                    <g className="animate-float" style={{ animation: 'float 6s ease-in-out infinite' }}>
-                      <path d="M-100,-60 Q0,-100 100,-60 T300,-60" fill="none" stroke="url(#grad1)" strokeWidth="4" opacity="0.5" />
-                      <path d="M-100,-30 Q0,-70 100,-30 T300,-30" fill="none" stroke="url(#grad1)" strokeWidth="4" opacity="0.7" />
-                      <path d="M-100,0 Q0,-40 100,0 T300,0" fill="none" stroke="url(#grad1)" strokeWidth="4" opacity="0.9" />
-                    </g>
-                    <g transform="translate(-100,50)" className="animate-float-delay" style={{ animation: 'float 6s ease-in-out infinite 2s' }}>
-                      <circle r="40" fill="none" stroke="white" strokeWidth="3" />
-                      <circle r="25" fill="none" stroke="white" strokeWidth="3" />
-                      <path d="M-20,0 L20,0 M0,-20 L0,20" stroke="white" strokeWidth="3" />
-                    </g>
-                    <g transform="translate(100,50)" className="animate-float-delay2" style={{ animation: 'float 6s ease-in-out infinite 4s' }}>
-                      <rect x="-30" y="-30" width="60" height="60" fill="none" stroke="white" strokeWidth="3" rx="5" />
-                      <path d="M-15,-15 L15,15 M15,-15 L-15,15" stroke="white" strokeWidth="3" />
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroSection
+        imageUrl={alumniData.heroSection.imageURL}
+        title={alumniData.heroSection.title}
+        description={alumniData.heroSection.description}
+        />
 
         {/* Stats Section */}
-        <section className="py-16 bg-white">
+        <section className="py-4 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Alumni Community</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <StatCard 
-                value={alumniData.welcome.stats.totalAlumni.toLocaleString()} 
+              <StatCard
+                value={alumniData.welcome.stats.totalAlumni.toLocaleString()}
                 label="Alumni Worldwide"
                 icon={
                   <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,8 +130,8 @@ const AlumniPage: NextPage = () => {
                   </svg>
                 }
               />
-              <StatCard 
-                value={String(alumniData.welcome.stats.countries)} 
+              <StatCard
+                value={String(alumniData.welcome.stats.countries)}
                 label="Countries"
                 icon={
                   <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,8 +139,8 @@ const AlumniPage: NextPage = () => {
                   </svg>
                 }
               />
-              <StatCard 
-                value={String(alumniData.welcome.stats.companies)} 
+              <StatCard
+                value={String(alumniData.welcome.stats.companies)}
                 label="Companies"
                 icon={
                   <svg className="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -184,8 +148,8 @@ const AlumniPage: NextPage = () => {
                   </svg>
                 }
               />
-              <StatCard 
-                value={String(alumniData.welcome.stats.mentorshipPrograms)} 
+              <StatCard
+                value={String(alumniData.welcome.stats.mentorshipPrograms)}
                 label="Mentorship Programs"
                 icon={
                   <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,7 +162,7 @@ const AlumniPage: NextPage = () => {
         </section>
 
         {/* Objectives Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-4 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Objectives of Our Alumni Network</h2>
@@ -219,7 +183,7 @@ const AlumniPage: NextPage = () => {
         </section>
 
         {/* Notable Alumni Section */}
-        <section className="py-16 bg-white">
+        <section className="py-4 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Notable Alumni</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -251,7 +215,7 @@ const AlumniPage: NextPage = () => {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-10">
+            <div className="text-center mt-6">
               <a href="/alumni-stories" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
                 View More Success Stories
                 <svg className="ml-3 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -263,7 +227,7 @@ const AlumniPage: NextPage = () => {
         </section>
 
         {/* Companies Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-6 bg-gray-50">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Where Our Alumni Work</h2>
             <div className="flex flex-wrap justify-center gap-6">
@@ -279,7 +243,7 @@ const AlumniPage: NextPage = () => {
         </section>
 
         {/* Events Section */}
-        <section className="py-16 bg-white">
+        <section className="py-6 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Upcoming Alumni Events</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -311,7 +275,7 @@ const AlumniPage: NextPage = () => {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-10">
+            <div className="text-center mt-4">
               <a href="/alumni-events" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition-colors duration-300">
                 View All Events
                 <svg className="ml-3 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -322,126 +286,6 @@ const AlumniPage: NextPage = () => {
           </div>
         </section>
 
-        {/* Registration Section */}
-        <section id="register" className="py-16 bg-gradient-to-r from-blue-700 to-purple-800 text-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 mb-10 md:mb-0">
-                  <h2 className="text-3xl font-bold mb-6">Join Our Alumni Network</h2>
-                  <p className="text-xl mb-8 opacity-90">Stay connected, give back, and access exclusive benefits as part of our alumni community.</p>
-                  <div className="  border-2 border-white bg-opacity-10 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-4">Benefits of Joining</h3>
-                    <ul className="space-y-3 ">
-                      <li className="flex items-start">
-                        <svg className="h-6 w-6 text-green-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span >Access to alumni directory and networking opportunities</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="h-6 w-6 text-green-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Career development resources and job postings</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="h-6 w-6 text-green-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className=''>Invitations to exclusive events and reunions</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="md:w-1/2 md:pl-10">
-                  <div className="bg-white rounded-xl shadow-xl p-8 text-gray-800">
-                    <h3 className="text-2xl font-bold mb-6 text-center">Register Now</h3>
-                    <form>
-                      <div className="mb-4">
-                        <label className="block text-gray-700 font-medium mb-2">Full Name</label>
-                        <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-                      </div>
-                      <div className="mb-4">
-                        <label className="block text-gray-700 font-medium mb-2">Email</label>
-                        <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-                      </div>
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div>
-                          <label className="block text-gray-700 font-medium mb-2">Program</label>
-                          <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                            <option>Select Program</option>
-                            <option>BCA</option>
-                            <option>B.Tech CSE</option>
-                            <option>B.Tech ECE</option>
-                            <option>MBA</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label className="block text-gray-700 font-medium mb-2">Batch</label>
-                          <input type="number" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Graduation year" />
-                        </div>
-                      </div>
-                      <div className="mb-4">
-                        <label className="block text-gray-700 font-medium mb-2">Current Occupation</label>
-                        <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Company & Position" />
-                      </div>
-                      <div className="mb-6">
-                        <label className="block text-gray-700 font-medium mb-2">LinkedIn Profile</label>
-                        <input type="url" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="https://linkedin.com/in/yourprofile" />
-                      </div>
-                      <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                        Submit Registration
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contribution Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Give Back to catalyst</h2>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <ContributionCard 
-                title="Mentor Students"
-                description="Share your expertise and guide current students in their academic and career journeys."
-                icon={
-                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                }
-                actionText="Become a Mentor"
-                actionLink="/mentor-program"
-              />
-              <ContributionCard 
-                title="Sponsor Scholarships"
-                description="Help deserving students access quality education through financial support."
-                icon={
-                  <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                }
-                actionText="Donate Now"
-                actionLink="/scholarships"
-              />
-              <ContributionCard 
-                title="Guest Lectures"
-                description="Share your industry knowledge by speaking at campus events or classes."
-                icon={
-                  <svg className="w-12 h-12 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                }
-                actionText="Express Interest"
-                actionLink="/guest-lectures"
-              />
-            </div>
-          </div>
-        </section>
       </main>
 
       <style>{`
@@ -481,9 +325,9 @@ const StatCard = ({ value, label, icon }: { value: string; label: string; icon: 
 };
 
 // Contribution Card Component
-const ContributionCard = ({ title, description, icon, actionText, actionLink }: { 
-  title: string; 
-  description: string; 
+const ContributionCard = ({ title, description, icon, actionText, actionLink }: {
+  title: string;
+  description: string;
   icon: React.ReactNode;
   actionText: string;
   actionLink: string;

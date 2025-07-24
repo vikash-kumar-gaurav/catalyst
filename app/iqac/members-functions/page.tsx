@@ -2,7 +2,7 @@ import Head from 'next/head';
 import HeroSection from '@/components/newHeroImageForAllPage';
 
 export default function IQACMembersPage() {
-  // IQAC Members Data
+ 
   const iqacMembers = [
     {
       id: 1,
@@ -204,7 +204,7 @@ export default function IQACMembersPage() {
         </section>
 
         {/* IQAC Functions Section */}
-        <section className="mb-16">
+        <section className="mb-4">
           <div className="bg-green-50 p-6 rounded-t-lg">
             <h2 className="text-2xl font-bold text-green-800">🧩 Functions & Responsibilities</h2>
           </div>
@@ -228,11 +228,11 @@ export default function IQACMembersPage() {
         </section>
 
         {/* Meeting Information */}
-        <section className="mb-16">
+        <section className="mb-4">
           <div className="bg-purple-50 p-6 rounded-t-lg">
             <h2 className="text-2xl font-bold text-purple-800">🗓️ Meeting Frequency & Documentation</h2>
           </div>
-          <div className="border border-purple-50 rounded-b-lg p-6 bg-white">
+          <div className="border border-purple-50 rounded-b-lg pt-6 bg-white">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">Meeting Schedule</h3>
@@ -262,40 +262,6 @@ export default function IQACMembersPage() {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="bg-gray-50 p-8 rounded-lg">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Contact IQAC</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="font-medium text-gray-800 mb-1">Email</h3>
-              <a href="mailto:iqac@catalyst.edu.in" className="text-blue-600">iqac@catalyst.edu.in</a>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <h3 className="font-medium text-gray-800 mb-1">Phone</h3>
-              <a href="tel:+911234567890" className="text-gray-600">+91 1234567890</a>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                </svg>
-              </div>
-              <h3 className="font-medium text-gray-800 mb-1">Office</h3>
-              <p className="text-gray-600">Room 205, Admin Block</p>
             </div>
           </div>
         </section>

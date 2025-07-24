@@ -174,7 +174,7 @@ const IndustryInteraction = async () => {
             />
 
             {/* Introduction Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <div className="bg-white rounded-xl shadow-lg p-8 md:p-10">
                     <h2 className="text-3xl font-bold text-gray-800 mb-6">Industry-Academia Collaboration</h2>
                     <div className="prose prose-lg text-gray-600 max-w-none">
@@ -189,7 +189,7 @@ const IndustryInteraction = async () => {
             </section>
 
             {/* Activities Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Industry Engagement Initiatives</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -223,7 +223,7 @@ const IndustryInteraction = async () => {
             </section>
 
             {/* Advisory Board Section */}
-            <section className="py-16 bg-blue-50">
+            <section className="py-6 bg-blue-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Industry Advisory Board</h2>
                     <p className="text-xl text-center text-gray-600 max-w-4xl mx-auto mb-12">
@@ -252,7 +252,7 @@ const IndustryInteraction = async () => {
             </section>
 
             {/* Testimonials Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">What Our Industry Partners Say</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -272,7 +272,7 @@ const IndustryInteraction = async () => {
             </section>
 
             {/* Partner Logos Section */}
-            <section className="py-16 bg-gray-100">
+            <section className="py-6 bg-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Esteemed Industry Partners</h2>
 
@@ -294,7 +294,7 @@ const IndustryInteraction = async () => {
             </section>
 
             {/* Gallery Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Industry Interaction Gallery</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -319,7 +319,7 @@ const IndustryInteraction = async () => {
             </section>
 
             {/* Call to Action */}
-            <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+            <section className="py-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold mb-6">Partner With Us</h2>
                     <p className="text-xl mb-8 max-w-3xl mx-auto">

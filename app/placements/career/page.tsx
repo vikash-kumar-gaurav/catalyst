@@ -156,7 +156,7 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
         description={ heroSection.description}
         imageUrl={ heroSection.imageUrl}
         overlayOpacity={0.3}
-        height="xl"
+        height="lg"
 
       />
 
@@ -236,9 +236,6 @@ const { heroSection, galleryImages, testimonials, processSteps, benefits, jobOpe
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
-                <div className="flex justify-center mb-4">
-                  {benefit.icon}
-                </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
               </div>

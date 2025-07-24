@@ -164,7 +164,7 @@ const InternshipInfo = async () => {
       />
 
       {/* Why Internships Matter - New Card Design */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 border-l-8 border-blue-600">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Why Internships Matter</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -187,7 +187,7 @@ const InternshipInfo = async () => {
       </section>
 
       {/* Internship Types - Grid Layout */}
-      <section className="py-16 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Internship Programs</h2>
 
@@ -212,7 +212,7 @@ const InternshipInfo = async () => {
       </section>
 
       {/* Support & Process - Side by Side */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Support Section */}
@@ -266,7 +266,7 @@ const InternshipInfo = async () => {
       </section>
 
       {/* Companies & Roles - New Design */}
-      <section className="py-16 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Internship Partners & Roles</h2>
 
@@ -297,7 +297,7 @@ const InternshipInfo = async () => {
                     src={program.image}
                     alt={`${program.program} internship`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                     <h3 className="text-2xl font-bold text-white">{program.program} Internships</h3>
@@ -321,7 +321,7 @@ const InternshipInfo = async () => {
       </section>
 
       {/* Testimonials - Card Design */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-6 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Internship Success Stories</h2>
 
@@ -356,7 +356,7 @@ const InternshipInfo = async () => {
       </section>
 
       {/* Downloads & Calendar - Side by Side */}
-      <section className="py-16 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Downloads */}
@@ -404,25 +404,6 @@ const InternshipInfo = async () => {
         </div>
       </section>
 
-      {/* CTA Section - New Design */}
-      <section className="py-16 bg-gradient-to-r from-blue-700 to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to Start Your Professional Journey?</h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Explore internship opportunities that align with your career aspirations
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-                View Current Openings
-              </button>
-              <button className="px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
-                For Companies
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

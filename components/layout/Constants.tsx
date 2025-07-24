@@ -39,9 +39,9 @@ export const navItems = [
         name: 'Program',
         href: '/program',
         submenu: [
-            { name: 'BCA', href: '/program//bca' },
-            { name: 'BBA', href: '/program//bba' },
-            { name: 'B.Sc - IT', href: '/program//bsc-it' },
+            { name: 'BCA', href: '/program/bca' },
+            { name: 'BBA', href: '/program/bba' },
+            { name: 'B.Sc - IT', href: '/program/bsc-it' },
             { name: 'Departmental Activities', href: '/program/departmental-activities' },
         ]
     },
