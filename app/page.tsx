@@ -134,7 +134,7 @@ const courses = [
 const workshops = [
   {
     id: 1,
-    kind: "Tech Workshop",
+    kind: "workshop",
     title: "Django Web Development Bootcamp",
     duration: "2 weeks",
     benefits: [
@@ -145,7 +145,7 @@ const workshops = [
   },
   {
     id: 2,
-    kind: "Tech Workshop",
+    kind: "workshop",
     title: "Agentic AI with LangChain",
     duration: "1 week",
     benefits: [
@@ -156,7 +156,7 @@ const workshops = [
   },
   {
     id: 3,
-    kind: "Analytics Workshop",
+    kind: "workshop",
     title: "Data Visualization using Power BI",
     duration: "1 week",
     benefits: [
@@ -167,7 +167,7 @@ const workshops = [
   },
   {
     id: 4,
-    kind: "Industry Tour",
+    kind: "industry-visit",
     title: "Coca-Cola Bottling Plant Visit",
     duration: "1 day",
     benefits: [
@@ -178,7 +178,7 @@ const workshops = [
   },
   {
     id: 5,
-    kind: "Industry Tour",
+    kind: "industry-visit",
     title: "Hajipur Footwear Factory Visit",
     duration: "1 day",
     benefits: [
@@ -189,7 +189,7 @@ const workshops = [
   },
   {
     id: 6,
-    kind: "Industry Tour",
+    kind: "industry-visit",
     title: "PVC Pipe Manufacturing Process Tour",
     duration: "1 day",
     benefits: [
@@ -200,7 +200,7 @@ const workshops = [
   },
   {
     id: 7,
-    kind: "Industry Tour",
+    kind: "industry-visit",
     title: "Kurkure Snacks Production Line Tour",
     duration: "1 day",
     benefits: [
@@ -211,7 +211,7 @@ const workshops = [
   },
   {
     id: 8,
-    kind: "Academic Tour",
+    kind: "tour",
     title: "IIT Bombay Campus Visit",
     duration: "1 day",
     benefits: [
@@ -219,6 +219,16 @@ const workshops = [
       "Exposure to ongoing research and innovation"
     ],
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3mPWaCKrOGetYMEftNUdEJ0r8KXL2G8Uew&s"
+  },
+  {
+    id:9,
+    kind : "internship",
+    title : "Creating a production website",
+    duration :" Till the website deployed",
+    benefits:[
+      "Gain the expreriance of the corporate and demanding skills"
+    ],
+    image:"https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753414461/4e50dead-6764-45f8-8056-a4454ccf7891.png"
   }
 ]
 

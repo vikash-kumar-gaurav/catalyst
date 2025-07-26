@@ -1,29 +1,11 @@
 
-import AllPageHero from '@/components/AllPageHeroSection';
 import { FaGraduationCap, FaLightbulb, FaHandsHelping, FaChartLine, FaUniversity, FaQuoteLeft } from 'react-icons/fa';
 import { GiAchievement, GiTeacher, GiMedal, GiThreeFriends } from 'react-icons/gi';
 import { MdGpsFixed, MdHistory, MdSchool, MdPeople } from 'react-icons/md';
 import { RiLeafLine, RiTeamLine } from 'react-icons/ri';
 import { IoMdTime } from 'react-icons/io';
 import HeroSection from '@/components/newHeroImageForAllPage';
-
-// SVG Components for decoration
-const WaveDivider = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
-        <path fill="#f3f4f6" fillOpacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-);
-
-const BlobBackground = () => (
-    <div className="absolute inset-0 overflow-hidden opacity-10">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute -right-20 -top-20 w-64 h-64 text-blue-300">
-            <path fill="currentColor" d="M44.3,-47.4C56.9,-36.1,66.4,-18,66.9,0.5C67.3,19,58.7,38,46.1,52.3C33.5,66.6,16.7,76.2,-1.8,78.1C-20.3,79.9,-40.6,74,-56.1,59.7C-71.6,45.4,-82.3,22.7,-82.7,-0.4C-83.1,-23.5,-73.2,-47,-57.7,-58.3C-42.2,-69.6,-21.1,-68.7,-0.7,-68C19.7,-67.3,39.4,-66.8,44.3,-47.4Z" transform="translate(100 100)" />
-        </svg>
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute -left-20 -bottom-20 w-64 h-64 text-indigo-300">
-            <path fill="currentColor" d="M50.2,-50.3C63.4,-39.8,70.8,-19.9,69.8,-0.9C68.8,18.1,59.4,36.2,46.2,50.9C33,65.6,16.5,76.9,-2.1,79C-20.7,81.1,-41.4,74,-56.1,59.3C-70.8,44.6,-79.5,22.3,-77.9,1.3C-76.3,-19.7,-64.4,-39.4,-49.7,-49.9C-35,-60.4,-17.5,-61.7,1.8,-63.5C21.1,-65.3,42.2,-67.6,50.2,-50.3Z" transform="translate(100 100)" />
-        </svg>
-    </div>
-);
+import Link from 'next/link';
 
 const AboutUsPage = () => {
     return (
@@ -34,7 +16,7 @@ const AboutUsPage = () => {
                 title="About CATALYST College"
                 description="Discover the story behind Bihar's most transformative educational institution"
                 imageUrl="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/cimage_placement_2025_photoshot_yat3oc.jpg"
-                overlayOpacity={0.5}
+                overlayOpacity={0.3}
                 height="sm"
             />
 
@@ -65,43 +47,31 @@ const AboutUsPage = () => {
                     </div>
 
                     {/* Stats Grid with Images */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                         {[
                             {
-                                icon: <FaGraduationCap className="text-4xl" />,
                                 value: "2008",
                                 label: "Year Established",
                                 description: "Founded during Bihar's educational renaissance with just 47 students",
-                                image: "",
-                                color: "from-blue-50 to-blue-100",
-                                border: "border-blue-200"
+                                image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753432357/465415939_9205845689447020_1762648298494770976_n_xzdy3g.jpg",
                             },
                             {
-                                icon: <GiTeacher className="text-4xl" />,
                                 value: "50+",
                                 label: "Expert Faculty",
                                 description: "Including IIM/IIT alumni and industry veterans with 10+ years experience",
-                                image: "/images/faculty.jpg", // Replace with actual path
-                                color: "from-indigo-50 to-indigo-100",
-                                border: "border-indigo-200"
+                                image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753430865/487876142_1062319959257276_8090554758284863642_n_vguylk.jpg",
                             },
                             {
-                                icon: <MdSchool className="text-4xl" />,
                                 value: "3",
                                 label: "Flagship Programs",
                                 description: "BBA, BCA, and MBA programs with 12+ specializations",
-                                image: "/images/programs.jpg", // Replace with actual path
-                                color: "from-purple-50 to-purple-100",
-                                border: "border-purple-200"
+                                image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753431625/unnamed_njuz3j.png"
                             },
                             {
-                                icon: <GiAchievement className="text-4xl" />,
                                 value: "50+",
                                 label: "Recruiting Partners",
                                 description: "Including Fortune 500 companies and leading Indian firms",
-                                image: "/images/placements.jpg", // Replace with actual path
-                                color: "from-teal-50 to-teal-100",
-                                border: "border-teal-200"
+                                image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753431905/consulting_2x_dmllcm.png"
                             }
                         ].map((stat, index) => (
                             <div
@@ -112,20 +82,17 @@ const AboutUsPage = () => {
                                     <img
                                         src={stat.image}
                                         alt={stat.label}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="w-full h-full object-cover "
                                     />
-                                    <div className={`absolute inset-0 bg-gradient-to-b ${stat.color} opacity-20`}></div>
+                                    <div className={`absolute inset-0 bg-gradient-to-b  opacity-20`}></div>
                                     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                                        <div className={`${stat.color.split(' ')[0].replace('from-', 'text-')} flex justify-center mb-2`}>
-                                            {stat.icon}
-                                        </div>
                                         <h3 className="text-2xl font-bold text-white">{stat.value}</h3>
                                         <p className="text-white/90 text-sm">{stat.label}</p>
                                     </div>
                                 </div>
                                 <div className="p-6">
                                     <p className="text-gray-600 text-sm mb-4">{stat.description}</p>
-                                    <div className={`border-t ${stat.border} pt-4`}>
+                                    <div className={`border-t  pt-4`}>
                                         <button className="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center group">
                                             Learn more
                                             <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -173,29 +140,60 @@ const AboutUsPage = () => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="md:w-1/2 grid grid-cols-2 gap-6">
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center justify-center">
-                                    <img src="/images/iso-badge.png" alt="ISO Certified" className="h-16 mb-4" />
-                                    <p className="text-sm text-center text-gray-600">ISO 9001:2008 Certified</p>
+                            <div className="md:w-1/2 grid grid-cols-2 gap-4">
+                                {/* Badge 1 - ISO Certified */}
+                                <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden relative group">
+                                    <img
+                                        src="https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753435210/1720515434152_tqojqb.jpg"
+                                        alt="ISO Certified"
+                                        className="h-full w-full object-cover"
+                                    />
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                                        <p className="text-sm text-center text-white font-medium">ISO 9001:2008 Certified</p>
+                                    </div>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center justify-center">
-                                    <img src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/AIMA_award_zhh76f.png" alt="AIMA Award" className="h-16 mb-4" />
-                                    <p className="text-sm text-center text-gray-600">AIMA Award Winner</p>
+
+                                {/* Badge 2 - AIMA Award */}
+                                <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden relative group">
+                                    <img
+                                        src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/AIMA_award_zhh76f.png"
+                                        alt="AIMA Award"
+                                        className="h-full w-full object-cover "
+                                    />
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                                        <p className="text-sm text-center text-white font-medium">AIMA Award Winner</p>
+                                    </div>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center justify-center">
-                                    <img src="/images/ppu-badge.png" alt="Patliputra University" className="h-16 mb-4" />
-                                    <p className="text-sm text-center text-gray-600">University Affiliated</p>
+
+                                {/* Badge 3 - University Affiliated */}
+                                <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden relative group">
+                                    <img
+                                        src="https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753434119/1743767026php3u4Gth_srwis3.jpg"
+                                        alt="Patliputra University"
+                                        className="h-full w-full object-cover"
+                                    />
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                                        <p className="text-sm text-center text-white font-medium">University Affiliated</p>
+                                    </div>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center justify-center">
-                                    <img src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/cimage_placement_2025_photoshot_yat3oc.jpg" alt="Education Today" className="h-16 mb-4" />
-                                    <p className="text-sm text-center text-gray-600">Best in Bihar</p>
+
+                                {/* Badge 4 - Best in Bihar */}
+                                <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden relative group">
+                                    <img
+                                        src="https://res.cloudinary.com/dacrc4ddi/image/upload/v1752556789/cimage_placement_2025_photoshot_yat3oc.jpg"
+                                        alt="Education Today"
+                                        className="h-full w-full object-cover"
+                                    />
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                                        <p className="text-sm text-center text-white font-medium">Best in Bihar</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Mission Statement */}
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-10 text-white overflow-hidden relative">
+                    <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-4 text-white overflow-hidden relative">
                         <div className="absolute inset-0 opacity-10">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full filter blur-xl"></div>
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-300 rounded-full filter blur-xl"></div>
@@ -207,12 +205,11 @@ const AboutUsPage = () => {
                                     At CATALYST, we don't just educate - we transform. Our unique blend of academic rigor, industry exposure, and personal mentorship creates professionals who don't just join the workforce, but redefine it.
                                 </p>
                                 <div className="flex justify-center space-x-4">
-                                    <button className="px-6 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors">
-                                        Our Pedagogy
-                                    </button>
-                                    <button className="px-6 py-3 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-colors">
+                                    <Link href={'/about/faculty-corner'}>
+                                        <button className="px-6 py-3 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-colors">
                                         Meet Our Team
                                     </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +218,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* History of us */}
-            <section className="relative py-14 bg-gray-50 overflow-hidden">
+            <section className="relative py-8 bg-gray-50 overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-0 left-0 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
@@ -455,7 +452,7 @@ const AboutUsPage = () => {
                     </div>
 
                     {/* Current Status */}
-                    <div className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-10 text-white overflow-hidden relative">
+                    <div className="mt-2 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-10 text-white overflow-hidden relative">
                         <div className="absolute inset-0 opacity-10">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full filter blur-xl"></div>
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-300 rounded-full filter blur-xl"></div>
@@ -489,7 +486,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* History & Establishment */}
-            <section className="relative py-20 bg-gray-50">
+            <section className="relative py-8 bg-gray-50">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center">
                         <div className="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
@@ -572,7 +569,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* Founders & Supporters */}
-            <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
+            <section className="relative py-8 bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl"></div>
@@ -624,7 +621,7 @@ const AboutUsPage = () => {
                             {
                                 name: "Dr. Rajesh Kumar",
                                 role: "Founding Chairman",
-                                image: "/images/founder.jpg", // Replace with actual path
+                                image: "/images/founder.jpg", 
                                 tenure: "2008 - Present",
                                 achievement: "Established Bihar's first industry-integrated BBA program",
                                 contribution: "Former IIT professor who designed our unique pedagogy blending academic rigor with practical application. His vision created an institution that consistently achieves 100% placements.",
@@ -638,7 +635,7 @@ const AboutUsPage = () => {
                             {
                                 name: "Smriti Khanna",
                                 role: "Director, Corporate Relations",
-                                image: "/images/director.jpg", // Replace with actual path
+                                image: "/images/director.jpg",
                                 tenure: "2010 - Present",
                                 achievement: "Built network of 50+ recruiting partners",
                                 contribution: "Corporate veteran who bridged the gap between academia and industry. Spearheaded our internship program that places students in Fortune 500 companies.",
@@ -652,7 +649,7 @@ const AboutUsPage = () => {
                             {
                                 name: "Vijayam Trust",
                                 role: "Guiding Force",
-                                image: "/images/trustees.jpg", // Replace with actual path
+                                image: "/images/trustees.jpg",
                                 tenure: "Since inception",
                                 achievement: "Provided seed funding and infrastructure",
                                 contribution: "The philanthropic arm that ensures education remains accessible through scholarships and campus development. Their endowment fund supports research and innovation.",
@@ -707,7 +704,7 @@ const AboutUsPage = () => {
                         ))}
                     </div>
 
-                    <div className="mt-20 text-center">
+                    <div className="mt-8 text-center">
                         <p className="text-slate-300 max-w-3xl mx-auto leading-relaxed">
                             Their collective vision has positioned CATALYST as Bihar's premier management institution, with alumni now leading organizations across India and globally.
                         </p>
@@ -730,7 +727,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* Vision & Mission */}
-            <section className="py-20 bg-white">
+            <section className="py-8 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Vision */}
@@ -794,7 +791,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* Teaching Philosophy */}
-            <section className="py-20 bg-indigo-50">
+            <section className="py-8 bg-indigo-50">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="inline-block px-4 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm font-semibold mb-4">Our Methodology</span>
@@ -846,7 +843,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* Challenges & Overcoming */}
-            <section className="py-20 bg-white">
+            <section className="py-8 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center">
                         <div className="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
@@ -910,7 +907,7 @@ const AboutUsPage = () => {
                         <div className="lg:w-1/2 relative">
                             <div className="bg-white p-1 rounded-xl shadow-lg border border-gray-100">
                                 <img
-                                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                    src="https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753437824/517126642_1140601734762431_1261258538293511693_n_ktaa5w.jpg"
                                     alt="Students collaborating"
                                     className="w-full h-auto rounded-lg"
                                 />
@@ -927,7 +924,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* Testimonials */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-8 bg-gray-50">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="inline-block px-4 py-1 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">Voices of Impact</span>
@@ -979,7 +976,7 @@ const AboutUsPage = () => {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+            <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-8">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-4xl font-bold mb-6">Ready to Be Part of Our Story?</h2>
                     <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">

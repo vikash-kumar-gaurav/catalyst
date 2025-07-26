@@ -15,7 +15,7 @@ interface Workshop {
   duration: string;
   image: string;
   page?: number;
-  description?: string; // Optional since not in your example
+  description?: string; 
 }
 
 interface ProgramsSectionProps {
