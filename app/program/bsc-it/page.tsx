@@ -634,7 +634,7 @@ export default async function BScITPage() {
         </div>
       </section>
       {/* --------youtube section-------- */}
-      <YoutubePlayer videos={bscitProgram.youtubeVideos} title={bscitProgram.youtubetitle} description={bscitProgram.youtubeDescription} />
+      <YoutubePlayer videos={bscitProgram.youtubeVideos}  description={bscitProgram.youtubeDescription} />
       {/* Labs Section */}
       <section id="labs" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

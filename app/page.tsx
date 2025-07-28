@@ -1,17 +1,18 @@
 
 import React from 'react';
 import Link from 'next/link';
-import axios from 'axios';
-import CollegeFacilities from '@/components/HomePageComponents/collegeFacility';
 import ProgramsSection from '@/components/HomePageComponents/WorkShops';
 import BentoGrid from '@/components/BentoGrid';
 import HeroImage from '@/components/HeroFile';
-import { MdDescription } from 'react-icons/md';
 import type { Metadata } from 'next'
 import TestimonialsCarousel from '@/components/HomePageComponents/Testimonials';
 import LatestNewsSection from '@/components/HomePageComponents/Notification';
 import CallbackRequestSection from '@/components/HomePageComponents/CallBack';
 import GlobalAchievers from '@/components/HomePageComponents/CollegeAchievers';
+import FacilitiesPage from '@/components/HomePageComponents/collegeFacility';
+import YoutubePlayer from '@/components/VideoPlayer';
+import { YouTubePlayer } from '@/components/singleVideoPlayer';
+
 
 
 
@@ -21,6 +22,33 @@ export const metadata: Metadata = {
   description: ' hi '
 }
 
+const speechvideos = [
+  {
+    "id": "e_3MPPkWA_g",
+    "title": "Why choose cimage"
+  },
+  {
+    "id": "Jm__N0zANEQ",
+    "title": "A Fun Management Game on Teamwork & Creativity"
+  },
+  {
+    "id": "PPvpgffNg54",
+    "title": "CIMAGE Vlog | Vivekanand Branch | College Vlog Made by Student"
+  },
+  {
+    "id": "auX4HDsrMOQ",
+    "title": "Inside CIMAGE Robotics Lab: Where Innovation Comes Alive!"
+  },
+  {
+    "id": "bJim-QjDpQc",
+    "title": "Best Campus Placement in CIMAGE College Patna"
+  },
+  {
+    "id": "z5zo6U6iX2o",
+    "title": "CIMAGE College Patna Review | Best BCA, BBA, BBM, BCOM, B.Sc-IT"
+  }
+]
+
 const heroData = {
   hero_img_url: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753270808/517124044_1140604534762151_4895265090587035788_n_akow3w.jpg",
   duration: "2025 - 2028",
@@ -28,67 +56,18 @@ const heroData = {
 }
 
 
-const campusFacility = {
-  campus_img_uri: "https://catalystcollege.in/sitepanel/uploads/aboutus/cimage-catalyst-pat.jpg",
-  facilities: [
-    {
-      id: 1,
-      title: "Library",
-      description: "Digitally integrated library with thousands of academic titles, e-books, and research archives.",
-      image: "https://catalystcollege.in/sitepanel/uploads/aboutus/image-004(1).jpg"
-    },
-    {
-      id: 2,
-      title: "Smart Classrooms",
-      description: "Interactive smart classrooms with digital boards, AI-assisted learning tools, and virtual reality modules.",
-      image: "https://catalystcollege.in/sitepanel/uploads/aboutus/WhatsApp%20Image%202024-11-13%20at%205.43.12%20PM%20(2).jpeg"
-    },
-    {
-      id: 3,
-      title: "Cafeteria",
-      description: "Multi-cuisine hygienic cafeteria with daily menu rotations and meal plans for students.",
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      id: 4,
-      title: "Computer Labs",
-      description: "High-speed internet-enabled computer labs with cloud-based access and state-of-the-art systems.",
-      image: "https://admissions.cimagepatna.com/wp-content/uploads/2025/06/Labs-II.jpeg"
-    },
-    {
-      id: 5,
-      title: "Auditorium",
-      description: "Fully air-conditioned auditorium with 500+ seating capacity, AV tech, and acoustic walls for events.",
-      image: "https://images.unsplash.com/photo-1533832024848-4ca8b44c4d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXVkaXRvcmlhbXxlbnwwfDB8MHx8fDA%3D"
-    },
-    {
-      id: 6,
-      title: "Hostel Facilities",
-      description: "Separate boys and girls hostels with Wi-Fi, biometric entry, and in-house wardens for safety.",
-      image: "https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SG9zdGVsfGVufDB8MHwwfHx8MA%3D%3D"
-    },
-    {
-      id: 7,
-      title: "Innovation Lab",
-      description: "AI/ML and robotics lab for hands-on innovation, equipped with 3D printers and IoT development kits.",
-      image: "https://scontent.fpat11-1.fna.fbcdn.net/v/t39.30808-6/486171915_1056603129828959_6134060459618529572_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Zu7cxmZVAagQ7kNvwG8TOXA&_nc_oc=AdlhiGguLTSkun5BR4M2jzqRVv_ZqTF4k7UjIkteZ8N1rJCDixqdVAgpw0ZuBWmoUzV7ayHFxRKAIt88BlGFo4bf&_nc_zt=23&_nc_ht=scontent.fpat11-1.fna&_nc_gid=hQJ2JL_f915s17tiLz7mGA&oh=00_AfQyAZJICYuHe6AcFDE_EhIIFJnEbmFm6Ig3niOkLu1HAA&oe=6874E840"
-    }
-  ]
-}
-
-
 const imageItems = [
   { tag: "Freshers Party", alt: "Students enjoying DJ night at freshers party", link: "/event/freshers", url: '/1.jpg' },
   { tag: "Farewell", alt: "Seniors bidding farewell with performances and speeches", link: "/event/farewell", url: '/2.jpg' },
-  { tag: "Holi Mela", alt: "Celebrating Holi with colors, music, and dance", link: "/event/holi-mela", url: '/3.jpg',},
+  { tag: "Holi Mela", alt: "Celebrating Holi with colors, music, and dance", link: "/event/holi-mela", url: '/3.jpg', },
   { tag: "Republic Day", alt: "Students participating in Republic Day parade and cultural programs", link: "/event/republic-day", url: '/4.jpg' },
-  { tag: "Independence Day", alt: "Flag hoisting ceremony and patriotic performances", link: "/event/independence-day", url:'/5.jpg'  },
+  { tag: "Independence Day", alt: "Flag hoisting ceremony and patriotic performances", link: "/event/independence-day", url: '/5.jpg' },
   { tag: "Cricket Tournament", alt: "Inter-departmental cricket tournament finals", link: "/event/cricket-tournament", url: '/6.jpg' },
-  { tag: "Badminton Championship", alt: "College-wide indoor badminton championship", link: "/event/badminton-championship", url:  '/7.jpg'},
+  { tag: "Badminton Championship", alt: "College-wide indoor badminton championship", link: "/event/badminton-championship", url: '/7.jpg' },
   { tag: "Cultural Fest", alt: "Annual college cultural fest with dance, drama, and music", link: "/event/cultural-fest", url: '/8.jpg' },
   { tag: "Tech Fest", alt: "Showcasing student tech projects, exhibitions, and coding events", link: "/event/tech-fest", url: '/9.jpg' },
   { tag: "Coding Round", alt: "Competitive programming round held at college level", link: "/event/coding-round", url: '/10.jpg' },
-  { tag: "Workshop Day", alt: "Hands-on workshops and speaker sessions for students", link: "/event/workshop-day", url: '/11.jpg' },
+  { tag: "Teachers' Day", alt: "Hands-on workshops and speaker sessions for students", link: "/event/workshop-day", url: '/11.jpg' },
   { tag: "Teachers' Day", alt: "Tributes and celebrations honoring faculty contributions", link: "/event/teachers-day", url: '/12.jpg' },
   { tag: "Annual Day", alt: "Celebration of college achievements with cultural performances", link: "/event/annual-day", url: '/13.jpg' }
 ];
@@ -99,7 +78,7 @@ const courses = [
     title: "Bachelor of Computer Applications (BCA)",
     duration: "3 years",
     description: "Comprehensive foundation in software development, data structures, and emerging tech trends.",
-    link:'/program/bca',
+    link: '/program/bca',
     highlights: [
       "Live projects & hackathons",
       "Internships in top IT firms",
@@ -109,7 +88,7 @@ const courses = [
   {
     title: "Bachelor of Business Administration (BBA)",
     duration: "3 years",
-    link:'/program/bba',
+    link: '/program/bba',
     description: "Management-focused program with real-world business case studies and entrepreneurial training.",
     highlights: [
       "Industry mentorship programs",
@@ -120,7 +99,7 @@ const courses = [
   {
     title: "Bachelor of Science in Information Technology (BSc IT)",
     duration: "3 years",
-    link:'/program/bsc-it',
+    link: '/program/bsc-it',
     description: "Curriculum covering web development, networks, cloud, and cybersecurity with practical exposure.",
     highlights: [
       "Certifications: AWS, CompTIA, Cisco",
@@ -221,14 +200,14 @@ const workshops = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3mPWaCKrOGetYMEftNUdEJ0r8KXL2G8Uew&s"
   },
   {
-    id:9,
-    kind : "internship",
-    title : "Creating a production website",
-    duration :" Till the website deployed",
-    benefits:[
+    id: 9,
+    kind: "internship",
+    title: "Creating a production website",
+    duration: " Till the website deployed",
+    benefits: [
       "Gain the expreriance of the corporate and demanding skills"
     ],
-    image:"https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753414461/4e50dead-6764-45f8-8056-a4454ccf7891.png"
+    image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753414461/4e50dead-6764-45f8-8056-a4454ccf7891.png"
   }
 ]
 
@@ -381,28 +360,99 @@ const testimonials = [
   }
 ]
 
-
-
-
-
-
-
-
-
-
-
+const facilityData = {
+  "facilities": [
+    {
+      "id": 1,
+      "title": "Smart Classrooms",
+      "description": "Fully air-conditioned smart classrooms equipped with interactive smart boards, ergonomic furniture, and digital teaching tools to provide an engaging and immersive learning environment.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753097050/c9e766a6-7aee-4a3d-beed-d975792d7c4c.png",
+      "features": ["Interactive smart boards", "Full air-conditioning", "Ergonomic seating", "Digital teaching tools"],
+      "tagline": "Smart Learning Starts Here"
+    },
+    {
+      "id": 2,
+      "title": "Extensive Library",
+      "description": "Our library houses over 1 million books, covering topics like history, biographies, academic subjects, and more. A quiet, resource-rich space for deep learning and research.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753696309/502461579_10008893625859124_5911446073717386558_n_optp6b.jpg",
+      "features": ["10 lakh+ books", "Dedicated history and biography sections", "Educational resources", "Peaceful reading environment"],
+      "tagline": "Where Knowledge Lives"
+    },
+    {
+      "id": 3,
+      "title": "Modern Canteen",
+      "description": "A hygienic canteen serving freshly prepared meals at affordable prices. It includes a wide variety of food options for all tastes, ensuring health and satisfaction.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753094865/WhatsApp_Image_2025-07-21_at_15.31.42_0099e550_ikee5q.jpg",
+      "features": ["Fresh quality meals", "Affordable pricing", "Clean and spacious seating", "Variety of cuisines"],
+      "tagline": "Healthy Food, Happy Minds"
+    },
+    {
+      "id": 4,
+      "title": "Seminar Hall",
+      "description": "Spacious seminar hall designed for farewell gatherings, freshers' parties, and major institutional events, equipped with professional lighting and audio systems.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752666158/484631522_1049466157209323_4171387036201517382_n_pju2zb.jpg",
+      "features": ["Event-ready space", "Audio-visual setup", "Comfortable seating", "Multi-event use"],
+      "tagline": "Celebrate, Inspire, Connect"
+    },
+    {
+      "id": 5,
+      "title": "Incubation Cell",
+      "description": "Dedicated startup incubation cell to nurture student-led innovations and entrepreneurship. Offers mentorship, workspace, and technical support for smart startup ideas.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752751502/3843a019-baf0-40e0-97b4-f548462aacf7.png",
+      "features": ["Startup support", "Technical mentorship", "Workspace access", "IoT and AI project guidance"],
+      "tagline": "Ideas Into Innovation"
+    },
+    {
+      "id": 6,
+      "title": "Full Surveillance Campus",
+      "description": "Our campus is under round-the-clock CCTV surveillance ensuring safety, discipline, and transparent monitoring of student and staff activities.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753095614/WhatsApp_Image_2025-07-21_at_16.29.48_9d92c193_mommgp.jpg",
+      "features": ["24/7 CCTV", "Staff & student monitoring", "Secure infrastructure", "Central monitoring room"],
+      "tagline": "Safe. Secure. Supervised."
+    },
+    {
+      "id": 7,
+      "title": "Advanced Computer Lab",
+      "description": "State-of-the-art computer labs featuring modern IDEs, development tools, and wide-screen monitors for efficient coding, software development, and digital design.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752827027/486300369_1055984116557527_4023767572347415079_n_h3ujez.jpg",
+      "features": ["Modern IDEs", "Wide-screen monitors", "High-speed internet", "Developer-friendly setup"],
+      "tagline": "Code. Create. Conquer."
+    },
+    {
+      "id": 8,
+      "title": "Robotics & IoT Lab",
+      "description": "Innovative robotics lab designed for building robots, IoT devices, and smart systems, equipped with advanced hardware, sensors, and prototyping tools.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752740741/487301788_1062568922565713_5457511864499874592_n_l65esw.jpg",
+      "features": ["Robotics kits", "IoT development tools", "Smart device prototyping", "Sensor-based projects"],
+      "tagline": "Build the Future Today"
+    },
+    {
+      "id": 9,
+      "title": "Student Support Services",
+      "description": "A dedicated support center offering academic guidance, career counseling, mental health services, and mentorship programs to help students thrive both academically and personally.",
+      "image": "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752927606/WhatsApp_Image_2025-07-19_at_17.46.49_fcb8ec33_mdu3no.jpg",
+      "features": [
+        "Career and academic counseling",
+        "Mental health and wellness support",
+        "One-on-one mentorship",
+        "Workshops & skill development sessions"
+      ],
+      "tagline": "Support That Empowers"
+    }
+  ]
+}
 
 
 export default async function Home() {
- 
-//  )
+
   return (
     <div className="bg-gradient-to-br from-indigo-50 to-purple-100">
       {/* ──────────────── HERO ──────────────── */}
-      <HeroImage data={heroData } />
+      <HeroImage data={heroData} />
 
       {/* -----------------------about Us ------------------------------ */}
-      <CollegeFacilities campusFacility={campusFacility } />
+
+      <FacilitiesPage data={facilityData} />
       {/* --------------------glallery section -------------------- */}
       <section className="relative py-8 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         {/* Subtle grid pattern background */}
@@ -434,7 +484,7 @@ export default async function Home() {
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
               <div className="p-1"> {/* Adds subtle inner spacing */}
                 <BentoGrid
-                  images={imageItems }
+                  images={imageItems}
                 />
               </div>
             </div>
@@ -492,7 +542,7 @@ export default async function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(courses )?.map((course: any, index: number) => (
+            {(courses)?.map((course: any, index: number) => (
               <div
                 key={index}
                 className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100"
@@ -526,9 +576,9 @@ export default async function Home() {
                   </div>
 
                   <Link href={course.link}>
-                      <button className="w-full px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors duration-300 group-hover:border-blue-300">
-                    Explore Program
-                  </button>
+                    <button className="w-full px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors duration-300 group-hover:border-blue-300">
+                      Explore Program
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -536,8 +586,14 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* ---youtube for showing the daily shudle like speech, presentation and more ------ */}
+      <YoutubePlayer description='our daily schedules here at cimage' videos={speechvideos} />
+
       {/* --------------workshops and internships----------------- */}
-      <ProgramsSection programs={workshops } />
+      <ProgramsSection programs={workshops} />
+
+
       {/* ________________CallBackRequest___________ */}
       <CallbackRequestSection />
 
@@ -547,11 +603,17 @@ export default async function Home() {
 
       {/* -------------News Section---------------- */}
       <LatestNewsSection newsItems={newsItems} />
+
+        {/* ----------single youtube page --------- */}
+
+
+      <YouTubePlayer videoId="nmPNN0MiAAE" muted ={false} />
       {/* --------------------------Testimonials---------------------- */}
       <section>
-        <TestimonialsCarousel testimonials={testimonials} />
+        <TestimonialsCarousel testimonials={testimonials} />  
       </section>
 
+    
 
 
     </div>

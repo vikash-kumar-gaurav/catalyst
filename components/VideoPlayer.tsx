@@ -11,7 +11,6 @@ interface Video {
 
 interface YoutubePlayerProps {
   videos: Video[];
-  title?: string;
   description?: string;
 }
 
@@ -90,7 +89,6 @@ const VideoCard: React.FC<{ video: Video; onPlay: (videoId: string) => void }> =
 
 const YoutubePlayer: React.FC<YoutubePlayerProps> = ({
   videos,
-  title = "Premium Content",
   description = "Exclusive video collection"
 }) => {
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
@@ -219,12 +217,7 @@ const YoutubePlayer: React.FC<YoutubePlayerProps> = ({
   <div className="relative z-50 container mx-auto px-6">
 
     <header className="text-center mb-16 relative overflow-hidden">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 relative">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-gradient-x">
-          {title}
-        </span>
-        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full"></span>
-      </h1>
+
 
       <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto relative font-serif italic tracking-wide leading-relaxed">
         <span className="absolute -left-6 top-0 text-4xl text-purple-400 opacity-60">"</span>

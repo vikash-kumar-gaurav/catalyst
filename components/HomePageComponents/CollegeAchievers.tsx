@@ -34,12 +34,12 @@ const GlobalAchievers = ({achievers}:{achievers:any}) => {
             <div key={achiever.id} className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
               <div className="relative h-60 w-full overflow-hidden rounded-t-xl">
                 {/* Glass panel effect */}
-                <div className="absolute inset-0 backdrop-blur-sm bg-white/10 border-b border-white/20">
+                <div className="absolute inset-0  backdrop-blur-sm bg-white/10 border-b border-white/20">
                   <Image
                     src={achiever.image}
                     alt={achiever.name}
                     fill
-                    className="object-cover mix-blend-multiply opacity-90"
+                    className="object-cover mix-blend-multiply min-h-96 opacity-90"
                   />
                 </div>
 

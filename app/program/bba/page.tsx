@@ -773,7 +773,7 @@ export default async function BBAPage() {
         </div>
       </section>
       {/* -----------youtube section ------------ */}
-      <YoutubePlayer title={bbaProgram.youtubetitle} description={bbaProgram.youtubeDescription} videos={bbaProgram.youtubeVideos} />
+      <YoutubePlayer description={bbaProgram.youtubeDescription} videos={bbaProgram.youtubeVideos} />
 
 
       {/* Faculty Section */}

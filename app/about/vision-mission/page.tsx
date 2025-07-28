@@ -551,7 +551,7 @@ pageData = data as any ?? pageData
                                 key={index} 
                                 className="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group"
                             >
-                                <div className="relative h-48 overflow-hidden">
+                                <div className="relative h-56 overflow-hidden">
                                     <img
                                         src={item.image}
                                         alt={item.title}

@@ -54,7 +54,7 @@ const ProgramsSection = ({ programs }: ProgramsSectionProps) => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20">
+    <section className="bg-gradient-to-b from-gray-50 to-white py-8">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="mb-2 text-center">

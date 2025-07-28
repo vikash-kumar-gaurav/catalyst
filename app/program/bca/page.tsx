@@ -598,7 +598,7 @@ bcaProgram = data as any ?? bcaProgram
 
 
       {/* ----adding the youtube videos --------- */}
-      <YoutubePlayer title={bcaProgram.youtubetitle} description={bcaProgram.youtubeDescription} videos={bcaProgram.youtubeVideos} />
+      <YoutubePlayer  description={bcaProgram.youtubeDescription} videos={bcaProgram.youtubeVideos} />
       {/* Curriculum Section */}
       <section id="curriculum" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
