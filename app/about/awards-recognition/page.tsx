@@ -47,42 +47,42 @@ let awardsData = {
       organization: "ASSOCHAM & Ministry of HRD",
       year: "2023",
       description: "Awarded by Dr. Ram Shankar Katheria, Hon. Minister of Education for State in recognition of excellence in management education.",
-      image: "/images/assocham-award.jpg"
+      image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753778509/30897545-bb2f-4b7f-9fcd-9169ad05a4b5.png"
     },
     {
       title: "Atal Ratna Samman Award",
       organization: "Government of India",
       year: "2021",
       description: "Recognized for extraordinary contributions in Management and IT Education by Union HRD Minister Sri Ramesh Pokhariyal Nishank.",
-      image: "/images/atal-award.jpg"
+      image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753778676/601c47d1-0d82-4e8a-9a6c-2bbf586689f8.png"
     },
     {
       title: "ABS Award - Best Campus Placement",
       organization: "Catalyst Research & Zee Business",
       year: "2016",
       description: "Awarded by Actress Amisha Patel for outstanding placement records in Eastern India.",
-      image: "/images/abs-award.jpg"
+      image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753777764/16a2f9c4-e07b-4396-9396-c8ec22bf89fb.png"
     },
     {
       title: "Leaders Award in Education",
       organization: "Bloomberg TV & Education World",
       year: "2019",
       description: "Recognized as 'Best Management Institution in Bihar' by Dr. Satyanarayan Jatia, Hon. MP.",
-      image: "/images/leaders-award.jpg"
+      image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753778555/390ab9b2-3ba3-4ab7-ba15-0fa99edb9e46.png"
     },
     {
       title: "Emerging Institute for Management",
       organization: "All India Management Association",
       year: "2012",
       description: "National level recognition for excellence in management education curriculum and pedagogy.",
-      image: "/images/aima-award.jpg"
+      image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753778425/5a91f8de-8a6a-4cbc-bd39-00d6abc54edd.png"
     },
     {
       title: "Peacock Feather Award",
       organization: "National Education Forum",
       year: "2018",
       description: "Best IT & Management College in Bihar awarded by former cricketer Mr. Javagal Srinath.",
-      image: "/images/peacock-award.jpg"
+      image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753777885/68b17412-901b-4924-8b39-108301ba78f2.png"
     }
   ],
   studentAchievements: [
@@ -194,10 +194,10 @@ let awardsData = {
   ]
 };
 
-let {data, error} = await fetchPageData("awards-&-recognition")
-console.log(data);
+// let {data, error} = await fetchPageData("awards-&-recognition")
+// console.log(data);
 
-awardsData = data as any ?? awardsData;
+// awardsData = data as any ?? awardsData;
 
 export default function AwardsPage() {
   return (

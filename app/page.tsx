@@ -72,6 +72,22 @@ const imageItems = [
   { tag: "Annual Day", alt: "Celebration of college achievements with cultural performances", link: "/event/annual-day", url: '/13.jpg' }
 ];
 
+const learderImage = [
+  { tag: "Freshers Party", alt: "Students enjoying DJ night at freshers party", link: "/event/freshers", url: '/1.jpg' },
+  { tag: "mr Governer", alt: "Seniors bidding farewell with performances and speeches", link: "/event/farewell", url: 'https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753723030/488886299_1064930345662904_4568816821473952557_n_eapnz2.jpg' },
+  { tag: "Holi Mela", alt: "Celebrating Holi with colors, music, and dance", link: "/event/holi-mela", url: '/3.jpg', },
+  { tag: "Republic Day", alt: "Students participating in Republic Day parade and cultural programs", link: "/event/republic-day", url: 'https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753780143/45773718-3161-46e9-85ba-b46c5dc74294.png' },
+  { tag: "Independence Day", alt: "Flag hoisting ceremony and patriotic performances", link: "/event/independence-day", url: '/5.jpg' },
+  { tag: "Cricket Tournament", alt: "Inter-departmental cricket tournament finals", link: "/event/cricket-tournament", url: '/6.jpg' },
+  { tag: "Badminton Championship", alt: "College-wide indoor badminton championship", link: "/event/badminton-championship", url: '/7.jpg' },
+  { tag: "Cultural Fest", alt: "Annual college cultural fest with dance, drama, and music", link: "/event/cultural-fest", url: 'https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753780291/9c26b7ec-231b-453f-a033-4497ffeb1447.png' },
+  { tag: "Tech Fest", alt: "Showcasing student tech projects, exhibitions, and coding events", link: "/event/tech-fest", url: '/9.jpg' },
+  { tag: "Apj Abdul kalam at Cimage", alt: "Competitive programming round held at college level", link: "/event/coding-round", url: 'https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752665744/neeraj_aggrawal_with_Apj_Abdul_kalam_Sit_eud0ek.png' },
+  { tag: "Teachers' Day", alt: "Hands-on workshops and speaker sessions for students", link: "/event/workshop-day", url: '/11.jpg' },
+  { tag: "Teachers' Day", alt: "Tributes and celebrations honoring faculty contributions", link: "/event/teachers-day", url: '/12.jpg' },
+  { tag: "Annual Day", alt: "Celebration of college achievements with cultural performances", link: "/event/annual-day", url: '/13.jpg' }
+];
+
 
 const courses = [
   {
@@ -453,7 +469,7 @@ export default async function Home() {
       {/* -----------------------about Us ------------------------------ */}
 
       <FacilitiesPage data={facilityData} />
-      {/* --------------------glallery section -------------------- */}
+      {/* -------------------- college  glallery section -------------------- */}
       <section className="relative py-8 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 opacity-10">
@@ -588,12 +604,68 @@ export default async function Home() {
       </section>
 
       {/* ---youtube for showing the daily shudle like speech, presentation and more ------ */}
-      <YoutubePlayer description='our daily schedules here at cimage' videos={speechvideos} />
+      <YoutubePlayer description='Know about Catalyst' videos={speechvideos} />
 
       {/* --------------workshops and internships----------------- */}
       <ProgramsSection programs={workshops} />
 
+      {/* -------------- Leaders at our college --------------- */}
 
+      <section className="relative py-8 overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+        {/* Subtle grid pattern background */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <pattern id="grid-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-gray-200" />
+            </pattern>
+            <rect x="0" y="0" width="100" height="100" fill="url(#grid-pattern)" />
+          </svg>
+        </div>
+
+        {/* Floating accent elements */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100 rounded-full filter blur-[80px] opacity-40"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-100 rounded-full filter blur-[80px] opacity-40"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Leaders</span> at Cimage
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our vibrant leaders visiting cimage
+            </p>
+          </div>
+
+          {/* Expanded BentoGrid Container */}
+          <div className="relative group mb-16">
+            <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+              <div className="p-1"> {/* Adds subtle inner spacing */}
+                <BentoGrid
+                  images={learderImage}
+                />
+              </div>
+            </div>
+            {/* Floating frame effect */}
+            <div className="absolute -inset-4 border-2 border-transparent group-hover:border-blue-200 rounded-3xl pointer-events-none transition-all duration-500"></div>
+          </div>
+
+          {/* Enhanced Gallery Button */}
+          <div className="text-center">
+            <button className="relative px-8 py-4 font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full overflow-hidden group hover:shadow-xl hover:shadow-blue-100 transition-all duration-300">
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="relative flex items-center justify-center space-x-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                </svg>
+                <span>View College Gallery</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
       {/* ________________CallBackRequest___________ */}
       <CallbackRequestSection />
 
@@ -601,19 +673,20 @@ export default async function Home() {
       <GlobalAchievers achievers={achievers} />
 
 
+
       {/* -------------News Section---------------- */}
       <LatestNewsSection newsItems={newsItems} />
 
-        {/* ----------single youtube page --------- */}
+      {/* ----------single youtube page --------- */}
 
 
-      <YouTubePlayer videoId="nmPNN0MiAAE" muted ={false} />
+      <YouTubePlayer videoId="nmPNN0MiAAE" muted={true} />
       {/* --------------------------Testimonials---------------------- */}
       <section>
-        <TestimonialsCarousel testimonials={testimonials} />  
+        <TestimonialsCarousel testimonials={testimonials} />
       </section>
 
-    
+
 
 
     </div>
