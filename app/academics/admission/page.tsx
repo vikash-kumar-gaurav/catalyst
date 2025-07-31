@@ -1,7 +1,6 @@
-
 import HeroSection from '@/components/newHeroImageForAllPage';
 import { fetchPageData } from '@/lib/useFetchData';
-import { FaGraduationCap, FaFileAlt, FaRupeeSign, FaCalendarAlt, FaPhone, FaEnvelope, FaUniversity, FaQuestionCircle } from 'react-icons/fa';
+import { FaGraduationCap, FaFileAlt, FaCalendarAlt, FaPhone, FaEnvelope, FaUniversity, FaQuestionCircle } from 'react-icons/fa';
 import { GiArchiveResearch, GiAchievement } from 'react-icons/gi';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 import { MdOutlinePayment, MdOutlineSchool } from 'react-icons/md';
@@ -13,24 +12,18 @@ const AdmissionPage = async() => {
       "name": "BCA (Computer Applications)",
       "duration": "3 Years",
       "intake": 120,
-      "affiliation": "XYZ University",
-      "accreditation": "NAAC A+ Grade",
       "description": "Comprehensive program covering programming, databases, web development, and software engineering."
     },
     {
       "name": "BBA (Management Studies)",
       "duration": "3 Years",
       "intake": 120,
-      "affiliation": "XYZ University",
-      "accreditation": "NAAC A+ Grade",
       "description": "Develops business acumen with specializations in Marketing, Finance, and Human Resources."
     },
     {
       "name": "B.Sc. IT (Information Technology)",
       "duration": "3 Years",
       "intake": 60,
-      "affiliation": "XYZ University",
-      "accreditation": "NAAC A+ Grade",
       "description": "Focuses on IT infrastructure, networking, cybersecurity, and emerging technologies."
     }
   ],
@@ -87,11 +80,11 @@ const AdmissionPage = async() => {
     },
     {
       "question": "What are the hostel facilities like?",
-      "answer": "We provide AC/Non-AC hostel rooms with WiFi, mess, laundry, and 24/7 security."
+      "answer": "We don't provide hostel facility but you can find one easily  "
     }
   ],
   "HeroSection":{
-    "ImageUrl":"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "ImageUrl":"https://res.cloudinary.com/dcnp0gkrx/image/upload/v1752927606/WhatsApp_Image_2025-07-19_at_17.46.49_fcb8ec33_mdu3no.jpg",
     "title":"Admissions 2025-28",
     "Description":"Begin your journey towards academic excellence with our industry-aligned undergraduate programs",
   }
@@ -159,10 +152,6 @@ const { data, error} = await fetchPageData("admission")
                   <span>Intake: {program.intake}</span>
                 </div>
                 <p className="text-gray-600 mb-4 text-center">{program.description}</p>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600"><strong>Affiliation:</strong> {program.affiliation}</p>
-                  <p className="text-sm text-gray-600"><strong>Accreditation:</strong> {program.accreditation}</p>
-                </div>
               </div>
             ))}
           </div>
@@ -175,7 +164,7 @@ const { data, error} = await fetchPageData("admission")
           <div className="flex flex-col lg:flex-row items-start">
             <div className="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
               <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                src=""
                 alt="Students in classroom"
                 className="rounded-lg shadow-xl"
               />

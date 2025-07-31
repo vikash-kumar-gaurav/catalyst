@@ -283,48 +283,93 @@ const newsItems = [
 const achievers = [
   {
     id: 1,
-    name: "Ankit Raj",
+    name: "Suraj Prakash",
     course: "BCA (2020 - 2023)",
-    company: "Amazon India",
+    company: "WIPRO (Sydney, Australia)",
     position: "Software Development Engineer",
     package: "₹32 LPA",
-    location: "Bangalore",
+    location: "Australia",
     testimonial: "Real-world coding projects and placement support helped me crack my dream job.",
     social: {
-      linkedin: "",
+      linkedin: "https/linkledIn.com",
       twitter: ""
     },
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6bjXseXhHiDj_aqbkRgRjB8jFO25DaAlAWDMRTCdU5bZjUdeOK5tAWDRtpnxd008mcWY&usqp=CAU"
+    image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753862748/ae40f028-0fbc-440c-be73-82379815e395.png"
   },
   {
     id: 2,
-    name: "Sneha Verma",
+    name: "Shweta Kumari",
     course: "MCA (2019 - 2022)",
-    company: "Zomato",
+    company: "JP Morgan (Glasgow, UK)",
     position: "Product Analyst",
     package: "₹21 LPA",
-    location: "Gurgaon",
+    location: "UK",
     testimonial: "The business intelligence modules during my MCA gave me the perfect skillset for product analytics.",
     social: {
       linkedin: "",
-      twitter: ""
+      twitter: "twitter.com"
     },
-    image: "https://media.cricheroes.in/user_profile/1607743048043_MP8GGBiRwrIQ.jpg"
+    image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753862993/73cdc911-9e37-4b2c-9b9c-a8b2bce4d300.png"
   },
   {
     id: 3,
-    name: "Rajat Sharma",
+    name: "Samiksha Gupta",
     course: "BSc IT (2018–2021)",
-    company: "Flipkart",
+    company: "Wipro",
     position: "Security Engineer",
     package: "₹18 LPA",
-    location: "Hyderabad",
+    location: "Texas, USA",
     testimonial: "Cybersecurity labs and faculty mentorship helped me land a role in e-commerce security.",
     social: {
       linkedin: "",
       twitter: ""
     },
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6bjXseXhHiDj_aqbkRgRjB8jFO25DaAlAWDMRTCdU5bZjUdeOK5tAWDRtpnxd008mcWY&usqp=CAU"
+    image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753863140/d87978de-5889-4d39-aa84-d45b186022b0.png"
+  },
+  {
+    id: 4,
+    name: "Raj Shrivastava",
+    course: "BSc IT (2018–2021)",
+    company: "cognizant",
+    position: "Security Engineer",
+    package: "₹18 LPA",
+    location: "Dubai, UAE",
+    testimonial: "Cybersecurity labs and faculty mentorship helped me land a role in e-commerce security.",
+    social: {
+      linkedin: "",
+      twitter: ""
+    },
+    image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753863652/200e1dc6-9d32-42ad-a17a-c02a01bf51d6.png"
+  },
+  {
+    id: 5,
+    name: "Priyanka Kumari",
+    course: "BSc IT (2018–2021)",
+    company: "TCS",
+    position: "Security Engineer",
+    package: "₹18 LPA",
+    location: "Michigan, USA",
+    testimonial: "Cybersecurity labs and faculty mentorship helped me land a role in e-commerce security.",
+    social: {
+      linkedin: "",
+      twitter: ""
+    },
+    image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753863600/988e634e-1010-45d4-b62b-b4c59da6900a.png"
+  },
+  {
+    id: 6,
+    name: "Nishi Prakash",
+    course: "BSc IT (2018–2021)",
+    company: "Rackspace",
+    position: "Security Engineer",
+    package: "₹18 LPA",
+    location: "London, UK",
+    testimonial: "Cybersecurity labs and faculty mentorship helped me land a role in e-commerce security.",
+    social: {
+      linkedin: "",
+      twitter: ""
+    },
+    image: "https://res.cloudinary.com/dcnp0gkrx/image/upload/v1753863561/8fb7de6d-aef8-45fb-9ce4-b13542c4ca6b.png"
   }
 ]
 
@@ -637,7 +682,7 @@ export default async function Home() {
           </div>
 
           {/* Expanded BentoGrid Container */}
-          <div className="relative group mb-16">
+          <div className="relative group mb-8">
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
               <div className="p-1"> {/* Adds subtle inner spacing */}
                 <BentoGrid
@@ -649,21 +694,6 @@ export default async function Home() {
             <div className="absolute -inset-4 border-2 border-transparent group-hover:border-blue-200 rounded-3xl pointer-events-none transition-all duration-500"></div>
           </div>
 
-          {/* Enhanced Gallery Button */}
-          <div className="text-center">
-            <button className="relative px-8 py-4 font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full overflow-hidden group hover:shadow-xl hover:shadow-blue-100 transition-all duration-300">
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative flex items-center justify-center space-x-2">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
-                </svg>
-                <span>View College Gallery</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </span>
-            </button>
-          </div>
         </div>
       </section>
       {/* ________________CallBackRequest___________ */}
